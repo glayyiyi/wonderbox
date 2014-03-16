@@ -1,0 +1,396 @@
+{include file="header.html"}
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<!-- 主要内容 -->
+<div id="main" class="clearfix">
+	<!-- 广告模块 -->
+	<div class="bannerBar m_b_15">
+		<p class="pic">
+			<img src="{$tempdir}/images/banner_01.jpg" />
+		</p>
+		<!-- 浮动层 -->
+
+		<!--<div class="pop_searchBar">
+			<div class="hd">
+				<ul class="tab_search">
+					<li><a class="hover">我要投资<s class="ico_tip"></s></a></li>
+					<li><a class="hover"><s class="ico_tip"></s></a></li>
+				</ul>
+			</div>
+			 <form action="/invest/index.html" method="get">
+				<div class="bg">
+				
+					<p class="m_b_5">筹款金额：￥{$var.account_format}元</p>
+                    <p class="m_b_5">年利率：<strong>{$var.apr}</strong>%</p>
+                    <p class="item">
+						<label class="tit">金额</label> <span class="c"> <input
+							type="text" class="input_picbg_01" name="q_l_account2" size="20"
+							value="{$magic.request.q_l_account2}" />
+						</span>
+					</p>
+					
+					<p class="item">
+						<label class="tit">年化收益率</label> <span class="c">  <select style="width: 150px;"
+								class="input_search" name="q_apr" id="q_apr">
+									<option value="">没有限制</option>
+									<option value="1" {if $magic.request.q_apr=='1'}selected{/if} >12%以下</option>
+									<option value="2" {if $magic.request.q_apr=='2'}selected{/if} >12%-16%</option>
+									<option value="3" {if $magic.request.q_apr=='3'}selected{/if} >16%以上</option>
+							</select>
+						</span>
+					</p> 
+					
+                    <p class="item">
+						<label class="tit">期限</label> <span class="c"> 
+						<select
+								style="width: 150px;" class="input_search" name="q_lmt"
+								id="q_lmt">
+									<option value="">没有限制</option>
+									<option value="1" {if $magic.request.q_lmt=='1'}selected{/if} >3个月以下</option>
+									<option value="2" {if $magic.request.q_lmt=='2'}selected{/if} >3-6个月</option>
+									<option value="3" {if $magic.request.q_lmt=='3'}selected{/if} >6-9个月</option>
+									<option value="4" {if $magic.request.q_lmt=='4'}selected{/if} >9-12个月</option>
+									<option value="5" {if $magic.request.q_lmt=='5'}selected{/if} >12个月以上</option>
+							</select>
+							 </span>
+					</p>-->
+                    
+			<!-- 		<p class="item">
+						<label class="tit">借款目的</label> <span class="c"> {linkages
+							name="use" nid="borrow_use" value="$magic.request.use"
+							default="没有限制"} </span>
+					</p>
+
+
+					<p class="item">
+						<label class="tit">标种</label> <span class="c"> <select
+							name="biaoType" id="biaoType">
+								<option value="">所有</option>
+								<option value="fast" {if $magic.request.biaoType=='fast'}selected{/if} >抵押标</option>
+								<option value="jin" {if $magic.request.biaoType=='jin'}selected{/if} >净值标</option>
+								<option value="miao" {if $magic.request.biaoType=='miao'}selected{/if} >秒还标</option>
+								<option value="xin" {if $magic.request.biaoType=='xin'}selected{/if} >信用标</option>
+								<option value="lz" {if $magic.request.biaoType=='lz'}selected{/if} >流转标</option>
+						</select>
+						</span>
+					</p>
+
+					<p class="item">
+						<label class="tit">关键字</label> <span class="c"> <input
+							type="text" class="input_picbg_01" name="keywords" size="20"
+							value="{$magic.request.keywords|urldecode}" />
+						</span>
+					</p> -->
+
+				<!-- 	<p class="item">
+						<label class="tit"></label> <span class="c tc"> <input
+							type="submit" class="btnnew btn_green_01 m_t_10" id="search_btn"
+							value="搜索" />
+						</span>
+					</p> 
+					<p>
+						<input type="hidden" name="type" value="{$magic.request.type}" />
+					</p>
+					</ul>
+				</div>
+
+			</form>
+		</div>-->
+
+		<!-- end 浮动层 -->
+	</div>
+	<!-- end 广告模块 -->
+				<!-- 热门投资 -->
+<!-- 				<div class="module_01 m_b_17">
+					<div class="hd m_b_15">
+						<h3 class="fl">热门投资</h3>
+						<span class="fr more"><a href="/invest/index.html?order=account_up">MORE</a></span>
+					</div>
+					<div class="bg posit_rel">
+						左右
+						<div class="global_module prolist">
+							<div  class="prolist_content">
+				                <ul>
+				                {loop module="borrow" function="GetList" var="var" limit="10"  order="biaoindex"}
+				                    <li>
+				                     <b class="pic"> <a href="invest/a{$var.id}.html"><img src="{$var.user_id|avatar:'middle'}" ></a></b>
+				                        
+				                        <div class="itemInfo">
+				                        <a href="invest/a{$var.id}.html"><h4>{$var.name|truncate:25:"..."}&nbsp;&nbsp;</h4></a>
+				                        <p class="m_b_5">筹款金额：￥{$var.account_format}元</p>
+                        				<p class="m_b_5">年化收益率：<strong>{$var.apr}</strong>%</p>
+				                        
+				                        	<p><a href="invest/a{$var.id}.html" class="ico_sprite btnnew btn_view_01">查 看</a></p>
+				                        </div>
+				                    </li>
+				                 {/loop}
+				                </ul>
+				            </div>
+						</div>
+						左右按钮
+			            <p class="module_left"><img class="goLeft" src="{$tempdir}/images/btn_left.png" alt="" /></p>
+			            <p class="module_right"><img class="goRight" src="{$tempdir}/images/btn_right.png" alt="" /></p>
+
+			            修饰背景
+			            <div class="module_01tip"></div>
+
+					</div>
+				</div> -->
+				<!-- end 热门投资 -->
+				<!-- 2列 -->
+				<div class="grid_c2 clearfix m_b_10">
+					<div class="fl clum_l">
+						<!-- 热门贷款 -->
+						<div class="module_02">
+							<div class="hd">
+							<h3 class="fl">推荐投资项目</h3>
+							<span class="fr more"><a href="/invest/index.html?order=account_up">[更多]</a></span>
+							
+						</div>
+				<div class="bg">			
+			{loop module="borrow" function="GetList" var="var" limit="3"  order="biaoindex"}
+				<div class="list-div">
+                    <a href="invest/a{$var.id}.html"><img src="{$var.user_id|avatar:'middle'}" class="productimg"></a>
+                    <ul class="list-ul">
+                        <li class="titleli">
+                           <span>
+                                <a href="invest/a{$var.id}.html">{$var.name|truncate:25:"..."}&nbsp;&nbsp;</a>
+                           </span>
+                           {if $var.is_lz==1}
+                           <a href="/question/a146.html" target="_blank" rel="tooltip" title="项目流转标"><img src="{$tpldir}/images/lz.gif" border="0"  alt="点击查看详情"  /></a>&nbsp;
+                           {elseif $var.is_fast==1}
+                           <a href="/question/a146.html" target="_blank" rel="tooltip" title="小微企业现场审核抵押标"><img src="{$tpldir}/images/fast.gif" border="0"  alt="点击查看详情"  /></a>&nbsp;
+                           {elseif $var.is_jin==1}
+                           <a href="/question/a184.html" target="_blank" rel="tooltip" title="借款者在网站内资产做保障的借款标"><img src="{$tpldir}/images/jin.gif"   border="0"  alt="点击查看详情" /></a>&nbsp;
+                           {elseif $var.is_mb==1}
+                           <a href="/question/a145.html" target="_blank" rel="tooltip" title="秒标满额系统自动还款"><img src="{$tpldir}/images/miao.jpg"  border="0" /></a>&nbsp;
+                           {elseif $var.is_xin==1}
+                           <a href="/question/a143.html" target="_blank" rel="tooltip" title="网站给予的信用额度借款标"><img src="{$tpldir}/images/xin.jpg"   border="0"  alt="点击查看详情" /></a>&nbsp;
+                           {/if}
+                           {if $var.isday==1}<a href="#" target="_blank" rel="tooltip" title="天标是按天借款标"><img src="{$tpldir}/images/day.jpg"   border="0"  alt="点击查看详情" /></a>&nbsp;{/if}
+                           {if $var.award==1 || $var.award==2 }<a  rel="tooltip" title="投资该借款标除利息外有额外的奖励" href="#" ><img src="{$tpldir}/images/jiangli.gif"  border="0"  /></a>&nbsp;{/if}
+                           {if $var.pwd != ""}<a rel="tooltip" title="定向标是投标的时候需要定向密码的借款标" href="#"><img src="{$tpldir}/images/lock.gif"  border="0"  /></a>&nbsp;{/if}
+                           {if $var.danbao == 1}<a rel="tooltip" title="由第三方担保公司担保的借款标" href="#"><img src="{$tpldir}/images/dan.gif"  border="0" /></a>{/if}
+                           {if $var.is_kuai==1} <a rel="tooltip" title="快速标，短期资金周转" href="#"><img src="{$tpldir}/images/kuai.gif"  border="0" /></a>{/if}
+                        </li>
+                        <li>筹款金额：￥{$var.account_format}元</li>
+                        <li>年化收益率：<strong>{$var.apr}</strong>%</li>
+                        <li>{if $var.is_lz==1}流转周期：{else}期限：{/if}{if $var.isday==1}<strong>{$var.time_limit_day}</strong>天{else}<strong>{$var.time_limit}</strong>个月{/if}</li>
+                        <!-- <li><span style="float:left">信用等级：</span><img class="rank" src="{$_G.system.con_credit_picurl}{$var.credit_pic|default:credit_s11.gif}" title="{$var.credit_jifen|default:0}分" /></li> -->
+                        <li><span style="float:left">剩余时间：{$var.lave_time} </span></li>
+                        <li>
+                            <div class="float_left">已完成：</div>
+                            <div class="jindu float_left">
+                                <div class="tiaotiao" style="width:{$var.scale|default:0}%"></div>
+                            </div>
+                            <div class="float_left">&nbsp;{$var.scale|default:0}%</div>
+                        </li>
+                        <li>{if $var.isday==1 &&$var.is_lz==0}到期全额还款{elseif $var.is_mb==1}系统自动还款{elseif $var.is_lz==1}到期自动回购{else}{$var.style|linkage:"borrow_style"}{/if}</li>
+					</ul>
+					<div class="list-btnbox">
+						{if $var.status==3}
+						{if $var.repayment_account == $var.repayment_yesaccount  }
+						<a href="invest/a{$var.id}.html" class="btn-action">已还款</a>
+						{else}
+						<a href="invest/a{$var.id}.html" class="btn-action">还款中</a>
+						{/if}
+						{elseif $var.status==5}
+						<img src="{$tempdir}/images/cancel_repayment.jpg" />
+						{elseif $var.status==4}
+						<a href="invest/a{$var.id}.html" class="btn-action">复审失败</a>
+						{elseif $var.status==2}
+						<a href="invest/a{$var.id}.html" class="btn-action">等待复审</a>
+						{elseif $var.scale < 100}
+							{if $var.is_lz==1}
+							<a href="invest/a{$var.id}.html" class="btn-action">马上认购</a>
+							{else}
+							<a href="invest/a{$var.id}.html" class="btn-action">立即投标</a>
+							{/if}
+						{else}
+							{if $var.is_lz==1}
+							<a href="invest/a{$var.id}.html" class="btn-action">已认购完</a>
+							{else}
+							<a href="invest/a{$var.id}.html" class="btn-action">等待复审</a>
+							{/if}
+					{/if}
+					</div>
+				</div>
+			{/loop}
+		</div>
+	 </div>
+	<!-- end 热门贷款 -->
+   </div>
+		<div class="fr clum_r">
+			<!-- 公 告 -->
+			<div class="module_04 m_b_10">
+				<div class="hd">
+					<span class="float_left"><h3>
+							<s class="icon_gg"></s>公 告
+						</h3></span>
+						<a href="/gonggao/index.html" class="float_right">[更多]</a>
+				</div>
+				<div class="bg">
+					<ul class="noteList">
+						{site site_id="22" } {loop module="article" function="GetList"
+						limit="3" site_var="var" var="item" status=1}
+						<li class="clearfix"><a
+							href="{$item.site_nid}/a{$item.id}.html"><span
+								class="float_left">{$item.name|truncate:10}</span><span
+								class="float_right">{$item.publish|truncate:10}</span></a></li> {/loop} {/site}
+					</ul>
+				</div>
+			</div>
+			<!-- end 公 告 -->
+			
+			
+			<div class="module_03">
+				<div class="hd">
+					<span class="float_left"><h3>
+						<s class="icon_tj"></s>我的好友
+					</h3>
+					</span>
+					<a href="/index.php?user&q=code/user/myfriend" class="float_right">[更多]</a>
+				</div>
+				<div class="bg">
+					<ul class="list_lc">
+						
+				{loop module="user" function="GetFriendsList" var="item" user_id="0" status=1 limit="2"}
+				
+						<li>
+							<div class="clearfix posit_rel">
+								<div class="info">
+									<!-- <h4 class="name m_b_10">{$item.friend_username}</h4> -->
+									<h4 class="name m_b_10">好友姓名：{if $item.friend_realname} {$item.friend_realname} {else} {$item.friend_username}{/if}</h4>
+									
+									<p><a href="/u/{$item.friends_userid}">－查看他投资的项目</a></p>
+									<p><a href="/index.php?user&q=code/message/sent&receive={$item.friend_username}">－给他留言</a></p>
+								</div>
+								<b class="photo"><img src="{$item.friends_user_id|avatar}"
+									width="100" height="99" /></b>
+
+
+							</div>
+
+
+						</li> 
+						{/loop}
+					</ul>
+				</div>
+			</div>
+			
+			
+			
+			<!-- 理财顾问推介 -->
+			<!-- <div class="module_03">
+				<div class="hd">
+					<h3>
+						<s class="icon_tj"></s>理财顾问推介
+					</h3>
+				</div>
+				<div class="bg">
+					<ul class="list_lc">
+						{loop module="user" function="GetList" limit="20" type_id=3}
+
+						<li>
+							<div class="clearfix posit_rel">
+								<div class="info">
+									<h4 class="name m_b_10">{$var.username}</h4>
+									<p class="item">姓名：{$var.realname}</p>
+									<p class="item">电话:{$var.phone}</p>
+									<p class="item m_b_6">
+										<label>服务星级：</label><span class="star"><s
+											class="star_01"></s><s class="star_01"></s><s class="star_01"></s><s
+											class="star_01"></s><s class="star_01"></s></span>
+									</p>
+									<p class="zx m_b_10">
+										<a target="_blank"
+											href="http://wpa.qq.com/msgrd?v=3&uin={$var.qq}&site=qq&menu=yes">
+											<img border="0" src="http://wpa.qq.com/pa?p=2:{$var.qq}:41"
+											alt="点击这里给我发消息" title="点击这里给我发消息" />
+										</a>
+									</p>
+
+									<p class="item">{$var.content}</p>
+								</div>
+								<b class="photo"><img src="{$var.user_id|avatar}"
+									width="100" height="99" /></b>
+
+
+							</div>
+
+
+						</li> {/loop}
+					</ul>
+				</div>
+			</div> -->
+			<!-- end 理财顾问推介 -->
+
+			<!-- <div class="module_04 m_b_10">
+                <div class="hd">
+                    <span class="float_left"><h3>成功贷款</h3></span><a href="/invest/index.html?type=success" class="float_right">[更多]</a>
+                </div>
+                <div class="bg" id="success_borrow">
+                    <ul class="notelist">
+                        {loop module="borrow" function="GetList" type="success" var="var" limit="6" status="3" order="account_down" recMonth="1"}
+                        <li class="clearfix">
+                            <img src="{$var.user_id|avatar}" alt="" class="sucimg">
+                            <dl>
+                                <dt><a href="invest/a{$var.id}.html" target="_blank" title="{$var.name}">{$var.name|truncate:13}</a></dt>
+                                <dd>金额：<b>{$var.account}元</b></dd>
+                                <dd>期限：{$var.time_limit|linkage:"borrow_time_limit"}</dd>
+                            </dl>
+                        </li>
+                        {/loop}
+                    </ul>
+                </div>
+            </div> -->
+			<!-- <div class="module_04 m_b_10" style="margin-bottom: 0;">
+				<div class="hd">
+					<span class="float_left"><h3>常见问题</h3></span> <a
+						href="/question/index.html" class="float_right">[更多]</a>
+				</div>
+				<div class="bg">
+					<ul class="nodelist">
+						{site site_id="11" } {loop module="article" function="GetList"
+						limit="7" site_var="var" var="item" status=1}
+						<li><a href="{$item.site_nid}/a{$item.id}.html">{$item.name|truncate:18}</a></li>
+						{/loop} {/site}
+					</ul>
+				</div>
+			</div> -->
+
+
+			<!-- 官方微信  -->
+<!-- 			<div class="weibo">
+				<div class="hd">官方微信</div>
+				<div class="bg clearfix">
+					<p class="txt fl m_r_20">微信扫描二维码，获得每日精选资讯</p>
+					<p class="pic fl">
+						<img src="" width="100" height="100" alt="二维码">
+					</p>
+				</div>
+			</div> -->
+			<!-- end 官方微信  -->
+		</div>
+	</div>
+				<!-- end 2列 -->
+			
+			<!-- end 主要内容 -->		
+			</div>
+			
+		
+<script type="text/javascript">
+{literal}
+jQuery(function(){
+	jQuery("[rel='tooltip']").tooltip();
+	jQuery('#login_btn').click(function(){
+		jQuery('#login_sub').submit();
+	});
+});
+{/literal}
+</script>
+<script src="{$tempdir}/media/js/tooltip.js"></script>
+<script src="{$tempdir}/media/js/popover.js"></script>
+<script src="{$tempdir}/media/js/transition.js"></script>
+
+<!--main end-->
+{include file="footer.html"}
