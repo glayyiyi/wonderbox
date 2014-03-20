@@ -126,26 +126,26 @@ jQuery(function(){
 
 							<!-- 								</td> -->
 							<!-- 							</tr> -->
-							
-							<tr>
-								<th style="vertical-align: top;">邀请码：</th>
 
-								<td><div class="input_style01">
-										<span class="r"> <input id="invite_userid"
-											name="invite_userid" type="text" size="22" maxlength="10"
-											value="{$magic.session.reginvite_user_id}"
-											onFocus="this.className='biankuang1';"
-											onBlur="this.className='biankuang2';checkInviteCode(this.value);" />
-										</span>
+							<!-- 							<tr> -->
+							<th style="vertical-align: top;">邀请码：</th>
 
-									</div>
-									<div class="reg-l-tips" id="invitecode_notice">
-										<span>*</span> 请输入邀请码,无邀请码不能注册
-									</div>
-									</td>
-							</tr>
-							
-							
+							<!-- 								<td><div class="input_style01"> -->
+							<!-- 										<span class="r"> <input id="invite_userid" -->
+							<!-- 											name="invite_userid" type="text" size="22" maxlength="10" -->
+							<!-- 											value="{$magic.session.reginvite_user_id}" -->
+							<!--  onFocus="this.className='biankuang1';"
+											onBlur="this.className='biankuang2';checkInviteCode(this.value);" />-->
+							<!-- 										</span> -->
+
+							<!-- 									</div> -->
+							<!-- 									<div class="reg-l-tips" id="invitecode_notice"> -->
+							<!-- 										<span>*</span> 请输入邀请码,无邀请码不能注册 -->
+							<!-- 									</div> -->
+							<!-- 									</td> -->
+							<!-- 							</tr> -->
+
+
 							<tr>
 								<th>用户名：</th>
 								<td><div class="input_style01">
@@ -192,9 +192,21 @@ jQuery(function(){
 										<span>*</span> 请重复输入上面的密码
 									</div></td>
 							</tr>
+							<tr>
+
+								<th>邀请人：</th>
+								<td><div class="input_style01">
+									<span class="r"><input id="invite_username"
+										name="invite_username" type="text" size="22" maxlength="10"
+										value="{$magic.session.reginvite_user_Name}"
+										onFocus="this.className='biankuang1';"
+										onBlur="this.className='biankuang2';"></span>
+								</div>
+								<div class="reg-l-tips">(此处如从邀请链接点击来可以不用修改)填写邀请人的本站用户名(非真实姓名).</div>
+								</td>
+							</tr>
 
 
-							
 
 
 							<!-- <tr> -->
@@ -214,12 +226,7 @@ jQuery(function(){
 							<!--  <div class="reg-l-input"><input id="realname" name="realname" type="text" size="22" maxlength="10" value="" onFocus="this.className='biankuang1';"  onBlur="this.className='biankuang2';checkRealname(this.value);"></div>-->
 							<!-- 					<div class="reg-l-tips" id="realname_notice"><span>*</span> (此处可不填)请填写您的真实姓名</div> -->
 							<!-- 				</li> -->
-							<!-- 				<li> -->
-							<!-- 					<div class="reg-l-title">介绍人：</div> -->
-							<!--  <div class="reg-l-input"><input id="invite_username" name="invite_username" type="text" size="22" maxlength="10" value="{$magic.session.reginvite_user_Name}" onFocus="this.className='biankuang1';"  onBlur="this.className='biankuang2';" ></div>-->
-							<!-- 					<div class="reg-l-tips"><span>*</span> (此处可不填)如填写介绍人的本站用户名(非真实姓名)，对方将获得奖励收入.<a href="#" id="infoyq" data-content="如果您申请了VIP并且成功付费，那么您的介绍人可以一次性获得100元的奖励。 -->
-							<!-- 每月结算已付费的VIP提成，通过网站充值方式打到您的介绍人的账上。">邀请规则</a></div> -->
-							<!-- 				</li> -->
+
 							<!--  <li class="reg-li"><input type="checkbox" id="dianji" checked="checked" style="position:relative; top:3px; margin-right:5px;">我已阅读并且同意<a href="/data/reg.doc">协议</a></li>-->
 							<!-- 				<li class="reg-li"><input type="submit" id="reg_btn" class="btn-action" value="立即注册" /></li> -->
 

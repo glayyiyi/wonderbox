@@ -41,8 +41,8 @@ if ($_U['query_type'] == "add" || $_U['query_type'] == "update"){
                 $msg = array("您选择的是按比例奖励，请填写奖励比例值( 0.1% ~ 6% )");
         }elseif(isset($_POST['isDXB']) && (!isset($_POST['pwd']) || $_POST['pwd'] == "" ) ){
                 $msg = array("您选择了定向标，请输入定向标的密码.");
-        }elseif(isset($_POST['is_lz']) && $_POST['account']%100!=0){
-        	$msg = array("流转标的借款金额必须是100的整数倍.");
+        }elseif(isset($_POST['is_lz']) && $_POST['account']%10000!=0){
+        	$msg = array("流转标的借款金额必须是10000的整数倍.");
         }else{
 		$var = array("name","use","time_limit","style","account","apr","lowest_account","most_account","valid_time","award","part_account","funds","is_false","open_account","open_borrow","open_tender","open_credit","content","is_vouch","vouch_award","vouch_user");
 		$data = post_var($var);
@@ -62,7 +62,7 @@ if ($_U['query_type'] == "add" || $_U['query_type'] == "update"){
 		}
 		if(isset($_POST['is_lz'])){
 			$data['is_lz'] = intval($_POST['is_lz']);
-			$data['lowest_account'] = 100;
+			$data['lowest_account'] = 50000;
 			$data['style'] = 0;
 		}
 		if(isset($_POST['isxin'])){
@@ -198,8 +198,8 @@ elseif ($_U['query_type'] == "tender"){
 		$borrow_result = borrowClass::GetOne(array("id"=>$_POST['id'],"tender_userid"=>$_G['user_id']));//获取借款标的单独信息
 		$is_lz=$borrow_result['is_lz'];
 		if($is_lz==1){
-			$account_money = (int)$_POST['flow_count']*100;
-			$postmoney = (int)$_POST['flow_count']*100;
+			$account_money = (int)$_POST['flow_count']*10000;
+			$postmoney = (int)$_POST['flow_count']*10000;
 		}else{
 			$account_money = $_POST['money'];
 			$postmoney = $_POST['money'];

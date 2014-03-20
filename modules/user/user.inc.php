@@ -488,32 +488,11 @@ if(strtolower($_POST['valicode']) != $_SESSION['valicode']){
 	
 	//邀请好友
 	elseif ($_U['query_type'] == "reginvite"){
-		
+		$_U['user_inviteid'] =  Key2Url($_G['user_id'],"reg_invite");
 		//$oUrl=$_G['weburl'].urlencode("/index.php?user&q=going/reginvite&u=").$_G['user_id'];
 		
 		//$_U['user_inviteid'] =  shortenSinaUrl($oUrl);
 		
-		//$_U['user_inviteid'] = $_G['user_id'] ;
-		
-		//By Glay
-		$encrypt="000001";
-		$data = $_G['user_id'];		// 被加密信息
-		//$key = 'reg_invite';					// 密钥
-		//$encrypt = encrypt($data,$key);
-		//$decrypt = decrypt($encrypt, $key);
-		//echo $encrypt, "\n", $decrypt;
-		if (intval ( $data ) > 0) {
-			
-			$x = $data;
-			$len = strlen ( $data );
-			
-			for($i = 0; $i < (6 - $len); $i ++) {
-				$x = '0' . $x;
-			}
-			$encrypt = $x;
-		}
-		
-		$_U ['user_inviteid'] = $encrypt;
 	}
 	
 	

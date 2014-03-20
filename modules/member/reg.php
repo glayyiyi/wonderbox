@@ -22,24 +22,25 @@ if (isset($_POST['email'])||isset($_POST['username'])) {
 		
        
        
-	// By Glay 去掉session里的邀请码 $index["invite_userid"] = $_SESSION["reginvite_user_id"];
-	if (isset ( $_POST ['invite_userid'] ) && ( $_POST ['invite_userid']!="")) {
+	$index["invite_userid"] = $_SESSION["reginvite_user_id"];
+
+// 	if (isset ( $_POST ['invite_userid'] ) && ( $_POST ['invite_userid']!="")) {
 		
-		// By Glay 邀请码的密文进行解密
-		//$key = 'reg_invite'; // 密钥
+// 		// By Glay 邀请码的密文进行解密
+// 		//$key = 'reg_invite'; // 密钥
 		
-		//$decrypt = decrypt ( $_POST ['invite_userid'], $key );
-		$index ["invite_userid"] = intval($_POST ['invite_userid']);
-		$sql = "select user_id from {user} where user_id='{$index ["invite_userid"] }'";
+// 		//$decrypt = decrypt ( $_POST ['invite_userid'], $key );
+// 		$index ["invite_userid"] = intval($_POST ['invite_userid']);
+// 		$sql = "select user_id from {user} where user_id='{$index ["invite_userid"] }'";
 		
 		
-		$result = $mysql->db_fetch_array ( $sql );
+// 		$result = $mysql->db_fetch_array ( $sql );
 	
-		if ($result ['user_id'] == "") {
-			echo "<script>alert('此邀请码不存在，请填写有效的邀请码！');location.href='index.php?user&q=going/getreg';</script>";
-			exit ();
-		}
-	}
+// 		if ($result ['user_id'] == "") {
+// 			echo "<script>alert('此邀请码不存在，请填写有效的邀请码！');location.href='index.php?user&q=going/getreg';</script>";
+// 			exit ();
+// 		}
+// 	}
         
         if(isset($_POST['invite_username']) && $_POST['invite_username'] != ""){
             $sql = "select user_id from {user} where `username`='{$_POST['invite_username']}'";

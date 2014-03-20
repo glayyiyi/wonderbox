@@ -2746,7 +2746,7 @@ class borrowClass extends amountClass{
 			}
 			$sendSMS[] = array('user_id'=>$user_id,'content'=>"流转标[{$borrow_name}]已被购买，你的账户增加了{$borrow_account}元。");
 
-			//扣除手续费
+			//Glay 扣除手续费
 			$biao_type = new lzbiaoClass();
 			$biao_result = $biao_type->get_biaotype_info();
 			if($isday==1){
@@ -2762,7 +2762,9 @@ class borrowClass extends amountClass{
 			$account_result =  accountClass::GetOneAccount(array("user_id"=>$user_id));
 			$fee_log['user_id'] = $user_id;
 			$fee_log['type'] = "borrow_fee";
-			$fee_log['money'] = $money;
+			//$fee_log['money'] = $money;
+			$fee_log['money']=0;//By Glay 因为是平台方放贷，暂时去掉手续费
+			
 			$fee_log['total'] = $account_result['total']-$fee_log['money'];
 			$fee_log['use_money'] = $account_result['use_money']-$fee_log['money'];
 			$fee_log['no_use_money'] = $account_result['no_use_money'];

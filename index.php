@@ -93,6 +93,7 @@ $_G['is_cookie'] = isset($_G['system']['con_cookie'])?(int)$_G['system']['con_co
 //By Glay 
 if ($_G['query_site'] == $admin_name ||(isset($_REQUEST['admin']) && $_REQUEST['admin']!="") ){
 	//ºóÌ¨ 
+	
 	if (isset($_SESSION['manager_loginendtime']) && $_SESSION['manager_loginendtime']>time()){
 			$_user_id = explode(",",authcode(isset($_SESSION['manager_rdun'])?$_SESSION['manager_rdun']:"","DECODE"));
 			$check_uid=$_SESSION['manager_uid'];
