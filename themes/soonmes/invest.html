@@ -109,7 +109,7 @@ $this->magic_vars['_G']['epurl'] = url_format($this->magic_vars['_G']['nowurl'],
 						</span>
 					</div>
 					</form> -->
-			<div class="bg select_brand">
+<!-- 			<div class="bg select_brand">
               <p class="m_b_10">请根据您的条件做筛选</p>
               
               <dl>
@@ -155,8 +155,8 @@ $this->magic_vars['_G']['epurl'] = url_format($this->magic_vars['_G']['nowurl'],
                   <div><a href="{$_G.uurl}&f_type=&q_l_account1=1000000&q_l_account2=&q_apr={$magic.request.q_apr}&q_lmt={$magic.request.q_lmt}" {if $magic.request.q_l_account1=='1000000' && $magic.request.q_l_account2==''}class="curr"{/if}>100w以上</a></div>
                 </dd>
               </dl>
-          </div>
-        </div>
+          </div>-->
+        </div> 
         <!-- end 搜索 -->
         <!-- 搜索列表 -->
         {list module="borrow" function="GetList" var="loop" site_id="0" biaoType="request" keywords="request" q_apr="request" q_lmt="request" type="request"  use="request" account1="request" account2 = "request" q_l_account1="request" q_l_account2 = "request" limittime="request" award="request" province="request" city="request" page="request" epage="request" order="$magic.request.order"}
