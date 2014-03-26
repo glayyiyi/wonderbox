@@ -1,10 +1,10 @@
 <?php
 class wyzxPayment {
 	public static function ToSubmit($payment){
-		$v_mid = '22869932'; // 1001是网银在线的测试商户号，商户要替换为自己的商户号。
-		$v_url = 'http://www.viptouzi.com/modules/payment/wyzx_return.php';// 商户自定义返回接收支付结果的页面。对应Receive.php示例。
-		$key   = 'chang_43420024420';
-		$remark2 = '[url:=http://www.viptouzi.com/modules/payment/wyzx_return.php]'; //服务器异步通知的接收地址。对应AutoReceive.php示例。必须要有[url:=]格式。
+		$v_mid = '22916976'; // 1001是网银在线的测试商户号，商户要替换为自己的商户号。
+		$v_url = 'http://www.wonderpay.com.cn/modules/payment/wyzx_return.php';// 商户自定义返回接收支付结果的页面。对应Receive.php示例。
+		$key   = 'wonderbox_888888';
+		$remark2 = '[url:=http://www.wonderpay.com.cn/modules/payment/wyzx_return.php]'; //服务器异步通知的接收地址。对应AutoReceive.php示例。必须要有[url:=]格式。
 		
 		
 		
