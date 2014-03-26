@@ -848,7 +848,7 @@ body { font-family:Microsoft YaHei, SimSun, SimHei, Verdana, Arial, Helvetica, s
 .pop_club .hd {
 	width:169px;
 	height:63px;
-	background:url(../images/pop_club_tit.png) no-repeat;
+	/*background:url(../images/pop_club_tit.png) no-repeat;*/
 	margin-bottom:15px;
 }
 .pop_club .bg {
