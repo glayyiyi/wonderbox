@@ -66,7 +66,10 @@ class attestationClass{
 		$total_page = ceil($total / $epage);
 		$index = $epage * ($page - 1);
 		$limit = " limit {$index}, {$epage}";
-		$list = $mysql->db_fetch_arrays(str_replace(array('SELECT', 'ORDER', 'LIMIT'), array($_select, 'order by  p1.status asc,p1.id desc', $limit), $sql));		
+		$tmp_sql_str=str_replace(array('SELECT', 'ORDER', 'LIMIT'), array($_select, 'order by  p1.status asc,p1.id desc', $limit), $sql);
+		print_r($tmp_sql_str);
+		exit;
+		$list = $mysql->db_fetch_arrays($tmp_sql_str);		
 		$list = $list?$list:array();
 		return array(
             'list' => $list,
