@@ -60,8 +60,8 @@ class attestationClass{
 				$_limit = " where limit ".$data['limit'];
 			}
 			$tmp_str=str_replace(array('SELECT', 'ORDER', 'LIMIT'), array($_select, 'order by p1.`id` desc', $_limit), $sql);
-			print_r($tmp_str);
-			exit;
+			//print_r($tmp_str);
+			//exit;
 			return $mysql->db_fetch_arrays();
 		}
 		$row = $mysql->db_fetch_array(str_replace(array('SELECT', 'ORDER', 'LIMIT'), array('count(1) as num', '', ''), $sql));
