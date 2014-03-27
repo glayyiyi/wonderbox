@@ -59,7 +59,10 @@ class attestationClass{
 			if ($data['limit'] != "all"){
 				$_limit = " where limit ".$data['limit'];
 			}
-			return $mysql->db_fetch_arrays(str_replace(array('SELECT', 'ORDER', 'LIMIT'), array($_select, 'order by p1.`id` desc', $_limit), $sql));
+			$tmp_str=str_replace(array('SELECT', 'ORDER', 'LIMIT'), array($_select, 'order by p1.`id` desc', $_limit), $sql);
+			print_r($tmp_str);
+			exit;
+			return $mysql->db_fetch_arrays();
 		}
 		$row = $mysql->db_fetch_array(str_replace(array('SELECT', 'ORDER', 'LIMIT'), array('count(1) as num', '', ''), $sql));
 		$total = $row['num'];
@@ -67,8 +70,6 @@ class attestationClass{
 		$index = $epage * ($page - 1);
 		$limit = " limit {$index}, {$epage}";
 		$tmp_sql_str=str_replace(array('SELECT', 'ORDER', 'LIMIT'), array($_select, 'order by  p1.status asc,p1.id desc', $limit), $sql);
-		print_r($tmp_sql_str);
-		exit;
 		$list = $mysql->db_fetch_arrays($tmp_sql_str);		
 		$list = $list?$list:array();
 		return array(
