@@ -781,7 +781,7 @@
 			</tr>
 			{loop module="attestation" function="GetList" var="arr_var"
 			limit="all" status="1" user_id="$var.user.user_id" status=1} {if
-			$arr_var.jifen>0}
+			$arr_var.jifen>=0}
 			<tr>
 				<!-- <td>{$arr_var.type_name}</td> -->
 				<!--   <td  >{$arr_var.jifen} ·Ö</td> -->
