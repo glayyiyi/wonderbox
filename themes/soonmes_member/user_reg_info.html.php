@@ -202,7 +202,7 @@ jQuery(function(){
 										onFocus="this.className='biankuang1';"
 										onBlur="this.className='biankuang2';"></span>
 								</div>
-								<div class="reg-l-tips">(此处如从邀请链接点击来可以不用修改)填写邀请人的本站用户名(非真实姓名).</div>
+								<div class="reg-l-tips">填写邀请人的本站用户名(非真实姓名，如从邀请链接点击而来可以不用修改)</div>
 								</td>
 							</tr>
 
