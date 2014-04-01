@@ -204,10 +204,10 @@ function submit_fool(){
 
 <div id="main" class="clearfix">
 	<div class="protocol">
-		<div class="title">借款协议书</div>
+		<div class="title" align="center"><font size="5">借款协议书</font></div>
 		<div class="but">借款协议号：{$magic.request.tender_id} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;借款人： {$var.realname}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出借人：详见本协议第一条</div>
 		<div class="xieyi">借款人通过{$_G.system.con_webname}网站(以下简称“本网站”),就有关借款事项与各出借人达成如下协议：</div>
-		<div><b>第一条：借款详情如下表所示： </b></div>
+		<div>第一条：借款基本信息： </div>
 		<div>
 			<table class="gvList" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvLoans" style="width:100%;border-collapse:collapse;">
 				<tr height="30">
@@ -220,12 +220,7 @@ function submit_fool(){
 					<th align="center" scope="col">截止还款日</th> -->
 					<th align="center" scope="col">签订日期</th>
 					<th align="center" scope="col">还款本息</th>
-					<!-- <th align="center" scope="col">合同／地址</th>
-					<th align="center" scope="col">姓名</th>
-					<th align="center" scope="col">联系方式</th>
-					<th align="center" scope="col">时间</th>
-					<th align="center" scope="col">电子邮件</th>
-					<th align="center" scope="col">邮寄</th> -->
+			
 				</tr>
 				{loop module="borrow" var="bor" function="GetTenderList" borrow_id="request" tender_id="request" limit="all"}
 				{if $bor.user_id!=$_G.user_id}
@@ -242,12 +237,7 @@ function submit_fool(){
 					<td>
 		               {$bor.equal.monthly_repayment|round:2} 元
 		             </td>
-		                   <!--  <td>{$bor.c_address}</td>
-		                    <td>{$bor.c_name}</td>
-		                    <td>{$bor.c_phone}</td>
-		                    <td>{if $bor.c_contact_way==1}随时{elseif $bor.c_contact_way==2}仅工作日 {elseif $bor.c_contact_way==3}仅双休日 {else}来前先电话预约 {/if}</td>
-		                    <td>{if $bor.c_with_email==1}是{else}否{/if}</td>
-		                    <td>{if $bor.c_with_post==1}是{else}否{/if}</td> -->
+		             
 				</tr>
 				{/loop}
 		  </table>
