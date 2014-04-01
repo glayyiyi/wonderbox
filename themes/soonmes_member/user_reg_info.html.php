@@ -202,7 +202,7 @@ jQuery(function(){
 										onFocus="this.className='biankuang1';"
 										onBlur="this.className='biankuang2';"></span>
 								</div>
-								<div class="reg-l-tips">填写邀请人的本站用户名(非真实姓名，如从邀请链接点击而来可以不用修改)</div>
+								<div class="reg-l-tips">邀请人的本站用户名(非真实姓名，如从邀请链接点击而来可以不用修改)</div>
 								</td>
 							</tr>
 
@@ -233,10 +233,9 @@ jQuery(function(){
 
 
 						</table>
-						<!--  	<p style="padding-left: 30px; margin-bottom: 20px;">-->
-						<!-- 							<input type="checkbox" id="dianji" checked="checked"/>我已阅读并且同意助贷网-个人信用贷款 -->
-						<!-- 							小额贷款 投资理财 企业融资 的 <a href="/data/reg.doc">使用协议</a> -->
-						<!-- 						</p> -->
+						 	<p style="padding-left: 30px; margin-bottom: 20px;">
+													<input type="checkbox" id="dianji" checked="checked" disabled="disabled" style="position:relative; top:3px; margin-right:5px;"/>同意 <a href="/reg_protocol/index.html"><font color='red'>万得汇金注册协议</font></a> 
+							</p> 
 						<p style="padding-left: 110px;">
 							<input type="submit" id="reg_btn" class="btnnew btn_login"
 								value="注 册" />
