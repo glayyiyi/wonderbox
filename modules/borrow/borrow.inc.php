@@ -62,7 +62,7 @@ if ($_U['query_type'] == "add" || $_U['query_type'] == "update"){
 		}
 		if(isset($_POST['is_lz'])){
 			$data['is_lz'] = intval($_POST['is_lz']);
-			$data['lowest_account'] = 50000;
+			$data['lowest_account'] = 1;//By Glay “‘«∞ «50000
 			$data['style'] = 0;
 		}
 		if(isset($_POST['isxin'])){
