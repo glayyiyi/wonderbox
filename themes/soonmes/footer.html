@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<!-- end Õ¾µãÐÅÏ¢ -->
-
+ <a href="http://webscan.360.cn/index/checkwebsite/url/wonderpay.com.cn"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/640528591a3c1b2b092c4ef409e666d6"/></a>
 	</body>
 
 </html>

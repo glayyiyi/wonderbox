@@ -233,7 +233,10 @@ if (count($_from)>0):
 			<div class="l" style="font-weight:bold;">充值方式：</div>
 			<div class="c">
 			<table>
-				<tr><td><input type="radio" name="type" id="type_1" class="input_border" onclick="change_type(1)" value="1"  checked="checked" /></td><td><label for="type_1">网上充值</label></td><td><input type="radio" name="type" id="type_2" class="input_border"  value="2"  onclick="change_type(2)" /></td><td><label for="type_2">线下充值</label></td></tr>
+				<tr><td><input type="radio" name="type" id="type_1" class="input_border" onclick="change_type(1)" value="1"  checked="checked" /></td><td><label for="type_1">网上充值</label></td>
+				<!-- <td><input type="radio" name="type" id="type_2" class="input_border"  value="2"  onclick="change_type(2)" /></td>
+				<td><label for="type_2">线下充值</label></td> -->
+				</tr>
 			</table>
 			</div>
 		</div>
@@ -336,11 +339,13 @@ if (count($_from)>0):
 （1）线下充值红包奖励的单笔最低金额不低于20000元。<br>
 （2）<strong><font color="blue">有效充值登记时间为:周一至周五的9:30到16:00</font></strong>，充值成功请跟我们的理财顾问联系。<br><br></font></div>
 					<div>
+
 					<?  if(!isset($this->magic_vars['_U']['account_payment_list']) || $this->magic_vars['_U']['account_payment_list']=='') $this->magic_vars['_U']['account_payment_list'] = array();  $_from = $this->magic_vars['_U']['account_payment_list']; 
  if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); } 
 if (count($_from)>0):
 ;    foreach ($_from as $this->magic_vars['key'] =>  $this->magic_vars['var']):
 ?>
+					
 					<? if (!isset($this->magic_vars['var']['nid'])) $this->magic_vars['var']['nid']=''; ;if (  $this->magic_vars['var']['nid']=="offline"): ?>
 					<input type="radio" name="payment2"  class="input_border" value="<? if (!isset($this->magic_vars['var']['id'])) $this->magic_vars['var']['id'] = ''; echo $this->magic_vars['var']['id']; ?>" id="offline_<? if (!isset($this->magic_vars['key'])) $this->magic_vars['key'] = ''; echo $this->magic_vars['key']; ?>" /><label for="offline_<? if (!isset($this->magic_vars['key'])) $this->magic_vars['key'] = ''; echo $this->magic_vars['key']; ?>"><? if (!isset($this->magic_vars['var']['description'])) $this->magic_vars['var']['description'] = ''; echo $this->magic_vars['var']['description']; ?></label><br />
 					<? endif; ?>
@@ -349,7 +354,7 @@ if (count($_from)>0):
 				</div>
 			</div>
 			<div class="user_right_border">
-				<div class="l" style="font-weight:bold;">线下充值备注：</div>
+				<!--  <div class="l" style="font-weight:bold;">线下充值备注：</div>-->
 				<div class="c">
 					<input type="text" name="remark"  class="input_border" value="" size="30" /><br>（请注明您的用户名，转账银行卡号和转账流水号，以及转账时间，谢谢配合）
 				</div>

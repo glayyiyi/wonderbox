@@ -1,41 +1,39 @@
-<?php if (!defined("ROOT_PATH"))  die("不能访问");$_G["system"]=array('con_webopen'=>0,'con_closemsg'=>'','con_webname'=>'万得汇金','con_weburl'=>'www.wonderbox.com','con_webpath'=>'','con_logo'=>'','con_keywords'=>'网络借贷,网络借贷平台,网上借贷,P2P网络借贷,P2P网上借贷,赚钱,本金保障,高收益,投资,借贷,理财,个人借贷,民间借贷,P2P借贷,贷款,信用贷款','con_description'=>'专业理财俱乐部','con_is_reg_open'=>1,'con_position'=>'|','con_beian'=>'京ICP备13053655','con_tongji'=>'','con_htmldir'=>'html','con_template'=>'soonmes','con_indexID'=>1,'con_session_time'=>1,'con_rewrite'=>1,'con_autohtml'=>0,'con_watermark_pic'=>0,'con_watermark_caijipic'=>0,'con_watermark_type'=>1,'con_watermark_font'=>50,'con_watermark_file'=>'','con_watermark_size'=>'','con_watermark_color'=>'#FF0000','con_watermark_word'=>'融都科技','con_watermark_position'=>4,'con_watermark_imgpct'=>0,'con_watermark_txtpct'=>0,'con_fujian_imgwidth'=>80,'con_fujian_imgheight'=>80,'con_fujian_imgtype'=>'gif|jpg|png','con_fujian_annextype'=>'gif|jpg|png','con_fujian_mediatype'=>'gif|jpg|png','con_member_reg_mail'=>'','con_comment_verify'=>'','con_credit_picurl'=>'/data/images/credit/','con_email_host'=>'smtp.163.com','con_email_auth'=>1,'con_email_email'=>'glay_guo@163.com','con_email_pwd'=>'glay780917','con_email_from'=>'glay_guo@163.com','con_email_from_name'=>'君和会财富俱乐部','con_borrow_maxaccount'=>50000000,'con_fuwutel'=>'010-11111111','con_fax'=>'','con_address'=>'北京XXXXXX地址','con_return_tender'=>1,'con_qq5'=>1554582112,'con_reward_scale'=>0.01,'con_kefutext'=>'尊敬的会员，您好，我是您的理财顾问，有什么可以帮您么？','con_vip_money'=>0,'con_vip_ticheng'=>0,'con_user_amount'=>0,'con_borrow_apr'=>28.2,'con_cookie'=>1,'con_late_rate'=>0.008,'con_msg_repayment'=>0,'con_houtai'=>'admin','con_emailsend'=>1,'con_borrow_fee'=>0.005,'con_realname_fee'=>0,'con_video_feestatus'=>0,'con_smsurl'=>'sdk2.entinfo.cn','con_issms'=>1,'con_sfyzurl'=>'http://sfzopen.erongdu.com/sfzcha.php','con_issfyz'=>0,'con_sfyzusername'=>'','con_sfyzpassword'=>'','con_smsusername'=>'SDK-BBX-010-19374','con_smspassword'=>'63[d-29f','con_site_listtype'=>1,'con_risk_notes'=>'风险提示书<br />
+<?php if (!defined("ROOT_PATH"))  die("不能访问");$_G["system"]=array('con_webopen'=>0,'con_closemsg'=>'','con_webname'=>'万得汇金','con_weburl'=>'www.wonderpay.cn','con_webpath'=>'','con_logo'=>'','con_keywords'=>'网络借贷,网络借贷平台,网上借贷,P2P网络借贷,P2P网上借贷,赚钱,本金保障,高收益,投资,借贷,理财,个人借贷,民间借贷,P2P借贷,贷款,信用贷款','con_description'=>'专业理财','con_is_reg_open'=>1,'con_position'=>'|','con_beian'=>'京ICP备12028038号-1','con_tongji'=>'','con_htmldir'=>'html','con_template'=>'soonmes','con_indexID'=>1,'con_session_time'=>1,'con_rewrite'=>1,'con_autohtml'=>0,'con_watermark_pic'=>0,'con_watermark_caijipic'=>0,'con_watermark_type'=>1,'con_watermark_font'=>50,'con_watermark_file'=>'','con_watermark_size'=>'','con_watermark_color'=>'#FF0000','con_watermark_word'=>'融都科技','con_watermark_position'=>4,'con_watermark_imgpct'=>0,'con_watermark_txtpct'=>0,'con_fujian_imgwidth'=>80,'con_fujian_imgheight'=>80,'con_fujian_imgtype'=>'gif|jpg|png','con_fujian_annextype'=>'gif|jpg|png','con_fujian_mediatype'=>'gif|jpg|png','con_member_reg_mail'=>'','con_comment_verify'=>'','con_credit_picurl'=>'/data/images/credit/','con_email_host'=>'smtp.163.com','con_email_auth'=>1,'con_email_email'=>'glay_guo@163.com','con_email_pwd'=>'glay780917','con_email_from'=>'glay_guo@163.com','con_email_from_name'=>'万得汇金','con_borrow_maxaccount'=>500000000,'con_fuwutel'=>'010-11111111','con_fax'=>'','con_address'=>'北京XXXXXX地址','con_return_tender'=>0,'con_qq5'=>25892141,'con_reward_scale'=>0,'con_kefutext'=>'尊敬的会员，您好，我是您的理财顾问，有什么可以帮您么？','con_vip_money'=>0,'con_vip_ticheng'=>0,'con_user_amount'=>0,'con_borrow_apr'=>28.2,'con_cookie'=>1,'con_late_rate'=>0.008,'con_msg_repayment'=>0,'con_houtai'=>'admin','con_emailsend'=>1,'con_borrow_fee'=>0,'con_realname_fee'=>0,'con_video_feestatus'=>0,'con_smsurl'=>'sdk2.entinfo.cn','con_issms'=>1,'con_sfyzurl'=>'http://sfzopen.erongdu.com/sfzcha.php','con_issfyz'=>0,'con_sfyzusername'=>'','con_sfyzpassword'=>'','con_smsusername'=>'SDK-BBX-010-20023','con_smspassword'=>'aeee639B','con_site_listtype'=>1,'con_risk_notes'=>'风险提示书<br />
 尊敬的客户：<br />
-由于理财产品管理运用过程中，可能会面临多种风险因素，因此，根据中国君和会业监督管理委员会相关监管规定的要求，在您选择投资本项目前，请仔细阅读以下重要内容。<br />
-君和会投资项目具有一定的风险，与存款存在明显区别。君和会（理财计划管理人）郑重提示：在投资此项目前，投资者应确保自己完全明白该项投资的性质和所涉及的风险，详细了解和审慎评估该理财产品的资金投资方向、风险评级及预期收益等基本情况，在审慎考虑后自行决定购买与自身风险承受能力和资产管理需求匹配的理财产品。理财计划管理人提醒客户应本着“充分了解风险，自主选择购买”的原则，谨慎决策，自愿将其合法所有的资金用于购买本产品，在购买理财产品后，投资者应随时关注该理财产品的信息披露情况，及时获取相关信息。理财计划管理人不承担下述风险：<br />
+由于理财产品管理运用过程中，可能会面临多种风险因素，因此，根据中国万得汇金业监督管理委员会相关监管规定的要求，在您选择投资本项目前，请仔细阅读以下重要内容。<br />
+万得汇金投资项目具有一定的风险，与存款存在明显区别。万得汇金（理财计划管理人）郑重提示：在投资此项目前，投资者应确保自己完全明白该项投资的性质和所涉及的风险，详细了解和审慎评估该理财产品的资金投资方向、风险评级及预期收益等基本情况，在审慎考虑后自行决定购买与自身风险承受能力和资产管理需求匹配的理财产品。理财计划管理人提醒客户应本着“充分了解风险，自主选择购买”的原则，谨慎决策，自愿将其合法所有的资金用于购买本产品，在购买理财产品后，投资者应随时关注该理财产品的信息披露情况，及时获取相关信息。理财计划管理人不承担下述风险：<br />
 1.政策风险：本产品是依照当前的法律法规、相关监管规定和政策设计的。如国家宏观政策以及市场法律法规、相关监管规定发生变化，可能影响产品的受理、投资运作、清算等业务的正常进行，并导致本产品收益降低甚至本金损失，也可能导致本产品违反国家法律、法规或者其他合同的有关规定，进而导致本产品被宣告无效、撤销、解除或提前终止等。<br />
 2.信用风险：如基础资产中股权（收益权）受让人（如有）未能及时足额支付受让价款、或借款人（如有）、或企业应收账款付款人（如有）、或债券发行人（如有）等未能及时足额支付本息，或所投资的其它资产未达到预期收益，则客户可能面临收益损失、本金部分损失、甚至本金全部损失的风险。<br />
 3.流动性风险：投资者无提前终止权，可能导致投资者需要资金时不能随时变现，并可能使投资者丧失其他投资机会导致实际收益率为负的风险。<br />
 4.市场风险：本产品的运行受到国内外经济、政治因素以及相关公司基本面状况等的影响，可能出现波动，从而导致客户收益波动、收益为零甚至本金损失的情况。<br />
 5.管理风险：本产品资金将投资于相关基础资产（详见第二条），基础资产管理方受经验、技能、判断力、执行力等方面的限制，可能对产品的运作及管理造成一定影响，并因此影响客户收益，甚至造成本金损失。<br />
-6.信息传递风险：产品管理人将按照本说明书有关“信息披露”的约定，进行本产品的信息披露。客户应根据“信息披露”的约定及时进行查询。如果客户未及时查询，或由于通讯故障、系统故障以及其他不可抗力等因素的影响使得客户无法及时了解产品信息，并由此影响客户的投资决策，因此而产生的责任和风险由客户自行承担。另外，客户预留在君和会的有效联系方式发生变更，应及时通知购买本产品的原网点，如客户未及时告知联系方式变更，产品管理人将可能在需要时无法及时联系到客户，并可能会由此影响客户的投资决策，由此而产生的责任和风险由客户自行承担。<br />
-7.认购风险：如出现市场剧烈波动、相关法规政策变化或其他可能影响本理财产品正常运作的情况，君和会有权停止发售本理财产品，客户将无法在约定募集期内认购本理财产品。因此造成的任何损失由客户自行承担，君和会对此不承担任何责任。<br />
-8.提前终止风险：产品存续期内若市场发生重大变动或突发性事件或君和会认为需要提前终止本产品的其他情形时，君和会有权提前终止产品，在提前终止情形下，客户面临不能按预定期限取得预期收益的风险。<br />
-9.不可抗力及意外事件风险：包括但不限于自然灾害、金融市场危机、战争或国家政策变化等不能预见、不能避免、不能克服的不可抗力事件或君和会系统故障、通讯故障、投资市场停止交易等意外事件的发生，可能对产品的成立、投资运作、资金返还、信息披露、公告通知等造成影响，甚至可能导致产品收益降低乃至本金损失。对于由于不可抗力及意外事件风险导致的任何损失，客户须自行承担，君和会对此不承担任何责任。<br />
-                                                            风险提示方：君和会<br />
-<br />
-','con_invest_protocol'=>'投资协议<br />
+6.信息传递风险：产品管理人将按照本说明书有关“信息披露”的约定，进行本产品的信息披露。客户应根据“信息披露”的约定及时进行查询。如果客户未及时查询，或由于通讯故障、系统故障以及其他不可抗力等因素的影响使得客户无法及时了解产品信息，并由此影响客户的投资决策，因此而产生的责任和风险由客户自行承担。另外，客户预留在万得汇金的有效联系方式发生变更，应及时通知购买本产品的原网点，如客户未及时告知联系方式变更，产品管理人将可能在需要时无法及时联系到客户，并可能会由此影响客户的投资决策，由此而产生的责任和风险由客户自行承担。<br />
+7.认购风险：如出现市场剧烈波动、相关法规政策变化或其他可能影响本理财产品正常运作的情况，万得汇金有权停止发售本理财产品，客户将无法在约定募集期内认购本理财产品。因此造成的任何损失由客户自行承担，万得汇金对此不承担任何责任。<br />
+8.提前终止风险：产品存续期内若市场发生重大变动或突发性事件或万得汇金认为需要提前终止本产品的其他情形时，万得汇金有权提前终止产品，在提前终止情形下，客户面临不能按预定期限取得预期收益的风险。<br />
+9.不可抗力及意外事件风险：包括但不限于自然灾害、金融市场危机、战争或国家政策变化等不能预见、不能避免、不能克服的不可抗力事件或万得汇金系统故障、通讯故障、投资市场停止交易等意外事件的发生，可能对产品的成立、投资运作、资金返还、信息披露、公告通知等造成影响，甚至可能导致产品收益降低乃至本金损失。对于由于不可抗力及意外事件风险导致的任何损失，客户须自行承担，万得汇金对此不承担任何责任。<br />
+                                              风险提示方：万得汇金','con_invest_protocol'=>'投资协议<br />
  <br />
 甲方（出借人）：详见债权列表<br />
  <br />
 乙方（借款人）： <br />
  <br />
-丙方（见证人）：君和会（www.viptouzi.com）<br />
+丙方（见证人）：万得汇金<br />
  <br />
 鉴于：<br />
-1、乙方作为君和会（www.viptouzi.com）网站注册（以下简称该网站）的理财管家，并承诺其提供给丙方的信息是完全真实、准确、完整的。<br />
+1、乙方作为万得汇金网站（以下简称该网站）的借款人，承诺其提供给丙方的信息是完全真实、准确、完整的。<br />
 2、甲方承诺对本协议涉及的借款具有完全的支配能力，是其自有闲散资金，为其合法所得；并承诺其提供给丙方的信息是完全真实、准确、完整的。<br />
 3、乙方有借款需求，甲方亦同意借款，双方希望达成借贷协议。就乙方向甲方借款的相关事宜，经各方协商一致，签订如下协议，以资信守：<br />
  <br />
 第一条 乙方借款基本信息<br />
-1、乙方借款：（短期周转、生意周转、生活周转、购物消费、不提现借款、其它借款、创业借款）<br />
-2、乙方借款：本金数额_____________（人民币）	（各出借人借款本金数额详见债权列表）<br />
+1、乙方借款：（短期周转、生意周转、生活周转、购物消费、不提现借款、其它借款、企业贷款）<br />
+2、乙方借款：本金数额_____________（人民币） （各出借人借款本金数额详见债权列表）<br />
 3、乙方认可：借款利率_____________（年化利率）<br />
-4、乙方还款方式：按月分期还款；%s到期还本、按月付息<br />
+4、乙方还款方式：按月分期还款；到期全额还款；按月付息到期还本<br />
 5、乙方借款期数：______个月<br />
  <br />
 第二条 甲方权利和义务<br />
 1、甲方认可本协议第一条所列“乙方借款基本信息”，同意按照在丙方网站投标并最终确认的数额向乙方提供借款。甲方应按合同约定的借款期限起始日期将足额的借款本金支付给乙方。<br />
-2、甲方享有其所出借款项所带来的利息收益。甲方将利息收入的百分之十支付丙方，作为丙方提供投资管理服务的报酬，甲方、乙方授权丙方：在乙方还款时直接将甲方应支付丙方的报酬予以扣除。<br />
+2、甲方享有其所出借款项所带来的利息收益。<br />
 3、如乙方违约，甲方有权要求丙方提供其已获得的乙方信息，并提供留存在丙方的本合同正本（已经乙方盖章确认），丙方应当提供。<br />
 4、甲方承担所得收益的相应税费。<br />
 5、如乙方实际还款金额少于本协议约定的本金、利息及违约金的，甲方各出借人同意按照本协议债权列表所列的各自借款比例收取还款。<br />
@@ -69,20 +67,20 @@
 1、根据本协议第四条第2项，甲方授权并委托丙方通过其网站将甲方支付的出借本金直接划付至乙方账户，乙方对此表示认可。<br />
 2、乙方确保所提供账户为乙方名下合法有效的银行账户；乙方因所提供账号的户名、账号或开户行错误或不完整，造成贷款本金数额无法到账等情况，由乙方承担全部经济损失，且并不影响本合同所述债权关系的生效与执行。<br />
 3、乙方按月向甲方偿还本金和利息。<br />
-4、乙方在此同意由乙方自行通过与www.huirendai.com网站合作的第三方支付平台主动地按时还款，由第三方支付公司或其它机构所收取的手续费用由乙方自行承担。<br />
+4、乙方在此同意由乙方自行通过与万得汇金网站合作的第三方支付平台主动地按时还款，由第三方支付公司或其它机构所收取的手续费用由乙方自行承担。<br />
 5、乙方须在每月还款当日或之前，将足额的月偿还本息费数额，存入该网站上乙方专用账号中。不论在任何情况下，乙方均保证按时足额还款，若因乙方存入金额不足而导致扣款失败，由乙方自行承担违约责任。<br />
 6、如还款日遇到法定假日或公休日，还款日期不进行顺延。<br />
 7、还款日为每月30或31日，则遇到天数不足 30或31 天的月份，还款日为应还款当月的最后一天。<br />
  <br />
 第七条 违约责任<br />
-（一）	乙方逾期还款责任<br />
+（一） 乙方逾期还款责任<br />
 1、乙方应严格履行还款义务，如乙方逾期还款，则应按照下述条款向甲方支付逾期罚息，自逾期开始之后，逾期本金的正常利息停止计算。罚息利率为每天千分之八。罚息总额 = 逾期本息总额×对应罚息利率×逾期天数；<br />
-（二）	乙方逾期还款超过30天责任<br />
+（二） 乙方逾期还款超过30天责任<br />
 1、如果乙方逾期支付任何一期还款超过30天，或乙方在逾期后出现逃避、拒绝沟通或拒绝承认欠款事实等恶意行为，本协议项下的全部借款本息及借款管理费均提前到期，乙方应立即清偿本协议下尚未偿付的全部本金、利息、罚息、借款管理费及根据本协议产生的其他全部费用。<br />
 2、如果乙方逾期支付任何一期还款超过30天，或乙方在逾期后出现逃避、拒绝沟通或拒绝承认欠款事实等恶意行为，丙方有权将乙方的“逾期记录”记入人民银行公民征信系统，丙方不承担任何法律责任。<br />
 3、如果乙方逾期支付任何一期还款超过30天，或乙方在逾期后出现逃避、拒绝沟通或拒绝承认欠款事实等恶意行为，丙方有权将乙方违约失信的相关信息及乙方其他信息向该网站、媒体、用人单位、公安机关、检查机关、法律机关披露，丙方不承担任何责任。<br />
 （三）协议各方均应严格履行合同义务，非经各方协商一致或依照本协议约定，任何一方不得解除本协议。<br />
-（四）任 何一方违约，违约方应承担因违约使得其他各方产生的费用和损失，包括但不限于调查、诉讼费、律师费等，应由违约方承担。如违约方为乙方的，甲方有权立即解 除本协议，并要求乙方立即偿还未偿还的本金、利息、罚息、违约金。此时，乙方还应向丙方支付所有应付的借款管理费。如本协议提前解除时，乙方在www.huirendai.com网站的账户里有任何余款的，丙方有权按照本协议第七条第（五）项的清偿顺序将乙方的余款用于清偿，甲方对此予以认可，丙方同时有权要求乙方支付因此产生的相关费用。<br />
+（四）任 何一方违约，违约方应承担因违约使得其他各方产生的费用和损失，包括但不限于调查、诉讼费、律师费等，应由违约方承担。如违约方为乙方的，甲方有权立即解 除本协议，并要求乙方立即偿还未偿还的本金、利息、罚息、违约金。此时，乙方还应向丙方支付所有应付的借款管理费。如本协议提前解除时，乙方在万得汇金网站的账户里有任何余款的，丙方有权按照本协议第七条第（五）项的清偿顺序将乙方的余款用于清偿，甲方对此予以认可，丙方同时有权要求乙方支付因此产生的相关费用。<br />
 （五）乙方的每期还款均应按照如下顺序清偿：<br />
 （1）根据本协议产生的其他全部费用；<br />
 （2）本协议约定的罚息；<br />
@@ -112,7 +110,7 @@
  <br />
 协议各方签字签章<br />
  <br />
-甲方：出借人（附件一）<br />
+甲方：出借人<br />
 签字：<br />
 签署日期：<br />
  <br />
@@ -120,7 +118,7 @@
 签字：<br />
 签署日期：<br />
  <br />
-丙方：君和会（www.viptouzi.com）<br />
+丙方：万得汇金<br />
 盖章：<br />
 签署日期','con_invest_commission'=>'理财委托投资书<br />
 　　甲 方：<br />
@@ -146,44 +144,42 @@
  <br />
 丙方：君和会（www.viptouzi.com）<br />
 盖章：<br />
-签署日期');$_G["system_name"]=array('con_webopen'=>'关闭站点（仅后台使用）','con_closemsg'=>'网站关闭信息','con_webname'=>'网站名称','con_weburl'=>'网站网址','con_webpath'=>'网站路径','con_logo'=>'网站logo','con_keywords'=>'网站关键词','con_description'=>'网站描述','con_is_reg_open'=>'是否开放注册','con_position'=>'网站位置分隔符','con_beian'=>'网站备案号','con_tongji'=>'网站统计','con_htmldir'=>'网站静态保存目录','con_template'=>'模板风格','con_indexID'=>'网站首页栏目ID','con_session_time'=>'系统过时时间(小时)','con_rewrite'=>'是否使用数字地址（如?1_2.html）','con_autohtml'=>'默认是否生成html','con_watermark_pic'=>'上传的图片是否使用图片水印功能','con_watermark_caijipic'=>'采集的图片是否使用图片水印功能','con_watermark_type'=>'选择水印的文件类型','con_watermark_font'=>'水印的字体','con_watermark_file'=>'水印图片文件名','con_watermark_size'=>'水印图片文字字体大小','con_watermark_color'=>'水印图片文字颜色','con_watermark_word'=>'水印文字','con_watermark_position'=>'水印位置','con_watermark_imgpct'=>'添加图片水印后质量参数','con_watermark_txtpct'=>'添加文字水印后质量参数','con_fujian_imgwidth'=>'缩略图默认宽度','con_fujian_imgheight'=>'缩略图默认高度','con_fujian_imgtype'=>'允许上传的图片类型','con_fujian_annextype'=>'允许上传的软件类型','con_fujian_mediatype'=>'允许的多媒体文件类型','con_member_reg_mail'=>'会员注册是否需要邮箱验证','con_comment_verify'=>'评论是否需要审核','con_credit_picurl'=>'信用等级图片地址','con_email_host'=>'SMTP服务器','con_email_auth'=>'SMTP服务器是否需要验证','con_email_email'=>'邮箱地址','con_email_pwd'=>'邮箱密码','con_email_from'=>'发件人Email','con_email_from_name'=>'发件人昵称或姓名','con_borrow_maxaccount'=>'借款最高额度','con_fuwutel'=>'客户服务热线','con_fax'=>'传真','con_address'=>'联系地址','con_return_tender'=>'开启回款续投奖励','con_qq5'=>'客服QQ5','con_reward_scale'=>'回款续投奖励','con_kefutext'=>'客户中心文字','con_vip_money'=>'会员费','con_vip_ticheng'=>'邀请注册成VIP提成','con_user_amount'=>'用户开始最低的额度','con_borrow_apr'=>'借款利率','con_cookie'=>'是否采用cookie登录','con_late_rate'=>'逾期利率','con_msg_repayment'=>'还款方式信息','con_houtai'=>'后台地址名称','con_emailsend'=>'是否启用邮箱发送信息','con_borrow_fee'=>'借款人借款的手续费','con_realname_fee'=>'实名认证费用','con_video_feestatus'=>'是否开启视频认证收费','con_smsurl'=>'短信接口地址','con_issms'=>'短信开关','con_sfyzurl'=>'身份验证URL','con_issfyz'=>'身份验证开启','con_sfyzusername'=>'身份验证用户名','con_sfyzpassword'=>'身份验证密码','con_smsusername'=>'短信接口用户名','con_smspassword'=>'短信接口密码','con_site_listtype'=>'开发模式','con_risk_notes'=>'项目风险提示书','con_invest_protocol'=>'投资协议','con_invest_commission'=>'投资委托书');$system=array('con_webopen'=>0,'con_closemsg'=>'','con_webname'=>'万得汇金','con_weburl'=>'www.wonderbox.com','con_webpath'=>'','con_logo'=>'','con_keywords'=>'网络借贷,网络借贷平台,网上借贷,P2P网络借贷,P2P网上借贷,赚钱,本金保障,高收益,投资,借贷,理财,个人借贷,民间借贷,P2P借贷,贷款,信用贷款','con_description'=>'专业理财俱乐部','con_is_reg_open'=>1,'con_position'=>'|','con_beian'=>'京ICP备13053655','con_tongji'=>'','con_htmldir'=>'html','con_template'=>'soonmes','con_indexID'=>1,'con_session_time'=>1,'con_rewrite'=>1,'con_autohtml'=>0,'con_watermark_pic'=>0,'con_watermark_caijipic'=>0,'con_watermark_type'=>1,'con_watermark_font'=>50,'con_watermark_file'=>'','con_watermark_size'=>'','con_watermark_color'=>'#FF0000','con_watermark_word'=>'融都科技','con_watermark_position'=>4,'con_watermark_imgpct'=>0,'con_watermark_txtpct'=>0,'con_fujian_imgwidth'=>80,'con_fujian_imgheight'=>80,'con_fujian_imgtype'=>'gif|jpg|png','con_fujian_annextype'=>'gif|jpg|png','con_fujian_mediatype'=>'gif|jpg|png','con_member_reg_mail'=>'','con_comment_verify'=>'','con_credit_picurl'=>'/data/images/credit/','con_email_host'=>'smtp.163.com','con_email_auth'=>1,'con_email_email'=>'glay_guo@163.com','con_email_pwd'=>'glay780917','con_email_from'=>'glay_guo@163.com','con_email_from_name'=>'君和会财富俱乐部','con_borrow_maxaccount'=>50000000,'con_fuwutel'=>'010-11111111','con_fax'=>'','con_address'=>'北京XXXXXX地址','con_return_tender'=>1,'con_qq5'=>1554582112,'con_reward_scale'=>0.01,'con_kefutext'=>'尊敬的会员，您好，我是您的理财顾问，有什么可以帮您么？','con_vip_money'=>0,'con_vip_ticheng'=>0,'con_user_amount'=>0,'con_borrow_apr'=>28.2,'con_cookie'=>1,'con_late_rate'=>0.008,'con_msg_repayment'=>0,'con_houtai'=>'admin','con_emailsend'=>1,'con_borrow_fee'=>0.005,'con_realname_fee'=>0,'con_video_feestatus'=>0,'con_smsurl'=>'sdk2.entinfo.cn','con_issms'=>1,'con_sfyzurl'=>'http://sfzopen.erongdu.com/sfzcha.php','con_issfyz'=>0,'con_sfyzusername'=>'','con_sfyzpassword'=>'','con_smsusername'=>'SDK-BBX-010-19374','con_smspassword'=>'63[d-29f','con_site_listtype'=>1,'con_risk_notes'=>'风险提示书<br />
+签署日期');$_G["system_name"]=array('con_webopen'=>'关闭站点（仅后台使用）','con_closemsg'=>'网站关闭信息','con_webname'=>'网站名称','con_weburl'=>'网站网址','con_webpath'=>'网站路径','con_logo'=>'网站logo','con_keywords'=>'网站关键词','con_description'=>'网站描述','con_is_reg_open'=>'是否开放注册','con_position'=>'网站位置分隔符','con_beian'=>'网站备案号','con_tongji'=>'网站统计','con_htmldir'=>'网站静态保存目录','con_template'=>'模板风格','con_indexID'=>'网站首页栏目ID','con_session_time'=>'系统过时时间(小时)','con_rewrite'=>'是否使用数字地址（如?1_2.html）','con_autohtml'=>'默认是否生成html','con_watermark_pic'=>'上传的图片是否使用图片水印功能','con_watermark_caijipic'=>'采集的图片是否使用图片水印功能','con_watermark_type'=>'选择水印的文件类型','con_watermark_font'=>'水印的字体','con_watermark_file'=>'水印图片文件名','con_watermark_size'=>'水印图片文字字体大小','con_watermark_color'=>'水印图片文字颜色','con_watermark_word'=>'水印文字','con_watermark_position'=>'水印位置','con_watermark_imgpct'=>'添加图片水印后质量参数','con_watermark_txtpct'=>'添加文字水印后质量参数','con_fujian_imgwidth'=>'缩略图默认宽度','con_fujian_imgheight'=>'缩略图默认高度','con_fujian_imgtype'=>'允许上传的图片类型','con_fujian_annextype'=>'允许上传的软件类型','con_fujian_mediatype'=>'允许的多媒体文件类型','con_member_reg_mail'=>'会员注册是否需要邮箱验证','con_comment_verify'=>'评论是否需要审核','con_credit_picurl'=>'信用等级图片地址','con_email_host'=>'SMTP服务器','con_email_auth'=>'SMTP服务器是否需要验证','con_email_email'=>'邮箱地址','con_email_pwd'=>'邮箱密码','con_email_from'=>'发件人Email','con_email_from_name'=>'发件人昵称或姓名','con_borrow_maxaccount'=>'借款最高额度','con_fuwutel'=>'客户服务热线','con_fax'=>'传真','con_address'=>'联系地址','con_return_tender'=>'开启回款续投奖励','con_qq5'=>'客服QQ5','con_reward_scale'=>'回款续投奖励','con_kefutext'=>'客户中心文字','con_vip_money'=>'会员费','con_vip_ticheng'=>'邀请注册成VIP提成','con_user_amount'=>'用户开始最低的额度','con_borrow_apr'=>'最大借款利率','con_cookie'=>'是否采用cookie登录','con_late_rate'=>'逾期利率','con_msg_repayment'=>'还款方式信息','con_houtai'=>'后台地址名称','con_emailsend'=>'是否启用邮箱发送信息','con_borrow_fee'=>'借款人借款的手续费','con_realname_fee'=>'实名认证费用','con_video_feestatus'=>'是否开启视频认证收费','con_smsurl'=>'短信接口地址','con_issms'=>'短信开关','con_sfyzurl'=>'身份验证URL','con_issfyz'=>'身份验证开启','con_sfyzusername'=>'身份验证用户名','con_sfyzpassword'=>'身份验证密码','con_smsusername'=>'短信接口用户名','con_smspassword'=>'短信接口密码','con_site_listtype'=>'开发模式','con_risk_notes'=>'项目风险提示书','con_invest_protocol'=>'投资协议','con_invest_commission'=>'投资委托书');$system=array('con_webopen'=>0,'con_closemsg'=>'','con_webname'=>'万得汇金','con_weburl'=>'www.wonderpay.cn','con_webpath'=>'','con_logo'=>'','con_keywords'=>'网络借贷,网络借贷平台,网上借贷,P2P网络借贷,P2P网上借贷,赚钱,本金保障,高收益,投资,借贷,理财,个人借贷,民间借贷,P2P借贷,贷款,信用贷款','con_description'=>'专业理财','con_is_reg_open'=>1,'con_position'=>'|','con_beian'=>'京ICP备12028038号-1','con_tongji'=>'','con_htmldir'=>'html','con_template'=>'soonmes','con_indexID'=>1,'con_session_time'=>1,'con_rewrite'=>1,'con_autohtml'=>0,'con_watermark_pic'=>0,'con_watermark_caijipic'=>0,'con_watermark_type'=>1,'con_watermark_font'=>50,'con_watermark_file'=>'','con_watermark_size'=>'','con_watermark_color'=>'#FF0000','con_watermark_word'=>'融都科技','con_watermark_position'=>4,'con_watermark_imgpct'=>0,'con_watermark_txtpct'=>0,'con_fujian_imgwidth'=>80,'con_fujian_imgheight'=>80,'con_fujian_imgtype'=>'gif|jpg|png','con_fujian_annextype'=>'gif|jpg|png','con_fujian_mediatype'=>'gif|jpg|png','con_member_reg_mail'=>'','con_comment_verify'=>'','con_credit_picurl'=>'/data/images/credit/','con_email_host'=>'smtp.163.com','con_email_auth'=>1,'con_email_email'=>'glay_guo@163.com','con_email_pwd'=>'glay780917','con_email_from'=>'glay_guo@163.com','con_email_from_name'=>'万得汇金','con_borrow_maxaccount'=>500000000,'con_fuwutel'=>'010-11111111','con_fax'=>'','con_address'=>'北京XXXXXX地址','con_return_tender'=>0,'con_qq5'=>25892141,'con_reward_scale'=>0,'con_kefutext'=>'尊敬的会员，您好，我是您的理财顾问，有什么可以帮您么？','con_vip_money'=>0,'con_vip_ticheng'=>0,'con_user_amount'=>0,'con_borrow_apr'=>28.2,'con_cookie'=>1,'con_late_rate'=>0.008,'con_msg_repayment'=>0,'con_houtai'=>'admin','con_emailsend'=>1,'con_borrow_fee'=>0,'con_realname_fee'=>0,'con_video_feestatus'=>0,'con_smsurl'=>'sdk2.entinfo.cn','con_issms'=>1,'con_sfyzurl'=>'http://sfzopen.erongdu.com/sfzcha.php','con_issfyz'=>0,'con_sfyzusername'=>'','con_sfyzpassword'=>'','con_smsusername'=>'SDK-BBX-010-20023','con_smspassword'=>'aeee639B','con_site_listtype'=>1,'con_risk_notes'=>'风险提示书<br />
 尊敬的客户：<br />
-由于理财产品管理运用过程中，可能会面临多种风险因素，因此，根据中国君和会业监督管理委员会相关监管规定的要求，在您选择投资本项目前，请仔细阅读以下重要内容。<br />
-君和会投资项目具有一定的风险，与存款存在明显区别。君和会（理财计划管理人）郑重提示：在投资此项目前，投资者应确保自己完全明白该项投资的性质和所涉及的风险，详细了解和审慎评估该理财产品的资金投资方向、风险评级及预期收益等基本情况，在审慎考虑后自行决定购买与自身风险承受能力和资产管理需求匹配的理财产品。理财计划管理人提醒客户应本着“充分了解风险，自主选择购买”的原则，谨慎决策，自愿将其合法所有的资金用于购买本产品，在购买理财产品后，投资者应随时关注该理财产品的信息披露情况，及时获取相关信息。理财计划管理人不承担下述风险：<br />
+由于理财产品管理运用过程中，可能会面临多种风险因素，因此，根据中国万得汇金业监督管理委员会相关监管规定的要求，在您选择投资本项目前，请仔细阅读以下重要内容。<br />
+万得汇金投资项目具有一定的风险，与存款存在明显区别。万得汇金（理财计划管理人）郑重提示：在投资此项目前，投资者应确保自己完全明白该项投资的性质和所涉及的风险，详细了解和审慎评估该理财产品的资金投资方向、风险评级及预期收益等基本情况，在审慎考虑后自行决定购买与自身风险承受能力和资产管理需求匹配的理财产品。理财计划管理人提醒客户应本着“充分了解风险，自主选择购买”的原则，谨慎决策，自愿将其合法所有的资金用于购买本产品，在购买理财产品后，投资者应随时关注该理财产品的信息披露情况，及时获取相关信息。理财计划管理人不承担下述风险：<br />
 1.政策风险：本产品是依照当前的法律法规、相关监管规定和政策设计的。如国家宏观政策以及市场法律法规、相关监管规定发生变化，可能影响产品的受理、投资运作、清算等业务的正常进行，并导致本产品收益降低甚至本金损失，也可能导致本产品违反国家法律、法规或者其他合同的有关规定，进而导致本产品被宣告无效、撤销、解除或提前终止等。<br />
 2.信用风险：如基础资产中股权（收益权）受让人（如有）未能及时足额支付受让价款、或借款人（如有）、或企业应收账款付款人（如有）、或债券发行人（如有）等未能及时足额支付本息，或所投资的其它资产未达到预期收益，则客户可能面临收益损失、本金部分损失、甚至本金全部损失的风险。<br />
 3.流动性风险：投资者无提前终止权，可能导致投资者需要资金时不能随时变现，并可能使投资者丧失其他投资机会导致实际收益率为负的风险。<br />
 4.市场风险：本产品的运行受到国内外经济、政治因素以及相关公司基本面状况等的影响，可能出现波动，从而导致客户收益波动、收益为零甚至本金损失的情况。<br />
 5.管理风险：本产品资金将投资于相关基础资产（详见第二条），基础资产管理方受经验、技能、判断力、执行力等方面的限制，可能对产品的运作及管理造成一定影响，并因此影响客户收益，甚至造成本金损失。<br />
-6.信息传递风险：产品管理人将按照本说明书有关“信息披露”的约定，进行本产品的信息披露。客户应根据“信息披露”的约定及时进行查询。如果客户未及时查询，或由于通讯故障、系统故障以及其他不可抗力等因素的影响使得客户无法及时了解产品信息，并由此影响客户的投资决策，因此而产生的责任和风险由客户自行承担。另外，客户预留在君和会的有效联系方式发生变更，应及时通知购买本产品的原网点，如客户未及时告知联系方式变更，产品管理人将可能在需要时无法及时联系到客户，并可能会由此影响客户的投资决策，由此而产生的责任和风险由客户自行承担。<br />
-7.认购风险：如出现市场剧烈波动、相关法规政策变化或其他可能影响本理财产品正常运作的情况，君和会有权停止发售本理财产品，客户将无法在约定募集期内认购本理财产品。因此造成的任何损失由客户自行承担，君和会对此不承担任何责任。<br />
-8.提前终止风险：产品存续期内若市场发生重大变动或突发性事件或君和会认为需要提前终止本产品的其他情形时，君和会有权提前终止产品，在提前终止情形下，客户面临不能按预定期限取得预期收益的风险。<br />
-9.不可抗力及意外事件风险：包括但不限于自然灾害、金融市场危机、战争或国家政策变化等不能预见、不能避免、不能克服的不可抗力事件或君和会系统故障、通讯故障、投资市场停止交易等意外事件的发生，可能对产品的成立、投资运作、资金返还、信息披露、公告通知等造成影响，甚至可能导致产品收益降低乃至本金损失。对于由于不可抗力及意外事件风险导致的任何损失，客户须自行承担，君和会对此不承担任何责任。<br />
-                                                            风险提示方：君和会<br />
-<br />
-','con_invest_protocol'=>'投资协议<br />
+6.信息传递风险：产品管理人将按照本说明书有关“信息披露”的约定，进行本产品的信息披露。客户应根据“信息披露”的约定及时进行查询。如果客户未及时查询，或由于通讯故障、系统故障以及其他不可抗力等因素的影响使得客户无法及时了解产品信息，并由此影响客户的投资决策，因此而产生的责任和风险由客户自行承担。另外，客户预留在万得汇金的有效联系方式发生变更，应及时通知购买本产品的原网点，如客户未及时告知联系方式变更，产品管理人将可能在需要时无法及时联系到客户，并可能会由此影响客户的投资决策，由此而产生的责任和风险由客户自行承担。<br />
+7.认购风险：如出现市场剧烈波动、相关法规政策变化或其他可能影响本理财产品正常运作的情况，万得汇金有权停止发售本理财产品，客户将无法在约定募集期内认购本理财产品。因此造成的任何损失由客户自行承担，万得汇金对此不承担任何责任。<br />
+8.提前终止风险：产品存续期内若市场发生重大变动或突发性事件或万得汇金认为需要提前终止本产品的其他情形时，万得汇金有权提前终止产品，在提前终止情形下，客户面临不能按预定期限取得预期收益的风险。<br />
+9.不可抗力及意外事件风险：包括但不限于自然灾害、金融市场危机、战争或国家政策变化等不能预见、不能避免、不能克服的不可抗力事件或万得汇金系统故障、通讯故障、投资市场停止交易等意外事件的发生，可能对产品的成立、投资运作、资金返还、信息披露、公告通知等造成影响，甚至可能导致产品收益降低乃至本金损失。对于由于不可抗力及意外事件风险导致的任何损失，客户须自行承担，万得汇金对此不承担任何责任。<br />
+                                              风险提示方：万得汇金','con_invest_protocol'=>'投资协议<br />
  <br />
 甲方（出借人）：详见债权列表<br />
  <br />
 乙方（借款人）： <br />
  <br />
-丙方（见证人）：君和会（www.viptouzi.com）<br />
+丙方（见证人）：万得汇金<br />
  <br />
 鉴于：<br />
-1、乙方作为君和会（www.viptouzi.com）网站注册（以下简称该网站）的理财管家，并承诺其提供给丙方的信息是完全真实、准确、完整的。<br />
+1、乙方作为万得汇金网站（以下简称该网站）的借款人，承诺其提供给丙方的信息是完全真实、准确、完整的。<br />
 2、甲方承诺对本协议涉及的借款具有完全的支配能力，是其自有闲散资金，为其合法所得；并承诺其提供给丙方的信息是完全真实、准确、完整的。<br />
 3、乙方有借款需求，甲方亦同意借款，双方希望达成借贷协议。就乙方向甲方借款的相关事宜，经各方协商一致，签订如下协议，以资信守：<br />
  <br />
 第一条 乙方借款基本信息<br />
-1、乙方借款：（短期周转、生意周转、生活周转、购物消费、不提现借款、其它借款、创业借款）<br />
-2、乙方借款：本金数额_____________（人民币）	（各出借人借款本金数额详见债权列表）<br />
+1、乙方借款：（短期周转、生意周转、生活周转、购物消费、不提现借款、其它借款、企业贷款）<br />
+2、乙方借款：本金数额_____________（人民币） （各出借人借款本金数额详见债权列表）<br />
 3、乙方认可：借款利率_____________（年化利率）<br />
-4、乙方还款方式：按月分期还款；%s到期还本、按月付息<br />
+4、乙方还款方式：按月分期还款；到期全额还款；按月付息到期还本<br />
 5、乙方借款期数：______个月<br />
  <br />
 第二条 甲方权利和义务<br />
 1、甲方认可本协议第一条所列“乙方借款基本信息”，同意按照在丙方网站投标并最终确认的数额向乙方提供借款。甲方应按合同约定的借款期限起始日期将足额的借款本金支付给乙方。<br />
-2、甲方享有其所出借款项所带来的利息收益。甲方将利息收入的百分之十支付丙方，作为丙方提供投资管理服务的报酬，甲方、乙方授权丙方：在乙方还款时直接将甲方应支付丙方的报酬予以扣除。<br />
+2、甲方享有其所出借款项所带来的利息收益。<br />
 3、如乙方违约，甲方有权要求丙方提供其已获得的乙方信息，并提供留存在丙方的本合同正本（已经乙方盖章确认），丙方应当提供。<br />
 4、甲方承担所得收益的相应税费。<br />
 5、如乙方实际还款金额少于本协议约定的本金、利息及违约金的，甲方各出借人同意按照本协议债权列表所列的各自借款比例收取还款。<br />
@@ -217,20 +213,20 @@
 1、根据本协议第四条第2项，甲方授权并委托丙方通过其网站将甲方支付的出借本金直接划付至乙方账户，乙方对此表示认可。<br />
 2、乙方确保所提供账户为乙方名下合法有效的银行账户；乙方因所提供账号的户名、账号或开户行错误或不完整，造成贷款本金数额无法到账等情况，由乙方承担全部经济损失，且并不影响本合同所述债权关系的生效与执行。<br />
 3、乙方按月向甲方偿还本金和利息。<br />
-4、乙方在此同意由乙方自行通过与www.huirendai.com网站合作的第三方支付平台主动地按时还款，由第三方支付公司或其它机构所收取的手续费用由乙方自行承担。<br />
+4、乙方在此同意由乙方自行通过与万得汇金网站合作的第三方支付平台主动地按时还款，由第三方支付公司或其它机构所收取的手续费用由乙方自行承担。<br />
 5、乙方须在每月还款当日或之前，将足额的月偿还本息费数额，存入该网站上乙方专用账号中。不论在任何情况下，乙方均保证按时足额还款，若因乙方存入金额不足而导致扣款失败，由乙方自行承担违约责任。<br />
 6、如还款日遇到法定假日或公休日，还款日期不进行顺延。<br />
 7、还款日为每月30或31日，则遇到天数不足 30或31 天的月份，还款日为应还款当月的最后一天。<br />
  <br />
 第七条 违约责任<br />
-（一）	乙方逾期还款责任<br />
+（一） 乙方逾期还款责任<br />
 1、乙方应严格履行还款义务，如乙方逾期还款，则应按照下述条款向甲方支付逾期罚息，自逾期开始之后，逾期本金的正常利息停止计算。罚息利率为每天千分之八。罚息总额 = 逾期本息总额×对应罚息利率×逾期天数；<br />
-（二）	乙方逾期还款超过30天责任<br />
+（二） 乙方逾期还款超过30天责任<br />
 1、如果乙方逾期支付任何一期还款超过30天，或乙方在逾期后出现逃避、拒绝沟通或拒绝承认欠款事实等恶意行为，本协议项下的全部借款本息及借款管理费均提前到期，乙方应立即清偿本协议下尚未偿付的全部本金、利息、罚息、借款管理费及根据本协议产生的其他全部费用。<br />
 2、如果乙方逾期支付任何一期还款超过30天，或乙方在逾期后出现逃避、拒绝沟通或拒绝承认欠款事实等恶意行为，丙方有权将乙方的“逾期记录”记入人民银行公民征信系统，丙方不承担任何法律责任。<br />
 3、如果乙方逾期支付任何一期还款超过30天，或乙方在逾期后出现逃避、拒绝沟通或拒绝承认欠款事实等恶意行为，丙方有权将乙方违约失信的相关信息及乙方其他信息向该网站、媒体、用人单位、公安机关、检查机关、法律机关披露，丙方不承担任何责任。<br />
 （三）协议各方均应严格履行合同义务，非经各方协商一致或依照本协议约定，任何一方不得解除本协议。<br />
-（四）任 何一方违约，违约方应承担因违约使得其他各方产生的费用和损失，包括但不限于调查、诉讼费、律师费等，应由违约方承担。如违约方为乙方的，甲方有权立即解 除本协议，并要求乙方立即偿还未偿还的本金、利息、罚息、违约金。此时，乙方还应向丙方支付所有应付的借款管理费。如本协议提前解除时，乙方在www.huirendai.com网站的账户里有任何余款的，丙方有权按照本协议第七条第（五）项的清偿顺序将乙方的余款用于清偿，甲方对此予以认可，丙方同时有权要求乙方支付因此产生的相关费用。<br />
+（四）任 何一方违约，违约方应承担因违约使得其他各方产生的费用和损失，包括但不限于调查、诉讼费、律师费等，应由违约方承担。如违约方为乙方的，甲方有权立即解 除本协议，并要求乙方立即偿还未偿还的本金、利息、罚息、违约金。此时，乙方还应向丙方支付所有应付的借款管理费。如本协议提前解除时，乙方在万得汇金网站的账户里有任何余款的，丙方有权按照本协议第七条第（五）项的清偿顺序将乙方的余款用于清偿，甲方对此予以认可，丙方同时有权要求乙方支付因此产生的相关费用。<br />
 （五）乙方的每期还款均应按照如下顺序清偿：<br />
 （1）根据本协议产生的其他全部费用；<br />
 （2）本协议约定的罚息；<br />
@@ -260,7 +256,7 @@
  <br />
 协议各方签字签章<br />
  <br />
-甲方：出借人（附件一）<br />
+甲方：出借人<br />
 签字：<br />
 签署日期：<br />
  <br />
@@ -268,7 +264,7 @@
 签字：<br />
 签署日期：<br />
  <br />
-丙方：君和会（www.viptouzi.com）<br />
+丙方：万得汇金<br />
 盖章：<br />
 签署日期','con_invest_commission'=>'理财委托投资书<br />
 　　甲 方：<br />
@@ -294,4 +290,4 @@
  <br />
 丙方：君和会（www.viptouzi.com）<br />
 盖章：<br />
-签署日期');$system_name=array('con_webopen'=>'关闭站点（仅后台使用）','con_closemsg'=>'网站关闭信息','con_webname'=>'网站名称','con_weburl'=>'网站网址','con_webpath'=>'网站路径','con_logo'=>'网站logo','con_keywords'=>'网站关键词','con_description'=>'网站描述','con_is_reg_open'=>'是否开放注册','con_position'=>'网站位置分隔符','con_beian'=>'网站备案号','con_tongji'=>'网站统计','con_htmldir'=>'网站静态保存目录','con_template'=>'模板风格','con_indexID'=>'网站首页栏目ID','con_session_time'=>'系统过时时间(小时)','con_rewrite'=>'是否使用数字地址（如?1_2.html）','con_autohtml'=>'默认是否生成html','con_watermark_pic'=>'上传的图片是否使用图片水印功能','con_watermark_caijipic'=>'采集的图片是否使用图片水印功能','con_watermark_type'=>'选择水印的文件类型','con_watermark_font'=>'水印的字体','con_watermark_file'=>'水印图片文件名','con_watermark_size'=>'水印图片文字字体大小','con_watermark_color'=>'水印图片文字颜色','con_watermark_word'=>'水印文字','con_watermark_position'=>'水印位置','con_watermark_imgpct'=>'添加图片水印后质量参数','con_watermark_txtpct'=>'添加文字水印后质量参数','con_fujian_imgwidth'=>'缩略图默认宽度','con_fujian_imgheight'=>'缩略图默认高度','con_fujian_imgtype'=>'允许上传的图片类型','con_fujian_annextype'=>'允许上传的软件类型','con_fujian_mediatype'=>'允许的多媒体文件类型','con_member_reg_mail'=>'会员注册是否需要邮箱验证','con_comment_verify'=>'评论是否需要审核','con_credit_picurl'=>'信用等级图片地址','con_email_host'=>'SMTP服务器','con_email_auth'=>'SMTP服务器是否需要验证','con_email_email'=>'邮箱地址','con_email_pwd'=>'邮箱密码','con_email_from'=>'发件人Email','con_email_from_name'=>'发件人昵称或姓名','con_borrow_maxaccount'=>'借款最高额度','con_fuwutel'=>'客户服务热线','con_fax'=>'传真','con_address'=>'联系地址','con_return_tender'=>'开启回款续投奖励','con_qq5'=>'客服QQ5','con_reward_scale'=>'回款续投奖励','con_kefutext'=>'客户中心文字','con_vip_money'=>'会员费','con_vip_ticheng'=>'邀请注册成VIP提成','con_user_amount'=>'用户开始最低的额度','con_borrow_apr'=>'借款利率','con_cookie'=>'是否采用cookie登录','con_late_rate'=>'逾期利率','con_msg_repayment'=>'还款方式信息','con_houtai'=>'后台地址名称','con_emailsend'=>'是否启用邮箱发送信息','con_borrow_fee'=>'借款人借款的手续费','con_realname_fee'=>'实名认证费用','con_video_feestatus'=>'是否开启视频认证收费','con_smsurl'=>'短信接口地址','con_issms'=>'短信开关','con_sfyzurl'=>'身份验证URL','con_issfyz'=>'身份验证开启','con_sfyzusername'=>'身份验证用户名','con_sfyzpassword'=>'身份验证密码','con_smsusername'=>'短信接口用户名','con_smspassword'=>'短信接口密码','con_site_listtype'=>'开发模式','con_risk_notes'=>'项目风险提示书','con_invest_protocol'=>'投资协议','con_invest_commission'=>'投资委托书'); ?>
+签署日期');$system_name=array('con_webopen'=>'关闭站点（仅后台使用）','con_closemsg'=>'网站关闭信息','con_webname'=>'网站名称','con_weburl'=>'网站网址','con_webpath'=>'网站路径','con_logo'=>'网站logo','con_keywords'=>'网站关键词','con_description'=>'网站描述','con_is_reg_open'=>'是否开放注册','con_position'=>'网站位置分隔符','con_beian'=>'网站备案号','con_tongji'=>'网站统计','con_htmldir'=>'网站静态保存目录','con_template'=>'模板风格','con_indexID'=>'网站首页栏目ID','con_session_time'=>'系统过时时间(小时)','con_rewrite'=>'是否使用数字地址（如?1_2.html）','con_autohtml'=>'默认是否生成html','con_watermark_pic'=>'上传的图片是否使用图片水印功能','con_watermark_caijipic'=>'采集的图片是否使用图片水印功能','con_watermark_type'=>'选择水印的文件类型','con_watermark_font'=>'水印的字体','con_watermark_file'=>'水印图片文件名','con_watermark_size'=>'水印图片文字字体大小','con_watermark_color'=>'水印图片文字颜色','con_watermark_word'=>'水印文字','con_watermark_position'=>'水印位置','con_watermark_imgpct'=>'添加图片水印后质量参数','con_watermark_txtpct'=>'添加文字水印后质量参数','con_fujian_imgwidth'=>'缩略图默认宽度','con_fujian_imgheight'=>'缩略图默认高度','con_fujian_imgtype'=>'允许上传的图片类型','con_fujian_annextype'=>'允许上传的软件类型','con_fujian_mediatype'=>'允许的多媒体文件类型','con_member_reg_mail'=>'会员注册是否需要邮箱验证','con_comment_verify'=>'评论是否需要审核','con_credit_picurl'=>'信用等级图片地址','con_email_host'=>'SMTP服务器','con_email_auth'=>'SMTP服务器是否需要验证','con_email_email'=>'邮箱地址','con_email_pwd'=>'邮箱密码','con_email_from'=>'发件人Email','con_email_from_name'=>'发件人昵称或姓名','con_borrow_maxaccount'=>'借款最高额度','con_fuwutel'=>'客户服务热线','con_fax'=>'传真','con_address'=>'联系地址','con_return_tender'=>'开启回款续投奖励','con_qq5'=>'客服QQ5','con_reward_scale'=>'回款续投奖励','con_kefutext'=>'客户中心文字','con_vip_money'=>'会员费','con_vip_ticheng'=>'邀请注册成VIP提成','con_user_amount'=>'用户开始最低的额度','con_borrow_apr'=>'最大借款利率','con_cookie'=>'是否采用cookie登录','con_late_rate'=>'逾期利率','con_msg_repayment'=>'还款方式信息','con_houtai'=>'后台地址名称','con_emailsend'=>'是否启用邮箱发送信息','con_borrow_fee'=>'借款人借款的手续费','con_realname_fee'=>'实名认证费用','con_video_feestatus'=>'是否开启视频认证收费','con_smsurl'=>'短信接口地址','con_issms'=>'短信开关','con_sfyzurl'=>'身份验证URL','con_issfyz'=>'身份验证开启','con_sfyzusername'=>'身份验证用户名','con_sfyzpassword'=>'身份验证密码','con_smsusername'=>'短信接口用户名','con_smspassword'=>'短信接口密码','con_site_listtype'=>'开发模式','con_risk_notes'=>'项目风险提示书','con_invest_protocol'=>'投资协议','con_invest_commission'=>'投资委托书'); ?>

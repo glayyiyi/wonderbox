@@ -587,10 +587,10 @@ echo $objAvatar->uc_avatar($this->magic_vars['_G']['user_id'], 'virtual');
 请把下边的邀请码发给您的好友，注册后，您将成为他的上线用户。<br />
 		</div>
 		<div class="user_right_border">
-			<div class="l">邀请码：</div>
+			<div class="l">邀请链接：</div>
 			<div class="c">
-				<!--  <textarea style="height:100px;width:500px" id="invite"><? if (!isset($this->magic_vars['_G']['weburl'])) $this->magic_vars['_G']['weburl'] = ''; echo $this->magic_vars['_G']['weburl']; ?>/index.php?user&q=going/reginvite&u=<? if (!isset($this->magic_vars['_U']['user_inviteid'])) $this->magic_vars['_U']['user_inviteid'] = ''; echo $this->magic_vars['_U']['user_inviteid']; ?></textarea>-->
-				<textarea style="height:100px;width:500px" id="invite">邀请你加入君和会VIP投资俱乐部（www.viptouzi.com），注册邀请码是<? if (!isset($this->magic_vars['_U']['user_inviteid'])) $this->magic_vars['_U']['user_inviteid'] = ''; echo $this->magic_vars['_U']['user_inviteid']; ?></textarea>
+				  <textarea style="height:100px;width:500px" id="invite"><? if (!isset($this->magic_vars['_G']['weburl'])) $this->magic_vars['_G']['weburl'] = ''; echo $this->magic_vars['_G']['weburl']; ?>/index.php?user&q=going/reginvite&u=<? if (!isset($this->magic_vars['_U']['user_inviteid'])) $this->magic_vars['_U']['user_inviteid'] = ''; echo $this->magic_vars['_U']['user_inviteid']; ?></textarea>
+				<!--<textarea style="height:100px;width:500px" id="invite">邀请你加入君和会VIP投资俱乐部（www.viptouzi.com），注册邀请码是<? if (!isset($this->magic_vars['_U']['user_inviteid'])) $this->magic_vars['_U']['user_inviteid'] = ''; echo $this->magic_vars['_U']['user_inviteid']; ?></textarea>-->
 				<br/><input type="button" onclick="doCopy('invite')" class="btn-action" value="复制" />
 			</div>
 		</div>

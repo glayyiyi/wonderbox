@@ -11,7 +11,7 @@
 <div class="bannerBar m_b_15">
 					<p class="pic"><img src="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/images/banner_03.jpg"></p>
 					<!-- 浮动层 -->
-	 				<div class="pop_club">
+	 			<!-- 	<div class="pop_club">
 						<div class="hd"></div>
                 <div class="bg">
                 	<? if (!isset($this->magic_vars['_G']['system']['con_webname'])) $this->magic_vars['_G']['system']['con_webname'] = ''; echo $this->magic_vars['_G']['system']['con_webname']; ?>是由君和资本旗下发起和建立的非盈利性会员组织，邀请平台投资者为会员，是为投资者之间进行沟通而搭建的线下私密交际平台。
@@ -20,12 +20,12 @@
 					  </div>
             <div class="pop_link">
             	<a href="#">贵宾风采</a> | <a href="#">专属服务</a>
-            </div>
+            </div> -->
 					<!-- end 浮动层 -->
 				</div>
 	
 	
-	<? if (!isset($_REQUEST['doaction'])) $_REQUEST['doaction']=''; ;if (  $_REQUEST['doaction']=="contract"): ?> <!-- 第二步 确认合同 -->
+	<? if (!isset($_REQUEST['doaction'])) $_REQUEST['doaction']=''; ;if (  $_REQUEST['doaction']=="contract"): ?> <!-- 第二步 确认协议 -->
 	
 		<div class="step_tz m_b_10">
         	  <div class="step_n num_01">
@@ -35,7 +35,7 @@
             <span class="direction"></span>
             <div class="step_n num_02 hover">
             	<em class="n">2</em>
-                <label class="txt">确认合同</label>
+                <label class="txt">确认协议</label>
             </div>
             <span class="direction"></span>
             <div class="step_n num_03">
@@ -58,7 +58,7 @@
 	<br>
 	<div >
             <p>       
-			<B><font size=3>以下共有三份协议需要您阅读并同意：</font></B>
+			<B><font size=3>以下共有两份协议需要您阅读并同意：</font></B>
 			</p>
 			
 			<br>
@@ -66,7 +66,7 @@
 			<B>一,项目风险提示书</B>
 			</p>
 			<div align="center">
-			<div align="left" style="width:99%;height:200px; overflow:scroll; border:1px solid #FF6C00;"> 
+			<div align="left" style="width:99%;height:300px; overflow:scroll; border:1px solid #FF6C00;"> 
 			<? if (!isset($this->magic_vars['_G']['system']['con_risk_notes'])) $this->magic_vars['_G']['system']['con_risk_notes'] = ''; echo $this->magic_vars['_G']['system']['con_risk_notes']; ?>
 			</div>
 			</div>
@@ -75,12 +75,12 @@
 			<B>二,投资协议</B>
 			</p>
 			<div align="center">
-			<div align="left" style="width:99%;height:200px; overflow:scroll; border:1px solid #FF6C00;"> 
+			<div align="left" style="width:99%;height:300px; overflow:scroll; border:1px solid #FF6C00;"> 
 			<? if (!isset($this->magic_vars['_G']['system']['con_invest_protocol'])) $this->magic_vars['_G']['system']['con_invest_protocol'] = ''; echo $this->magic_vars['_G']['system']['con_invest_protocol']; ?>
 			</div>
 			</div>
 		<br>
-			<p>
+			<!-- <p>
 			<B>三,投资委托书</B>
 			</p>
 			<div align="center">
@@ -89,7 +89,7 @@
 			</div>
 			</div>
 			
-			<br>
+			<br> -->
     </div>
    
     </div>
@@ -118,7 +118,7 @@
             <span class="direction"></span>
             <div class="step_n num_02">
             	<em class="n">2</em>
-                <label class="txt">确认合同</label>
+                <label class="txt">确认协议</label>
             </div>
             <span class="direction"></span>
             <div class="step_n num_03">
@@ -296,7 +296,7 @@
             <span class="direction"></span>
             <div class="step_n num_02">
             	<em class="n">2</em>
-                <label class="txt">确认合同</label>
+                <label class="txt">确认协议</label>
             </div>
             <span class="direction"></span>
             <div class="step_n num_03 hover">
@@ -349,6 +349,17 @@
 				<ul>
 					<li>您的可用余额： <? if (!isset($this->magic_vars['var']['user_account']['use_money'])) $this->magic_vars['var']['user_account']['use_money'] = '';$_tmp = $this->magic_vars['var']['user_account']['use_money'];$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?> 元 <a href="/index.php?user&q=code/account/recharge_new">我要充值</a></li>
 					<li>最多投标总额：<? if (!isset($this->magic_vars['var']['borrow']['most_account'])) $this->magic_vars['var']['borrow']['most_account']=''; ;if (  $this->magic_vars['var']['borrow']['most_account']<=0): ?>不限制<? else: ?><? if (!isset($this->magic_vars['var']['borrow']['most_account'])) $this->magic_vars['var']['borrow']['most_account'] = ''; echo $this->magic_vars['var']['borrow']['most_account']; ?>元<? endif; ?></li>
+				<? if (!isset($this->magic_vars['var']['borrow']['is_lz'])) $this->magic_vars['var']['borrow']['is_lz']=''; ;if (  $this->magic_vars['var']['borrow']['is_lz']==1): ?>
+					<li>最小流转单位：10000 元
+					<li>已认购:<? if (!isset($this->magic_vars['var']['borrow']['account_yes'])) $this->magic_vars['var']['borrow']['account_yes'] = ''; echo $this->magic_vars['var']['borrow']['account_yes']/10000; ?> 份&nbsp;&nbsp;
+					还剩:<b class="max"><? if (!isset($this->magic_vars['var']['borrow']['other'])) $this->magic_vars['var']['borrow']['other'] = ''; echo $this->magic_vars['var']['borrow']['other']/10000; ?></b>份</li>
+					<li id="flow_num">购买份数：
+						<input class="less" value="-" type="button" onclick="less()">
+						<input type="text"  class="nums" id="flow_count" name="flow_count" value="1" size="5">
+						<input class="add" value="+" type="button" onclick="add()">
+					</li>
+					<input type="hidden" id="is_lz" name="is_lz" size="11" value="1">
+				<? else: ?>
 					<? if (!isset($this->magic_vars['var']['borrow']['is_kuai'])) $this->magic_vars['var']['borrow']['is_kuai']=''; ;if (  $this->magic_vars['var']['borrow']['is_kuai'] == 1): ?><li><font color="red">您当前最多可投快速标资金为:<? if (!isset($this->magic_vars['var']['borrow']['kuai_usemoney'])) $this->magic_vars['var']['borrow']['kuai_usemoney'] = ''; echo $this->magic_vars['var']['borrow']['kuai_usemoney']; ?>元</font><a href="/index.php?user&q=code/account/recharge_new">马上进行线下充值</a></li><? endif; ?>
 					<li>当前年利率: <? if (!isset($this->magic_vars['var']['borrow']['apr'])) $this->magic_vars['var']['borrow']['apr'] = ''; echo $this->magic_vars['var']['borrow']['apr']; ?> %</li>
 					<li>投标金额：<input tabindex="1" type="text" id="money" name="money" size="11" 
@@ -358,7 +369,7 @@
 					onkeyup="value=value.replace(/[^0-9.]/g,'')">元 <input type="button" onclick="inputAll(<? if (!isset($this->magic_vars['var']['borrow']['lowest_account'])) $this->magic_vars['var']['borrow']['lowest_account'] = '';$_tmp = $this->magic_vars['var']['borrow']['lowest_account'];$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?>,<? if (!isset($this->magic_vars['var']['borrow']['most_account'])) $this->magic_vars['var']['borrow']['most_account'] = '';$_tmp = $this->magic_vars['var']['borrow']['most_account'];$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?>,<? if (!isset($this->magic_vars['var']['user_account']['use_money'])) $this->magic_vars['var']['user_account']['use_money'] = '';$_tmp = $this->magic_vars['var']['user_account']['use_money'];$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?>);" 
 					<? endif; ?>
 					value="自动填入全部金额"></li>
-
+                 <? endif; ?>
 					<li>支付密码：<? if (!isset($this->magic_vars['_G']['user_result']['paypassword'])) $this->magic_vars['_G']['user_result']['paypassword']=''; ;if (  $this->magic_vars['_G']['user_result']['paypassword']==""): ?><a href="/index.php?user&q=code/user/paypwd" target="_blank"><font color="red">请先设一个支付交易密码,设置完后返回该页面刷新生效</font></a><? else: ?><input type="password" name="paypassword" size="11" tabindex="2" /><? endif; ?></li>
 					<? if (!isset($this->magic_vars['var']['borrow']['pwd'])) $this->magic_vars['var']['borrow']['pwd']=''; ;if (  $this->magic_vars['var']['borrow']['pwd'] != ""): ?><li>定向标密码：<input type="text" name="dxbPWD" id="dxbPWD" size="11" tabindex="3" /></li><? endif; ?>
 					<!-- <? if (!isset($this->magic_vars['var']['borrow']['is_mb'])) $this->magic_vars['var']['borrow']['is_mb']=''; ;if (  $this->magic_vars['var']['borrow']['is_mb']==1): ?>  <? endif; ?> -->
@@ -384,7 +395,7 @@
             <span class="direction"></span>
             <div class="step_n num_02">
             	<em class="n">2</em>
-                <label class="txt">确认合同</label>
+                <label class="txt">确认协议</label>
             </div>
             <span class="direction"></span>
             <div class="step_n num_03">
@@ -772,7 +783,7 @@
 			</tr>
 			<? $this->magic_vars['query_type']='GetList';$data = array('var'=>'arr_var','limit'=>'all','status'=>'1','user_id'=>$this->magic_vars['var']['user']['user_id']);$default = '';  include_once(ROOT_PATH.'modules/attestation/attestation.class.php');$this->magic_vars['magic_result'] = attestationClass::GetList($data);if(!isset($this->magic_vars['magic_result'])) $this->magic_vars['magic_result']= array(); $_from = $this->magic_vars['magic_result']; if (!is_array($_from) && !is_object($_from)) {$_from =array(); } if (count($_from)>0):
 ;    foreach ($_from as $this->magic_vars['key'] => $this->magic_vars['arr_var']):
-?> <? if (!isset($this->magic_vars['arr_var']['jifen'])) $this->magic_vars['arr_var']['jifen']=''; ;if ( $this->magic_vars['arr_var']['jifen']>0): ?>
+?> <? if (!isset($this->magic_vars['arr_var']['jifen'])) $this->magic_vars['arr_var']['jifen']=''; ;if ( $this->magic_vars['arr_var']['jifen']>=0): ?>
 			<tr>
 				<!-- <td><? if (!isset($this->magic_vars['arr_var']['type_name'])) $this->magic_vars['arr_var']['type_name'] = ''; echo $this->magic_vars['arr_var']['type_name']; ?></td> -->
 				<!--   <td  ><? if (!isset($this->magic_vars['arr_var']['jifen'])) $this->magic_vars['arr_var']['jifen'] = ''; echo $this->magic_vars['arr_var']['jifen']; ?> 分</td> -->
@@ -1114,7 +1125,7 @@
 			<ul>
 				<li>您的可用余额： <? if (!isset($this->magic_vars['var']['user_account']['use_money'])) $this->magic_vars['var']['user_account']['use_money'] = '';$_tmp = $this->magic_vars['var']['user_account']['use_money'];$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?> 元 <a href="/index.php?user&q=code/account/recharge_new">我要充值</a></li>
 				<li>最多投标总额：<? if (!isset($this->magic_vars['var']['borrow']['most_account'])) $this->magic_vars['var']['borrow']['most_account']=''; ;if (  $this->magic_vars['var']['borrow']['most_account']<=0): ?>不限制<? else: ?><? if (!isset($this->magic_vars['var']['borrow']['most_account'])) $this->magic_vars['var']['borrow']['most_account'] = ''; echo $this->magic_vars['var']['borrow']['most_account']; ?>元<? endif; ?></li>
-				
+			
 				<? if (!isset($this->magic_vars['var']['borrow']['is_lz'])) $this->magic_vars['var']['borrow']['is_lz']=''; ;if (  $this->magic_vars['var']['borrow']['is_lz']==1): ?>
 					<li>最小流转单位：100 元
 					<li>已认购:<? if (!isset($this->magic_vars['var']['borrow']['account_yes'])) $this->magic_vars['var']['borrow']['account_yes'] = ''; echo $this->magic_vars['var']['borrow']['account_yes']/100; ?> 份&nbsp;&nbsp;
@@ -1178,7 +1189,7 @@ function check_form(lowest,most,use_money){
 		 
 		 <? if (!isset($this->magic_vars['var']['borrow']['is_lz'])) $this->magic_vars['var']['borrow']['is_lz']=''; ;if (  $this->magic_vars['var']['borrow']['is_lz']==1): ?>
 			 
-			var account = jQuery('#flow_count').val()*100;
+			var account = jQuery('#flow_count').val()*10000;
 		<? else: ?>
 			var account = jQuery('#money').val();
 		<? endif; ?>

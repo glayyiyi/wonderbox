@@ -1,1 +1,1 @@
-{"appid":"100366990","appkey":"8bf122ce25ed317910932e804ca4bae2","callback":"http://demoa.erongdu.com/api/qqcallback.php","scope":"get_user_info","errorReport":true,"storageType":"file","host":"localhost","user":"root","password":"root","database":"test"}
+{"dbname":"webscantest","dbuser":"root","dbhost":"127.0.0.1","dbpass":"123123","data":"true","uname":"admin","password":"root","storageType":"file","host":"localhost","user":"root","database":"test","scope":null,"errorReport":false}

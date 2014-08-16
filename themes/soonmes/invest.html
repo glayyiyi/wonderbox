@@ -159,7 +159,8 @@ $this->magic_vars['_G']['epurl'] = url_format($this->magic_vars['_G']['nowurl'],
         </div> 
         <!-- end 搜索 -->
         <!-- 搜索列表 -->
-        {list module="borrow" function="GetList" var="loop" site_id="0" biaoType="request" keywords="request" q_apr="request" q_lmt="request" type="request"  use="request" account1="request" account2 = "request" q_l_account1="request" q_l_account2 = "request" limittime="request" award="request" province="request" city="request" page="request" epage="request" order="$magic.request.order"}
+        <!--
+        {list module="borrow" function="GetList" var="loop1" site_id="0" biaoType="request" keywords="request" q_apr="request" q_lmt="request" type="request"  use="request" account1="request" account2 = "request" q_l_account1="request" q_l_account2 = "request" limittime="request" award="request" province="request" city="request" page="request" epage="request" order="$magic.request.order"}
 		<div class="searchList">
 		{foreach from="$loop.list" item="var"}
         
@@ -178,7 +179,7 @@ $this->magic_vars['_G']['epurl'] = url_format($this->magic_vars['_G']['nowurl'],
                     <div class="num_pr fr">
                       <p>已有<em>{$var.tender_times}人</em>参与认购</p>
                       <p>还需￥{$var.other}满额</p>
-                      <!-- <p class="n"><em>12人</em></p> -->
+                   
                       
                       <p>剩余时间：<span id="endtime{$var.id}">{$var.lave_time} </span></p>
                     </div>
@@ -198,7 +199,7 @@ $this->magic_vars['_G']['epurl'] = url_format($this->magic_vars['_G']['nowurl'],
 						{if $var.award==1 || $var.award==2 }<a  rel="tooltip" title="投资该借款标除利息外有额外的奖励" href="#" ><img src="{$tpldir}/images/jiangli.gif"  border="0"  /></a>&nbsp;{/if}
 						{if $var.pwd != ""}<a rel="tooltip" title="定向标是投标的时候需要定向密码的借款标" href="#"><img src="{$tpldir}/images/lock.gif"  border="0"  /></a>&nbsp;{/if}
                         <p class="sort">类别：信托类</p>
-                        <!-- <p class="lBtn" style="padding-left:10px;"><a href="#" class="ico_sprite btnnew btn_view_01 hover">查 看</a></p> -->
+                        
                     </div>
                     <div class="dateInfo fl p_t_35">
                         <p>预期年化收益：{$var.apr}%</p>
@@ -221,12 +222,96 @@ $this->magic_vars['_G']['epurl'] = url_format($this->magic_vars['_G']['nowurl'],
             </ul>
             {/foreach}
         </div>
-        	<!--分页开始-->
+        	
 				<br/><div align="center" class="showpage">{$loop.showpage}</div>
-			<!--分页结束-->
+			
        {/list}
+       -->
         <!-- end 搜索列表 -->	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 		</div>
+		
+		 <!-- 其他抓取列表 
+        {list module="borrow" function="GetListOther" var="loop" site_id="0" biaoType="request" keywords="request" q_apr="request" q_lmt="request" type="request"  use="request" account1="request" account2 = "request" q_l_account1="request" q_l_account2 = "request" limittime="request" award="request" province="request" city="request" page="request" epage="request" order="$magic.request.order"}
+		<div class="searchList">
+		{foreach from="$loop.list" item="var"}
+        
+            <ul class="list">
+                <li class="clearfix">
+                   
+                    <b class="pic fl"><img src="{$var.user_id|avatar:middle}" style="height: 100px;width: 100px;" /></b>
+                    <span class="sear_btn fr">
+                      <a class="btn_blueBg03" href="/invest/a{$var.id}.html" style="*width:150px;">
+                        <span class="fl"></span>
+                            <span class="fr"></span>
+                            <label class="txt">查看详情</label>
+                      </a>
+                      
+                    </span>
+                    <div class="num_pr fr">
+                      <p>已有<em>{$var.tender_times}人</em>参与认购</p>
+                      <p>还需￥{$var.other}满额</p>
+                     
+                      
+                      <p>剩余：<span >{$var.progress} </span></p>
+                    </div>
+                    <div class="titItem fl">
+                        <a href="/invest/a{$var.id}.html"> <h3>{$var.name}</h3></a>
+                        {if $var.is_vouch==1}<a href="/question/a144.html" target="_blank"><img src="{$tpldir}/images/danbao.gif" border="0" alt= /></a>&nbsp;{/if}
+						{if $var.is_mb==1}<a href="/question/a145.html" target="_blank" rel="tooltip" title="秒标满额系统自动还款"
+><img src="{$tpldir}/images/miao.jpg"  border="0"   /></a>&nbsp;{/if}
+						{if $var.is_fast==1}<a href="/question/a146.html" target="_blank" rel="tooltip" title="抵押标是小微企业现场审核抵押借款标"><img src="{$tpldir}/images/fast.gif" border="0"  alt=  /></a>&nbsp;{/if}
+						{if $var.danbao==1} <img src="{$tpldir}/images/dan.gif" />{/if}
+						{if $var.is_kuai==1} <img src="{$tpldir}/images/kuai.gif" />{/if}
+						{if $var.is_lz==1} <img src="{$tpldir}/images/lz.gif" />{/if}
+						{if $var.is_jin==1}<a href="/question/a184.html" target="_blank" rel="tooltip" title="净值标是以用户在网站资产做担保的借款标"><img src="{$tpldir}/images/jin.gif"   border="0"  alt= /></a>&nbsp;{/if}
+						{if $var.biao_type=="xin"}<a href="/question/a143.html" target="_blank" rel="tooltip" title="信用标是以个人用户信用状况借款"><img src="{$tpldir}/images/xin.jpg"   border="0"  /></a>&nbsp;{/if}
+						{if $var.isday==1}<a href="#" target="_blank" rel="tooltip" title="天标是按天借款标"><img src="{$tpldir}/images/day.jpg"   border="0"  /></a>&nbsp;{/if}
+						{if $var.flag==1} <img src="{$tpldir}/images/tuijian.gif" align="absmiddle"  border="0"/>&nbsp;{/if}
+						{if $var.award==1 || $var.award==2 }<a  rel="tooltip" title="投资该借款标除利息外有额外的奖励" href="#" ><img src="{$tpldir}/images/jiangli.gif"  border="0"  /></a>&nbsp;{/if}
+						{if $var.pwd != ""}<a rel="tooltip" title="定向标是投标的时候需要定向密码的借款标" href="#"><img src="{$tpldir}/images/lock.gif"  border="0"  /></a>&nbsp;{/if}
+                        <p class="sort">类别：信托类</p>-->
+                        <!-- <p class="lBtn" style="padding-left:10px;"><a href="#" class="ico_sprite btnnew btn_view_01 hover">查 看</a></p> -->
+                    <!-- </div>
+                    <div class="dateInfo fl p_t_35">
+                        <p>预期年化收益：{$var.apr}%</p>
+                        <p>期限：{if $var.isday==1 } 
+					{$var.time_limit_day}天
+					{elseif $var.is_mb==1}
+					 额满即还
+					{else}
+					{$var.time_limit}个月 
+					{/if}</p>
+                        <p>投资门槛：￥{$var.lowest_account}元</p>
+                    </div>
+                   {article module="borrow" var="bor" function="GetInvest" id=$var.id}
+                    <div class="info p_t_35">
+                        <p>筹款用途：{$bor.borrow.use_name}</p>
+                    </div>
+                    {/article}
+                </li>
+
+            </ul>
+            {/foreach}
+        </div>
+				<br/><div align="center" class="showpage">{$loop.showpage}</div>
+			
+       {/list}-->
+        <!-- end 其他抓取列表 -->	
+		
+		
 	</div>
 
 	<!-- <ul id="tab" class="list-tab clearfix">
@@ -278,7 +363,7 @@ $this->magic_vars['_G']['epurl'] = url_format($this->magic_vars['_G']['nowurl'],
 	</div> -->
 	
 <!--所有标-->
-<!-- {list module="borrow" function="GetList" var="loop" site_id="0" biaoType="request" keywords="request" q_apr="request" q_lmt="request" type="request"  use="request" account1="request" account2 = "request" limittime="request" award="request" province="request" city="request" page="request" epage="request" order="$magic.request.order"}
+ {list module="borrow" function="GetList" var="loop" site_id="0" biaoType="request" keywords="request" q_apr="request" q_lmt="request" type="request"  use="request" account1="request" account2 = "request" limittime="request" award="request" province="request" city="request" page="request" epage="request" order="$magic.request.order"}
 		<div class="listmain">
 		{foreach from="$loop.list" item="var"}
 			<div class="list-div">
@@ -357,10 +442,10 @@ $this->magic_vars['_G']['epurl'] = url_format($this->magic_vars['_G']['nowurl'],
 		
 	{/foreach}
 		</div>
-	分页开始
+
 				<br/><div align="center" class="showpage">{$loop.showpage}</div>
-	分页结束
-	{/list} -->
+	
+	{/list} 
 </div>
 {/if}
 

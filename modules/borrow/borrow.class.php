@@ -373,6 +373,45 @@ class borrowClass extends amountClass{
             'total_page' => $total_page
         );
 	}
+	
+	/*
+	 * 抓取理财产品列表
+	*/
+	function GetListOther($data=array()){
+	
+		global $mysql,$_G;
+		$page = empty($data['page'])?1:intval($data['page']);
+		$epage = empty($data['epage'])?10:intval($data['epage']);
+		print_r($page);
+		$where = ' where 1=1';
+		if(isset($data['biaoType']) && $data['biaoType']!=''){
+			$where .= ' and p1.biao_type=\''.$data['biaoType'].'\'';
+		}
+
+		if(isset($data['status']) && $data['status']!=''){
+			$where .= ' and p1.status='.$data['status'];
+		}
+
+		$sql = 'select count(1) as count from {data_product} p1'.$where;
+		$re = $mysql->db_fetch_array($sql);
+		$total = $re['count'];
+		$total_page = ceil($total / $epage);
+		$index = $epage * ($page - 1);
+		$limit = " limit {$index}, {$epage}";
+		$sql = 'select p1.* from {data_product} p1 '.$where.$limit;
+		print_r($sql);
+		$list = $mysql->db_fetch_arrays($sql);
+
+		return array(
+				'list' => $list,
+				'total' => $total,
+				'page' => $page,
+				'epage' => $epage,
+				'total_page' => $total_page
+		);
+	}
+	
+	
 	/*
 	 * 后台借款列表
 	*/

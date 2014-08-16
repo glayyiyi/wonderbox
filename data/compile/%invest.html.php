@@ -60,8 +60,8 @@ if (count($_from)>0):
 					<img src="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/images/banner_03.jpg">
 				</p>
 				<!-- 浮动层 -->
-				<div class="pop_club">
-					<div class="hd"></div>
+				<!--<div class="pop_club">
+					 <div class="hd"></div>
 					<div class="bg">
 						<? if (!isset($this->magic_vars['_G']['system']['con_webname'])) $this->magic_vars['_G']['system']['con_webname'] = ''; echo $this->magic_vars['_G']['system']['con_webname']; ?>是由君和资本旗下发起和建立的非盈利性会员组织，邀请平台投资者为会员，是为投资者之间进行沟通而搭建的线下私密交际平台。</div>
 					<div class="ft">
@@ -71,63 +71,15 @@ if (count($_from)>0):
 				</div>
 				<div class="pop_link">
 					<a href="#">贵宾风采</a> | <a href="#">专属服务</a>
-				</div>
+				</div> -->
 				<!-- end 浮动层 -->
 			</div>
-			<div class="box-title">搜索条件</div>
+			<div class="box-title">产品列表</div>
 		<div class="box-con">
-			<!-- <ul class="select-A clearfix"> -->
-				<!-- <li>
-						<label class="tit">金额</label> <span class="c"> <input
-							type="text" name="account2" size="20"
-							value="<? if (!isset($_REQUEST['account2'])) $_REQUEST['account2'] = ''; echo $_REQUEST['account2']; ?>" />
-						</span>
-				</li> -->
-					
-				<!-- <li>
-						<label class="tit">年化收益率</label> <span class="c">  <select
-							name="q_apr" id="q_apr" >
-								<option value="">没有限制</option>
-								<option value="1" <? if (!isset($_REQUEST['q_apr'])) $_REQUEST['q_apr']=''; ;if (  $_REQUEST['q_apr']=='5'): ?>selected<? endif; ?> >12%以下</option>
-								<option value="2" <? if (!isset($_REQUEST['q_apr'])) $_REQUEST['q_apr']=''; ;if (  $_REQUEST['q_apr']=='6'): ?>selected<? endif; ?> >12%-16%</option>
-								<option value="3" <? if (!isset($_REQUEST['q_apr'])) $_REQUEST['q_apr']=''; ;if (  $_REQUEST['q_apr']=='7'): ?>selected<? endif; ?> >16%以上</option>
-						</select>
-						</span>
-				</li> -->
-					
-              <!--  <li>
-						<label class="tit">期限</label> <span class="c">   <select name='limittime' id='limittime' >  <option value=''>没有限制</option>  <option value='1' <?php if($_REQUEST['limittime']=='1') echo "selected='selected'" ?>>1个月</option>  <option value='2' <?php if($_REQUEST['limittime']=='2') echo "selected='selected'" ?>>2个月</option>  <option value='3' <?php if($_REQUEST['limittime']=='3') echo "selected='selected'" ?>>3个月</option>  <option value='4' <?php if($_REQUEST['limittime']=='4') echo "selected='selected'" ?>>4个月</option>  <option value='5' <?php if($_REQUEST['limittime']=='5') echo "selected='selected'" ?>>5个月</option>  <option value='6' <?php if($_REQUEST['limittime']=='6') echo "selected='selected'" ?>>6个月</option>  <option value='7' <?php if($_REQUEST['limittime']=='7') echo "selected='selected'" ?>>7个月</option>  <option value='8' <?php if($_REQUEST['limittime']=='8') echo "selected='selected'" ?>>8个月</option>  <option value='9' <?php if($_REQUEST['limittime']=='9') echo "selected='selected'" ?>>9个月</option>  <option value='10' <?php if($_REQUEST['limittime']=='10') echo "selected='selected'" ?>>10个月</option>  <option value='11' <?php if($_REQUEST['limittime']=='11') echo "selected='selected'" ?>>11个月</option>  <option value='12' <?php if($_REQUEST['limittime']=='12') echo "selected='selected'" ?>>12个月</option>  <option value='24' <?php if($_REQUEST['limittime']=='24') echo "selected='selected'" ?>>24个月</option> </select> </span>
-				</li> -->
 			
-			
-			
-			
-			
-				<!-- <li>借款目的：
-				  <select name='use' id='use' >  <option value=''>没有限制</option>  <option value='1' <?php if($_REQUEST['use']=='1') echo "selected='selected'" ?>>短期周转</option>  <option value='2' <?php if($_REQUEST['use']=='2') echo "selected='selected'" ?>>生意周转</option>  <option value='3' <?php if($_REQUEST['use']=='3') echo "selected='selected'" ?>>生活周转</option>  <option value='4' <?php if($_REQUEST['use']=='4') echo "selected='selected'" ?>>购物消费</option>  <option value='5' <?php if($_REQUEST['use']=='5') echo "selected='selected'" ?>>不提现借款</option>  <option value='6' <?php if($_REQUEST['use']=='6') echo "selected='selected'" ?>>其它借款</option>  <option value='7' <?php if($_REQUEST['use']=='7') echo "selected='selected'" ?>>创业借款</option>  <option value='0' <?php if($_REQUEST['use']=='0') echo "selected='selected'" ?>>投资便携式健康产业</option>  <option value='11' <?php if($_REQUEST['use']=='11') echo "selected='selected'" ?>>代买某大型集团内部信托</option>  <option value='12' <?php if($_REQUEST['use']=='12') echo "selected='selected'" ?>>代买某集团公司内部内部理财产品</option> </select>  
-				</li>
-				<li>期限：
-				  <select name='limittime' id='limittime' >  <option value=''>没有限制</option>  <option value='1' <?php if($_REQUEST['limittime']=='1') echo "selected='selected'" ?>>1个月</option>  <option value='2' <?php if($_REQUEST['limittime']=='2') echo "selected='selected'" ?>>2个月</option>  <option value='3' <?php if($_REQUEST['limittime']=='3') echo "selected='selected'" ?>>3个月</option>  <option value='4' <?php if($_REQUEST['limittime']=='4') echo "selected='selected'" ?>>4个月</option>  <option value='5' <?php if($_REQUEST['limittime']=='5') echo "selected='selected'" ?>>5个月</option>  <option value='6' <?php if($_REQUEST['limittime']=='6') echo "selected='selected'" ?>>6个月</option>  <option value='7' <?php if($_REQUEST['limittime']=='7') echo "selected='selected'" ?>>7个月</option>  <option value='8' <?php if($_REQUEST['limittime']=='8') echo "selected='selected'" ?>>8个月</option>  <option value='9' <?php if($_REQUEST['limittime']=='9') echo "selected='selected'" ?>>9个月</option>  <option value='10' <?php if($_REQUEST['limittime']=='10') echo "selected='selected'" ?>>10个月</option>  <option value='11' <?php if($_REQUEST['limittime']=='11') echo "selected='selected'" ?>>11个月</option>  <option value='12' <?php if($_REQUEST['limittime']=='12') echo "selected='selected'" ?>>12个月</option>  <option value='24' <?php if($_REQUEST['limittime']=='24') echo "selected='selected'" ?>>24个月</option> </select>  
-				</li>
-				<li>标种：
-				<select name="biaoType" id="biaoType">
-					<option value=""> 所有</option>
-					<option value="fast" <? if (!isset($_REQUEST['biaoType'])) $_REQUEST['biaoType']=''; ;if (  $_REQUEST['biaoType']=='fast'): ?>selected<? endif; ?> >抵押标</option>
-					<option value="jin" <? if (!isset($_REQUEST['biaoType'])) $_REQUEST['biaoType']=''; ;if (  $_REQUEST['biaoType']=='jin'): ?>selected<? endif; ?> >净值标</option>
-					<option value="miao" <? if (!isset($_REQUEST['biaoType'])) $_REQUEST['biaoType']=''; ;if (  $_REQUEST['biaoType']=='miao'): ?>selected<? endif; ?> >秒还标</option>
-					<option value="xin" <? if (!isset($_REQUEST['biaoType'])) $_REQUEST['biaoType']=''; ;if (  $_REQUEST['biaoType']=='xin'): ?>selected<? endif; ?> >信用标</option>
-					<option value="lz" <? if (!isset($_REQUEST['biaoType'])) $_REQUEST['biaoType']=''; ;if (  $_REQUEST['biaoType']=='lz'): ?>selected<? endif; ?> >流转标</option>
-				</select>
-				</li>
-				<li>关键字：<input type="text" name="keywords" size="20" value="<? if (!isset($_REQUEST['keywords'])) $_REQUEST['keywords'] = '';$_tmp = $_REQUEST['keywords'];$_tmp = $this->magic_modifier("urldecode",$_tmp,"");echo $_tmp;unset($_tmp); ?>" /></li> -->
-				<!-- <li><input type="submit" class="btn-action" id="search_btn" value="搜索" /> </li>
-			   <li><input type="hidden" name="type" value="<? if (!isset($_REQUEST['type'])) $_REQUEST['type'] = ''; echo $_REQUEST['type']; ?>" /></li> -->
-			<!-- </ul> -->
-		
-		    <!-- 搜索 -->
 		
         <div class="searchBar">
-        <form action="" method="get">
+      <!--   <form action="" method="get">
 					<div class="hd clearfix">
 						<div class="fl conditions">
 							<label class="th">投资金额</label> <span class="td"><input
@@ -157,11 +109,11 @@ if (count($_from)>0):
 								class="ico_sprite btnnew btn_view_02 f_14" id="search_btn"
 								value="重新搜索" /></li>
 							<li><input type="hidden" name="type"
-								value="<? if (!isset($_REQUEST['type'])) $_REQUEST['type'] = ''; echo $_REQUEST['type']; ?>" /></li> <!-- <a href="#" class="ico_sprite btnnew btn_view_02 f_14">重新搜索</a> -->
+								value="<? if (!isset($_REQUEST['type'])) $_REQUEST['type'] = ''; echo $_REQUEST['type']; ?>" /></li> <a href="#" class="ico_sprite btnnew btn_view_02 f_14">重新搜索</a>
 						</span>
 					</div>
-					</form>
-			<div class="bg select_brand">
+					</form> -->
+<!-- 			<div class="bg select_brand">
               <p class="m_b_10">请根据您的条件做筛选</p>
               
               <dl>
@@ -207,11 +159,12 @@ if (count($_from)>0):
                   <div><a href="<? if (!isset($this->magic_vars['_G']['uurl'])) $this->magic_vars['_G']['uurl'] = ''; echo $this->magic_vars['_G']['uurl']; ?>&f_type=&q_l_account1=1000000&q_l_account2=&q_apr=<? if (!isset($_REQUEST['q_apr'])) $_REQUEST['q_apr'] = ''; echo $_REQUEST['q_apr']; ?>&q_lmt=<? if (!isset($_REQUEST['q_lmt'])) $_REQUEST['q_lmt'] = ''; echo $_REQUEST['q_lmt']; ?>" <? if (!isset($_REQUEST['q_l_account1'])) $_REQUEST['q_l_account1']='';if (!isset($_REQUEST['q_l_account2'])) $_REQUEST['q_l_account2']=''; ;if (  $_REQUEST['q_l_account1']=='1000000' &&  $_REQUEST['q_l_account2']==''): ?>class="curr"<? endif; ?>>100w以上</a></div>
                 </dd>
               </dl>
-          </div>
-        </div>
+          </div>-->
+        </div> 
         <!-- end 搜索 -->
         <!-- 搜索列表 -->
-        <? $this->magic_vars['query_type']='GetList';$data = array('var'=>'loop','biaoType'=>isset($_REQUEST['biaoType'])?$_REQUEST['biaoType']:'','keywords'=>isset($_REQUEST['keywords'])?$_REQUEST['keywords']:'','q_apr'=>isset($_REQUEST['q_apr'])?$_REQUEST['q_apr']:'','q_lmt'=>isset($_REQUEST['q_lmt'])?$_REQUEST['q_lmt']:'','type'=>isset($_REQUEST['type'])?$_REQUEST['type']:'','use'=>isset($_REQUEST['use'])?$_REQUEST['use']:'','account1'=>isset($_REQUEST['account1'])?$_REQUEST['account1']:'','account2'=>isset($_REQUEST['account2'])?$_REQUEST['account2']:'','q_l_account1'=>isset($_REQUEST['q_l_account1'])?$_REQUEST['q_l_account1']:'','q_l_account2'=>isset($_REQUEST['q_l_account2'])?$_REQUEST['q_l_account2']:'','limittime'=>isset($_REQUEST['limittime'])?$_REQUEST['limittime']:'','award'=>isset($_REQUEST['award'])?$_REQUEST['award']:'','province'=>isset($_REQUEST['province'])?$_REQUEST['province']:'','city'=>isset($_REQUEST['city'])?$_REQUEST['city']:'','page'=>isset($_REQUEST['page'])?$_REQUEST['page']:'','epage'=>isset($_REQUEST['epage'])?$_REQUEST['epage']:'','order'=>$_REQUEST['order'],'site_id'=>$this->magic_vars['_G']['site_result']['site_id']);$data['page'] = isset($_REQUEST['page'])?$_REQUEST['page']:'';  include_once(ROOT_PATH.'modules/borrow/borrow.class.php');$this->magic_vars['magic_result'] = borrowClass::GetList($data); $this->magic_vars['loop']['list'] =  $this->magic_vars['magic_result']['list']; $this->magic_vars['loop']['page'] =  $this->magic_vars['magic_result']['page']; $this->magic_vars['loop']['epage'] =  $this->magic_vars['magic_result']['epage']; $this->magic_vars['loop']['total'] =  $this->magic_vars['magic_result']['total']; $this->magic_vars['loop']['showpage'] =  show_pages($this->magic_vars['magic_result']);?>
+        <!--
+        <? $this->magic_vars['query_type']='GetList';$data = array('var'=>'loop1','biaoType'=>isset($_REQUEST['biaoType'])?$_REQUEST['biaoType']:'','keywords'=>isset($_REQUEST['keywords'])?$_REQUEST['keywords']:'','q_apr'=>isset($_REQUEST['q_apr'])?$_REQUEST['q_apr']:'','q_lmt'=>isset($_REQUEST['q_lmt'])?$_REQUEST['q_lmt']:'','type'=>isset($_REQUEST['type'])?$_REQUEST['type']:'','use'=>isset($_REQUEST['use'])?$_REQUEST['use']:'','account1'=>isset($_REQUEST['account1'])?$_REQUEST['account1']:'','account2'=>isset($_REQUEST['account2'])?$_REQUEST['account2']:'','q_l_account1'=>isset($_REQUEST['q_l_account1'])?$_REQUEST['q_l_account1']:'','q_l_account2'=>isset($_REQUEST['q_l_account2'])?$_REQUEST['q_l_account2']:'','limittime'=>isset($_REQUEST['limittime'])?$_REQUEST['limittime']:'','award'=>isset($_REQUEST['award'])?$_REQUEST['award']:'','province'=>isset($_REQUEST['province'])?$_REQUEST['province']:'','city'=>isset($_REQUEST['city'])?$_REQUEST['city']:'','page'=>isset($_REQUEST['page'])?$_REQUEST['page']:'','epage'=>isset($_REQUEST['epage'])?$_REQUEST['epage']:'','order'=>$_REQUEST['order'],'site_id'=>$this->magic_vars['_G']['site_result']['site_id']);$data['page'] = isset($_REQUEST['page'])?$_REQUEST['page']:'';  include_once(ROOT_PATH.'modules/borrow/borrow.class.php');$this->magic_vars['magic_result'] = borrowClass::GetList($data); $this->magic_vars['loop1']['list'] =  $this->magic_vars['magic_result']['list']; $this->magic_vars['loop1']['page'] =  $this->magic_vars['magic_result']['page']; $this->magic_vars['loop1']['epage'] =  $this->magic_vars['magic_result']['epage']; $this->magic_vars['loop1']['total'] =  $this->magic_vars['magic_result']['total']; $this->magic_vars['loop1']['showpage'] =  show_pages($this->magic_vars['magic_result']);?>
 		<div class="searchList">
 		<?  if(!isset($this->magic_vars['loop']['list']) || $this->magic_vars['loop']['list']=='') $this->magic_vars['loop']['list'] = array();  $_from = $this->magic_vars['loop']['list']; 
  if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); } 
@@ -234,7 +187,7 @@ if (count($_from)>0):
                     <div class="num_pr fr">
                       <p>已有<em><? if (!isset($this->magic_vars['var']['tender_times'])) $this->magic_vars['var']['tender_times'] = ''; echo $this->magic_vars['var']['tender_times']; ?>人</em>参与认购</p>
                       <p>还需￥<? if (!isset($this->magic_vars['var']['other'])) $this->magic_vars['var']['other'] = ''; echo $this->magic_vars['var']['other']; ?>满额</p>
-                      <!-- <p class="n"><em>12人</em></p> -->
+                   
                       
                       <p>剩余时间：<span id="endtime<? if (!isset($this->magic_vars['var']['id'])) $this->magic_vars['var']['id'] = ''; echo $this->magic_vars['var']['id']; ?>"><? if (!isset($this->magic_vars['var']['lave_time'])) $this->magic_vars['var']['lave_time'] = ''; echo $this->magic_vars['var']['lave_time']; ?> </span></p>
                     </div>
@@ -254,7 +207,7 @@ if (count($_from)>0):
 						<? if (!isset($this->magic_vars['var']['award'])) $this->magic_vars['var']['award']='';if (!isset($this->magic_vars['var']['award'])) $this->magic_vars['var']['award']=''; ;if (  $this->magic_vars['var']['award']==1 ||  $this->magic_vars['var']['award']==2): ?><a  rel="tooltip" title="投资该借款标除利息外有额外的奖励" href="#" ><img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/jiangli.gif"  border="0"  /></a>&nbsp;<? endif; ?>
 						<? if (!isset($this->magic_vars['var']['pwd'])) $this->magic_vars['var']['pwd']=''; ;if (  $this->magic_vars['var']['pwd'] != ""): ?><a rel="tooltip" title="定向标是投标的时候需要定向密码的借款标" href="#"><img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/lock.gif"  border="0"  /></a>&nbsp;<? endif; ?>
                         <p class="sort">类别：信托类</p>
-                        <!-- <p class="lBtn" style="padding-left:10px;"><a href="#" class="ico_sprite btnnew btn_view_01 hover">查 看</a></p> -->
+                        
                     </div>
                     <div class="dateInfo fl p_t_35">
                         <p>预期年化收益：<? if (!isset($this->magic_vars['var']['apr'])) $this->magic_vars['var']['apr'] = ''; echo $this->magic_vars['var']['apr']; ?>%</p>
@@ -277,12 +230,100 @@ if (count($_from)>0):
             </ul>
             <? endforeach; endif; unset($_from); ?>
         </div>
-        	<!--分页开始-->
+        	
 				<br/><div align="center" class="showpage"><? if (!isset($this->magic_vars['loop']['showpage'])) $this->magic_vars['loop']['showpage'] = ''; echo $this->magic_vars['loop']['showpage']; ?></div>
-			<!--分页结束-->
+			
        <? unset($_magic_vars); ?>
+       -->
         <!-- end 搜索列表 -->	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 		</div>
+		
+		 <!-- 其他抓取列表 
+        <? $this->magic_vars['query_type']='GetListOther';$data = array('var'=>'loop','biaoType'=>isset($_REQUEST['biaoType'])?$_REQUEST['biaoType']:'','keywords'=>isset($_REQUEST['keywords'])?$_REQUEST['keywords']:'','q_apr'=>isset($_REQUEST['q_apr'])?$_REQUEST['q_apr']:'','q_lmt'=>isset($_REQUEST['q_lmt'])?$_REQUEST['q_lmt']:'','type'=>isset($_REQUEST['type'])?$_REQUEST['type']:'','use'=>isset($_REQUEST['use'])?$_REQUEST['use']:'','account1'=>isset($_REQUEST['account1'])?$_REQUEST['account1']:'','account2'=>isset($_REQUEST['account2'])?$_REQUEST['account2']:'','q_l_account1'=>isset($_REQUEST['q_l_account1'])?$_REQUEST['q_l_account1']:'','q_l_account2'=>isset($_REQUEST['q_l_account2'])?$_REQUEST['q_l_account2']:'','limittime'=>isset($_REQUEST['limittime'])?$_REQUEST['limittime']:'','award'=>isset($_REQUEST['award'])?$_REQUEST['award']:'','province'=>isset($_REQUEST['province'])?$_REQUEST['province']:'','city'=>isset($_REQUEST['city'])?$_REQUEST['city']:'','page'=>isset($_REQUEST['page'])?$_REQUEST['page']:'','epage'=>isset($_REQUEST['epage'])?$_REQUEST['epage']:'','order'=>$_REQUEST['order'],'site_id'=>$this->magic_vars['_G']['site_result']['site_id']);$data['page'] = isset($_REQUEST['page'])?$_REQUEST['page']:'';  include_once(ROOT_PATH.'modules/borrow/borrow.class.php');$this->magic_vars['magic_result'] = borrowClass::GetListOther($data); $this->magic_vars['loop']['list'] =  $this->magic_vars['magic_result']['list']; $this->magic_vars['loop']['page'] =  $this->magic_vars['magic_result']['page']; $this->magic_vars['loop']['epage'] =  $this->magic_vars['magic_result']['epage']; $this->magic_vars['loop']['total'] =  $this->magic_vars['magic_result']['total']; $this->magic_vars['loop']['showpage'] =  show_pages($this->magic_vars['magic_result']);?>
+		<div class="searchList">
+		<?  if(!isset($this->magic_vars['loop']['list']) || $this->magic_vars['loop']['list']=='') $this->magic_vars['loop']['list'] = array();  $_from = $this->magic_vars['loop']['list']; 
+ if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); } 
+if (count($_from)>0):
+;    foreach ($_from as $this->magic_vars['key'] =>  $this->magic_vars['var']):
+?>
+        
+            <ul class="list">
+                <li class="clearfix">
+                   
+                    <b class="pic fl"><img src="<? if (!isset($this->magic_vars['var']['user_id'])) $this->magic_vars['var']['user_id'] = '';$_tmp = $this->magic_vars['var']['user_id'];$_tmp = $this->magic_modifier("avatar",$_tmp,"middle");echo $_tmp;unset($_tmp); ?>" style="height: 100px;width: 100px;" /></b>
+                    <span class="sear_btn fr">
+                      <a class="btn_blueBg03" href="/invest/a<? if (!isset($this->magic_vars['var']['id'])) $this->magic_vars['var']['id'] = ''; echo $this->magic_vars['var']['id']; ?>.html" style="*width:150px;">
+                        <span class="fl"></span>
+                            <span class="fr"></span>
+                            <label class="txt">查看详情</label>
+                      </a>
+                      
+                    </span>
+                    <div class="num_pr fr">
+                      <p>已有<em><? if (!isset($this->magic_vars['var']['tender_times'])) $this->magic_vars['var']['tender_times'] = ''; echo $this->magic_vars['var']['tender_times']; ?>人</em>参与认购</p>
+                      <p>还需￥<? if (!isset($this->magic_vars['var']['other'])) $this->magic_vars['var']['other'] = ''; echo $this->magic_vars['var']['other']; ?>满额</p>
+                     
+                      
+                      <p>剩余：<span ><? if (!isset($this->magic_vars['var']['progress'])) $this->magic_vars['var']['progress'] = ''; echo $this->magic_vars['var']['progress']; ?> </span></p>
+                    </div>
+                    <div class="titItem fl">
+                        <a href="/invest/a<? if (!isset($this->magic_vars['var']['id'])) $this->magic_vars['var']['id'] = ''; echo $this->magic_vars['var']['id']; ?>.html"> <h3><? if (!isset($this->magic_vars['var']['name'])) $this->magic_vars['var']['name'] = ''; echo $this->magic_vars['var']['name']; ?></h3></a>
+                        <? if (!isset($this->magic_vars['var']['is_vouch'])) $this->magic_vars['var']['is_vouch']=''; ;if (  $this->magic_vars['var']['is_vouch']==1): ?><a href="/question/a144.html" target="_blank"><img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/danbao.gif" border="0" alt= /></a>&nbsp;<? endif; ?>
+						<? if (!isset($this->magic_vars['var']['is_mb'])) $this->magic_vars['var']['is_mb']=''; ;if (  $this->magic_vars['var']['is_mb']==1): ?><a href="/question/a145.html" target="_blank" rel="tooltip" title="秒标满额系统自动还款"
+><img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/miao.jpg"  border="0"   /></a>&nbsp;<? endif; ?>
+						<? if (!isset($this->magic_vars['var']['is_fast'])) $this->magic_vars['var']['is_fast']=''; ;if (  $this->magic_vars['var']['is_fast']==1): ?><a href="/question/a146.html" target="_blank" rel="tooltip" title="抵押标是小微企业现场审核抵押借款标"><img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/fast.gif" border="0"  alt=  /></a>&nbsp;<? endif; ?>
+						<? if (!isset($this->magic_vars['var']['danbao'])) $this->magic_vars['var']['danbao']=''; ;if (  $this->magic_vars['var']['danbao']==1): ?> <img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/dan.gif" /><? endif; ?>
+						<? if (!isset($this->magic_vars['var']['is_kuai'])) $this->magic_vars['var']['is_kuai']=''; ;if (  $this->magic_vars['var']['is_kuai']==1): ?> <img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/kuai.gif" /><? endif; ?>
+						<? if (!isset($this->magic_vars['var']['is_lz'])) $this->magic_vars['var']['is_lz']=''; ;if (  $this->magic_vars['var']['is_lz']==1): ?> <img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/lz.gif" /><? endif; ?>
+						<? if (!isset($this->magic_vars['var']['is_jin'])) $this->magic_vars['var']['is_jin']=''; ;if (  $this->magic_vars['var']['is_jin']==1): ?><a href="/question/a184.html" target="_blank" rel="tooltip" title="净值标是以用户在网站资产做担保的借款标"><img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/jin.gif"   border="0"  alt= /></a>&nbsp;<? endif; ?>
+						<? if (!isset($this->magic_vars['var']['biao_type'])) $this->magic_vars['var']['biao_type']=''; ;if (  $this->magic_vars['var']['biao_type']=="xin"): ?><a href="/question/a143.html" target="_blank" rel="tooltip" title="信用标是以个人用户信用状况借款"><img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/xin.jpg"   border="0"  /></a>&nbsp;<? endif; ?>
+						<? if (!isset($this->magic_vars['var']['isday'])) $this->magic_vars['var']['isday']=''; ;if (  $this->magic_vars['var']['isday']==1): ?><a href="#" target="_blank" rel="tooltip" title="天标是按天借款标"><img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/day.jpg"   border="0"  /></a>&nbsp;<? endif; ?>
+						<? if (!isset($this->magic_vars['var']['flag'])) $this->magic_vars['var']['flag']=''; ;if (  $this->magic_vars['var']['flag']==1): ?> <img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/tuijian.gif" align="absmiddle"  border="0"/>&nbsp;<? endif; ?>
+						<? if (!isset($this->magic_vars['var']['award'])) $this->magic_vars['var']['award']='';if (!isset($this->magic_vars['var']['award'])) $this->magic_vars['var']['award']=''; ;if (  $this->magic_vars['var']['award']==1 ||  $this->magic_vars['var']['award']==2): ?><a  rel="tooltip" title="投资该借款标除利息外有额外的奖励" href="#" ><img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/jiangli.gif"  border="0"  /></a>&nbsp;<? endif; ?>
+						<? if (!isset($this->magic_vars['var']['pwd'])) $this->magic_vars['var']['pwd']=''; ;if (  $this->magic_vars['var']['pwd'] != ""): ?><a rel="tooltip" title="定向标是投标的时候需要定向密码的借款标" href="#"><img src="<? if (!isset($this->magic_vars['tpldir'])) $this->magic_vars['tpldir'] = ''; echo $this->magic_vars['tpldir']; ?>/images/lock.gif"  border="0"  /></a>&nbsp;<? endif; ?>
+                        <p class="sort">类别：信托类</p>-->
+                        <!-- <p class="lBtn" style="padding-left:10px;"><a href="#" class="ico_sprite btnnew btn_view_01 hover">查 看</a></p> -->
+                    <!-- </div>
+                    <div class="dateInfo fl p_t_35">
+                        <p>预期年化收益：<? if (!isset($this->magic_vars['var']['apr'])) $this->magic_vars['var']['apr'] = ''; echo $this->magic_vars['var']['apr']; ?>%</p>
+                        <p>期限：<? if (!isset($this->magic_vars['var']['isday'])) $this->magic_vars['var']['isday']=''; ;if (  $this->magic_vars['var']['isday']==1): ?> 
+					<? if (!isset($this->magic_vars['var']['time_limit_day'])) $this->magic_vars['var']['time_limit_day'] = ''; echo $this->magic_vars['var']['time_limit_day']; ?>天
+					<? if (!isset($this->magic_vars['var']['is_mb'])) $this->magic_vars['var']['is_mb']=''; ;elseif (  $this->magic_vars['var']['is_mb']==1): ?>
+					 额满即还
+					<? else: ?>
+					<? if (!isset($this->magic_vars['var']['time_limit'])) $this->magic_vars['var']['time_limit'] = ''; echo $this->magic_vars['var']['time_limit']; ?>个月 
+					<? endif; ?></p>
+                        <p>投资门槛：￥<? if (!isset($this->magic_vars['var']['lowest_account'])) $this->magic_vars['var']['lowest_account'] = ''; echo $this->magic_vars['var']['lowest_account']; ?>元</p>
+                    </div>
+                   <? $data = array('var'=>'bor','id'=>$this->magic_vars['var']['id']);  include_once(ROOT_PATH.'modules/borrow/borrow.class.php');$this->magic_vars['bor'] = borrowClass::GetInvest($data);if(!is_array($this->magic_vars['bor'])){ $this->magic_vars['bor']=array();}?>
+                    <div class="info p_t_35">
+                        <p>筹款用途：<? if (!isset($this->magic_vars['bor']['borrow']['use_name'])) $this->magic_vars['bor']['borrow']['use_name'] = ''; echo $this->magic_vars['bor']['borrow']['use_name']; ?></p>
+                    </div>
+                    <? unset($_magic_vars);unset($data); ?>
+                </li>
+
+            </ul>
+            <? endforeach; endif; unset($_from); ?>
+        </div>
+				<br/><div align="center" class="showpage"><? if (!isset($this->magic_vars['loop']['showpage'])) $this->magic_vars['loop']['showpage'] = ''; echo $this->magic_vars['loop']['showpage']; ?></div>
+			
+       <? unset($_magic_vars); ?>-->
+        <!-- end 其他抓取列表 -->	
+		
+		
 	</div>
 
 	<!-- <ul id="tab" class="list-tab clearfix">
@@ -334,7 +375,7 @@ if (count($_from)>0):
 	</div> -->
 	
 <!--所有标-->
-<!-- <? $this->magic_vars['query_type']='GetList';$data = array('var'=>'loop','biaoType'=>isset($_REQUEST['biaoType'])?$_REQUEST['biaoType']:'','keywords'=>isset($_REQUEST['keywords'])?$_REQUEST['keywords']:'','q_apr'=>isset($_REQUEST['q_apr'])?$_REQUEST['q_apr']:'','q_lmt'=>isset($_REQUEST['q_lmt'])?$_REQUEST['q_lmt']:'','type'=>isset($_REQUEST['type'])?$_REQUEST['type']:'','use'=>isset($_REQUEST['use'])?$_REQUEST['use']:'','account1'=>isset($_REQUEST['account1'])?$_REQUEST['account1']:'','account2'=>isset($_REQUEST['account2'])?$_REQUEST['account2']:'','limittime'=>isset($_REQUEST['limittime'])?$_REQUEST['limittime']:'','award'=>isset($_REQUEST['award'])?$_REQUEST['award']:'','province'=>isset($_REQUEST['province'])?$_REQUEST['province']:'','city'=>isset($_REQUEST['city'])?$_REQUEST['city']:'','page'=>isset($_REQUEST['page'])?$_REQUEST['page']:'','epage'=>isset($_REQUEST['epage'])?$_REQUEST['epage']:'','order'=>$_REQUEST['order'],'site_id'=>$this->magic_vars['_G']['site_result']['site_id']);$data['page'] = isset($_REQUEST['page'])?$_REQUEST['page']:'';  include_once(ROOT_PATH.'modules/borrow/borrow.class.php');$this->magic_vars['magic_result'] = borrowClass::GetList($data); $this->magic_vars['loop']['list'] =  $this->magic_vars['magic_result']['list']; $this->magic_vars['loop']['page'] =  $this->magic_vars['magic_result']['page']; $this->magic_vars['loop']['epage'] =  $this->magic_vars['magic_result']['epage']; $this->magic_vars['loop']['total'] =  $this->magic_vars['magic_result']['total']; $this->magic_vars['loop']['showpage'] =  show_pages($this->magic_vars['magic_result']);?>
+ <? $this->magic_vars['query_type']='GetList';$data = array('var'=>'loop','biaoType'=>isset($_REQUEST['biaoType'])?$_REQUEST['biaoType']:'','keywords'=>isset($_REQUEST['keywords'])?$_REQUEST['keywords']:'','q_apr'=>isset($_REQUEST['q_apr'])?$_REQUEST['q_apr']:'','q_lmt'=>isset($_REQUEST['q_lmt'])?$_REQUEST['q_lmt']:'','type'=>isset($_REQUEST['type'])?$_REQUEST['type']:'','use'=>isset($_REQUEST['use'])?$_REQUEST['use']:'','account1'=>isset($_REQUEST['account1'])?$_REQUEST['account1']:'','account2'=>isset($_REQUEST['account2'])?$_REQUEST['account2']:'','limittime'=>isset($_REQUEST['limittime'])?$_REQUEST['limittime']:'','award'=>isset($_REQUEST['award'])?$_REQUEST['award']:'','province'=>isset($_REQUEST['province'])?$_REQUEST['province']:'','city'=>isset($_REQUEST['city'])?$_REQUEST['city']:'','page'=>isset($_REQUEST['page'])?$_REQUEST['page']:'','epage'=>isset($_REQUEST['epage'])?$_REQUEST['epage']:'','order'=>$_REQUEST['order'],'site_id'=>$this->magic_vars['_G']['site_result']['site_id']);$data['page'] = isset($_REQUEST['page'])?$_REQUEST['page']:'';  include_once(ROOT_PATH.'modules/borrow/borrow.class.php');$this->magic_vars['magic_result'] = borrowClass::GetList($data); $this->magic_vars['loop']['list'] =  $this->magic_vars['magic_result']['list']; $this->magic_vars['loop']['page'] =  $this->magic_vars['magic_result']['page']; $this->magic_vars['loop']['epage'] =  $this->magic_vars['magic_result']['epage']; $this->magic_vars['loop']['total'] =  $this->magic_vars['magic_result']['total']; $this->magic_vars['loop']['showpage'] =  show_pages($this->magic_vars['magic_result']);?>
 		<div class="listmain">
 		<?  if(!isset($this->magic_vars['loop']['list']) || $this->magic_vars['loop']['list']=='') $this->magic_vars['loop']['list'] = array();  $_from = $this->magic_vars['loop']['list']; 
  if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); } 
@@ -417,10 +458,10 @@ if (count($_from)>0):
 		
 	<? endforeach; endif; unset($_from); ?>
 		</div>
-	分页开始
+
 				<br/><div align="center" class="showpage"><? if (!isset($this->magic_vars['loop']['showpage'])) $this->magic_vars['loop']['showpage'] = ''; echo $this->magic_vars['loop']['showpage']; ?></div>
-	分页结束
-	<? unset($_magic_vars); ?> -->
+	
+	<? unset($_magic_vars); ?> 
 </div>
 <? endif; ?>
 

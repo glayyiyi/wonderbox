@@ -33,7 +33,7 @@
 		 	<li><a href="/index.php?user&q=code/borrow/bid">投资中的项目</a></li> 
 			<li><a href="/index.php?user&q=code/borrow/succes&type=wait">正在赎回的项目</a></li>
 			<li><a href="/index.php?user&q=code/borrow/succes&type=yes">已赎回的项目</a></li> 
-			<li><a href="/index.php?user&q=code/borrow/auto">投资助手</a></li>
+			<!-- <li><a href="/index.php?user&q=code/borrow/auto">投资助手</a></li> -->
 			<li><a href="/index.php?user&q=code/account">投资统计</a></li>
 		</ul>
 	</div>
@@ -47,7 +47,7 @@
 			<li><a href="/index.php?user&q=code/user/avatar">更换头像</a></li>
 			<li><a href="/index.php?user&q=code/user/userpwd">修改密码</a></li>                    
 			<li><a href="/index.php?user&q=code/user/phone_status">信息认证和绑定</a></li>
-			<li><a href="#">隐私及通知设置</a></li>
+			<!-- <li><a href="#">隐私及通知设置</a></li> -->
 			<li><a href="/index.php?user&q=code/user/reginvite">邀请好友</a></li>
 		</ul>
 	</div>
