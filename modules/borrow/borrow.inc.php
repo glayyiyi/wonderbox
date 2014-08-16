@@ -198,8 +198,8 @@ elseif ($_U['query_type'] == "tender"){
 		$borrow_result = borrowClass::GetOne(array("id"=>$_POST['id'],"tender_userid"=>$_G['user_id']));//获取借款标的单独信息
 		$is_lz=$borrow_result['is_lz'];
 		if($is_lz==1){
-			$account_money = (int)$_POST['flow_count']*10000;
-			$postmoney = (int)$_POST['flow_count']*10000;
+			$account_money = (int)$_POST['flow_count']*1;//By Glay 以前是10000
+			$postmoney = (int)$_POST['flow_count']*1;//By Glay 以前是10000
 		}else{
 			$account_money = $_POST['money'];
 			$postmoney = $_POST['money'];
