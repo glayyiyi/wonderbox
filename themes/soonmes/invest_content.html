@@ -348,9 +348,9 @@
 					<li>您的可用余额： {$var.user_account.use_money|default:0} 元 <a href="/index.php?user&q=code/account/recharge_new">我要充值</a></li>
 					<li>最多投标总额：{if $var.borrow.most_account<=0}不限制{else}{$var.borrow.most_account}元{/if}</li>
 				{if $var.borrow.is_lz==1}
-					<li>最小流转单位：10000 元
-					<li>已认购:{$var.borrow.account_yes/10000} 份&nbsp;&nbsp;
-					还剩:<b class="max">{$var.borrow.other/10000}</b>份</li>
+					<li>最小流转单位：1 元
+					<li>已认购:{$var.borrow.account_yes/1} 份&nbsp;&nbsp;
+					还剩:<b class="max">{$var.borrow.other/1}</b>份</li>
 					<li id="flow_num">购买份数：
 						<input class="less" value="-" type="button" onclick="less()">
 						<input type="text"  class="nums" id="flow_count" name="flow_count" value="1" size="5">
