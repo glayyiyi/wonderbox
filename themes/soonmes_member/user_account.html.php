@@ -213,7 +213,12 @@
 			<div class="l" style="font-weight:bold;">充值方式：</div>
 			<div class="c">
 			<table>
-				<tr><td><input type="radio" name="type" id="type_1" class="input_border" onclick="change_type(1)" value="1"  checked="checked" /></td><td><label for="type_1">网上充值</label></td><td><input type="radio" name="type" id="type_2" class="input_border"  value="2"  onclick="change_type(2)" /></td><td><label for="type_2">线下充值</label></td></tr>
+				<tr>
+				<td><input type="radio" name="type" id="type_1" class="input_border" onclick="change_type(1)" value="1"  checked="checked" /></td>
+				<td><label for="type_1">网上充值</label></td>
+			<!-- 	<td><input type="radio" name="type" id="type_2" class="input_border"  value="2"  onclick="change_type(2)" /></td>
+				<td><label for="type_2">线下充值</label></td> -->
+				</tr>
 			</table>
 			</div>
 		</div>
