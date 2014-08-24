@@ -213,10 +213,7 @@
 			<div class="l" style="font-weight:bold;">充值方式：</div>
 			<div class="c">
 			<table>
-				<tr><td><input type="radio" name="type" id="type_1" class="input_border" onclick="change_type(1)" value="1"  checked="checked" /></td><td><label for="type_1">网上充值</label></td>
-				<!-- <td><input type="radio" name="type" id="type_2" class="input_border"  value="2"  onclick="change_type(2)" /></td>
-				<td><label for="type_2">线下充值</label></td> -->
-				</tr>
+				<tr><td><input type="radio" name="type" id="type_1" class="input_border" onclick="change_type(1)" value="1"  checked="checked" /></td><td><label for="type_1">网上充值</label></td><td><input type="radio" name="type" id="type_2" class="input_border"  value="2"  onclick="change_type(2)" /></td><td><label for="type_2">线下充值</label></td></tr>
 			</table>
 			</div>
 		</div>
@@ -252,48 +249,48 @@
 <div id="ban">
 <table width="100%" cellpadding="3" cellspacing="3">
 <tr>
-<td width="160"><input type="radio" name="payment1" value="1025_cbp"/>
+<td width="160"><input type="radio" name="payment1" value="ICBC_g"/>
 <img src="../data/bank/ICBC_OUT.gif" border="0"/></td>
 <td width="160">
-<input type="radio" name="payment1" value="104_cbp">
+<input type="radio" name="payment1" value="BOC_g">
 <img src="../data/bank/BOC_OUT.gif" border="0"/>
 </td>
 <td  width="160">
-<input type="radio" name="payment1" value="105_cbp"/>
+<input type="radio" name="payment1" value="CCB_g"/>
 <img src="../data/bank/CCB_OUT.gif" border="0"/></td>
 </tr>
 <tr>
-<td><input type="radio" name="payment1" value="103_cbp"/>
+<td><input type="radio" name="payment1" value="ABC_g"/>
 <img src="../data/bank/ABC_OUT.gif" border="0"/></td>
 <td>
-<input type="radio" name="payment1" value="3080_cbp"/>
+<input type="radio" name="payment1" value="CMB_g"/>
 <img src="../data/bank/CMB_OUT.gif" border="0"/>
 </td>
-<td><input type="radio" name="payment1" value="306_cbp" />
+<td><input type="radio" name="payment1" value="GDB_g" />
 <img src="../data/bank/GDB_OUT.gif" border="0"/></td>
 </tr><tr>
-<td><input type="radio" name="payment1" value="305_cbp"/>
+<td><input type="radio" name="payment1" value="CMBC_g"/>
 <img src="../data/bank/CMBC_OUT.gif" border="0"/></td>
-<td><input type="radio" name="payment1" value="312_cbp"/>
+<td><input type="radio" name="payment1" value="CEB_g"/>
 <img src="../data/bank/CEB_OUT.gif" border="0"/></td>
-<td><input type="radio" name="payment1" value="309_cbp"/>
+<td><input type="radio" name="payment1" value="CIB_g"/>
 <img src="../data/bank/CIB_OUT.gif" border="0"/></td>
 </tr>
 <tr>
-<td><input type="radio" name="payment1" value="3230_cbp"/>
+<td><input type="radio" name="payment1" value="PSBC_g"/>
 <img src="../data/bank/yz.jpg" border="0"/></td>
-<td><input type="radio" name="payment1" value="311_cbp"/>
+<td><input type="radio" name="payment1" value="HXBC_g"/>
 <img src="../data/bank/hx.jpg" border="0"/></td>
-<td><input type="radio" name="payment1" value="301_cbp"/>
+<td><input type="radio" name="payment1" value="BOCOM_g"/>
 <img src="../data/bank/COMM_OUT.gif" border="0"/></td>
 </tr>
 <tr>
-<td><input type="radio" name="payment1" value="313_cbp"/>
+<td><input type="radio" name="payment1" value="CITIC_g"/>
 <img src="../data/bank/CITIC_OUT.gif" border="0"/></td>
-<td><input type="radio" name="payment1" value="314_cbp">
+<td><input type="radio" name="payment1" value="SPDB_g">
 <img src="../data/bank/pf.jpg" border="0"/></td>
-<td><input type="radio" name="payment1" value="307_cbp">
-<img src="../data/bank/bank_payh.gif" border="0"/></td>
+<td><input type="radio" name="payment1" value="SDB_g">
+<img src="../data/bank/SZFZ_OUT.gif" border="0"/></td>
 </tr>
 </table>
 </div>
@@ -311,13 +308,11 @@
                                 
 				<div class="c">
                     <div>
-                       <font color="red">线下充值如遇到问题，请马上与理财顾问联系；<br>
+                       <font color="red">线下充值如遇到问题，请马上与客服联系联系；<br>
 （1）线下充值红包奖励的单笔最低金额不低于20000元。<br>
-（2）<strong><font color="blue">有效充值登记时间为:周一至周五的9:30到16:00</font></strong>，充值成功请跟我们的理财顾问联系。<br><br></font></div>
+（2）<strong><font color="blue">有效充值登记时间为:周一至周五的9:30到16:00</font></strong>，充值成功请跟我们的客服联系。<br><br></font></div>
 					<div>
-
 					{foreach from=$_U.account_payment_list item="var"}
-					
 					{if $var.nid=="offline"}
 					<input type="radio" name="payment2"  class="input_border" value="{$var.id}" id="offline_{$key}" /><label for="offline_{$key}">{$var.description}</label><br />
 					{/if}
@@ -326,7 +321,7 @@
 				</div>
 			</div>
 			<div class="user_right_border">
-				<!--  <div class="l" style="font-weight:bold;">线下充值备注：</div>-->
+				<div class="l" style="font-weight:bold;">线下充值备注：</div>
 				<div class="c">
 					<input type="text" name="remark"  class="input_border" value="" size="30" /><br>（请注明您的用户名，转账银行卡号和转账流水号，以及转账时间，谢谢配合）
 				</div>
@@ -502,7 +497,7 @@
 			<div class="l" style="font-weight:bold;">开户行名称：</div>
 			<div class="c">
 				<input type="text" name="branch" value="" data-content="**分行**支行**分理处或营业部(如：上海分行杨浦支行控江路分理处),
-		    如果您无法确定,建议您致电您的开户银行理财顾问进行询问。 " id="infokaih" />
+		    如果您无法确定,建议您致电您的开户银行客服进行询问。 " id="infokaih" />
 			</div>
 		</div>
 		<div class="user_right_border" style="margin-left:0px">
@@ -668,12 +663,6 @@ function sub_form(){
 			<div class="l" style="font-weight:bold;">正在申请提现：</div>
 			<div class="c">
 				{$var.txValue|default:0}元(金额)
-			</div>
-		</div>
-		<div class="user_right_border">
-			<div class="l" style="font-weight:bold;">要还的借款：</div>
-			<div class="c">
-				{$var.txRepayment}元(金额)
 			</div>
 		</div>
                 
