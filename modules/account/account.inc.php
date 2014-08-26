@@ -97,7 +97,7 @@ if(1==2){
 					$bco = $payment[0];
 					$_POST['payment1']=53;
 					$payment_type = 'chinapnr';
-				else if($payment[1]=='g'){  //  xx_g 结尾，通过国付宝 连接
+				}else if($payment[1]=='g'){  //  xx_g 结尾，通过国付宝 连接
 					$bco = $payment[0];
 					$_POST['payment1']=32;
 					$payment_type = 'gopay';
