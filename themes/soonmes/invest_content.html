@@ -805,7 +805,7 @@
 		<li><a href="#zhxq1111" data-toggle="tab">账户详情</a></li>
 		<li><a href="#hkxy" data-toggle="tab">还款信用</a></li>
 		<li><a href="#grxx" data-toggle="tab">个人资料</a></li>
-		<li><a href="#tbjl" data-toggle="tab">投标奖励</a></li>
+		<li><a href="#tbjl" data-toggle="tab">安全保障</a></li>
 		<li><a href="#hkjl" data-toggle="tab">待还款记录</a></li>
 		
 	</ul>
@@ -880,7 +880,7 @@
 	<!--投标奖励-->
 	<div class="list-tab-con tab-pane fade" id="tbjl">
 		<ul class="clearfix">
-		{if $var.borrow.award==0}
+		<!-- {if $var.borrow.award==0}
 			<li><font color="#FF0000" size="3">没有奖励</font></li>
 		{elseif  $var.borrow.award==1}
 			<li>奖励方式：按金额奖励</li>
@@ -890,8 +890,13 @@
 			<li>奖励方式：按比例奖励</li>
 			<li>奖励比例：{$var.borrow.funds}%</li>
 			<li>奖励条件：{if $var.borrow.is_false==1}投标失败也奖励{else}投标且成功复审通过后才有奖励{/if}</li>
-		{/if}
-		</ul>	
+		{/if} -->
+		1、募集的资金通过第三方支付进入指定账户，该账户受平台监管，确保企业用于自身经营  
+		</ul> 
+		<ul class="clearfix">
+		2、借款方预付全款给销售方（广州金博），如果借款方违约，金博将90%的货款退还给借款方与平台的共管账户，平台将优先赔付给投资人。
+		</ul> 
+			
 	</div>
 	
 	
