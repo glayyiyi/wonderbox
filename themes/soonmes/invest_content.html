@@ -452,11 +452,11 @@
                         <table width="100%" class="tb_pro tb_pro02 m_b_10">
                           <tr>
                             <th class="f_16 f_bold" style="width:100px;">筹款金额：</th>
-                            <td class="f_16 f_bold">￥{$var.borrow.account}元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年利率：{$var.borrow.apr}%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期限：{if $var.borrow.isday==1 } 
+                            <td class="f_16 f_bold">￥{$var.borrow.account}元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年利率：<font color="#f00">{$var.borrow.apr}%</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期限：<font color="#f00">{if $var.borrow.isday==1 } 
 								{$var.borrow.time_limit_day}天
 							{else}
 								{$var.borrow.time_limit}个月
-							{/if}</td>
+							{/if}</font></td>
                           </tr>
                           <tr>
                             <th class="f_16 f_bold" style="width:100px;">筹款用途：</th>
@@ -517,7 +517,7 @@
                 {else}
                 {$var.borrow.time_limit}个月
                 {/if},预计可获￥{$var.borrow.interest*100|round:"2"}元利息回报</p>
-                
+                <p><font color="#f00">项目风险小，本息有保障</font></p>
                 
            <p class="j_btn">     
            {if $var.borrow.is_vouch==1 && $var.borrow.vouch_account!=$var.borrow.account} 
