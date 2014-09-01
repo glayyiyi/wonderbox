@@ -78,7 +78,7 @@ jQuery(function(){
 			<div class="register clearfix m_b_25">
 
 				<div class="hd m_b_20">
-					注册 <font size="2" color="black">万得汇金是一群中高收入客户组成的私密投资圈子，欢迎您的加入，目前开放注册中</font><s
+					注册 <font size="2" color="black">万得金融是一群中高收入客户组成的私密投资圈子，欢迎您的加入，目前开放注册中</font><s
 						class="tip"></s>
 				</div>
 				<div class="bg clearfix">
@@ -234,7 +234,7 @@ jQuery(function(){
 
 						</table>
 						 	<p style="padding-left: 30px; margin-bottom: 20px;">
-													<input type="checkbox" id="dianji" checked="checked" disabled="disabled" style="position:relative; top:3px; margin-right:5px;"/>同意 <a href="/reg_protocol/index.html"><font color='red'>万得汇金注册协议</font></a> 
+													<input type="checkbox" id="dianji" checked="checked" disabled="disabled" style="position:relative; top:3px; margin-right:5px;"/>同意 <a href="/reg_protocol/index.html"><font color='red'>万得金融注册协议</font></a> 
 							</p> 
 						<p style="padding-left: 110px;">
 							<input type="submit" id="reg_btn" class="btnnew btn_login"
