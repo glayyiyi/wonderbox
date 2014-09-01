@@ -59,9 +59,9 @@
                     <div class="banner_login">
                     	<img src="{$tempdir}/images/banner_login.jpg" />
                     </div>
-                     <div >
-                    	<img src="{$tempdir}/images/maidian.jpg" />
-                    </div>
+<!--                      <div > -->
+<!--                     	<img src="{$tempdir}/images/maidian.jpg" /> -->
+<!--                     </div> -->
 <!--                     <div class="clearfix down"> -->
 <!--                    	  <div class="fl phoneDown"> -->
 <!--                        	<h4 class="m_b_10">©м╩╖╤кобть</h4> -->
