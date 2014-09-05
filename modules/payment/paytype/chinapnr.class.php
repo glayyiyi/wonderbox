@@ -11,27 +11,27 @@ class chinapnrPayment {
 	
 	public static function ToSubmit($payment){
 		$form_url = 'https://mas.chinapnr.com/gar/RecvMerchant.do'; //生产环境		
-		$payment['MerId'] = "871687"; //商户号
+		$payment['MerId'] = "510693"; //商户号
 		$submitDate=date('Ymd',time());//订单提交日期	
 		$submitTime=date('His',time());//订单提交时间	
 		$user_id = $payment['user_id']; 
 		$totalAmount=number_format($payment['money'], 2, '.', '');
 		$Version = "10";
 		$CmdId = "Buy";
-		$MerId = "871687";
+		$MerId = "510693";
 		$OrdId = trim($payment['trade_no']);
 		$OrdAmt = trim($totalAmount);
 		$CurCode = "RMB";
 		$Pid = "1111";
-		$RetUrl = "http://hndai.p2p.com/modules/payment/chinapnr_return.php";
-		$BgRetUrl = "http://hndai.p2p.com/modules/payment/chinapnr_return.php";
+		$RetUrl = "http://www.wdjr.com.cn/modules/payment/chinapnr_return.php";
+		$BgRetUrl = "http://www.wdjr.com.cn/modules/payment/chinapnr_return.php";
 		$MerPriv = "1111";
 		$GateId = "";
 		$UsrMp = "";
 		$DivDetails = "";
 		$PayUsrId = "";
 			
-	$fp = fsockopen("127.0.0.1", '8733', $errno, $errstr, 10);
+	$fp = fsockopen("127.0.0.1", '80', $errno, $errstr, 10);
 	if (!$fp) {
 		echo "$errstr ($errno)<br />\n";
 	} else {
