@@ -101,7 +101,7 @@ class chinapnrPayment {
 				  <input type=hidden name="PayUsrId" value="<?= $PayUsrId ?>">  
 				</form>
 				<script language="javascript">
-				  //document.getElementById("frm1").submit();
+				  document.getElementById("frm1").submit();
 				</script>
 			  </body>
 			</html>
