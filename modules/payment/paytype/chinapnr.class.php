@@ -10,8 +10,7 @@ class chinapnrPayment {
 
 	
 	public static function ToSubmit($payment){
-		//$form_url = 'https://mas.chinapnr.com/gar/RecvMerchant.do'; //生产环境	
-		$form_url = 'http://test.chinapnr.com/gar/RecvMerchant.do'; //测试环境
+		$form_url = 'https://mas.chinapnr.com/gar/RecvMerchant.do'; //生产环境		
 		$payment['MerId'] = "510693"; //商户号
 		$submitDate=date('Ymd',time());//订单提交日期	
 		$submitTime=date('His',time());//订单提交时间	
@@ -24,8 +23,8 @@ class chinapnrPayment {
 		$OrdAmt = trim($totalAmount);
 		$CurCode = "RMB";
 		$Pid = "1111";
-		$RetUrl = "http://www.wdjr.com.cn/modules/payment/chinapnr_return.php";
-		$BgRetUrl = "http://www.wdjr.com.cn/modules/payment/chinapnr_return.php";
+		$RetUrl = "http://wdjr.com.cn/modules/payment/chinapnr_return.php";
+		$BgRetUrl = "http://wdjr.com.cn/modules/payment/chinapnr_return.php";
 		$MerPriv = "1111";
 		$GateId = "";
 		$UsrMp = "";
@@ -82,7 +81,7 @@ class chinapnrPayment {
 			  <?php echo $ChkValue;?>
 			  </div>
 			 进入汇付天下支付页面>>>>>>>>
-				<form id="frm1" name="frm1" method="post" action="http://test.chinapnr.com/gar/RecvMerchant.do" target="_blank">
+				<form id="frm1" name="frm1" method="post" action="https://mas.chinapnr.com/gar/RecvMerchant.do" target="_blank">
 			 <div style="display:block">
 				 <textarea name="ChkValue" cols="60" rows="6"><?=$ChkValue?></textarea>
 				</div>
@@ -102,7 +101,7 @@ class chinapnrPayment {
 				  <input type=hidden name="PayUsrId" value="<?= $PayUsrId ?>">  
 				</form>
 				<script language="javascript">
-				  document.getElementById("frm1").submit();
+				  //document.getElementById("frm1").submit();
 				</script>
 			  </body>
 			</html>
