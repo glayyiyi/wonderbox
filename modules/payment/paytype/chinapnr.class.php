@@ -32,7 +32,7 @@ class chinapnrPayment {
 		$DivDetails = "";
 		$PayUsrId = "";
 			
-	$fp = fsockopen("127.0.0.1", '80', $errno, $errstr, 10);
+	$fp = fsockopen("127.0.0.1", '8733', $errno, $errstr, 10);
 	if (!$fp) {
 		echo "$errstr ($errno)<br />\n";
 	} else {

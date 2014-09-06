@@ -63,7 +63,7 @@
 	$SignData = $ChkValue;
 
 
-	if($SignData == "0011V5100100000"){	
+	if($SignData == "0011V5106930000"){	
 		//510010改为商户号
 	//if($SignData == "0"){
 		if($RespCode == "000000"){
