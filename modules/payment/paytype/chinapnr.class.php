@@ -11,7 +11,7 @@ class chinapnrPayment {
 	
 	public static function ToSubmit($payment){
 		//$form_url = 'https://mas.chinapnr.com/gar/RecvMerchant.do'; //生产环境	
-		$form_url = 'https://test.chinapnr.com/gar/RecvMerchant.do'; //生产环境
+		$form_url = 'http://test.chinapnr.com/gar/RecvMerchant.do'; //生产环境
 		$payment['MerId'] = "510693"; //商户号
 		$submitDate=date('Ymd',time());//订单提交日期	
 		$submitTime=date('His',time());//订单提交时间	
@@ -82,7 +82,7 @@ class chinapnrPayment {
 			  <?php echo $ChkValue;?>
 			  </div>
 			 进入汇付天下支付页面>>>>>>>>
-				<form id="frm1" name="frm1" method="post" action="https://test.chinapnr.com/gar/RecvMerchant.do" target="_blank">
+				<form id="frm1" name="frm1" method="post" action="http://test.chinapnr.com/gar/RecvMerchant.do" target="_blank">
 			 <div style="display:block">
 				 <textarea name="ChkValue" cols="60" rows="6"><?=$ChkValue?></textarea>
 				</div>
