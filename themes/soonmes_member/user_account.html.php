@@ -232,7 +232,8 @@
 			<div class="user_right_border">
 				<div class="l" style="font-weight:bold;">充值类型：</div>
 				<div class="c">
-						<font color="red">以下银行是使用个人网上银行支付，只需开通个人网上银行即可!</font>
+				<img border="0" src="/themes/soonmes/images/chinapnr.jpg">
+<!-- 						<font color="red">下一步选择银行是使用个人网上银行支付，只需开通个人网上银行即可!</font> -->
 <style type="text/css">
 {literal}
 #ban table td{height:40px; line-height:40px;padding-right:30px;padding-bottom:10px; }
@@ -251,54 +252,55 @@
 .btn_grey_b:hover span, .btn_grey_b:hover span {background-position:0 -105px }
 {/literal}
 </style>
-<div id="ban">
-<table width="100%" cellpadding="3" cellspacing="3">
-<tr>
-<td width="160"><input type="radio" name="payment1" value="ICBC_cpr"/>
-<img src="../data/bank/ICBC_OUT.gif" border="0"/></td>
-<td width="160">
-<input type="radio" name="payment1" value="BOC_cpr">
-<img src="../data/bank/BOC_OUT.gif" border="0"/>
-</td>
-<td  width="160">
-<input type="radio" name="payment1" value="CCB_cpr"/>
-<img src="../data/bank/CCB_OUT.gif" border="0"/></td>
-</tr>
-<tr>
-<td><input type="radio" name="payment1" value="ABC_cpr"/>
-<img src="../data/bank/ABC_OUT.gif" border="0"/></td>
-<td>
-<input type="radio" name="payment1" value="CMB_cpr"/>
-<img src="../data/bank/CMB_OUT.gif" border="0"/>
-</td>
-<td><input type="radio" name="payment1" value="GDB_cpr" />
-<img src="../data/bank/GDB_OUT.gif" border="0"/></td>
-</tr><tr>
-<td><input type="radio" name="payment1" value="CMBC_cpr"/>
-<img src="../data/bank/CMBC_OUT.gif" border="0"/></td>
-<td><input type="radio" name="payment1" value="CEB_cpr"/>
-<img src="../data/bank/CEB_OUT.gif" border="0"/></td>
-<td><input type="radio" name="payment1" value="CIB_cpr"/>
-<img src="../data/bank/CIB_OUT.gif" border="0"/></td>
-</tr>
-<tr>
-<td><input type="radio" name="payment1" value="PSBC_cpr"/>
-<img src="../data/bank/yz.jpg" border="0"/></td>
-<td><input type="radio" name="payment1" value="HXBC_cpr"/>
-<img src="../data/bank/hx.jpg" border="0"/></td>
-<td><input type="radio" name="payment1" value="BOCOM_cpr"/>
-<img src="../data/bank/COMM_OUT.gif" border="0"/></td>
-</tr>
-<tr>
-<td><input type="radio" name="payment1" value="CITIC_cpr"/>
-<img src="../data/bank/CITIC_OUT.gif" border="0"/></td>
-<td><input type="radio" name="payment1" value="SPDB_cpr">
-<img src="../data/bank/pf.jpg" border="0"/></td>
-<td><input type="radio" name="payment1" value="SDB_cpr">
-<img src="../data/bank/SZFZ_OUT.gif" border="0"/></td>
-</tr>
-</table>
-</div>
+<input type="hidden" name="payment1" value="PAYMENT_cpr"/>
+<!-- By Glay <div id="ban"> -->
+<!-- <table width="100%" cellpadding="3" cellspacing="3"> -->
+<!-- <tr> -->
+<!-- <td width="160"><input type="radio" name="payment1" value="ICBC_cpr"/> -->
+<!-- <img src="../data/bank/ICBC_OUT.gif" border="0"/></td> -->
+<!-- <td width="160"> -->
+<!-- <input type="radio" name="payment1" value="BOC_cpr"> -->
+<!-- <img src="../data/bank/BOC_OUT.gif" border="0"/> -->
+<!-- </td> -->
+<!-- <td  width="160"> -->
+<!-- <input type="radio" name="payment1" value="CCB_cpr"/> -->
+<!-- <img src="../data/bank/CCB_OUT.gif" border="0"/></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td><input type="radio" name="payment1" value="ABC_cpr"/> -->
+<!-- <img src="../data/bank/ABC_OUT.gif" border="0"/></td> -->
+<!-- <td> -->
+<!-- <input type="radio" name="payment1" value="CMB_cpr"/> -->
+<!-- <img src="../data/bank/CMB_OUT.gif" border="0"/> -->
+<!-- </td> -->
+<!-- <td><input type="radio" name="payment1" value="GDB_cpr" /> -->
+<!-- <img src="../data/bank/GDB_OUT.gif" border="0"/></td> -->
+<!-- </tr><tr> -->
+<!-- <td><input type="radio" name="payment1" value="CMBC_cpr"/> -->
+<!-- <img src="../data/bank/CMBC_OUT.gif" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="CEB_cpr"/> -->
+<!-- <img src="../data/bank/CEB_OUT.gif" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="CIB_cpr"/> -->
+<!-- <img src="../data/bank/CIB_OUT.gif" border="0"/></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td><input type="radio" name="payment1" value="PSBC_cpr"/> -->
+<!-- <img src="../data/bank/yz.jpg" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="HXBC_cpr"/> -->
+<!-- <img src="../data/bank/hx.jpg" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="BOCOM_cpr"/> -->
+<!-- <img src="../data/bank/COMM_OUT.gif" border="0"/></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td><input type="radio" name="payment1" value="CITIC_cpr"/> -->
+<!-- <img src="../data/bank/CITIC_OUT.gif" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="SPDB_cpr"> -->
+<!-- <img src="../data/bank/pf.jpg" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="SDB_cpr"> -->
+<!-- <img src="../data/bank/SZFZ_OUT.gif" border="0"/></td> -->
+<!-- </tr> -->
+<!-- </table> -->
+<!-- </div> -->
 {foreach from=$_U.account_payment_list item="var"}
 {if $var.nid!="offline"}
 <input type="radio" name="payment1" class="input_border" value="{$var.id}" id="payment_{$key}"  /> <label for="payment_{$key}">{$var.name}</label> <input type="hidden" name="payname{$var.id}" value="{$var.name}" /><label for="payment_{$key}">({$var.description})</label> <br />
@@ -379,16 +381,16 @@
 
 			if(aa == 1){
 			//线上充值
-				var xsbank = $("input[name=payment1]:checked").val();
+// By Glay				var xsbank = $("input[name=payment1]:checked").val();
 				 
-				if (!xsbank){
- 					jQuery.jBox.tip('请选择在线充值类型！','warning');
-					return false;
-				}else{
-					//提交跳出充值提示框 20130130 add by weego 
-					jQuery.jBox(info,{title:'在线充值',buttons: {'返回重新选择': 'ok' }, width: 500,opacity: 0.3, showClose: false,showIcon: false, top: '25%',draggable: false});
-					return true;			
-				}
+// 				if (!xsbank){
+//  					jQuery.jBox.tip('请选择在线充值类型！','warning');
+// 					return false;
+// 				}else{
+// 					//提交跳出充值提示框 20130130 add by weego 
+// 					jQuery.jBox(info,{title:'在线充值',buttons: {'返回重新选择': 'ok' }, width: 500,opacity: 0.3, showClose: false,showIcon: false, top: '25%',draggable: false});
+// 					return true;			
+// 				}
 				
 			}else{
 			//线下充值
