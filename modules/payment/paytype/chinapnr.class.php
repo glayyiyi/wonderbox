@@ -65,9 +65,6 @@ class chinapnrPayment {
 		while (!feof($fp)) {
 			$ChkValue .= fgets($fp, 128);
 		}
-		echo $ChkValue;
-		fclose($fp);
-		exit;
 		$ChkValue = substr($ChkValue, -264,-8);
 		fclose($fp);
 		//echo $ChkValue;
