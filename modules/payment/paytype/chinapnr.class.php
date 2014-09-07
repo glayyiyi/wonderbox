@@ -11,7 +11,7 @@ class chinapnrPayment {
 	
 	public static function ToSubmit($payment){
 		//$form_url = 'https://mas.chinapnr.com/gar/RecvMerchant.do'; //生产环境	
-		$form_url = 'http://test.chinapnr.com/gar/RecvMerchant.do'; //生产环境
+		$form_url = 'http://test.chinapnr.com/gar/RecvMerchant.do'; //测试环境
 		$payment['MerId'] = "510693"; //商户号
 		$submitDate=date('Ymd',time());//订单提交日期	
 		$submitTime=date('His',time());//订单提交时间	
@@ -65,6 +65,9 @@ class chinapnrPayment {
 		while (!feof($fp)) {
 			$ChkValue .= fgets($fp, 128);
 		}
+		echo $ChkValue;
+		fclose($fp);
+		exit;
 		$ChkValue = substr($ChkValue, -264,-8);
 		fclose($fp);
 		//echo $ChkValue;
