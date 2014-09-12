@@ -75,11 +75,11 @@
 			require_once ('../../core/config.inc.php');
 			require_once (ROOT_PATH.'modules/account/account.class.php');
 			require_once (ROOT_PATH.'modules/payment/payment.class.php');
-			$file = $cachepath['pay'].$TrxId;
+			$file = $cachepath['pay'].$OrdId;
 			$fp = fopen($file , 'w+');
 			@chmod($file, 0777);
 			if(flock($fp , LOCK_EX | LOCK_NB)){    //设定模式独占锁定和不堵塞锁定
-				accountClass::OnlineReturn(array("trade_no"=>$TrxId));
+				accountClass::OnlineReturn(array("trade_no"=>$OrdId));
 				flock($fp , LOCK_UN);
 				echo "充值成功，请点击返回查看充值记录<a href=/?user&q=code/account/recharge> >>>>>></a>";
 			} else{
