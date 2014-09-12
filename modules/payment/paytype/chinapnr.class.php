@@ -79,12 +79,12 @@ class chinapnrPayment {
 				<meta http-equiv="content-Type" content="text/html; charset=gbk" />
 			  </head>
 			  <body>
-			  <div style="display:none">
-			  <?php echo $ChkValue;?>
-			  </div>
-			 进入汇付天下支付页面>>>>>>>>
+		<!-- 	  <div style="display:none"> -->
+			  <?php //echo $ChkValue;?>
+					<!-- 			  </div> -->
+<!-- 			 进入汇付天下支付页面>>>>>>>> -->
 				<form id="frm1" name="frm1" method="post" action="https://mas.chinapnr.com/gar/RecvMerchant.do">
-			 <div style="display:block">
+			 	<div style="display:none">
 				 <textarea name="ChkValue" cols="60" rows="6"><?=$ChkValue?></textarea>
 				</div>
 				  <input type=hidden name="Version" value="<?=$Version?>">
