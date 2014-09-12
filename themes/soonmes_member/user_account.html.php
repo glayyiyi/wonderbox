@@ -214,7 +214,7 @@
 			<div class="c">
 			<table>
 				<tr>
-				<td><input type="radio" name="type" id="type_1" class="input_border" onclick="change_type(1)" value="1"  checked="checked" />&nbsp;</td>
+				<td><input type="radio" name="type" id="type_1" class="input_border" onclick="change_type(1)" value="1"  checked="checked" />&nbsp;&nbsp;</td>
 				<td><label for="type_1">网上充值</label></td>
 			<!-- 	<td><input type="radio" name="type" id="type_2" class="input_border"  value="2"  onclick="change_type(2)" /></td>
 				<td><label for="type_2">线下充值</label></td> -->

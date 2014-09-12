@@ -70,12 +70,30 @@
 			//交易成功
 			//根据订单号 进行相应业务操作
 			//在些插入代码
-			echo "支付成功";
+			//支付成功
+			//商户系统的逻辑处理（例如判断金额，判断支付状态(20成功,30失败),更新订单状态等等）......
+			require_once ('../../core/config.inc.php');
+			require_once (ROOT_PATH.'modules/account/account.class.php');
+			require_once (ROOT_PATH.'modules/payment/payment.class.php');
+			$file = $cachepath['pay'].$TrxId;
+			$fp = fopen($file , 'w+');
+			@chmod($file, 0777);
+			if(flock($fp , LOCK_EX | LOCK_NB)){    //设定模式独占锁定和不堵塞锁定
+				accountClass::OnlineReturn(array("trade_no"=>$TrxId));
+				flock($fp , LOCK_UN);
+				echo "充值成功，请点击返回查看充值记录<a href=/?user&q=code/account/recharge> >>>>>></a>";
+			} else{
+				fclose($fp);
+				echo "充值失败ERROE:001，请点击返回<a href=/?user&q=code/account/recharge> >>>>>></a>";
+			}
+			echo "ok";
+			exit();
 		}else{
 			//交易失败
 			//根据订单号 进行相应业务操作
 			//在些插入代码
-			echo "支付失败";
+			echo "充值失败ERROE:002，请点击返回<a href=/?user&q=code/account/recharge> >>>>>></a>";
+			//echo "支付失败";
 		}
 	}else{
 		//验签失败
