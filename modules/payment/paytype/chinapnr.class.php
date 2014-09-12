@@ -65,8 +65,10 @@ class chinapnrPayment {
 		while (!feof($fp)) {
 			$ChkValue .= fgets($fp, 128);
 		}
-		$ChkValue = substr($ChkValue, 15);
-		//By Glay $ChkValue = substr($ChkValue, -264,-8);
+		//By Glay
+		//$ChkValue = substr($ChkValue, 15);
+		
+		$ChkValue = substr($ChkValue, -264,-8);
 		fclose($fp);
 		//echo $ChkValue;
 	}
