@@ -387,9 +387,9 @@
 //  					jQuery.jBox.tip('请选择在线充值类型！','warning');
 // 					return false;
 // 				}else{
-// 					//提交跳出充值提示框 20130130 add by weego 
-// 					jQuery.jBox(info,{title:'在线充值',buttons: {'返回重新选择': 'ok' }, width: 500,opacity: 0.3, showClose: false,showIcon: false, top: '25%',draggable: false});
-// 					return true;			
+ 					//提交跳出充值提示框 20130130 add by weego 
+ 					jQuery.jBox(info,{title:'在线充值',buttons: {'返回重新选择': 'ok' }, width: 500,opacity: 0.3, showClose: false,showIcon: false, top: '25%',draggable: false});
+ 					return true;			
 // 				}
 				
 			}else{

@@ -83,7 +83,7 @@ class chinapnrPayment {
 			  <?php echo $ChkValue;?>
 			  </div>
 			 进入汇付天下支付页面>>>>>>>>
-				<form id="frm1" name="frm1" method="post" action="https://mas.chinapnr.com/gar/RecvMerchant.do" target="_blank">
+				<form id="frm1" name="frm1" method="post" action="https://mas.chinapnr.com/gar/RecvMerchant.do">
 			 <div style="display:block">
 				 <textarea name="ChkValue" cols="60" rows="6"><?=$ChkValue?></textarea>
 				</div>
