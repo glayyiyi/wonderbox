@@ -81,12 +81,13 @@
 			if(flock($fp , LOCK_EX | LOCK_NB)){    //设定模式独占锁定和不堵塞锁定
 				accountClass::OnlineReturn(array("trade_no"=>$OrdId));
 				flock($fp , LOCK_UN);
-				echo "充值成功，请点击返回查看充值记录<a href=/?user&q=code/account/recharge> >>>>>></a>";
+				header('location:/?user&q=code/account/recharge');
+				//echo "充值成功，请点击返回查看充值记录<a href=/?user&q=code/account/recharge> >>>>>></a>";
 			} else{
 				fclose($fp);
 				echo "充值失败ERROE:001，请点击返回<a href=/?user&q=code/account/recharge> >>>>>></a>";
 			}
-			echo "ok";
+			//echo "ok";
 			exit();
 		}else{
 			//交易失败
