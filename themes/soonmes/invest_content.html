@@ -143,29 +143,13 @@
 			
 			您已完成项目投资，目前您的相关投资资金已冻结！
                   </div>
-		<div class="fl b_f0f0f0">
+	<!-- 	<div class="fl b_f0f0f0">
                 	
-                  <!--  -->
+                 
                   <div class="succ_m">
                     <div class="s_hd">
                         <h3 class="fl">投资协议合同</h3>
-                       <!--  <span class="fr suc_btn">
-                            <a class="btn_whiteBg01 m_r_5" style="width:44px;" href="#">
-                              <span class="fl"></span>
-                              <span class="fr"></span>
-                              <label class="txt">打印</label>
-                            </a>
-                            <a class="btn_whiteBg01 m_r_5" style="width:56px;" href="#">
-                              <span class="fl"></span>
-                              <span class="fr"></span>
-                              <label class="txt">另存为</label>
-                            </a>
-                            <a class="btn_whiteBg01" style="width:104px;" href="#">
-                              <span class="fl"></span>
-                              <span class="fr"></span>
-                              <label class="txt">电子邮件发给我</label>
-                            </a>
-                        </span> -->
+          
                     </div>
                     <div class="s_bg p_10">
                         <table width="100%" class="tb_succ">
@@ -199,8 +183,7 @@
                         </table>
                     </div>
                   </div>
-                  <!--  -->
-                  <!--  -->
+                 
                   <div class="succ_m">
                     <div class="s_hd">
                         <h3 class="fl">合同及其他设置</h3>
@@ -223,7 +206,7 @@
                                       <label class="m_r_10"><input type="radio" name="c_contact_way" value="3" {if $bor.c_contact_way==3} checked="checked"{/if}/> 仅双休日</label>
                                       <label><input type="radio" name="c_contact_way" value="4" {if $bor.c_contact_way==4} checked="checked"{/if}/> 来前先电话预约</label>
                                       <input type="hidden" name="tender_id" value="{$magic.request.tender_id}" />
-                                       <!-- <input type="hidden" name="user_id" value="{$_G.user_id}" /> -->
+                                       <input type="hidden" name="user_id" value="{$_G.user_id}" />
 
                                     </p>
                                 </div>
@@ -245,10 +228,10 @@
                     </div>
                     </form>
                   </div>
-                  <!--  -->
-              </div>
+                 
+              </div> -->
 
-              	<div class="p_8_5 recharge">
+       <div class="p_8_5 recharge">
                    <div class="personnel m_b_60">
           {article module="borrow" function="Getkf"}
 			
@@ -512,11 +495,11 @@
 					{/if}
                           
                    <br>      
-                  <p>投资1万元,期限{if $var.borrow.isday==1 } 
+                 <!--  <p>投资1万元,期限{if $var.borrow.isday==1 } 
                 {$var.borrow.time_limit_day}天
                 {else}
                 {$var.borrow.time_limit}个月
-                {/if},预计可获￥{$var.borrow.interest*100|round:"2"}元利息回报</p>
+                {/if},预计可获￥{$var.borrow.interest*100|round:"2"}元利息回报</p> -->
                 <p><font color="#f00">项目风险小，本息有保障</font></p>
                 
            <p class="j_btn">     

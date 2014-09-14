@@ -223,7 +223,7 @@ function submit_fool(){
 	<span ><span>甲方</span><span>(</span><span>借款人</span><span>)</span><span>：</span><span> ****</span><span>贸易有限公司</span><span></span></span> 
 </p>
 <p style="margin-left:3.05pt;text-align:left;" align="left">
-	<span ><span>甲方代理人：</span><span> </span><span>黎明</span><span></span></span> 
+	<span ><span>甲方代理人：</span><span> </span><span>wonderbox</span><span></span></span> 
 </p>
 <p style="margin-left:3.05pt;text-align:left;" align="left">
 	<span ><span>万得金融平台用户名：</span><span> wonderbox</span></span> 
@@ -241,15 +241,15 @@ function submit_fool(){
 		<div>
 			<table class="gvList" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvLoans" style="width:100%;border-collapse:collapse;">
 				<tr height="30">
-					<th align="center" scope="col">出借人</th>
+					<th align="center" scope="col">出借人(id)</th>
 					<th align="center" scope="col">借款金额</th>
 					<th align="center" scope="col">借款期限</th>
 					<th align="center" scope="col">年利率</th>
-					<!-- <th align="center" scope="col">借款开始日</th>
+					<th align="center" scope="col">借款开始日</th>
 					<th align="center" scope="col">借款到期日</th>
-					<th align="center" scope="col">截止还款日</th> -->
+					<!-- <th align="center" scope="col">截止还款日</th> 
 					<th align="center" scope="col">签订日期</th>
-					<th align="center" scope="col">还款本息</th>
+					<th align="center" scope="col">还款本息</th>-->
 			
 				</tr>
 				{loop module="borrow" var="bor" function="GetTenderList" borrow_id="request" tender_id="request" limit="all"}
@@ -260,13 +260,13 @@ function submit_fool(){
 					<td>{if $bor.realname} {$bor.realname} {else} {$bor.username}{/if}</td><td>{$bor.tender_account}元</td>
 					<td>{if $var.isday==1}{$var.time_limit_day}天{else}{$var.time_limit|linkage:"borrow_time_limit"}{/if}</td>
 					<td>{$var.apr}%</td>
-				<!-- 	<td>{$var.success_time|date_format:"Y-m-d"}</td>
+					<td>{$var.success_time|date_format:"Y-m-d"}</td>
 					<td>{$var.end_time|date_format:"Y-m-d"}</td>
-					<td>{if $var.isday==1 || $var.style==2}{$var.end_time|date_format:"Y-m-d"}{else}{$var.each_time}{/if}</td> -->
+					<!-- <td>{if $var.isday==1 || $var.style==2}{$var.end_time|date_format:"Y-m-d"}{else}{$var.each_time}{/if}</td> 
 					<td>{$bor.addtime|date_format:"Y-m-d"}</td>
 					<td>
 		               {$bor.equal.monthly_repayment|round:2} 元
-		             </td>
+		             </td>-->
 		             
 				</tr>
 				{/loop}
