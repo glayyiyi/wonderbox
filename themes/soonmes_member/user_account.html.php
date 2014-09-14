@@ -619,9 +619,11 @@ function sub_form(){
 <strong>注：</strong><br/>
 1、确保您的银行帐号的姓名和您的网站上的真实姓名一致<br><br>
 2、请输入您要取出金额,我们将在1至2个工作日(国家节假日除外)之内处理您提交的提现申请。资金将在24小时内到达您的账上。请用户务必于每个工作日的下午4点(以最新公告时间为准)之前提交提现申请，每个工作日16:00(以最新公告时间为准)之后提交的提现申请在当天将不会得到及时处理。<br><br>
-3、单笔取现下限{$_G.cash_rule.min_cash}元，上限为{$_G.cash_rule.max_cash}，日累计提现不得超过{$_G.cash_rule.max_day_cash}。<br><br>
+<!-- 3、单笔取现下限{$_G.cash_rule.min_cash}元，上限为{$_G.cash_rule.max_cash}，日累计提现不得超过{$_G.cash_rule.max_day_cash}。<br><br> -->
+3、单笔取现下限{$_G.cash_rule.min_cash}元。<br><br>
 {if $_G.cash_rule.scheme==1}
-4、单笔提现金额{$_G.cash_rule.cash_lt}元（包含）以下，每笔收取{$_G.cash_rule.every_lt_fee}元手续费。单笔提现{$_G.cash_rule.cash_gt}元以上，每笔收取{$_G.cash_rule.every_gt_fee}元手续费。用户自充值之日起于{$_G.cash_rule.every_day_lt}日之内且未完全投标的额外加收{$_G.cash_rule.every_extra_fee}元手续费。
+<!-- 4、单笔提现金额{$_G.cash_rule.cash_lt}元（包含）以下，每笔收取{$_G.cash_rule.every_lt_fee}元手续费。单笔提现{$_G.cash_rule.cash_gt}元以上，每笔收取{$_G.cash_rule.every_gt_fee}元手续费。用户自充值之日起于{$_G.cash_rule.every_day_lt}日之内且未完全投标的额外加收{$_G.cash_rule.every_extra_fee}元手续费。 -->
+4、优惠期间，提现手续费全免！
 {else}
 4、提现手续费为提现金额的{$_G.cash_rule.scale_fee}%，用户自充值之日起于{$_G.cash_rule.scale_day_lt}日之内且未完全投标的部分额外加收{$_G.cash_rule.scale_extra_fee}%手续费。
 {/if}
