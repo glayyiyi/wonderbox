@@ -53,7 +53,7 @@ $rdGlobal['lz_reBackTime']=3600*24; //Á÷×ª±êÌáÇ°¶àÉÙÊ±¼ä»Ø¹º 0Îªµ±¼´£¬3600 ÎªÌáÇ
 $rdGlobal['lz_awardfirst']=false; //Á÷×ª±ê½±Àø trueÍ¶±ê³É¹¦¾Í·¢·Å false»Ø¹ºÊ±·¢·Å
 $rdGlobal['serial_on']=false; //ºóÌ¨U¶ÜµÇÂ¼£¬false¹Ø±Õ,true¿ªÆô
 $rdGlobal['uc_on']=false; //UC½Ó¿Ú¿ªÆô£¬false¹Ø±Õ,true¿ªÆô
-$rdGlobal['uc_key']="is912uijeds982jhs9zhaozihansb312"; //UC ¼ÓÃÜÃÜÔ¿
+$rdGlobal['uc_key']="appdor.123"; //UC ¼ÓÃÜÃÜÔ¿
 
 /*   ³õÊ¼»¯ÉèÖÃ  
 @ini_set('memory_limit',          '64M');
