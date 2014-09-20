@@ -488,7 +488,8 @@ if(strtolower($_POST['valicode']) != $_SESSION['valicode']){
 	
 	//ÑûÇëºÃÓÑ
 	elseif ($_U['query_type'] == "reginvite"){
-		$_U['user_inviteid'] =  Key2Url($_G['user_id'],"reg_invite");
+		//print_r($_G['user_id']);
+		$_U['user_inviteid'] =  Key2Url(trim($_G['user_id']),"reg_invite");
 		//$oUrl=$_G['weburl'].urlencode("/index.php?user&q=going/reginvite&u=").$_G['user_id'];
 		
 		//$_U['user_inviteid'] =  shortenSinaUrl($oUrl);

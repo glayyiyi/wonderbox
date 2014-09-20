@@ -389,7 +389,7 @@ if ($_U['query_sort'] == "going"){
 		$_SESSION['reginvite_user_id'] = intval($_user_id[1]);
 		$_SESSION['reginvite_user_id'] = $_user_id[1];
 		
-		exit;
+		//exit;
 		if(intval($_user_id[1])>0){
 			$sql = "select username from {user} where `user_id`={intval($_user_id[1])}";
 			$result = $mysql->db_fetch_array($sql);
