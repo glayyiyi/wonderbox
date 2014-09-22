@@ -253,7 +253,7 @@
 				<div class="bg">
 					<ul class="list_lc">
 						
-				{loop module="user" function="GetFriendsList" var="item" user_id="0" status=1 limit="2"}
+				{loop module="user" function="GetFriendsList" var="item" user_id=$_G.user_id status=1 limit="2"}
 				
 						<li>
 							<div class="clearfix posit_rel">

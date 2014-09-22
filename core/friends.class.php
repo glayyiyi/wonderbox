@@ -21,9 +21,13 @@ class friendsClass{
 		$page = empty($data['page'])?1:$data['page'];
 		$epage = empty($data['epage'])?10:$data['epage'];
 		$_sql = " where 1=1 ";
-		if (isset($data['user_id']) && $data['user_id']!=""){
+// By Glay		if (isset($data['user_id']) && $data['user_id']!=""){
+// 			$_sql .=" and p1.user_id = '{$data['user_id']}'";
+// 		}
+		if (isset($data['user_id'])){
 			$_sql .=" and p1.user_id = '{$data['user_id']}'";
 		}
+		
 		if (isset($data['username']) && $data['username']!=""){
 			$_sql .=" and p2.username like '%{$data['username']}%'";
 		}
@@ -41,7 +45,7 @@ class friendsClass{
 				$_limit = "  limit ".$data['limit'];
 			}
 			$var_sql=str_replace(array('SELECT', 'ORDER', 'LIMIT'), array($_select, $_order, $_limit), $sql);
-			//print_r($var_sql);
+			print_r($var_sql);
 			//exit;
 			return $mysql->db_fetch_arrays($var_sql);
 		}			 

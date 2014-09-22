@@ -47,7 +47,8 @@
                 <div class="alert"><span>投资记录</span></div>
                  {loop module="borrow" function="GetTenderList" var="_var" limit='0,30' user_id="$GU_uid"}
                   <p>
-                   &nbsp;&nbsp;{$_var.addtime|date_format:"Y-m-d"} 投标【<a href="/invest/a{$_var.borrow_id}.html" title="{$_var.borrow_name}" target="_blank">{$_var.borrow_name|truncate:10}</a>】 金额( {$_var.tender_account}元) {if $_var.status==1}成功{else}失败{/if}
+                   &nbsp;&nbsp;{$_var.addtime|date_format:"Y-m-d"} 投标【<a href="/invest/a{$_var.borrow_id}.html" title="{$_var.borrow_name}" target="_blank">{$_var.borrow_name|truncate:10}</a>】 金额( {$_var.tender_account}元) 
+                   <!-- {if $_var.status==1}成功{else}失败{/if} -->
                    </p>
                   {/loop}
 <!-- <div class="page" >{$loop.showpage}</div> -->
