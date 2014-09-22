@@ -45,7 +45,7 @@ class friendsClass{
 				$_limit = "  limit ".$data['limit'];
 			}
 			$var_sql=str_replace(array('SELECT', 'ORDER', 'LIMIT'), array($_select, $_order, $_limit), $sql);
-			print_r($var_sql);
+			//print_r($var_sql);
 			//exit;
 			return $mysql->db_fetch_arrays($var_sql);
 		}			 
