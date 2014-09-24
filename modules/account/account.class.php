@@ -2186,10 +2186,12 @@ class accountClass{
 			$log['no_use_money'] = $account_result['no_use_money'];
 			$log['collection'] = $account_result['collection'];
 			$log['to_user'] = 0;
-			$log['remark'] = "在线充值，订单号:".$trade_no;
-			accountClass::AddLog($log);
 			$sendMsg = "在线充值操作成功，订单号:{$trade_no}，账号增加{$log['money']}元，账户总金额：{$log['total']}，账户可用余额：{$log['use_money']}。";
 			sendSMS($user_id,$sendMsg,1);
+			$log['remark'] = $user_id.$trade_no;
+			//$log['remark'] = "在线充值，订单号:".$trade_no;
+			accountClass::AddLog($log);
+			
 			
 			$account_result =  self::GetOne(array("user_id"=>$user_id));
 			$log['user_id'] = $user_id;
