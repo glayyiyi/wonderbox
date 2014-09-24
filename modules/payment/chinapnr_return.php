@@ -79,7 +79,8 @@
 			$fp = fopen($file , 'w+');
 			@chmod($file, 0777);
 			if(flock($fp , LOCK_EX | LOCK_NB)){    //设定模式独占锁定和不堵塞锁定
-				accountClass::OnlineReturn(array("trade_no"=>$OrdId));
+				$acunt=new accountClass();
+				$acunt->OnlineReturn(array("trade_no"=>$OrdId));
 				flock($fp , LOCK_UN);
 				header('location:/?user&q=code/account/recharge');
 				//echo "充值成功，请点击返回查看充值记录<a href=/?user&q=code/account/recharge> >>>>>></a>";
