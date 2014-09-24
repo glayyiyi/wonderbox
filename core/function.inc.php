@@ -1399,7 +1399,7 @@ function sendSMS($userid,$content,$system=0,$phone=0)
 {
 	global $_G,$mysql;
 	require_once ROOT_PATH . 'core/user.class.php';
-	if($userid<1){
+	if(empty($userid)){
 		return false;
 	}
 	if ($_G['system']['con_issms']==1)
@@ -1433,7 +1433,8 @@ function sendSMS($userid,$content,$system=0,$phone=0)
 		if($phone!=0){
 			$mobile = $phone;
 		}
-		if($mobile<1) return false;
+		if(empty($mobile)) 
+			return false;
 		//By Glay
 		$_u_results = userClass::GetOnes(array("user_id"=>$userid));
 		$realname=$_u_results['realname'];
