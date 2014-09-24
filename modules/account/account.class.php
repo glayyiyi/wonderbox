@@ -2187,7 +2187,7 @@ class accountClass{
 			$log['collection'] = $account_result['collection'];
 			$log['to_user'] = 0;
 			$sendMsg = "在线充值操作成功，订单号:{$trade_no}，账户增加{$log['money']}元，账户总金额:{$log['total']}元，账户可用余额:{$log['use_money']}元。";
-			sendSMS($user_id,$sendMsg,1,'13929579770');
+			sendSMS($user_id,$sendMsg,1);
 			$log['remark'] = $user_id.$sendMsg;
 			//$log['remark'] = "在线充值，订单号:".$trade_no;
 			accountClass::AddLog($log);
