@@ -1792,7 +1792,7 @@ class accountClass{
 				$remind['content'] = "成功充值{$result['money']}元,流水号:{$result['trade_no']}";
 				$remind['type'] = "recharge";
 				$sendRemind[] = $remind;
-				$sendSMS[] = array('user_id'=>$result['user_id'],'content'=>"账号余额增加{$result['money']}元。");
+				$sendSMS[] = array('user_id'=>$result['user_id'],'content'=>"您的充值审核通过，账号余额增加{$result['money']}元。");
 			}elseif ($data['status']==2){
 				//提醒设置
 				$remind['nid'] = "recharge";
@@ -2188,7 +2188,8 @@ class accountClass{
 			$log['to_user'] = 0;
 			$log['remark'] = "在线充值，订单号:".$trade_no;
 			accountClass::AddLog($log);
-			
+			$sendSMS[] = array('user_id'=>$user_id,'content'=>"您的充值操作成功，账号增加{$log['money']}元，账户总金额：{$log['total']}，账户可用余额：{$log['use_money']}。");
+			sendSMS($user_id,$sendSMS['content'],1);
 			
 			$account_result =  self::GetOne(array("user_id"=>$user_id));
 			$log['user_id'] = $user_id;
