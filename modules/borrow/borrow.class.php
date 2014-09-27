@@ -1460,6 +1460,10 @@ class borrowClass extends amountClass{
 				mysql_query("rollback");
 				return false;
 			}
+			//By Glay 增加投标后的短信通知
+			$sendMsg = "投标完成，".$log['remark'];
+			sendSMS($log['user_id'],$sendMsg,1);
+			
 			$tender_data['user_id'] = $data['user_id'];
 			$tender_data['account'] = $data['account'];
 			$tender_data['tender_id'] = $tender_id;

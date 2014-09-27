@@ -2193,7 +2193,6 @@ class accountClass{
 			accountClass::AddLog($log);
 			
 			//By Glay 增加在线支付成功后的短信通知
-			//sendSMS($log['user_id'],$sendMsg,1);
 			sendSMS($log['user_id'],$sendMsg,1);
 			
 			
