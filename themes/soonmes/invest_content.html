@@ -796,9 +796,9 @@
 	<ul  id="tab" class="list-tab clearfix">
 		<li class="active"><a href="#jkxq" data-toggle="tab">借款详情</a></li>
 		<li><a href="#tbjl" data-toggle="tab">安全保障</a></li>
-		<li><a href="#zhxq1111" data-toggle="tab">账户详情</a></li>
+		<!--  <li><a href="#zhxq1111" data-toggle="tab">账户详情</a></li>-->
 		<li><a href="#hkxy" data-toggle="tab">还款信用</a></li>
-		<li><a href="#grxx" data-toggle="tab">个人资料</a></li>
+		<!--<li><a href="#grxx" data-toggle="tab">个人资料</a></li>-->
 		
 		<li><a href="#hkjl" data-toggle="tab">待还款记录</a></li>
 		
@@ -836,7 +836,7 @@
 		</ul> 		
 	</div>
 	
-	<!--账户详情-->
+	<!--账户详情
 	<div class="list-tab-con tab-pane fade" id="zhxq">
 		<ul class="clearfix">
 		{article module="borrow" function="GetUserLog" user_id="$var.user.user_id" var="acc"}
@@ -861,7 +861,7 @@
 			{/article}
 		</ul>
 		<p class="text-red">注：公开的账户资金详情在标的借款全部还清后将自动不再公开显示.</p>
-	</div>
+	</div>-->
 	
 	<!--还款信用-->
 	<div class="list-tab-con tab-pane fade" id="hkxy">
@@ -879,7 +879,7 @@
 	</div>
 	
 	
-	<!--个人资料-->
+	<!--个人资料
 	<div class="list-tab-con tab-pane fade" id="grxx">
 		<ul class="clearfix">
 			<li>性 别：{if $var.user.sex==1}男{else}女{/if}</li>
@@ -893,7 +893,7 @@
 			<li>是否逾期：{ $var.userinfo.late|linkage}</li>
 		</ul>
 	</div>
-
+	-->
 
 	
 	
