@@ -11,7 +11,9 @@
 <div class="intro">
 <div class="inner"><img src="{$tempdir}/img/air.jpg" class="bnr-img" />
 <h1>说说万得金融</h1>
-<p>万得金融致力于为投资者提供安全、收益高的互联网金融服务。主打供应链金融标的，预付15%订金，由大型骨干国企提供刚性兑付本息保证，较担保公司模式具有更高的安全性。作为国内首推的互联网金融产品，提供更好的投资收益。</p>
+<p>
+万得金融是国内第一家供应链金融领域的互联网金融平台，致力为投资人提供安全、便捷、高收益的互联网金融服务，帮助大众实现财富增值。平台类刚性兑付，通过借款人预付15%押金，国有骨干企业履约保证投资人本息安全，较目前其他平台的担保公司担保模式更透明、安全。
+</p>
 </div>
 </div>
 <div class="dai-list">
@@ -31,17 +33,17 @@
 	</div>
 	</span> <span class="jindu">{$var.scale|default:0}%</span> {if $var.status==3}
 	{if $var.repayment_account == $var.repayment_yesaccount } <a
-		href="invest/a{$var.id}.html" class="btn-action">已还款</a> {else} <a
-		href="invest/a{$var.id}.html" class="btn-action">还款中</a> {/if} {elseif
+		href="invest/a{$var.id}.html" >已还款</a> {else} <a
+		href="invest/a{$var.id}.html" >还款中</a> {/if} {elseif
 	$var.status==5} <img src="{$tempdir}/images/cancel_repayment.jpg" />
 	{elseif $var.status==4} <a href="invest/a{$var.id}.html"
-		class="btn-action">复审失败</a> {elseif $var.status==2} <a
-		href="invest/a{$var.id}.html" class="btn-action">等待复审</a> {elseif
+		>复审失败</a> {elseif $var.status==2} <a
+		href="invest/a{$var.id}.html" >等待复审</a> {elseif
 	$var.scale < 100} {if $var.is_lz==1} <a href="invest/a{$var.id}.html"
-		class="btn-action">马上认购</a> {else} <a href="invest/a{$var.id}.html"
-		class="btn-action">立即投标</a> {/if} {else} {if $var.is_lz==1} <a
-		href="invest/a{$var.id}.html" class="btn-action">已认购完</a> {else} <a
-		href="invest/a{$var.id}.html" class="btn-action">等待复审</a> {/if} {/if}
+		>马上认购</a> {else} <a href="invest/a{$var.id}.html"
+		>立即投标</a> {/if} {else} {if $var.is_lz==1} <a
+		href="invest/a{$var.id}.html" >已认购完</a> {else} <a
+		href="invest/a{$var.id}.html" >等待复审</a> {/if} {/if}
 	</li>
 	{/loop}
 
