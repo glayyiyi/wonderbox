@@ -27,7 +27,7 @@
 	$var.is_lz==1}流转周期：{else}期限：{/if}{if $var.isday==1}<strong>{$var.time_limit_day}</strong>天{else}<strong>{$var.time_limit}</strong>个月{/if}</span><span>{$var.lave_time}</span>
 	<span>
 	<div class="rate-bg">
-	<div class="rate-tiao" style="width: 100%"></div>
+	<div class="rate-tiao" style="width: {$var.scale|default:0}%"></div>
 	</div>
 	</span> <span class="jindu">{$var.scale|default:0}%</span> {if $var.status==3}
 	{if $var.repayment_account == $var.repayment_yesaccount } <a
