@@ -1,399 +1,170 @@
-{include file="header.html"}
-<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-<!-- Ö÷ÒªÄÚÈİ -->
-<div id="main" class="clearfix">
-	<!-- ¹ã¸æÄ£¿é -->
-	<div class="bannerBar m_b_15">
-		<p class="pic">
-			<img src="{$tempdir}/images/banner_01.jpg" />
-		</p>
-		<!-- ¸¡¶¯²ã -->
-
-		<!--<div class="pop_searchBar">
-			<div class="hd">
-				<ul class="tab_search">
-					<li><a class="hover">ÎÒÒªÍ¶×Ê<s class="ico_tip"></s></a></li>
-					<li><a class="hover"><s class="ico_tip"></s></a></li>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="./css/reset.css" />
+<link rel="stylesheet" href="./css/common.css" />
+<link rel="stylesheet" href="./css/index.css" />
+</head>
+<body>
+	<div id="wdjr-front">
+		<div class="wdjr-head">
+			<div class="inner">
+				<span><i class="icon i-tel"></i>æœåŠ¡çƒ­çº¿ï¼š010-59091009</span>
+				<span><i class="icon i-time"></i>æœåŠ¡æ—¶é—´ï¼š9:00-18:00</span>
+				<span><i class="icon i-qq"></i>å®˜æ–¹QQç¾¤ï¼š391114833</span>
+				<span class="weibo"><a href="#"><i class="icon i-weibo"></i></a><a href="#"><i class="icon i-weixin"></i></a></span>
+				<span class="login"><a href="#">ç™»å½•</a>|<a href="#">æ³¨å†Œ</a></span>
+				<a href="#" class="go-home">è¿”å›é¦–é¡µ</a>
+			</div>
+		</div>
+		<div class="wdjr-menu">
+			<div class="inner">
+				<ul>
+					<li class="on">
+						<a href="/">é¦–é¡µ</a>
+					</li>
+					<li>
+						<a href="#">æˆ‘è¦æŠ•èµ„</a>
+					</li>
+					<li>
+						<a href="#">æˆ‘çš„è´¦å·</a>
+					</li>
+					<li>
+						<a href="#">å®‰å…¨ä¿éšœ</a>
+					</li>
+					<li>
+						<a href="#">å…³äºæˆ‘ä»¬</a>
+					</li>
 				</ul>
+				<a class="logo" href="/"></a>
 			</div>
-			 <form action="/invest/index.html" method="get">
-				<div class="bg">
-				
-					<p class="m_b_5">³ï¿î½ğ¶î£º£¤{$var.account_format}Ôª</p>
-                    <p class="m_b_5">ÄêÀûÂÊ£º<strong>{$var.apr}</strong>%</p>
-                    <p class="item">
-						<label class="tit">½ğ¶î</label> <span class="c"> <input
-							type="text" class="input_picbg_01" name="q_l_account2" size="20"
-							value="{$magic.request.q_l_account2}" />
-						</span>
-					</p>
-					
-					<p class="item">
-						<label class="tit">Äê»¯ÊÕÒæÂÊ</label> <span class="c">  <select style="width: 150px;"
-								class="input_search" name="q_apr" id="q_apr">
-									<option value="">Ã»ÓĞÏŞÖÆ</option>
-									<option value="1" {if $magic.request.q_apr=='1'}selected{/if} >12%ÒÔÏÂ</option>
-									<option value="2" {if $magic.request.q_apr=='2'}selected{/if} >12%-16%</option>
-									<option value="3" {if $magic.request.q_apr=='3'}selected{/if} >16%ÒÔÉÏ</option>
-							</select>
-						</span>
-					</p> 
-					
-                    <p class="item">
-						<label class="tit">ÆÚÏŞ</label> <span class="c"> 
-						<select
-								style="width: 150px;" class="input_search" name="q_lmt"
-								id="q_lmt">
-									<option value="">Ã»ÓĞÏŞÖÆ</option>
-									<option value="1" {if $magic.request.q_lmt=='1'}selected{/if} >3¸öÔÂÒÔÏÂ</option>
-									<option value="2" {if $magic.request.q_lmt=='2'}selected{/if} >3-6¸öÔÂ</option>
-									<option value="3" {if $magic.request.q_lmt=='3'}selected{/if} >6-9¸öÔÂ</option>
-									<option value="4" {if $magic.request.q_lmt=='4'}selected{/if} >9-12¸öÔÂ</option>
-									<option value="5" {if $magic.request.q_lmt=='5'}selected{/if} >12¸öÔÂÒÔÉÏ</option>
-							</select>
-							 </span>
-					</p>-->
-                    
-			<!-- 		<p class="item">
-						<label class="tit">½è¿îÄ¿µÄ</label> <span class="c"> {linkages
-							name="use" nid="borrow_use" value="$magic.request.use"
-							default="Ã»ÓĞÏŞÖÆ"} </span>
-					</p>
-
-
-					<p class="item">
-						<label class="tit">±êÖÖ</label> <span class="c"> <select
-							name="biaoType" id="biaoType">
-								<option value="">ËùÓĞ</option>
-								<option value="fast" {if $magic.request.biaoType=='fast'}selected{/if} >µÖÑº±ê</option>
-								<option value="jin" {if $magic.request.biaoType=='jin'}selected{/if} >¾»Öµ±ê</option>
-								<option value="miao" {if $magic.request.biaoType=='miao'}selected{/if} >Ãë»¹±ê</option>
-								<option value="xin" {if $magic.request.biaoType=='xin'}selected{/if} >ĞÅÓÃ±ê</option>
-								<option value="lz" {if $magic.request.biaoType=='lz'}selected{/if} >Á÷×ª±ê</option>
-						</select>
-						</span>
-					</p>
-
-					<p class="item">
-						<label class="tit">¹Ø¼ü×Ö</label> <span class="c"> <input
-							type="text" class="input_picbg_01" name="keywords" size="20"
-							value="{$magic.request.keywords|urldecode}" />
-						</span>
-					</p> -->
-
-				<!-- 	<p class="item">
-						<label class="tit"></label> <span class="c tc"> <input
-							type="submit" class="btnnew btn_green_01 m_t_10" id="search_btn"
-							value="ËÑË÷" />
-						</span>
-					</p> 
-					<p>
-						<input type="hidden" name="type" value="{$magic.request.type}" />
-					</p>
-					</ul>
-				</div>
-
-			</form>
-		</div>-->
-
-		<!-- end ¸¡¶¯²ã -->
-	</div>
-	<!-- end ¹ã¸æÄ£¿é -->
-				<!-- ÈÈÃÅÍ¶×Ê -->
-<!-- 				<div class="module_01 m_b_17">
-					<div class="hd m_b_15">
-						<h3 class="fl">ÈÈÃÅÍ¶×Ê</h3>
-						<span class="fr more"><a href="/invest/index.html?order=account_up">MORE</a></span>
-					</div>
-					<div class="bg posit_rel">
-						×óÓÒ
-						<div class="global_module prolist">
-							<div  class="prolist_content">
-				                <ul>
-				                {loop module="borrow" function="GetList" var="var" limit="10"  order="biaoindex"}
-				                    <li>
-				                     <b class="pic"> <a href="invest/a{$var.id}.html"><img src="{$var.user_id|avatar:'middle'}" ></a></b>
-				                        
-				                        <div class="itemInfo">
-				                        <a href="invest/a{$var.id}.html"><h4>{$var.name|truncate:25:"..."}&nbsp;&nbsp;</h4></a>
-				                        <p class="m_b_5">³ï¿î½ğ¶î£º£¤{$var.account_format}Ôª</p>
-                        				<p class="m_b_5">Äê»¯ÊÕÒæÂÊ£º<strong>{$var.apr}</strong>%</p>
-				                        
-				                        	<p><a href="invest/a{$var.id}.html" class="ico_sprite btnnew btn_view_01">²é ¿´</a></p>
-				                        </div>
-				                    </li>
-				                 {/loop}
-				                </ul>
-				            </div>
-						</div>
-						×óÓÒ°´Å¥
-			            <p class="module_left"><img class="goLeft" src="{$tempdir}/images/btn_left.png" alt="" /></p>
-			            <p class="module_right"><img class="goRight" src="{$tempdir}/images/btn_right.png" alt="" /></p>
-
-			            ĞŞÊÎ±³¾°
-			            <div class="module_01tip"></div>
-
-					</div>
-				</div> -->
-				<!-- end ÈÈÃÅÍ¶×Ê -->
-				<!-- 2ÁĞ -->
-				<div class="grid_c2 clearfix m_b_10">
-					<div class="fl clum_l">
-						<!-- ÈÈÃÅ´û¿î -->
-								Ê²Ã´ÊÇÍòµÃ½ğÈÚ£¿</br>
-ÍòµÃ½ğÈÚÆ½Ì¨Îª´óÖÚÌá¹©°²È«¡¢¿É¿¿¡¢¸ßÊÕÒæµÄ»¥ÁªÍøÀí²Æ·şÎñ¡£Í¨¹ıÍòµÃ½ğÈÚÆ½Ì¨µÄÍÆ¼ö£¬Äú¿ÉÒÔ½«ÊÖÖĞµÄ¸»Óà×Ê½ğ³ö½è¸øÓÉÆ½Ì¨¡¢¹©»õÉÌ¡¢½è¿î·½Èı·½Ğ­Òé±£ÕÏµÄ£¬¾­ÓªÇé¿öÁ¼ºÃµÄÖĞĞ¡ÆóÒµ£¬²¢»ñµÃÀûÏ¢»Ø±¨¡£
-						<div class="module_02">
-							<div class="hd">
-					
-							<h3 class="fl">ÍÆ¼öÍ¶×ÊÏîÄ¿</h3>
-							<span class="fr more"><a href="/invest/index.html?order=account_up">[¸ü¶à]</a></span>
-							
-						</div>
-				<div class="bg">			
-			{loop module="borrow" function="GetList" var="var" limit="3"  order="biaoindex"}
-				<div class="list-div">
-                    <a href="invest/a{$var.id}.html"><img src="{$var.user_id|avatar:'middle'}" class="productimg"></a>
-                    <ul class="list-ul">
-                        <li class="titleli">
-                           <span>
-                                <a href="invest/a{$var.id}.html">{$var.name|truncate:25:"..."}&nbsp;&nbsp;</a>
-                           </span>
-                           {if $var.is_lz==1}
-                           <a href="/question/a146.html" target="_blank" rel="tooltip" title="ÏîÄ¿Á÷×ª±ê"><img src="{$tpldir}/images/lz.gif" border="0"  alt="µã»÷²é¿´ÏêÇé"  /></a>&nbsp;
-                           {elseif $var.is_fast==1}
-                           <a href="/question/a146.html" target="_blank" rel="tooltip" title="Ğ¡Î¢ÆóÒµÏÖ³¡ÉóºËµÖÑº±ê"><img src="{$tpldir}/images/fast.gif" border="0"  alt="µã»÷²é¿´ÏêÇé"  /></a>&nbsp;
-                           {elseif $var.is_jin==1}
-                           <a href="/question/a184.html" target="_blank" rel="tooltip" title="½è¿îÕßÔÚÍøÕ¾ÄÚ×Ê²ú×ö±£ÕÏµÄ½è¿î±ê"><img src="{$tpldir}/images/jin.gif"   border="0"  alt="µã»÷²é¿´ÏêÇé" /></a>&nbsp;
-                           {elseif $var.is_mb==1}
-                           <a href="/question/a145.html" target="_blank" rel="tooltip" title="Ãë±êÂú¶îÏµÍ³×Ô¶¯»¹¿î"><img src="{$tpldir}/images/miao.jpg"  border="0" /></a>&nbsp;
-                           {elseif $var.is_xin==1}
-                           <a href="/question/a143.html" target="_blank" rel="tooltip" title="ÍøÕ¾¸øÓèµÄĞÅÓÃ¶î¶È½è¿î±ê"><img src="{$tpldir}/images/xin.jpg"   border="0"  alt="µã»÷²é¿´ÏêÇé" /></a>&nbsp;
-                           {/if}
-                           {if $var.isday==1}<a href="#" target="_blank" rel="tooltip" title="Ìì±êÊÇ°´Ìì½è¿î±ê"><img src="{$tpldir}/images/day.jpg"   border="0"  alt="µã»÷²é¿´ÏêÇé" /></a>&nbsp;{/if}
-                           {if $var.award==1 || $var.award==2 }<a  rel="tooltip" title="Í¶×Ê¸Ã½è¿î±ê³ıÀûÏ¢ÍâÓĞ¶îÍâµÄ½±Àø" href="#" ><img src="{$tpldir}/images/jiangli.gif"  border="0"  /></a>&nbsp;{/if}
-                           {if $var.pwd != ""}<a rel="tooltip" title="¶¨Ïò±êÊÇÍ¶±êµÄÊ±ºòĞèÒª¶¨ÏòÃÜÂëµÄ½è¿î±ê" href="#"><img src="{$tpldir}/images/lock.gif"  border="0"  /></a>&nbsp;{/if}
-                           {if $var.danbao == 1}<a rel="tooltip" title="ÓÉµÚÈı·½µ£±£¹«Ë¾µ£±£µÄ½è¿î±ê" href="#"><img src="{$tpldir}/images/dan.gif"  border="0" /></a>{/if}
-                           {if $var.is_kuai==1} <a rel="tooltip" title="¿ìËÙ±ê£¬¶ÌÆÚ×Ê½ğÖÜ×ª" href="#"><img src="{$tpldir}/images/kuai.gif"  border="0" /></a>{/if}
-                        </li>
-                        <li>³ï¿î½ğ¶î£º£¤{$var.account_format}Ôª</li>
-                        <li>Äê»¯ÊÕÒæÂÊ£º<strong>{$var.apr}</strong>%</li>
-                        <li>{if $var.is_lz==1}Á÷×ªÖÜÆÚ£º{else}ÆÚÏŞ£º{/if}{if $var.isday==1}<strong>{$var.time_limit_day}</strong>Ìì{else}<strong>{$var.time_limit}</strong>¸öÔÂ{/if}</li>
-                        <!-- <li><span style="float:left">ĞÅÓÃµÈ¼¶£º</span><img class="rank" src="{$_G.system.con_credit_picurl}{$var.credit_pic|default:credit_s11.gif}" title="{$var.credit_jifen|default:0}·Ö" /></li> -->
-                        <li><span style="float:left">Ê£ÓàÊ±¼ä£º{$var.lave_time} </span></li>
-                        <li>
-                            <div class="float_left">ÒÑÍê³É£º</div>
-                            <div class="jindu float_left">
-                                <div class="tiaotiao" style="width:{$var.scale|default:0}%"></div>
-                            </div>
-                            <div class="float_left">&nbsp;{$var.scale|default:0}%</div>
-                        </li>
-                        <li>{if $var.isday==1 &&$var.is_lz==0}µ½ÆÚÈ«¶î»¹¿î{elseif $var.is_mb==1}ÏµÍ³×Ô¶¯»¹¿î{elseif $var.is_lz==1}µ½ÆÚ×Ô¶¯»Ø¹º{else}{$var.style|linkage:"borrow_style"}{/if}</li>
-					</ul>
-					<div class="list-btnbox">
-						{if $var.status==3}
-						{if $var.repayment_account == $var.repayment_yesaccount  }
-						<a href="invest/a{$var.id}.html" class="btn-action">ÒÑ»¹¿î</a>
-						{else}
-						<a href="invest/a{$var.id}.html" class="btn-action">»¹¿îÖĞ</a>
-						{/if}
-						{elseif $var.status==5}
-						<img src="{$tempdir}/images/cancel_repayment.jpg" />
-						{elseif $var.status==4}
-						<a href="invest/a{$var.id}.html" class="btn-action">¸´ÉóÊ§°Ü</a>
-						{elseif $var.status==2}
-						<a href="invest/a{$var.id}.html" class="btn-action">µÈ´ı¸´Éó</a>
-						{elseif $var.scale < 100}
-							{if $var.is_lz==1}
-							<a href="invest/a{$var.id}.html" class="btn-action">ÂíÉÏÈÏ¹º</a>
-							{else}
-							<a href="invest/a{$var.id}.html" class="btn-action">Á¢¼´Í¶±ê</a>
-							{/if}
-						{else}
-							{if $var.is_lz==1}
-							<a href="invest/a{$var.id}.html" class="btn-action">ÒÑÈÏ¹ºÍê</a>
-							{else}
-							<a href="invest/a{$var.id}.html" class="btn-action">µÈ´ı¸´Éó</a>
-							{/if}
-					{/if}
-					</div>
-				</div>
-			{/loop}
 		</div>
-	 </div>
-	<!-- end ÈÈÃÅ´û¿î -->
-   </div>
-		<div class="fr clum_r">
-			<!-- ¹« ¸æ -->
-			<div class="module_04 m_b_10">
-				<div class="hd">
-					<span class="float_left"><h3>
-							<s class="icon_gg"></s>¹« ¸æ
-						</h3></span>
-						<a href="/gonggao/index.html" class="float_right">[¸ü¶à]</a>
-				</div>
-				<div class="bg">
-					<ul class="noteList">
-						{site site_id="22" } {loop module="article" function="GetList"
-						limit="3" site_var="var" var="item" status=1}
-						<li class="clearfix"><a
-							href="{$item.site_nid}/a{$item.id}.html"><span
-								class="float_left">{$item.name|truncate:10}</span><span
-								class="float_right">{$item.publish|truncate:10}</span></a></li> {/loop} {/site}
-					</ul>
-				</div>
+		<!-- å…¬å…±å¤´ç»“æŸ -->
+		<div class="wdjr-banner">
+			<div class="inner">
+				<a href="#" class="reg"></a>
+				<a href="#" class="b-login"></a>
+			</div>	
+		</div>
+		<div class="anliguan">
+			<div class="inner"></div>
+		</div>
+		<div class="intro">
+			<div class="inner">
+				<img src="./img/air.jpg" class="bnr-img"/>
+				<h1>è¯´è¯´ä¸‡å¾—é‡‘è</h1>
+				<p>ä¸‡å¾—é‡‘èè‡´åŠ›äºä¸ºæŠ•èµ„è€…æä¾›å®‰å…¨ã€æ”¶ç›Šé«˜çš„äº’è”ç½‘é‡‘èæœåŠ¡ã€‚ä¸»æ‰“ä¾›åº”é“¾é‡‘èæ ‡çš„ï¼Œé¢„ä»˜15%è®¢é‡‘ï¼Œç”±å¤§å‹éª¨å¹²å›½ä¼æä¾›åˆšæ€§å…‘ä»˜æœ¬æ¯ä¿è¯ï¼Œè¾ƒæ‹…ä¿å…¬å¸æ¨¡å¼å…·æœ‰æ›´é«˜çš„å®‰å…¨æ€§ã€‚ä½œä¸ºå›½å†…é¦–æ¨çš„äº’è”ç½‘é‡‘èäº§å“ï¼Œæä¾›æ›´å¥½çš„æŠ•èµ„æ”¶ç›Šã€‚</p>
 			</div>
-			<!-- end ¹« ¸æ -->
-			
-			
-			<div class="module_03">
-				<div class="hd">
-					<span class="float_left"><h3>
-						<s class="icon_tj"></s>ÎÒµÄºÃÓÑ
-					</h3>
+		</div>
+		<div class="dai-list">
+			<div class="inner">
+				<div class="cun-title"></div>
+				<ul>
+					<li class="list-title"><span>é¡¹ç›®åç§°</span><span>èèµ„æ€»é¢</span><span>å¹´åŒ–æ”¶ç›Š</span><span>å¯æŠ•ä½™é¢</span><span>æŠ•èµ„æœŸé™</span><span>å‰©ä½™æ—¶é—´</span><span>èèµ„è¿›åº¦</span></li>
+					<li class="dai-item"><span>ä¸‡å¾—ç†è´¢2å·</span><span class="blue">50000</span><span class="blue">12%</span><span class="blue">0</span><span><em class="blue">3</em>ä¸ªæœˆ</span><span>16å°æ—¶36åˆ†</span>
+					<span>
+						<div class="rate-bg">
+							<div class="rate-tiao" style="width:100%"></div>
+						</div>
 					</span>
-					<a href="/index.php?user&q=code/user/myfriend" class="float_right">[¸ü¶à]</a>
+					<span class="jindu">100%</span>
+					<a href="#">è¿˜æ¬¾ä¸­</a>
+					</li>
+					<li class="dai-item"><span>ä¸‡å¾—ç†è´¢2å·</span><span class="blue">50000</span><span class="blue">12%</span><span class="blue">0</span><span><em class="blue">3</em>ä¸ªæœˆ</span><span>16å°æ—¶36åˆ†</span>
+					<span>
+						<div class="rate-bg">
+							<div class="rate-tiao" style="width:75%"></div>
+						</div>
+					</span>
+					<span class="jindu">75%</span>
+					<a href="#">è¿˜æ¬¾ä¸­</a>
+					</li>
+					<li class="dai-item"><span>ä¸‡å¾—ç†è´¢2å·</span><span class="blue">50000</span><span class="blue">12%</span><span class="blue">0</span><span><em class="blue">3</em>ä¸ªæœˆ</span><span>16å°æ—¶36åˆ†</span>
+					<span>
+						<div class="rate-bg">
+							<div class="rate-tiao" style="width:50%"></div>
+						</div>
+					</span>
+					<span class="jindu">50%</span>
+					<a href="#">è¿˜æ¬¾ä¸­</a>
+					</li>
+				</ul>
+				<a href="#" class="more">æŸ¥çœ‹æ›´å¤š</a>
+			</div>
+		</div>
+		<div class="dai-list">
+			<div class="inner">
+				<div class="piaojubao-title"></div>
+				<ul>
+					<li class="list-title"><span>é¡¹ç›®åç§°</span><span>èèµ„æ€»é¢</span><span>å¹´åŒ–æ”¶ç›Š</span><span>å¯æŠ•ä½™é¢</span><span>æŠ•èµ„æœŸé™</span><span>å‰©ä½™æ—¶é—´</span><span>èèµ„è¿›åº¦</span></li>
+					<li class="dai-item"><span>ä¸‡å¾—ç†è´¢2å·</span><span class="blue">50000</span><span class="blue">12%</span><span class="blue">0</span><span><em class="blue">3</em>ä¸ªæœˆ</span><span>16å°æ—¶36åˆ†</span>
+					<span>
+						<div class="rate-bg">
+							<div class="rate-tiao" style="width:100%"></div>
+						</div>
+					</span>
+					<span class="jindu">100%</span>
+					<a href="#">è¿˜æ¬¾ä¸­</a>
+					</li>
+					<li class="dai-item"><span>ä¸‡å¾—ç†è´¢2å·</span><span class="blue">50000</span><span class="blue">12%</span><span class="blue">0</span><span><em class="blue">3</em>ä¸ªæœˆ</span><span>16å°æ—¶36åˆ†</span>
+					<span>
+						<div class="rate-bg">
+							<div class="rate-tiao" style="width:75%"></div>
+						</div>
+					</span>
+					<span class="jindu">75%</span>
+					<a href="#">è¿˜æ¬¾ä¸­</a>
+					</li>
+					<li class="dai-item"><span>ä¸‡å¾—ç†è´¢2å·</span><span class="blue">50000</span><span class="blue">12%</span><span class="blue">0</span><span><em class="blue">3</em>ä¸ªæœˆ</span><span>16å°æ—¶36åˆ†</span>
+					<span>
+						<div class="rate-bg">
+							<div class="rate-tiao" style="width:50%"></div>
+						</div>
+					</span>
+					<span class="jindu">50%</span>
+					<a href="#">è¿˜æ¬¾ä¸­</a>
+					</li>
+				</ul>
+				<a href="#" class="more">æŸ¥çœ‹æ›´å¤š</a>
+			</div>
+		</div>
+		<div class="f-link">
+			<div class="inner">
+			<span>å‹æƒ…é“¾æ¥ï¼š</span><a href="#">å’Œè®¯è´¢ç»</a>|<a href="#">ç½‘è´·ä¹‹å®¶</a>|<a href="#">ç½‘è´·å¤©çœ¼</a>|<a href="#">æ±‡ä»˜å¤©ä¸‹æœ‰é™å…¬å¸</a>
+			</div>
+		</div>
+		<div class="u-link">
+			<div class="inner">
+				<div class="tel">
+					<p>æœåŠ¡çƒ­çº¿</p>
+					<p class="tel-big">010-59091009</p>
+					<p>æœåŠ¡æ—¶é—´ï¼ˆ9:00â€”18:00ï¼‰</p>
 				</div>
-				<div class="bg">
-					<ul class="list_lc">
-						
-				{loop module="user" function="GetFriendsList" var="item" user_id=$_G.user_id status=1 limit="2"}
-				
-						<li>
-							<div class="clearfix posit_rel">
-								<div class="info">
-									<!-- <h4 class="name m_b_10">{$item.friend_username}</h4> -->
-									<h4 class="name m_b_10">ºÃÓÑĞÕÃû£º{if $item.friend_realname} {$item.friend_realname} {else} {$item.friend_username}{/if}</h4>
-									
-									<p><a href="/u/{$item.friends_userid}">£­²é¿´ËûÍ¶×ÊµÄÏîÄ¿</a></p>
-									<p><a href="/index.php?user&q=code/message/sent&receive={$item.friend_username}">£­¸øËûÁôÑÔ</a></p>
-								</div>
-								<b class="photo"><img src="{$item.friends_user_id|avatar}"
-									width="100" height="99" /></b>
-
-
-							</div>
-
-
-						</li> 
-						{/loop}
-					</ul>
+				<div>
+					<a href="#">å…³äºæˆ‘ä»¬</a><a href="#">åª’ä½“æŠ¥é“</a><a href="#">åˆä½œä¼™ä¼´</a><a href="#">æ‹›è´¤çº³å£«</a><a href="#">è”ç³»æˆ‘ä»¬</a>
+				</div>
+				<div class="other-link">
+					<a href="#"><i class="icon i-l-weixin"></i>å¾®ä¿¡</a><a href="#"><i class="icon i-l-weibo"></i>æ–°æµªå¾®åš</a><a href="#"><i class="icon i-tx"></i>è…¾è®¯å¾®åš</a><a href="#"><i class="icon i-us"></i>åœ¨çº¿å®¢æœ</a>
 				</div>
 			</div>
-			
-			
-			
-			<!-- Àí²Æ¹ËÎÊÍÆ½é -->
-			<!-- <div class="module_03">
-				<div class="hd">
-					<h3>
-						<s class="icon_tj"></s>Àí²Æ¹ËÎÊÍÆ½é
-					</h3>
+		</div>
+		<!--å…¬å…±åº•å¼€å§‹-->
+		<div class="wdjr-footer">
+			<div class="inner">
+				<p class="address">åœ°å€ï¼šåŒ—äº¬å¸‚æœé˜³åŒºæœé˜³é—¨å¤–å¤§è¡—æ˜†æ³°å›½é™…å¤§å¦2610å®¤</p>
+				<p class="copyright">Copyright @ 2013 www.wdjr.com.cn All Rights Reserved.ä¸‡å¾—é‡‘è - ç‰ˆæƒæ‰€æœ‰ äº¬ICPå¤‡12028038å·-1</p>
+				<div class="auth-link">
+					<a class="auth-icon auth-i-360" href="#"></a>
+					<a class="auth-icon auth-i-icp" href="#"></a>
+					<a class="auth-icon auth-i-xin" href="#"></a>
+					<a class="auth-icon auth-i-yanzheng" href="#"></a>
 				</div>
-				<div class="bg">
-					<ul class="list_lc">
-						{loop module="user" function="GetList" limit="20" type_id=3}
-
-						<li>
-							<div class="clearfix posit_rel">
-								<div class="info">
-									<h4 class="name m_b_10">{$var.username}</h4>
-									<p class="item">ĞÕÃû£º{$var.realname}</p>
-									<p class="item">µç»°:{$var.phone}</p>
-									<p class="item m_b_6">
-										<label>·şÎñĞÇ¼¶£º</label><span class="star"><s
-											class="star_01"></s><s class="star_01"></s><s class="star_01"></s><s
-											class="star_01"></s><s class="star_01"></s></span>
-									</p>
-									<p class="zx m_b_10">
-										<a target="_blank"
-											href="http://wpa.qq.com/msgrd?v=3&uin={$var.qq}&site=qq&menu=yes">
-											<img border="0" src="http://wpa.qq.com/pa?p=2:{$var.qq}:41"
-											alt="µã»÷ÕâÀï¸øÎÒ·¢ÏûÏ¢" title="µã»÷ÕâÀï¸øÎÒ·¢ÏûÏ¢" />
-										</a>
-									</p>
-
-									<p class="item">{$var.content}</p>
-								</div>
-								<b class="photo"><img src="{$var.user_id|avatar}"
-									width="100" height="99" /></b>
-
-
-							</div>
-
-
-						</li> {/loop}
-					</ul>
-				</div>
-			</div> -->
-			<!-- end Àí²Æ¹ËÎÊÍÆ½é -->
-
-			<!-- <div class="module_04 m_b_10">
-                <div class="hd">
-                    <span class="float_left"><h3>³É¹¦´û¿î</h3></span><a href="/invest/index.html?type=success" class="float_right">[¸ü¶à]</a>
-                </div>
-                <div class="bg" id="success_borrow">
-                    <ul class="notelist">
-                        {loop module="borrow" function="GetList" type="success" var="var" limit="6" status="3" order="account_down" recMonth="1"}
-                        <li class="clearfix">
-                            <img src="{$var.user_id|avatar}" alt="" class="sucimg">
-                            <dl>
-                                <dt><a href="invest/a{$var.id}.html" target="_blank" title="{$var.name}">{$var.name|truncate:13}</a></dt>
-                                <dd>½ğ¶î£º<b>{$var.account}Ôª</b></dd>
-                                <dd>ÆÚÏŞ£º{$var.time_limit|linkage:"borrow_time_limit"}</dd>
-                            </dl>
-                        </li>
-                        {/loop}
-                    </ul>
-                </div>
-            </div> -->
-			<!-- <div class="module_04 m_b_10" style="margin-bottom: 0;">
-				<div class="hd">
-					<span class="float_left"><h3>³£¼ûÎÊÌâ</h3></span> <a
-						href="/question/index.html" class="float_right">[¸ü¶à]</a>
-				</div>
-				<div class="bg">
-					<ul class="nodelist">
-						{site site_id="11" } {loop module="article" function="GetList"
-						limit="7" site_var="var" var="item" status=1}
-						<li><a href="{$item.site_nid}/a{$item.id}.html">{$item.name|truncate:18}</a></li>
-						{/loop} {/site}
-					</ul>
-				</div>
-			</div> -->
-
-
-			<!-- ¹Ù·½Î¢ĞÅ  -->
-<!-- 			<div class="weibo">
-				<div class="hd">¹Ù·½Î¢ĞÅ</div>
-				<div class="bg clearfix">
-					<p class="txt fl m_r_20">Î¢ĞÅÉ¨Ãè¶şÎ¬Âë£¬»ñµÃÃ¿ÈÕ¾«Ñ¡×ÊÑ¶</p>
-					<p class="pic fl">
-						<img src="" width="100" height="100" alt="¶şÎ¬Âë">
-					</p>
-				</div>
-			</div> -->
-			<!-- end ¹Ù·½Î¢ĞÅ  -->
+			</div>
 		</div>
 	</div>
-				<!-- end 2ÁĞ -->
-			
-			<!-- end Ö÷ÒªÄÚÈİ -->		
-			</div>
-			
-		
-<script type="text/javascript">
-{literal}
-jQuery(function(){
-	jQuery("[rel='tooltip']").tooltip();
-	jQuery('#login_btn').click(function(){
-		jQuery('#login_sub').submit();
-	});
-});
-{/literal}
-</script>
-<script src="{$tempdir}/media/js/tooltip.js"></script>
-<script src="{$tempdir}/media/js/popover.js"></script>
-<script src="{$tempdir}/media/js/transition.js"></script>
-
-<!--main end-->
-{include file="footer.html"}
+</body>
+</html>

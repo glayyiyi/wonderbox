@@ -1,0 +1,163 @@
+.wdjr-main{
+    margin-top: 20px;
+}
+.wdjr-banner{
+    background-color: #12196a;
+}
+.wdjr-banner .inner{
+    background-image: url("../images/banner.jpg");
+    width: 1300px;
+    height: 325px;
+    position: relative;
+}
+.wdjr-banner .reg{
+    position: absolute;
+    display: block;
+    width: 195px;
+    height: 42px;
+    right: 185px;
+    bottom: 88px;
+
+}
+.wdjr-banner .b-login{
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 20px;
+    right: 223px;
+    bottom: 58px;
+}
+.anliguan,.intro,.dai-list,.u-link{
+    margin-top: 30px;
+}
+.anliguan .inner{
+    background-image: url("../images/anliguan.jpg");
+    width: 996px;
+    height: 135px;
+    text-align: center;
+}
+.intro h1{
+    color: #102f8d;
+    font-size: 24px;
+}
+.intro p{
+    margin-top: 18px;
+    width: 650px;
+    text-indent:2em;
+    font-size: 14px;
+    line-height: 28px;
+}
+.intro .bnr-img{
+    float: right;
+    margin-right: 20px;
+}
+.cun-title{
+    background-image: url("../images/dingcun.jpg");
+    width: 994px;
+    height: 34px;
+}
+.piaojubao-title{
+    background-image: url("../images/piaojubao.jpg");
+    width: 994px;
+    height: 34px;
+}
+.dai-list span{
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    color: #9fa0a0;
+    text-align: center;
+    vertical-align: middle;
+}
+.list-title span{
+    font-size: 16px;
+    color: #040404;
+    text-align: center;
+}
+.dai-list .blue{
+    color: #102f8d;
+}
+.dai-list ul{
+    margin-top: 20px;
+    border-bottom: 1px dashed #f1efef;
+    margin-bottom: 3px;
+}
+.dai-list .rate-bg{
+    border: 1px solid #f39801;
+    height: 14px;
+    line-height: 14px;
+    overflow: hidden;
+    padding: 1px;
+    width: 100px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.dai-list .rate-tiao{
+    background-color: #f39801;
+    height: 14px;
+    line-height: 14px;
+}
+.dai-list .jindu{
+    width: 50px;
+}
+.dai-item a{
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    background-color: #f39801;
+    width: 95px;
+    height: 37px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 37px;
+    vertical-align: middle;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.dai-list .more{
+    display: block;
+    width: 996px;
+    background-color: #f1efef;
+    height: 29px;
+    font-size: 14px;
+    color: #676767;
+    text-align: center;
+    line-height: 29px;
+}
+.f-link{
+    margin-top: 105px;
+    font-size: 14px;
+}
+.f-link .inner{
+    border-bottom: 2px solid #f1efef;
+    padding-bottom: 18px;
+}
+.f-link a{
+    margin:0px 5px;
+}
+.u-link a{
+    margin-right: 30px;
+    font-size: 16px;
+}
+.other-link{
+    margin-top: 50px;
+}
+.other-link a{
+    font-size: 18px;
+}
+.other-link i{
+    margin-right: 4px;
+}
+.tel{
+    float: right;
+}
+.tel p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.tel .tel-big{
+    font-size: 24px;
+}
