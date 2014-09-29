@@ -598,7 +598,7 @@ DIV.spacer {
 	margin:0;
 }
 .NavLinkContent .txtspan a{
-	display:block; width:222px; height:43px; line-height:43px; background:url(../bg/zx-li.jpg) no-repeat; font-size:14px; text-align:center;
+	display:block; width:200px; height:43px; line-height:43px; background:url(../bg/zx-li.jpg) no-repeat; font-size:14px; text-align:center;
 }
 .NavLinkContent .txtspan a:hover{
 	background:url(../bg/zx-hover.jpg) no-repeat; color:#fff;
