@@ -40,27 +40,45 @@
 				<span><i class="icon i-time"></i>服务时间：9:00-18:00</span>
 				<span><i class="icon i-qq"></i>官方QQ群：391114833</span>
 				<span class="weibo"><a href="#"><i class="icon i-weibo"></i></a><a href="#"><i class="icon i-weixin"></i></a></span>
-				<span class="login"><a href="#">登录</a>|<a href="#">注册</a></span>
-				<a href="#" class="go-home">返回首页</a>
+				<span class="login">
+				{if $_G.user_id>0}
+				  欢迎你，<a href="/?user">{$_G.user_result.username}</a> 
+				  <a href="/?user&q=going/logout">[退出]</a>
+				 {else}
+				 {if $_G.open_connet.type=='qq'}
+				 欢迎您，<img src="/data/images/base/connect_qq.gif" title="qq" />
+				 {$_G.open_connet.nickname} | 
+				 <a href="/index.action?user&q=going/reg">完善帐号信息</a> | 
+				 <a href="/index.action?user&q=going/login">绑定已有帐号</a> | 
+				<a href="/?user&q=going/logout">退出</a>
+				 {else}
+				 <a href="/index.action?user&q=going/login">登录</a> {if $_G.system.con_is_reg_open } | 
+				 <a href="/index.action?user&q=going/getreg">注册</a>{/if}
+				 {/if}
+				
+				{/if}
+				
+				</span>
+				<a href="/" class="go-home">返回首页</a>
 			</div>
 		</div>
 		<div class="wdjr-menu">
 			<div class="inner">
 				<ul>
-					<li class="on">
+					<!--<li class="on">
 						<a href="/">首页</a>
-					</li>
+					</li>-->
 					<li>
 						<a href="#">我要投资</a>
 					</li>
 					<li>
-						<a href="#">我的账号</a>
+						<a href="/index.action?user">我的账号</a>
 					</li>
 					<li>
-						<a href="#">安全保障</a>
+						<a href="/onlineservice/index.html">安全保障</a>
 					</li>
 					<li>
-						<a href="#">关于我们</a>
+						<a href="/aboutus/index.html">关于我们</a>
 					</li>
 				</ul>
 				<a class="logo" href="/"></a>
