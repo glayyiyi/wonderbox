@@ -54,7 +54,7 @@
     position: relative;
     height: 54px;
     width: 1000px;
-    padding: 33px 150px;
+    padding: 33px 0px;
     overflow: visible;
 }
 .wdjr-menu ul a{
@@ -85,10 +85,10 @@
     *zoom:1;
     vertical-align: middle;
 }
-/*----------------------公共头结束-----------------------*/
+/*----------------------鍏叡澶寸粨鏉�----------------------*/
 
 
-/*公共底*/
+/*鍏叡搴�/
 .wdjr-footer{
     background-color: #444444;
     margin-top: 45px;
@@ -140,7 +140,7 @@
 .auth-link .auth-i-yanzheng{
     margin-right: 0px;
 }
-/*通用样式*/
+/*閫氱敤鏍峰紡*/
 .i-tel{
     background-position: -7px -9px;
     width:21px;
