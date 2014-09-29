@@ -23,7 +23,7 @@
 	<li class="list-title"><span>项目名称</span><span>融资总额</span><span>年化收益</span><span>可投余额</span><span>投资期限</span><span>剩余时间</span><span>融资进度</span></li>
 	<li class="dai-item"><span><a href="invest/a{$var.id}.html">{$var.name|truncate:25:"..."}</a></span><span
 		class="blue">￥{$var.account_format}元</span><span class="blue"><strong>{$var.apr}</strong>%</span><span
-		class="blue">0</span><span>{if
+		class="blue">￥{$var.other}</span><span>{if
 	$var.is_lz==1}流转周期：{else}期限：{/if}{if $var.isday==1}<strong>{$var.time_limit_day}</strong>天{else}<strong>{$var.time_limit}</strong>个月{/if}</span><span>{$var.lave_time}</span>
 	<span>
 	<div class="rate-bg">
@@ -46,7 +46,7 @@
 	{/loop}
 
 </ul>
-<a href="#" class="more">查看更多</a></div>
+<!--  <a href="#" class="more">查看更多</a></div>-->
 </div>
 
 <div class="f-link">
