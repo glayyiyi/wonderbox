@@ -26,7 +26,9 @@
 	order="biaoindex"}
 	<li class="list-title"><span>项目名称</span><span>融资总额</span><span>年化收益</span><span>可投余额</span><span>投资期限</span><span>剩余时间</span><span>融资进度</span></li>
 	<li class="dai-item">
-	<a href="invest/a{$var.id}.html">{$var.name|truncate:25:"..."}</a>
+	
+	<a {if $var.status==3}class="done"{/if} href="invest/a{$var.id}.html">{$var.name|truncate:25:"..."}</a>
+	 
 	<span
 		class="blue">￥{$var.account_format}元</span><span class="blue"><strong>{$var.apr}</strong>%</span><span
 		class="blue">￥{$var.other}</span><span>{if
