@@ -38,18 +38,26 @@
 	</span> 
 	<span class="jindu">{$var.scale|default:0}%</span> 
 	{if $var.status==3}
-	{if $var.repayment_account == $var.repayment_yesaccount } <a
-		href="invest/a{$var.id}.html" >已还款</a> {else} <a
-		href="invest/a{$var.id}.html" >还款中</a> {/if} {elseif
-	$var.status==5} <img src="{$tempdir}/images/cancel_repayment.jpg" />
-	{elseif $var.status==4} <a href="invest/a{$var.id}.html"
-		>复审失败</a> {elseif $var.status==2} <a
-		href="invest/a{$var.id}.html" >等待复审</a> {elseif
-	$var.scale < 100} {if $var.is_lz==1} <a href="invest/a{$var.id}.html"
-		>马上认购</a> {else} <a href="invest/a{$var.id}.html"
-		>立即投标</a> {/if} {else} {if $var.is_lz==1} <a
-		href="invest/a{$var.id}.html" >已认购完</a> {else} <a
-		href="invest/a{$var.id}.html" >等待复审</a> {/if} {/if}
+	{if $var.repayment_account == $var.repayment_yesaccount } 
+	<a class="done" href="invest/a{$var.id}.html" >已还款</a> 
+	{else} 
+	<a class="done" href="invest/a{$var.id}.html" >还款中</a> 
+	{/if} 
+	{elseif $var.status==5} <img src="{$tempdir}/images/cancel_repayment.jpg" />
+	{elseif $var.status==4} <a class="done" href="invest/a{$var.id}.html">复审失败</a> 
+	{elseif $var.status==2} <a class="done" href="invest/a{$var.id}.html" >等待复审</a> 
+	{elseif $var.scale < 100} 
+	{if $var.is_lz==1} 
+	<a href="invest/a{$var.id}.html">马上认购</a> 
+	{else} 
+	<a href="invest/a{$var.id}.html">立即投标</a> 
+	{/if} 
+	{else} 
+	{if $var.is_lz==1} 
+	<a class="done" href="invest/a{$var.id}.html" >已认购完</a> 
+	{else} 
+		<a class="done" href="invest/a{$var.id}.html" >等待复审</a> {/if} 
+	{/if}
 	</li>
 	{/loop}
 

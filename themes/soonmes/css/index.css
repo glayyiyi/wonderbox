@@ -117,6 +117,8 @@
     text-align: center;
     margin-bottom: 25px;
 }
+.dai-item a.done{ background-color:#888}
+
 .dai-list .more{
     display: block;
     width: 996px;
