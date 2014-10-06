@@ -1,0 +1,13 @@
+@charset "utf-8";
+.rsABlock { position:relative !important }
+
+.bannerMore{ display:block; height:40px; width:80px;background:url(../../images/default/bannerMore.png) no-repeat; margin-top:10px;}
+.rsMinW .rsArrowIcn { background-attachment: scroll; background-clip: border-box; background-color: transparent; background-image: url("rs-minimal-white.png"); background-origin: padding-box; background-position: 0 0; background-repeat: repeat; background-size: auto auto; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; border-top-left-radius: 2px; border-top-right-radius: 2px; cursor: pointer; height: 24px; margin-left: 3px; margin-top: 3px; position: absolute; width: 24px; }
+.rsNav{ position:absolute; left:50%; bottom:10px;}
+.rsNav .rsNavItem{ background:#111; height:5px; width:5px;margin:0 5px; float:left;}
+.rsNav .rsNavSelected{background:#fff; }
+.rsArrow{ position:absolute; top:45%; height:40px; width:30px; background:#000}
+.rsArrowLeft{ left:0; background:url(../../images/default/rsArrowLeft.png) center center}
+.rsArrowRight{ right:0; background:url(../../images/default/rsArrowRight.png) center center}
+.royalSlider{ height:350px !important; overflow:hidden;}
+.royalSlider a.full{ display:block; height:350px;}

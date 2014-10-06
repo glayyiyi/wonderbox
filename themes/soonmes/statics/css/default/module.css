@@ -1,0 +1,103 @@
+@charset "utf-8";
+/*Jui website
+Author:vigoree.com Team*/
+
+.topTool{color:#fff; height:30px;}
+.topTool a{ color:#fff; display:inline-block; margin: 0 5px;}
+
+.topContact{}
+.topContact span{ padding-right:20px; display:inline-block; line-height:30px;}
+.topLogin{}
+.topLogin .welcome{ display:inline-block; padding-right:20px;}
+.topLogin a{ line-height:30px;}
+
+
+.menuCtol{ display:none;}
+
+.menu { float: right;}
+.menu ul {}
+.menu ul li { float: left; position:relative;}
+.menu ul li a { display: inline-block; font-size:16px; color:#444; height:80px; line-height:80px; padding:0 0 0 20px; font-weight:bold;}
+.menu ul li a:hover, .menu ul li a.highlight{ color:#dc7400;}
+.menu ul li a.current { color:#115fad;}
+.menu ul li li{ float:none;}
+.menu ul li ul{ background-color:#fff; position:absolute;  box-shadow:#444 0 3px 3px;left:0; top:70px; z-index:9999; display:none;}
+.menu ul li li a{ display:block; width:150px; height:50px; line-height:50px; border-top:1px solid #eee; color:#888}
+.menu ul li li a:hover{color:#dc7400; }
+
+/*子banner*/
+
+.subBanner{ text-align:center; height:50px; line-height:50px; background:#999}
+
+/*筛选*/
+.filter{ padding:20px; border-bottom:1px solid #eee;}
+.filter a{ display:inline-block; margin:5px; padding:2px 5px; background:#f7f7f7}
+.filter strong{display:inline-block; margin:5px; background:#111; color:#fff;padding:2px 5px;}
+
+
+/*文章 文字 列表*/
+.articalList{ background:#fff; min-height:700px;_height:700px}
+.articalList h3{ font-size:16px; padding:10px 20px; border-bottom:1px solid #eee; color:#000;}
+.articalList ul li{ border-bottom:1px solid #eee; }
+.articalList ul li.highlight a{background:url(../../images/default/jui-listHot.png) no-repeat left top}
+.articalList ul li.highlight h2{ color:#c00}
+.articalList ul li a{ display:block;padding:20px;}
+.articalList ul li a:hover{ background-color:#ffe;}
+.articalList ul li .title{ overflow:hidden;_height:1;zoom:1;}
+.articalList ul li .content{overflow:hidden;_height:1;zoom:1; padding-top:5px;}
+.articalList ul li .content strong.img{ display:block; width:15%; float:left;}
+.articalList ul li .content strong img{ width:90px; height:50px;}
+.articalList ul li .content p{ display:block; width:60%; float:left; color:#aaa;}
+.articalList ul li strong.time{ color:#777; display:block; float:left; width:11%; padding-left:4%; background:url(../../images/default/jui-clockG.png) no-repeat left center}
+.articalList ul li strong.new{color:#777; background:url(../../images/default/jui-clockB.png) no-repeat left center}
+.articalList ul li h2{ float:left;font-size:14px; color:#444; width:75%}
+.articalList ul li strong.read{ color:#c00;display:block; float:left; width:10%; text-align:right}
+
+/*图文 列表*/
+
+.imgListItem{ overflow:hidden;_height:1;zoom:1;}
+.imgListItem .img{ float:left; padding-right:10px;}
+.imgListItem .img img{ border:1px solid #eee; padding:5px;}
+.imgListItem .content{float:left; width:400px;}
+.imgListItem .content h2{ padding:5px 0 !important; float:none;}
+.imgListItem .content p{ width:100% !important;}
+.imgListItem .content .more{ padding:5px 0}
+
+
+/*边文字列表*/
+.sideList{ padding:10px 10px 20px;}
+.sideList h3{ padding:10px; display:inline-block;font-size:16px; color:#444;}
+.sideList h3 span{ background:url(../../images/default/listDrop.png) no-repeat right center; padding-right:20px;}
+.sideList ul{ padding-left:10px;}
+.sideList ul li a{ font-size:12px;display:block; height:30px; line-height:30px; padding:0 20px;overflow:hidden;color:#777;background:url(../../images/default/jui-point01.png) no-repeat left center;}
+.sideList ul li a:hover{ background-color:#fff}
+
+
+/*articalContent*/
+.articalContent{ background:#fff; padding:20px;}
+.articalContent .title{ padding-bottom:10px;}
+.articalContent .title h1{ font-size:24px; line-height:30px;}
+.articalContent .tool{ padding-bottom:10px;}
+.articalContent .highlight{ border:1px solid #FCEBA9; background:#ffe; padding:10px;}
+.articalContent .content{ padding:20px 0}
+
+
+
+/*翻页*/
+.pageFlip{ padding:10px; background:#fff;}
+.pageFlip span, .pageFlip a:hover{display:inline-block; margin-right:5px; padding:5px 10px; background:#000; color:#fff;}
+.pageFlip a{ color:#777;display:inline-block; margin-right:5px; padding:5px 10px; background:#f7f7f7;}
+
+
+/*回顶部*/
+.gotoTop{ position:fixed; bottom:30px;right:10px;display:none; border-radius:10px;}
+.gotoTop a{ display:block; height:50px; width:50px; background:#ccc url(../../images/gotoTop.png) no-repeat center center;}
+.gotoTop span{ display:none;}
+
+/*copyright*/
+.copyright{ padding:20px 0;}
+.copyright .add{}
+.copyright .content{ padding:0 0 10px;}
+.footerContact{ margin:0 auto; width:980px; padding:10px 0; border-bottom:1px solid #ccc}
+.moreLink{ color:#444;}
+.moreLink a{ color:#444; display:inline-block; padding:0 10px;}

@@ -1,0 +1,37 @@
+@charset "utf-8";
+/*Jui website
+Author:vigoree.com Team*/
+
+body{ background:#f7f7f7;}
+#container{ }
+	#header{background:#fff;}
+	#homeSlider{}
+	#mainBody{overflow:hidden;_height:1;zoom:1; background:#fff;}
+	#footer{ border-top:1px solid #eee; background:#c1c1c1}
+	
+	/*header*/
+	#header .topTool{ overflow:hidden;_height:1;zoom:1; background:#000 url(../../images/topbarBg.png) repeat-x; }
+	   #header .topTool .content{ width:980px; margin:0 auto}
+	#header .topBar{height:80px; border-bottom:1px solid #eee;}
+	   #header .topBar .content{ width:980px; margin:0 auto}
+	#header .logo{  float:left;}
+		#header .logo img{ display:block}
+	#header .menu{ float:right;}
+	#header .tool{  float:right; padding:10px;}
+	/*mainBody*/
+	.subBar{ float:left; width:30%}
+	.mainContent{float:left;width:68%}
+	.sideBar{float:right;width:30%}
+	/*footer*/
+	.bottomInfo{ background:#000; color:#fff;}
+	.copyright{ width:980px; margin:0 auto; text-align:center}
+
+.isClean{ overflow:hidden;_height:1;zoom:1;}
+.isLeft{ float:left;}
+.isRight{ float:right;}
+
+.col3{width:30%}
+.col4{width:40%}
+.col5{width:50%}
+.col6{width:60%}
+.col7{width:70%}
