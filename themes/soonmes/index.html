@@ -152,8 +152,9 @@
                 <div class="rate rate0">{$var.scale|default:0}%</div>
                 <div class="intro">
                   <h3><a {if $var.status==3}class="done"{/if} href="invest/a{$var.id}.html"><strong>{$var.name|truncate:25:"..."}</strong></a></h3>
-                  <div class="relate"><strong class="money">{$var.account_format} <span>贷款</span></strong> <strong class="limit">{if
-	$var.is_lz==1}流转周期：{else}期限：{/if}{if $var.isday==1}<strong>{$var.time_limit_day}</strong>天{else}<strong>{$var.time_limit}</strong>个月{/if}</span></strong> <strong class="level"><img src="{$tempdir}/statics/upload/icon-levelA.png" /></strong></div>
+                  <div class="relate"><strong class="money">{$var.account_format} <span>贷款</span></strong> 
+                  <strong class="limit">
+                 {if $var.isday==1}{$var.time_limit_day}天{else}{$var.time_limit}个月{/if}<span>期限</span></strong><strong class="level"><img src="{$tempdir}/statics/upload/icon-levelA.png" /></strong></div>
                   <div class="relate"><strong class="rateYear">{$var.apr}% 预期 <span>年化率</span></strong></div>
                 </div>
                 <div class="oprate"> {if $var.status==3}
