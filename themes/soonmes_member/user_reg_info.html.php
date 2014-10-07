@@ -128,7 +128,7 @@ jQuery(function(){
 							<!-- 							</tr> -->
 
 							<!-- 							<tr> -->
-							<th style="vertical-align: top;">бћЧыТыЃК</th>
+							<!--  <th style="vertical-align: top;">бћЧыТыЃК</th>-->
 
 							<!-- 								<td><div class="input_style01"> -->
 							<!-- 										<span class="r"> <input id="invite_userid" -->
