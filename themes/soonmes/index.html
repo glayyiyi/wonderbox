@@ -155,7 +155,7 @@
                   <div class="relate"><strong class="money">{$var.account_format} <span>贷款</span></strong> 
                   <strong class="limit">
                  {if $var.isday==1}{$var.time_limit_day}天{else}{$var.time_limit}个月{/if}<span>期限</span></strong><strong class="level"><img src="{$tempdir}/statics/upload/icon-levelA.png" /></strong></div>
-                  <div class="relate"><strong class="rateYear">{$var.apr}% 预期 <span>年化率</span></strong></div>
+                  <div class="relate"><strong class="rateYear">{$var.apr}% <span>年化率</span></strong></div>
                 </div>
                 <div class="oprate"> {if $var.status==3}
 	{if $var.repayment_account == $var.repayment_yesaccount } 
@@ -254,7 +254,7 @@
     <div class="moreLink"> <a href="#">关于万得金融</a> | <a href="#">联系我们</a> | <a href="#">合作伙伴</a> | <a href="#">服务协议</a> | <a href="#">隐私保护声明</a></div>
       <div class="add">地址：北京市朝阳区朝阳门外大街昆泰国际大厦2610室</div>
       <div class="content">Copyright @ 2013 www.wdjr.com.cn All Rights Reserved.万得金融 - 版权所有 京ICP备12028038号-1</div>
-      <div class="certificate"><img src="{$tempdir}/statics/upload/certificate.png" /></div>
+      <div class="certificate"><a id='___szfw_logo___' href='https://search.szfw.org/cert/l/CX20140929005206005278' target='_blank'><img src='{$tempdir}/statics/upload/certificate.jpg'></a></div>
     </div>
   </div>
 </div>
@@ -307,6 +307,9 @@ jQuery(function(){
 
 
 </script>
+
+
+<script type='text/javascript'>(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
 {/literal}
 
 </body>
