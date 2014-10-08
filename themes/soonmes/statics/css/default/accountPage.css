@@ -1,0 +1,18 @@
+@charset "utf-8";
+/*Jui website
+Author:vigoree.com Team*/
+.accountPage{ background:#f7f7f7;}
+.accountPage .content{ overflow:hidden;_height:1;zoom:1; width:980px; margin:0 auto; padding:20px 0}
+.accountPage .subMenu{ float:left; width:150px;}
+.accountPage .main{ float:left; width:810px;}
+
+.subMenu{ background:#fff; border:1px solid #ccc; border-radius:5px; overflow:hidden;}
+.subMenu ul { padding:0 0 0 10px;}
+.subMenu ul li{ border-top:1px solid #eee;}
+.subMenu ul li a{ display:block; height:30px; line-height:30px;}
+.subMenu ul li.selected a{ display:block; height:30px; line-height:30px; color:#dc7400}
+.subMenu h3{ background:#f7f7f7; padding:5px 10px}
+
+.accountPage .main{}
+.accountPage .main .tabBar{}
+.accountPage .main .tabContent{}

@@ -1,0 +1,12 @@
+@charset "utf-8";
+/*Jui website
+Author:vigoree.com Team*/
+.proPage{ overflow:hidden;_height:1;zoom:1;}
+.proPage .mainBar{ float:left; width:650px;}
+.proPage .sideBar{ float:right; width:310px;}
+
+
+.proPage .sideBar h3{ color:#003b8e; font-size:1.4em; background:#f4f4f4; line-height:2em;height:2em; padding-left:10px; position:relative}
+.proPage .sideBar h3 .more{ position:absolute; right:0; top:0;padding-right:10px; font-size:.8em; font-weight:normal}
+.proPage .sideBar ul { padding:10px}
+.proPage .sideBar ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center;}

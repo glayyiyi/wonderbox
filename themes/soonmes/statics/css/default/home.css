@@ -54,12 +54,12 @@
 .homeSection .project .list .rate90{ background-position:-504px center;}
 .homeSection .project .list .rate100{ background-position:-560px center;}
 
-.homeSection .info .promote{}
-.homeSection .info .notice h3{ color:#003b8e; font-size:1.4em; background:#f4f4f4; line-height:2em; padding-left:10px; position:relative}
+.homeSection .info .promote{ padding-bottom:1em;}
+.homeSection .info .notice h3{ color:#003b8e; font-size:1.4em; background:#f4f4f4; line-height:2em;height:2em; padding-left:10px; position:relative}
 .homeSection .info .notice h3 .more{ position:absolute; right:0; top:0;padding-right:10px; font-size:.8em; font-weight:normal}
 .homeSection .info .notice ul { padding:10px}
 .homeSection .info .notice ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center;}
-.homeSection .info .news h3{color:#003b8e; font-size:1.4em;background:#f4f4f4; line-height:2em; padding-left:10px; position:relative}
+.homeSection .info .news h3{color:#003b8e; font-size:1.4em;background:#f4f4f4; line-height:2em; height:2em; padding-left:10px; position:relative}
 .homeSection .info .news h3 .more{ position:absolute; right:0; top:0; padding-right:10px; font-size:.8em; font-weight:normal}
 .homeSection .info .news ul { padding:10px}
 .homeSection .info .news ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center;}
@@ -90,6 +90,6 @@
 .homeLogin .content .toReg{ text-align:center; padding:10px; font-size:1.2em;}
 .homeLogin .content .toReg a{ color:#dc7400; }
 .homeLogin .inputForm { padding-top:20px;}
-.homeLogin .inputForm input{ border:none;border-bottom:1px solid #eee; height:40px; width:218px; padding-left:10px; font-size:1.2em}
+.homeLogin .inputForm input{ border:none;border-bottom:1px solid #eee; height:40px; line-height:40px; width:218px; padding-left:10px; font-size:1.2em}
 .homeLogin .inputForm input:focus{ outline:1px solid #F60; border-bottom:1px solid #f60}
 .homeLogin .summary{ font-size:1.2em; padding:20px 0;}
