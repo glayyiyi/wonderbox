@@ -1,12 +1,77 @@
 @charset "utf-8";
 /*Jui website
 Author:vigoree.com Team*/
-.proPage{ overflow:hidden;_height:1;zoom:1;}
-.proPage .mainBar{ float:left; width:650px;}
-.proPage .sideBar{ float:right; width:310px;}
+.proPage { background:#f7f7f7; }
+.proPage .content { overflow:hidden; _height:1; zoom:1; width:980px; margin:0 auto; padding:10px 0; }
+.path{ padding-bottom:10px; color:#888;}
+.proPage .mainBar { float:left; width:650px; color:#888 }
+.proPage .mainBar a { color:#dc7400 }
+.proPage .sideBar { float:right; width:310px; }
+.proItem { }
+.proItem .title { background:#dc7400; color:#fff; position:relative; padding: 0 10px; font-size:16px; line-height:30px; height:30px; border-radius:5px }
+.proItemConfirm .title{ background:#003b8e}
+.proItem .title .tip { position:absolute; right:10px; top:0; font-size:12px; }
+.proItem .baseInfo { padding:20px 10px; overflow:hidden; _height:1; zoom:1; }
+.proItem .baseInfo .rateBar { float:left; }
+.proItem .baseInfo .rateBar { height: 56px; line-height: 56px; margin-right: 20px; text-align: center; width: 56px; }
+.proItem .baseInfo .info { float:left; width:550px; }
+.proItem .baseInfo .info .hasDone { color:#888 }
+.proItem .baseInfo .info .hasDone strong { font-size:18px; color:#dc7400; }
+.proItem .tradeInfo { background:#fff; border:1px solid #ccc; padding:20px; border-radius:5px; overflow:hidden; _height:1; zoom:1; }
+
+.proItem .bMoney { float:left; width:180px; }
+.proItem .bMoney strong { display:block; font-size:20px; color:#dc7400 }
+
+.proItem .bTime { float:left; width:180px; }
+.proItem .bTime strong { display:block; font-size:20px; color:#003b8e }
+
+.proItem .bBalance { float:left; width:180px; }
+.proItem .bBalance strong { display:block; font-size:20px; color:#444 }
+
+.proItem .bPay { float:left; width:180px; }
+.proItem .bPay strong { display:block; font-size:20px; color:#003b8e }
+
+.proItem .bGet { float:left; width:180px; }
+.proItem .bGet strong { display:block; font-size:20px; color:#dc7400 }
+
+.proItem .forgetPWD a{ color:#444}
+
+.proItem .rask { float:right; }
+.proItem .inputForm { clear:both; padding:20px 0 10px; vertical-align:middle }
+.proItem .inputForm input { font-size:14px; height:35px; width:300px; line-height:35px; padding:0 10px; margin-right:10px; border-radius:5px; border:1px solid #ccc; }
+.proItem .inputForm button { font-size:14px; height:35px; width:120px; background: #dc7400; color:#fff; line-height:35px; padding:0 10px; border:none; margin-right:10px; border-radius:5px; cursor:pointer }
+.proItem .inputForm button.blue { background:#003b8e }
+.proItem .inputForm button.green { background:#009e1a }
+.proItem .inputForm button.gray { background:#cccccc }
+.proItem .balance { }
+.proItem .intro { padding:10px; }
 
 
-.proPage .sideBar h3{ color:#003b8e; font-size:1.4em; background:#f4f4f4; line-height:2em;height:2em; padding-left:10px; position:relative}
-.proPage .sideBar h3 .more{ position:absolute; right:0; top:0;padding-right:10px; font-size:.8em; font-weight:normal}
-.proPage .sideBar ul { padding:10px}
-.proPage .sideBar ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center;}
+.proItem .tabBar { padding:10px 0; }
+.proItem .tabBar ul { overflow:hidden; _height:1; zoom:1; }
+.proItem .tabBar ul li { float:left; padding-right:5px; }
+.proItem .tabBar ul li a { display:block; background:#888; color:#fff; padding:2px 10px; border-radius:3px; }
+.proItem .tabBar ul li a.current { background:#dc7400; }
+.proItem .tabBar ul li a:hover { background:#dc7400; }
+.proItem .tabContent { padding:10px; background:#fff; color:#dc7400; border:1px solid #eee; border-radius:5px; }
+
+.filter{}
+.filter .tabBar { padding:10px 0; }
+.filter .tabBar ul { overflow:hidden; _height:1; zoom:1; }
+.filter .tabBar ul li { float:left; padding-right:5px; }
+.filter .tabBar ul li a { display:block; background:#888; color:#fff; padding:2px 10px; border-radius:3px; }
+.filter .tabBar ul li a.current { background:#dc7400; }
+.filter .tabBar ul li a:hover { background:#dc7400; }
+.filter .tabContent { padding:10px; background:#fff; color:#dc7400; border:1px solid #eee; border-radius:5px; }
+
+
+.proPage .sideBar h3 { color:#003b8e; font-size:1.4em; background:#f4f4f4; line-height:2em; height:2em; padding-left:10px; position:relative }
+.proPage .sideBar h3 .more { position:absolute; right:0; top:0; padding-right:10px; font-size:.8em; font-weight:normal }
+.proPage .sideBar ul { padding:10px }
+.proPage .sideBar ul li a { font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center; }
+
+.proItemConfirmInfo{ padding:20px;}
+.proItemConfirmInfo table{ width:98%}
+.proItemConfirmInfo table th, .proItemConfirmInfo table td{ padding:5px; font-size:16px;}
+.proItemConfirmInfo table th{ color:#888}
+.proItemConfirmInfo table td{ color:#dc7400}

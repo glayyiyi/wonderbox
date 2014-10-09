@@ -1,0 +1,44 @@
+@charset "utf-8";
+/*Jui website
+Author:vigoree.com Team*/
+.invitePage{ background:#f7f7f7 url(inviteBg.jpg) center top no-repeat; padding-top:588px; font-size:12px; padding-bottom:10px}
+/*
+.inviteAction{ width:740px; margin:0 auto;overflow:hidden;_height:1;zoom:1; border:1px solid #eee;}
+.inviteAction .left{ float:left;width:370px;height:430px;  overflow:auto; background:#fff;}
+.inviteAction .left .sms{ padding:10px; }
+.inviteAction .left .sms *{ vertical-align:top;}
+.inviteAction .left .sms h3{ font-size:16px; padding-bottom:10px;}
+.inviteAction .left .sms table{ color:#888;}
+.inviteAction .left .sms table td{ padding:2px;}
+.inviteAction .left .sms input{ height:24px; line-height:24px; border:1px solid #ccc; border-radius:5px;}
+.inviteAction .left .sms  a.submit{ display:block; width:100px; text-align:center; padding:2px 0; color:#fff; background:#dc7400; margin-top:10px;}
+.inviteAction .left .copy{ padding:10px; border-top:1px solid #ccc}
+.inviteAction .left .copy h3{ font-size:16px;padding-bottom:10px;}
+.inviteAction .left .copy a.copy{ display:block; width:100px; text-align:center; padding:2px 0; color:#fff; background:#888; margin-top:10px;}
+.inviteAction .left .copy textarea{ font-size:12px; border:1px solid #ccc; width:98%;}
+
+.inviteAction .right{ float:right; width:369px; border-left:1px solid #eee; height:430px; overflow:auto;}
+.inviteAction .right h3{ padding:5px; font-size:16px; background:#eee;}
+.inviteAction .right table{ width:100%;}
+.inviteAction .right table td{ border-top:1px solid #ccc; color:#888; background:#fff; padding:2px 5px;}
+.inviteAction .right table th{padding:2px 5px;}*/
+
+.inviteAction{ width:740px; margin:0 auto;border:1px solid #eee;}
+.inviteAction .left{overflow:hidden;_height:1;zoom:1; background:#fff }
+.inviteAction .left .sms{ padding:10px; float: left; width:345px; border-right:1px solid #eee}
+.inviteAction .left .sms *{ vertical-align:top;}
+.inviteAction .left .sms h3{ font-size:16px; padding-bottom:10px;}
+.inviteAction .left .sms table{ color:#888;}
+.inviteAction .left .sms table td{ padding:2px;}
+.inviteAction .left .sms input{ height:24px; line-height:24px; border:1px solid #ccc; border-radius:5px;}
+.inviteAction .left .sms  a.submit{ display:block; width:100px; text-align:center; padding:2px 0; color:#fff; background:#dc7400; margin-top:10px;}
+.inviteAction .left .copy{ padding:10px; float:right; width:350px;}
+.inviteAction .left .copy h3{ font-size:16px;padding-bottom:10px;}
+.inviteAction .left .copy a.copy{ display:block; width:100px; text-align:center; padding:2px 0; color:#fff; background:#888; margin-top:10px;}
+.inviteAction .left .copy textarea{ font-size:12px; border:1px solid #ccc; width:98%;}
+
+.inviteAction .right{ float:right; width:369px; border-left:1px solid #eee; height:430px; overflow:auto; display:none}
+.inviteAction .right h3{ padding:5px; font-size:16px; background:#eee;}
+.inviteAction .right table{ width:100%;}
+.inviteAction .right table td{ border-top:1px solid #ccc; color:#888; background:#fff; padding:2px 5px;}
+.inviteAction .right table th{padding:2px 5px;}

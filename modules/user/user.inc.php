@@ -486,8 +486,30 @@ if(strtolower($_POST['valicode']) != $_SESSION['valicode']){
 		$_U['user_cache'] = userClass::GetUserCache(array("user_id"=>$_G['user_id']));//用户缓存
 	}
 	
+	/*
+	 * 发送短信
+	*/
+	elseif($_U['query_type']=="send_phone"){
+		if(isset($_POST['phone'])){
+			if($_POST['phone']=="" || !is_numeric($_POST['phone'])){
+				$msg = array("手机号码不正确");
+			}elseif($_POST['content']==""){
+				$msg = array("内容不能为空");
+			}else{
+					
+				$re = sendSMS(1,$_POST['content'],1,$_POST['phone']);
+				if($re==false){
+					$msg = array("发送失败");
+				}else{
+					$msg = array("发送成功");
+				}
+			}
+		}
+	}
+	
 	//邀请好友
 	elseif ($_U['query_type'] == "reginvite"){
+		
 		//print_r($_G['user_id']);
 		$_U['user_inviteid'] =  Key2Url(trim($_G['user_id']),"reg_invite");
 		//$oUrl=$_G['weburl'].urlencode("/index.php?user&q=going/reginvite&u=").$_G['user_id'];

@@ -29,10 +29,6 @@ Author:vigoree.com Team*/
 
 .subBanner{ text-align:center; height:50px; line-height:50px; background:#999}
 
-/*筛选*/
-.filter{ padding:20px; border-bottom:1px solid #eee;}
-.filter a{ display:inline-block; margin:5px; padding:2px 5px; background:#f7f7f7}
-.filter strong{display:inline-block; margin:5px; background:#111; color:#fff;padding:2px 5px;}
 
 
 /*文章 文字 列表*/
@@ -65,12 +61,12 @@ Author:vigoree.com Team*/
 
 
 /*边文字列表*/
-.sideList{ padding:10px 10px 20px;}
-.sideList h3{ padding:10px; display:inline-block;font-size:16px; color:#444;}
-.sideList h3 span{ background:url(../../images/default/listDrop.png) no-repeat right center; padding-right:20px;}
-.sideList ul{ padding-left:10px;}
-.sideList ul li a{ font-size:12px;display:block; height:30px; line-height:30px; padding:0 20px;overflow:hidden;color:#777;background:url(../../images/default/jui-point01.png) no-repeat left center;}
-.sideList ul li a:hover{ background-color:#fff}
+.sideInfo h3{color:#003b8e; font-size:1.4em;background:#f4f4f4; line-height:2em; height:2em; padding-left:10px; position:relative}
+.sideInfo h3 .more{ position:absolute; right:0; top:0; padding-right:10px; font-size:.8em; font-weight:normal}
+.sideInfo ul { padding:10px}
+.sideInfo ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center;}
+.sideInfo ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em}
+
 
 
 /*articalContent*/
@@ -81,6 +77,9 @@ Author:vigoree.com Team*/
 .articalContent .highlight{ border:1px solid #FCEBA9; background:#ffe; padding:10px;}
 .articalContent .content{ padding:20px 0}
 
+/*提示页*/
+
+.alertPage{ padding:200px;}
 
 
 /*翻页*/

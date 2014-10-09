@@ -84,42 +84,37 @@
                   <div class="left">
                   <div class="sms">
                   <h3>一键发送</h3>
-                  <form method="post" name="form1" action="/index.php?user&q=code/user/send_phone">
                   <table>
                         <tr>
                           <th width="80"> 短信发送 </th>
-                          <td>【万得金融】我是{$_G.user_result.realname}，我在万得金融平台送你红包，百度“万得金融”，注册填写邀请人{$_G.user_result.username}。
+                          <td>【万得金融】我是袁志刚，我在万得金融平台送你10元现金红包，百度“万得金融”，注册填写邀请人xxxx。
 </td>
                         </tr>
                          <tr>
                           <th> 手机号 </th>
-                          <td><input id="phone" name="phone" type="text" />
-                          <input id="content" name="content" type="hidden" value='【万得金融】我是{$_G.user_result.realname}，我在万得金融平台送你红包，百度“万得金融”，注册填写邀请人{$_G.user_result.username}。'
-                          />
+                          <td><input type="text" />
 
 </td>
                         </tr>
-<!--                          <tr> -->
-<!--                           <th> 验证码 </th> -->
-<!--                           <td><input type="text" /></td> -->
-<!--                         </tr> -->
+                         <tr>
+                          <th> 验证码 </th>
+                          <td><input type="text" /></td>
+                        </tr>
 
-                        </table>
-                        <a href="#" onclick="sub_form()" class="submit">发送短信</a>
-                        </form>
+                        </table><a href="#" class="submit">发送短信</a>
                   </div>
                  <div class="copy"> <h3>复制链接内容发送</h3>
-<textarea id='invite' rows="8">万得金融平台的红包，点击以下链接
-{$_G.weburl}/index.php?user&q=going/reginvite&u={$_U.user_inviteid} </textarea>
-<a href="#" onclick="doCopy('invite')" class="copy">复制</a></div>
+<textarea rows="3">万得金融平台的红包，点击以下链接
+http://www.wdjr.com.cn/index.php?user&q=going/reginvite&u=c54fumjdx7s84gkj6SWd2Ta4GkeAHo%2BcbufOOLy4K33t2%2FzCYXLGlMntUusA5C3HtVNr%2BRzepRBF6h1a </textarea><a href="#" class="copy">复制</a></div>
+
+                  
                   </div>
                   <div class="right">
-                  
                     <div class="total">
                       <h3>总计</h3>
                       <table>
                         <tr>
-                          <th>好友注册 </th>
+                          <th> 好友注册 </th>
                           <th>好友投资</th>
                           <th>我的奖励</th>
                         </tr>
@@ -131,12 +126,12 @@
                       </table>
                     </div>
                     <div class="detail">
-                      <h3>明细</h3>
+                      <h3>总计</h3>
                       <table>
                         <tr>
-                          <th> 用户名 </th>
+                          <th> 明细 </th>
+                          <th>用户名</th>
                           <th>投资额</th>
-                          <th>投资项目</th>
                           <th>投资日期</th>
                         </tr>
                         <tr>
@@ -229,32 +224,3 @@
                 </div>
               </div></body>
 </html>
-	{literal}
-		<script>
-		function doCopy(id) { 
-		  var codeid;
-		  codeid=id;
-		 if (document.all){
-		   var obj;
-		   obj=document.getElementById(codeid);
-		   window.clipboardData.setData("text",obj.innerText)
-		   alert("邀请链接地址复制成功，你可以直接复制发给你的好友");
-		 }
-		 else{
-		   alert("此功能只能在IE上有效\n\n请在文本域中用Ctrl+A选择再复制");
-		 }
-		}
-		function sub_form(){
-			var username = document.getElementById("phone").value;
-			var content = document.getElementById("content").value;
-			if(username==""){
-				alert("手机号码不能为空");return;
-			}
-			if(content==""){
-				alert("内容不能为空");return;
-			}
-			document.forms['form1'].submit();
-			document.forms['form1'].elements['sub'].disabled=true;
-		}
-		</script>
-		{/literal}

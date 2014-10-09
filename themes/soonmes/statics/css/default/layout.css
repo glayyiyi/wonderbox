@@ -6,7 +6,7 @@ body{ background:#f7f7f7;}
 #container{ }
 	#header{background:#fff;}
 	#homeSlider{}
-	#mainBody{overflow:hidden;_height:1;zoom:1; background:#fff;}
+	#mainBody{overflow:hidden;_height:1;zoom:1; background:#f7f7f7;}
 	#footer{ border-top:1px solid #eee; background:#c1c1c1}
 	
 	/*header*/

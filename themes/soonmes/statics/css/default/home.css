@@ -1,6 +1,6 @@
 @charset "utf-8";
 /*This EX css is for your style*/
-.homeTemp{ background:#f4f4f4;}
+.homeTemp{ background:#fff;}
 .homeTemp .content{ width:980px; margin:0 auto;overflow:hidden;_height:1;zoom:1; padding:10px 0; }
 .homeTemp .items{ float:left; width:33%; text-align:center; height:220px}
 .homeTemp img{}
@@ -19,7 +19,7 @@
 
 .homeSection .project .list{ }
 .homeSection .project .list ul li{ padding:20px; border-top:1px solid #ccc; border-bottom:1px solid #fff;}
-.homeSection .project .list ul li:hover{ background:#f7f7f7;}
+.homeSection .project .list ul li:hover{ background:#fff;}
 .homeSection .project .list ul li.first{}
 .homeSection .project .list ul li .item{overflow:hidden;height:1;zoom:1;}
 .homeSection .project .list .rate{ float:left; width:56px; height:56px; line-height:56px; text-align:center; margin-right:20px;}
@@ -42,36 +42,36 @@
 .homeSection .project .list .oprate .remain strong{ color:#dc7400}
 .homeSection .project .list .oprate .remain span{ color:#888}
 
-.homeSection .project .list .rate{ background:url(../../images/rate.png); color:#888}
-.homeSection .project .list .rate10{ background-position:-56px center;}
-.homeSection .project .list .rate20{ background-position:-112px center;}
-.homeSection .project .list .rate30{ background-position:-168px center;}
-.homeSection .project .list .rate40{ background-position:-224px center;}
-.homeSection .project .list .rate50{ background-position:-280px center;}
-.homeSection .project .list .rate60{ background-position:-336px center;}
-.homeSection .project .list .rate70{ background-position:-392px center;}
-.homeSection .project .list .rate80{ background-position:-448px center;}
-.homeSection .project .list .rate90{ background-position:-504px center;}
-.homeSection .project .list .rate100{ background-position:-560px center;}
+.rate{ background:url(../../images/rate.png); color:#888}
+.rate10{ background-position:-56px center;}
+.rate20{ background-position:-112px center;}
+.rate30{ background-position:-168px center;}
+.rate40{ background-position:-224px center;}
+.rate50{ background-position:-280px center;}
+.rate60{ background-position:-336px center;}
+.rate70{ background-position:-392px center;}
+.rate80{ background-position:-448px center;}
+.rate90{ background-position:-504px center;}
+.rate100{ background-position:-560px center;}
 
 .homeSection .info .promote{ padding-bottom:1em;}
-.homeSection .info .notice h3{ color:#003b8e; font-size:1.4em; background:#f4f4f4; line-height:2em;height:2em; padding-left:10px; position:relative}
+.homeSection .info .notice h3{ color:#003b8e; font-size:1.4em; background:#eee; line-height:2em;height:2em; padding-left:10px; position:relative; border-radius:5px;}
 .homeSection .info .notice h3 .more{ position:absolute; right:0; top:0;padding-right:10px; font-size:.8em; font-weight:normal}
 .homeSection .info .notice ul { padding:10px}
 .homeSection .info .notice ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center;}
-.homeSection .info .news h3{color:#003b8e; font-size:1.4em;background:#f4f4f4; line-height:2em; height:2em; padding-left:10px; position:relative}
+.homeSection .info .news h3{color:#003b8e; font-size:1.4em;background:#eee; line-height:2em; height:2em; padding-left:10px; position:relative; border-radius:5px;}
 .homeSection .info .news h3 .more{ position:absolute; right:0; top:0; padding-right:10px; font-size:.8em; font-weight:normal}
 .homeSection .info .news ul { padding:10px}
 .homeSection .info .news ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center;}
 .homeSection .info .news ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em}
 
-.parttners{}
+.parttners{ background:#fff;}
 .parttners h2{ color:#dc7400; font-size:1.4em; background:url(../../images/line01.png) no-repeat left bottom; padding:10px 0}
 .parttners .content{ width:980px; margin:0 auto}
-.parttners ul{ overflow:hidden;_height:1;zoom:1;}
+.parttners ul{ overflow:hidden;_height:1;zoom:1; padding:20px 0;}
 .parttners ul li{ float:left; width:25%; text-align:center;}
 
-.links{padding:20px 0}
+.links{padding:20px 0; background:#fff;}
 .links h2{ color:#dc7400; font-size:1.4em; background:url(../../images/line01.png) no-repeat left bottom; padding:10px 0}
 .links .content{ width:980px; margin:0 auto}
 .links ul{ overflow:hidden;_height:1;zoom:1; padding:20px 0;}
