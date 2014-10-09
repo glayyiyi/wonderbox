@@ -109,7 +109,7 @@
                         </form>
                   </div>
                  <div class="copy"> <h3>复制链接内容发送</h3>
-<textarea id='invite' rows="8">万得金融平台的红包，点击以下链接
+<textarea id='invite' rows="6">万得金融平台的红包，点击以下链接
 {$_G.weburl}/index.php?user&q=going/reginvite&u={$_U.user_inviteid} </textarea>
 <a href="#" onclick="doCopy('invite')" class="copy">复制</a></div>
                   </div>
