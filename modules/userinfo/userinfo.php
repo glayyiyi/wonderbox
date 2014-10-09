@@ -161,7 +161,8 @@ elseif($_A['query_type']=="send_phone"){
 		}elseif($_POST['content']==""){
 			$msg = array("内容不能为空");
 		}else{
-			$re = sendSMS(0,$_POST['content'],1,$_POST['phone']);
+			
+			$re = sendSMS(1,$_POST['content'],1,$_POST['phone']);
 			if($re==false){
 				$msg = array("发送失败");
 			}else{
