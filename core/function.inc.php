@@ -1443,7 +1443,7 @@ function sendSMS($userid,$content,$system=0,$phone=0)
 		$content = str_replace(",", "，", $content);
 		$content = str_replace("'", " ", $content);
 		$content = str_replace("\"", " ", $content);
-		$content = str_replace(":", "：", $content);
+		//$content = str_replace(":", "：", $content);
 		
 		//要post的数据
 		$argv = array(
