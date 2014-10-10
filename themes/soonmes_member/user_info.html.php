@@ -94,7 +94,7 @@
                          <tr>
                           <th> 手机号 </th>
                           <td><input id="phone" name="phone" type="text" />
-                          <input id="content" name="content" type="hidden" value='我是{$_G.user_result.realname}，我在万得金融平台送你红包，百度“万得金融”，注册填写邀请人{$_G.user_result.username}。'
+                          <input id="content" name="content" type="hidden" value='我是{$_G.user_result.realname}，我在万得金融平台送你红包，百度“万得金融”，注册填写邀请人{$_G.user_result.username}。http://wdjr.com.cn'
                           />
 
 </td>
