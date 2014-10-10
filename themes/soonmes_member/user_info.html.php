@@ -585,7 +585,7 @@
                   <div class="sms">
                   <h3>一键发送</h3>
                   <form method="post" name="form1" action="/index.php?user&q=code/user/send_phone">
-                  <table>
+                  <table style="text-align:left">
                         <tr>
                           <th width="80"> 短信发送 </th>
                           <td>【万得金融】我是{$_G.user_result.realname}，我在万得金融平台送你红包，百度“万得金融”，注册填写邀请人{$_G.user_result.username}。
@@ -609,7 +609,7 @@
                         </form>
                   </div>
                  <div class="copy"> <h3>复制链接内容发送</h3>
-<textarea id='invite' rows="6">万得金融平台的红包，点击以下链接
+<textarea id='invite' style=" line-height: 14px;height:90px;" rows="6">万得金融平台的红包，点击以下链接
 {$_G.weburl}/index.php?user&q=going/reginvite&u={$_U.user_inviteid} </textarea>
 <a href="#" onclick="doCopy('invite')" class="copy">复制</a></div>
                   </div>
