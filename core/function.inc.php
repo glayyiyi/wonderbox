@@ -1471,7 +1471,7 @@ function sendSMS($userid,$content,$system=0,$phone=0)
 // 		);
 		//By Glay $content = mysql_real_escape_string($content);
 		
-		$sql="insert into {sms_log}(userid,msgcontent,mobile,spnumber,addtime) values(".$userid.",'".$content."','".$mobile."','1069800000091717',now())";
+		$sql="insert into {sms_log}(userid,msgcontent,mobile,spnumber,addtime) values(".$userid.",'".$argv['content']."','".$mobile."','1069800000091717',now())";
 		$mysql->db_query($sql);
 		$myid=$mysql->db_insert_id();
 		//By Glay
