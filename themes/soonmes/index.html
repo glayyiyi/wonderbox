@@ -1,82 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-		<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-		<meta http-equiv="X-UA-Compatible" content="IE=8" />
-		<title>{$_G.system.con_webname}</title>
-		<meta name="description" content="{$_G.system.con_description}" />
-		<meta name="keywords" content="{$_G.system.con_keywords}" />
-		
-		<link rel="stylesheet" type="text/css" href="{$tempdir}/statics/css/default/main.css" media="screen"/>
-</head>
-	<body>
-<div id="container">
-  <div id="header">
-    <div class="topTool">
-      <div class="content">
-        <div class="isLeft">
-          <div class="topContact"><span>服务热线：010-59091009 </span> <span>服务时间：9:00-18:00 </span> <span>官方QQ群：391114833</span></div>
-        </div>
-        <div class="isRight">
-          <div class="topLogin">
-          <span class="welcome">
-          您好，亲爱的万得金融用户
-                    {if $_G.user_id>0}
-				  <a href="/?user">{$_G.user_result.username}</a> 
-				  <a href="/?user&q=going/logout">[退出]</a>
-		
-				 {else}
-				 <a href="/index.action?user&q=going/login">登录</a> 
-				 {if $_G.system.con_is_reg_open } 
-				 <a href="/index.action?user&q=going/getreg">注册</a>
-				 {/if}
-				 {/if}
-          </span>
-         
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="topBar floatIsTrue">
-      <div class="content">
-        <div class="logo"><img src="{$tempdir}/statics/images/logo.png" alt="万得金融 - 普惠,公开,平等的网络借贷平台" /></div>
-        <div class="menu">
-          <ul id="nav">
-          			<li>
-						<a href="/" class="highlight">我要投资</a>
-					</li>
-					<li>
-						<a href="/index.action?user">我的账户</a>
-					</li>
-					<li>
-						<a href="/onlineservice/index.html">安全保障</a>
-					</li>
-					<li>
-						<a href="/html/aboutus/intro.html">关于我们</a>
-					</li>
-            <!-- <li><a href="#">我要投资 </a></li>
-            <li><a href="#">新手指南</a>
-            </li>
-            <li><a href="#">安全保障</a></li>
-            <li><a href="#">关于我们</a>
-              <ul>
-                <li><a href="#"> 公司简介 </a></li>
-                <li><a href="#"> 产品介绍</a></li>
-                <li><a href="#"> 业务模式</a></li>
-                <li><a href="#"> 风险管控</a></li>
-                <li><a href="#"> 投资指南</a></li>
-                <li><a href="#"> 收益模式</a></li>
-              </ul>
-            </li>
-            <li><a href="#" class="highlight">我的账户</a></li> -->
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-		<!-- 公共头结束 -->
-
+{include file="header_new.html"}
 <div id="homeSlider">
     <div id="home-width-slider" class="royalSlider">
       <div class="rsContent" style="background-image:url({$tempdir}/statics/upload/banner1.jpg)"><a href="/index.action?user&q=going/getreg" class="full"></a></div>
@@ -140,8 +62,8 @@
     </div>
     <div class="homeSection">
       <div class="project">
-        <div class="title">商融通
-          <div class="more"><a href="#">更多商融通</a></div>
+        <div class="title">链融通
+          <div class="more"><a href="#">更多链融通</a></div>
         </div>
         <div class="list">
           <ul>
@@ -238,30 +160,10 @@
     </div>
   </div>
 
+{include file="footer_new.html"}
 
-
-  <div id="footer">
-    <div class="footerContact isClean">
-      <div class="isLeft">
-      <img src="{$tempdir}/statics/images/footerContact01.png" />
-      <img src="{$tempdir}/statics/images/footerContact02.png" />
-      <img src="{$tempdir}/statics/images/footerContact03.png" />
-      <img src="{$tempdir}/statics/images/footerContact04.png" />
-      </div>
-      <div class="isRight"><img src="{$tempdir}/statics/images/footerContact00.png" /></div>
-    </div>
-    <div class="copyright">
-    <div class="moreLink"> <a href="#">关于万得金融</a> | <a href="#">联系我们</a> | <a href="#">合作伙伴</a> | <a href="#">服务协议</a> | <a href="#">隐私保护声明</a></div>
-      <div class="add">地址：北京市朝阳区朝阳门外大街昆泰国际大厦2610室</div>
-      <div class="content">Copyright @ 2013 www.wdjr.com.cn All Rights Reserved.万得金融 - 版权所有 京ICP备12028038号-1</div>
-      <div class="certificate"><a id='___szfw_logo___' href='https://search.szfw.org/cert/l/CX20140929005206005278' target='_blank'><img src='{$tempdir}/statics/upload/certificate.jpg'></a></div>
-    </div>
-  </div>
-</div>
-<script type="text/javascript" src="{$tempdir}/statics/js/jquery.min.js"></script>
 <script type="text/javascript" src="{$tempdir}/statics/js/default/jquery.royalslider.min.js"></script>
 <script type="text/javascript" src="{$tempdir}/statics/js/default/setting.js"></script>
-
 {literal}
 <script>
       jQuery(document).ready(function($) {
@@ -305,12 +207,5 @@ jQuery(function(){
 	});
 });
 
-
 </script>
-
-
-<script type='text/javascript'>(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
 {/literal}
-
-</body>
-</html>

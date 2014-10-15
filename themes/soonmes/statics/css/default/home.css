@@ -14,7 +14,7 @@
 .homeSection .info{ float:right;  width:310px}
 
 
-.homeSection .project .title{/* background:#dc7400 url(../../images/homeProjectTitle.png) ; border-top:2px solid #dc7400;*/ background:#f7f7f7; font-size:1.4em; line-height:32px; height:32px; color:#dc7400; padding:0 1em 0 0; position:relative; padding:0 10px}
+.homeSection .project .title{/* background:#d70 url(../../images/homeProjectTitle.png) ; border-top:2px solid #d70;*/ background:#f7f7f7; font-size:1.4em; line-height:32px; height:32px; color:#d70; padding:0 1em 0 0; position:relative; padding:0 10px}
 .homeSection .project .title .more{ position:absolute; right:10px; top:0; font-size:.8em;}
 
 .homeSection .project .list{ }
@@ -25,21 +25,21 @@
 .homeSection .project .list .rate{ float:left; width:56px; height:56px; line-height:56px; text-align:center; margin-right:20px;}
 .homeSection .project .list .intro{ float:left;font-size:1.1em;}
 .homeSection .project .list .intro h3{ font-size:1.2em;}
-.homeSection .project .list .intro h3 strong{ color:#dc7400; padding:0}
-.homeSection .project .list .intro strong{ display:inline-block; padding:0 20px;}
-.homeSection .project .list .intro span{ color:#888;}
-.homeSection .project .list .intro .money{ background:url(../../images/icon-16-money.png) left center no-repeat; border-right:1px solid #ccc; color:#003b8e}
-.homeSection .project .list .intro .limit{ border-right:1px solid #ccc; color:#003b8e}
-.homeSection .project .list .intro .level{vertical-align:middle}
-.homeSection .project .list .intro .level img{ float:left;}
-.homeSection .project .list .intro .rateYear{background:url(../../images/icon-16-cal.png) left center no-repeat; color:#dc7400}
+.homeSection .project .list .intro h3 strong{ color:#d70; padding:0}
+.relate strong{ display:inline-block; padding:0 20px;}
+.relate span{ color:#888;}
+.relate .money{ background:url(../../images/icon-16-money.png) left center no-repeat; border-right:1px solid #ccc; color:#038}
+.relate .limit{ border-right:1px solid #ccc; color:#038}
+.relate .level{vertical-align:middle}
+.relate .level img{ float:left;}
+.relate .rateYear{background:url(../../images/icon-16-cal.png) left center no-repeat; color:#d70}
 
 .homeSection .project .list .oprate{ float:right; text-align:right}
-.homeSection .project .list .oprate a{ background:#dc7400 url(../../images/buyBtn01.png) left center no-repeat;  color:#fff; display:inline-block; height:34px; line-height:34px; width:85px; text-align:center; font-size:1.2em}
-.homeSection .project .list .oprate a:hover{ background:#dc7400 url(../../images/buyBtn01hover.png) left center no-repeat;  }
-.homeSection .project .list .oprate a.done{ background:#dc7400 url(../../images/doneBtn.png) left center no-repeat;  color:#888; }
+.homeSection .project .list .oprate a{ background:#d70 url(../../images/buyBtn01.png) left center no-repeat;  color:#fff; display:inline-block; height:34px; line-height:34px; width:85px; text-align:center; font-size:1.2em}
+.homeSection .project .list .oprate a:hover{ background:#d70 url(../../images/buyBtn01hover.png) left center no-repeat;  }
+.homeSection .project .list .oprate a.done{ background:#d70 url(../../images/doneBtn.png) left center no-repeat;  color:#888; }
 .homeSection .project .list .oprate .remain{ padding:10px 0 0;}
-.homeSection .project .list .oprate .remain strong{ color:#dc7400}
+.homeSection .project .list .oprate .remain strong{ color:#d70}
 .homeSection .project .list .oprate .remain span{ color:#888}
 
 .rate{ background:url(../../images/rate.png); color:#888}
@@ -55,24 +55,24 @@
 .rate100{ background-position:-560px center;}
 
 .homeSection .info .promote{ padding-bottom:1em;}
-.homeSection .info .notice h3{ color:#003b8e; font-size:1.4em; background:#eee; line-height:2em;height:2em; padding-left:10px; position:relative; border-radius:5px;}
+.homeSection .info .notice h3{ color:#038; font-size:1.4em; background:#eee; line-height:2em;height:2em; padding-left:10px; position:relative; border-radius:5px;}
 .homeSection .info .notice h3 .more{ position:absolute; right:0; top:0;padding-right:10px; font-size:.8em; font-weight:normal}
 .homeSection .info .notice ul { padding:10px}
 .homeSection .info .notice ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center;}
-.homeSection .info .news h3{color:#003b8e; font-size:1.4em;background:#eee; line-height:2em; height:2em; padding-left:10px; position:relative; border-radius:5px;}
+.homeSection .info .news h3{color:#038; font-size:1.4em;background:#eee; line-height:2em; height:2em; padding-left:10px; position:relative; border-radius:5px;}
 .homeSection .info .news h3 .more{ position:absolute; right:0; top:0; padding-right:10px; font-size:.8em; font-weight:normal}
 .homeSection .info .news ul { padding:10px}
 .homeSection .info .news ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center;}
 .homeSection .info .news ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em}
 
 .parttners{ background:#fff;}
-.parttners h2{ color:#dc7400; font-size:1.4em; background:url(../../images/line01.png) no-repeat left bottom; padding:10px 0}
+.parttners h2{ color:#d70; font-size:1.4em; background:url(../../images/line01.png) no-repeat left bottom; padding:10px 0}
 .parttners .content{ width:980px; margin:0 auto}
 .parttners ul{ overflow:hidden;_height:1;zoom:1; padding:20px 0;}
 .parttners ul li{ float:left; width:25%; text-align:center;}
 
 .links{padding:20px 0; background:#fff;}
-.links h2{ color:#dc7400; font-size:1.4em; background:url(../../images/line01.png) no-repeat left bottom; padding:10px 0}
+.links h2{ color:#d70; font-size:1.4em; background:url(../../images/line01.png) no-repeat left bottom; padding:10px 0}
 .links .content{ width:980px; margin:0 auto}
 .links ul{ overflow:hidden;_height:1;zoom:1; padding:20px 0;}
 .links ul li{ float:left; border-left:2px solid #eee; padding:0 20px; font-size:1.4em;}
@@ -88,8 +88,63 @@
 .homeLogin .content .submitBtn button{background:url(../../images/homeLoginBtn.png); width:228px; height:48px; text-align:center; line-height:48px; color:#fff; font-size:2em; border:none; cursor:pointer}
 .homeLogin .content .submitBtn button:hover{}
 .homeLogin .content .toReg{ text-align:center; padding:10px; font-size:1.2em;}
-.homeLogin .content .toReg a{ color:#dc7400; }
+.homeLogin .content .toReg a{ color:#d70; }
 .homeLogin .inputForm { padding-top:20px;}
 .homeLogin .inputForm input{ border:none;border-bottom:1px solid #eee; height:40px; line-height:40px; width:218px; padding-left:10px; font-size:1.2em}
 .homeLogin .inputForm input:focus{ outline:1px solid #F60; border-bottom:1px solid #f60}
 .homeLogin .summary{ font-size:1.2em; padding:20px 0;}
+
+
+/*loginMain*/
+.loginPage{ padding:60px 0;}
+.loginMain{ background:#666; width:800px; margin:0 auto; overflow:hidden;_height:!;zoom:1; border:5px solid #fff; border-radius:5px;}
+.loginMain .promote{ float:left;height:300px; background:}
+.loginMain .form{ float:right; width:230px; height:260px; background:url(../../images/homeLoginBg.png); padding:20px; color:#fff; }
+.loginMain .title{font-size:1.5em;}
+.loginMain .inputForm{}
+.loginMain .remember{padding:10px 0; float:left;}
+.loginMain .forgetPWD{padding:10px 0; float:right;}
+.loginMain .forgetPWD a{ color:#fff;}
+.loginMain .submitBtn{ clear:both;}
+.loginMain .submitBtn button{background:url(../../images/homeLoginBtn.png); width:228px; height:48px; text-align:center; line-height:48px; color:#fff; font-size:2em; border:none; cursor:pointer}
+.loginMain .submitBtn button:hover{}
+.loginMain .toReg{ text-align:center; padding:10px; font-size:1.2em;}
+.loginMain .toReg a{ color:#d70; }
+.loginMain .inputForm { padding-top:20px;}
+.loginMain .inputForm input{ border:none;border-bottom:1px solid #eee; height:40px; line-height:40px; width:218px; padding-left:10px; font-size:1.2em}
+.loginMain .inputForm input:focus{ outline:1px solid #F60; border-bottom:1px solid #f60}
+.loginMain .summary{ font-size:1.2em; padding:20px 0;}
+
+/*regPage*/
+.regPage{padding:60px 0;}
+.regMain{background:#eee; width:500px; margin:0 auto; overflow:hidden;_height:!;zoom:1; border:5px solid #fff; border-radius:5px;}
+.regMain .regIntro{ padding:10px; background:#d70;color:#ddd}
+.regMain .regIntro h2{ font-size:16px; color:#fff}
+.regMain .item{ padding:10px;}
+.regMain .item .title{ font-size:14px; color:#444; font-weight:bold;}
+.regMain .item .title span{ font-size:12px; color:#888; font-weight:normal;}
+.regMain .item .input{}
+.regMain .item .input input.text{ padding:0 10px;border:1px solid #ccc; background:#fff; width:460px; height:35px; line-height:35px; border-radius:5px;}
+.regMain .item .input input:focus{ border:1px solid #d70}
+.regMain .item  .agree{ text-align:center; font-size:14px;}
+.regMain .item  .btn{ text-align:center;}
+.regMain .item  .btn a{ font-size:14px; color:#d70}
+.regMain .item  button{ background:#d70; color:#fff; border:none; border-radius:5px; padding:5px 40px; font-size:14px; margin-right:20px;}
+
+
+/*aboutPage*/
+.aboutPage{ background:#f7f7f7; padding-top:10px;}
+.aboutPage .content{ overflow:hidden;_height:1;zoom:1; width:980px; margin:0 auto; padding:20px 0}
+.aboutPage .subMenu{ float:left; width:150px;}
+.aboutPage .main{ float:right; width:810px;}
+
+.aboutPage .subMenu{ background:#fff; border:1px solid #ccc; border-radius:5px; overflow:hidden;}
+.aboutPage .subMenu ul { padding:0 0 0 10px;}
+.aboutPage .subMenu ul li{ border-top:1px solid #eee;}
+.aboutPage .subMenu ul li a{ display:block; height:40px; line-height:40px; font-size:14px;}
+.aboutPage .subMenu ul li a.selected{ color:#d70}
+.aboutPage .subMenu h3{ background:#d70; padding:5px 10px; color:#fff; font-size:16px;}
+
+.aboutPage .main{ min-height:500px;_height:500px;}
+.aboutPage  .aboutArtical h1{ font-size:16px; padding-bottom:10px; color:#C60}
+.aboutPage  .aboutArtical{ padding:20px 50px; font-size:14px; line-height:32px;}

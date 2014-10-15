@@ -10,6 +10,10 @@
 .introPage .tabContent p{ line-height:32px; font-size:14px; padding-bottom:10px}
 .introPage .tabContent h3{ color:#0e338c;}
 
+.introPage .acticalTable{ border-top:2px solid #ccc}
+.introPage .acticalTable td{ vertical-align:top; padding:5px 10px; font-size:14px; border-bottom:1px solid #ddd;}
+.introPage .acticalTable th{ vertical-align:top;padding:5px 10px; font-size:14px; background:#f7f7f7; color:#444;border-bottom:1px solid #ddd;}
+
 #usual2{}
 #usual2 ul{ overflow:hidden; border-bottom:1px solid #072896}
 #usual2 ul li{ float:left; padding:0 10px;}

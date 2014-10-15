@@ -6,26 +6,82 @@ Author:vigoree.com Team*/
 .accountPage .subMenu{ float:left; width:150px;}
 .accountPage .main{ float:right; width:810px;}
 
+
 .subMenu{ background:#fff; border:1px solid #ccc; border-radius:5px; overflow:hidden;}
 .subMenu ul { padding:0 0 0 10px;}
 .subMenu ul li{ border-top:1px solid #eee;}
-.subMenu ul li a{ display:block; height:30px; line-height:30px;}
-.subMenu ul li.selected a{ display:block; height:30px; line-height:30px; color:#dc7400}
-.subMenu h3{ background:#f7f7f7; padding:5px 10px}
+.subMenu ul li a{ display:block; height:35px; line-height:35px; font-size:14px;}
+.subMenu ul li.selected a{ color:#d70}
+.subMenu h3{ background:#1e3549; padding:5px 10px; color:#fff; font-size:14px;}
 
 .accountPage .main{ min-height:500px;_height:500px;}
-.accountPage .main .title{ padding:5px 10px; background:#fff; color:#dc7400; border:1px solid #eee; border-radius:5px; font-size:16px; font-weight:bold;}
+.accountPage .main .title{ padding:5px 10px; background:#fff; color:#d70; border:1px solid #eee; border-radius:5px; font-size:16px; font-weight:bold;}
 .accountPage .main .tabBar{ padding:10px 0;}
 .accountPage .main .tabBar ul{ overflow:hidden;_height:1;zoom:1;}
 .accountPage .main .tabBar ul li{ float:left; padding-right:5px;}
 .accountPage .main .tabBar ul li a{ display:block; background:#888; color:#fff; padding:2px 10px; border-radius:3px;}
-.accountPage .main .tabBar ul li a.current{background:#dc7400;}
-.accountPage .main .tabBar ul li a:hover{background:#dc7400;}
-.accountPage .main .tabContent{padding:10px; background:#fff; color:#dc7400; border:1px solid #eee; border-radius:5px;}
+.accountPage .main .tabBar ul li a.current{background:#d70;}
+.accountPage .main .tabBar ul li a:hover{background:#d70;}
+.accountPage .main .tabContent{padding:10px; background:#fff; color:#d70; border:1px solid #eee; border-radius:5px;}
 
 /*accountHome*/
-.accountHome{}
+.accountPage .overview{}
+.accountPage .overview .profile{overflow:hidden;_height:1;zoom:1; background:url(../../images/profileBg02.png) no-repeat;padding:20px; color:#fff; font-size:12px; border:1px solid #ccc; border-bottom:none; border-top-left-radius:5px; border-top-right-radius:5px;}
+.accountPage .overview .profile .photo{ float:left; padding:0 20px;}
+.accountPage .overview .profile .photo a{}
+.accountPage .overview .profile .photo img{ border-radius:100px; border:5px solid #fff; width:100px; height:100px;}
+.accountPage .overview .profile .base{float:left; width:350px;}
+.accountPage .overview .profile .base .welcomeWord{ padding-bottom:10px; font-size:14px;} 
+.accountPage .overview .profile .base .safe{ padding-bottom:10px;}
+.accountPage .overview .profile .base .safe a{ color:#d70;}
+.accountPage .overview .profile .base .safe .levelBar{ background:#666; height:5px; width:200px;}
+.accountPage .overview .profile .base .safe .levelBar span{ display:block; height:5px; background:#6C3}
+.accountPage .overview .profile .base .balance{ padding-bottom:10px;}
+.accountPage .overview .profile .base .balance strong{ display:inline-block; padding-right:10px;}
+.accountPage .overview .profile .base .balance span{ color:#d70; font-weight:bold;}
 
+.accountPage .overview .profile .inOut{float:left; width:260px;overflow:hidden;_height:1;zoom:1; text-align:center}
+.accountPage .overview .profile .inOut a{ color:#fff;}
+.accountPage .overview .profile .inOut .in{ float:left; width:130px; padding-top:80px;background:url(../../images/accountTop-in.png) no-repeat center top;}
+.accountPage .overview .profile .inOut .in strong{ font-size:24px; color:#d70; display:block;}
+.accountPage .overview .profile .inOut .out{ float:left; width:130px; padding-top:80px;background:url(../../images/accountTop-out.png) no-repeat center top;}
+.accountPage .overview .profile .inOut .out strong{ font-size:24px; color:#ffe400;display:block;}
+
+.accountPage .overview .myMoney{ background:#fff; border:1px solid #ccc; border-top:none ;margin-bottom:20px; border-bottom-left-radius:5px; border-bottom-right-radius:5px; overflow:hidden;_height:1;zoom:1;}
+.accountPage .overview .myMoney .left{float:left;height:200px; width:49%; border-right:1px solid #eee;}
+.accountPage .overview .myMoney .right{ float:right; width:49%;}
+.accountPage .overview .myMoney h3{ padding:10px;}
+
+.accountPage .overview .myTrade{}
+.accountPage .overview .myTrade .sheet{ float:left; width:248px; background:#fff;margin-right:20px; border-radius:5px; border:1px solid #ccc;}
+.accountPage .overview .myTrade .sheetBig{ margin:0; width:268px;}
+.accountPage .overview .myTrade .sheet .sheetTitle{ background:#eee; color:#444; padding-left:10px;}
+.accountPage .overview .myTrade .sheet .data{ padding:10px;}
+.accountPage .overview .myTrade .sheet .data table{ width:100%;}
+.accountPage .overview .myTrade .sheet .data table th{ padding:5px; border-bottom:1px solid #eee; font-weight:bold;}
+.accountPage .overview .myTrade .sheet .data table td{ padding:5px; border-bottom:1px solid #eee;}
 
 /*noData*/
 .noData{ padding:60px; color:#888; text-align:center;}
+.accountDataTable{}
+.accountDataTable table{ width:100%;}
+.accountDataTable table th{ padding:5px; color:#444; border-bottom:2px solid #444; vertical-align:top; font-weight:bold;}
+.accountDataTable table td{ padding:5px; color:#444; border-bottom:1px solid #ccc; vertical-align:top;}
+.accountDataTable table tr:hover td{ background:#f7f7f7; color:#d70}
+.accountDataTable a.plan{ display:inline-block; padding:0 5px; margin-right:5px; color:#fff; background:#869bbf; border-radius:3px;}
+.accountDataTable a.contract{ display:inline-block; padding:0 5px; margin-right:5px;color:#fff; background:#888; border-radius:3px;}
+.accountDataTable a.trans{ display:inline-block; padding:0 5px; margin-right:5px;color:#fff; background:#d70; border-radius:3px;}
+.accountDataTable a.delete{ display:inline-block; padding:0 5px; margin-right:5px;color:#fff; background:#FFC4C4; border-radius:3px;}
+.accountDataTable a.flag{ display:inline-block; padding:0 5px; margin-right:5px;color:#fff; background:#CCC; border-radius:3px;}
+.accountDataTable a.edit{ display:inline-block; padding:0 5px; margin-right:5px;color:#fff; background:#888; border-radius:3px;}
+
+.accountDataTable select{ border:1px solid #ccc;}
+
+.accountDataTable .green{ color:#093}
+.accountDataTable .red{ color:#F33}
+
+.accountDataTable a{color:#444}
+.accountDataTable a.new{ font-weight:bold}
+/*msg*/
+span.msg-icon-new{background: url(../../images/icon-msg-new.png) no-repeat center center; display:inline-block; height:24px; width:24px; cursor:pointer;}
+span.msg-icon-read{background:url(../../images/icon-msg-read.png) no-repeat center center; display:inline-block; height:24px; width:24px;  cursor:pointer;}

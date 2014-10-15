@@ -18,12 +18,12 @@ Author:vigoree.com Team*/
 .menu ul {}
 .menu ul li { float: left; position:relative;}
 .menu ul li a { display: inline-block; font-size:16px; color:#444; height:80px; line-height:80px; padding:0 0 0 20px; font-weight:bold;}
-.menu ul li a:hover, .menu ul li a.highlight{ color:#dc7400;}
+.menu ul li a:hover, .menu ul li a.highlight{ color:#d70;}
 .menu ul li a.current { color:#115fad;}
 .menu ul li li{ float:none;}
 .menu ul li ul{ background-color:#fff; position:absolute;  box-shadow:#444 0 3px 3px;left:0; top:70px; z-index:9999; display:none;}
 .menu ul li li a{ display:block; width:150px; height:50px; line-height:50px; border-top:1px solid #eee; color:#888}
-.menu ul li li a:hover{color:#dc7400; }
+.menu ul li li a:hover{color:#d70; }
 
 /*子banner*/
 
@@ -32,7 +32,14 @@ Author:vigoree.com Team*/
 
 
 /*文章 文字 列表*/
-.articalList{ background:#fff; min-height:700px;_height:700px}
+
+.articalPage{ background:#f7f7f7; padding-top:10px;}
+.articalPage .content{ overflow:hidden;_height:1;zoom:1; width:980px; margin:0 auto; padding:20px 0}
+.articalPage .subMenu{ float:left; width:150px;}
+.articalPage .main{ float:right; width:810px;}
+.articalPage .main .titleTop{padding:5px 10px; background:#fff; color:#d70; border:1px solid #ccc; border-radius:5px; font-size:16px; font-weight:bold; margin-bottom:10px;}
+
+.articalList{ background:#fff; min-height:700px;_height:700px; border:1px solid #ccc; padding:10px; border-radius:5px;}
 .articalList h3{ font-size:16px; padding:10px 20px; border-bottom:1px solid #eee; color:#000;}
 .articalList ul li{ border-bottom:1px solid #eee; }
 .articalList ul li.highlight a{background:url(../../images/default/jui-listHot.png) no-repeat left top}
@@ -40,10 +47,10 @@ Author:vigoree.com Team*/
 .articalList ul li a{ display:block;padding:20px;}
 .articalList ul li a:hover{ background-color:#ffe;}
 .articalList ul li .title{ overflow:hidden;_height:1;zoom:1;}
-.articalList ul li .content{overflow:hidden;_height:1;zoom:1; padding-top:5px;}
-.articalList ul li .content strong.img{ display:block; width:15%; float:left;}
-.articalList ul li .content strong img{ width:90px; height:50px;}
-.articalList ul li .content p{ display:block; width:60%; float:left; color:#aaa;}
+.articalList ul li .mainPart{overflow:hidden;_height:1;zoom:1; padding-top:5px;}
+.articalList ul li .mainPart strong.img{ display:block; width:15%; float:left;}
+.articalList ul li .mainPart strong img{ width:90px; height:50px;}
+.articalList ul li .mainPart p{ display:block; width:60%; float:left; color:#aaa;}
 .articalList ul li strong.time{ color:#777; display:block; float:left; width:11%; padding-left:4%; background:url(../../images/default/jui-clockG.png) no-repeat left center}
 .articalList ul li strong.new{color:#777; background:url(../../images/default/jui-clockB.png) no-repeat left center}
 .articalList ul li h2{ float:left;font-size:14px; color:#444; width:75%}
@@ -61,7 +68,7 @@ Author:vigoree.com Team*/
 
 
 /*边文字列表*/
-.sideInfo h3{color:#003b8e; font-size:1.4em;background:#f4f4f4; line-height:2em; height:2em; padding-left:10px; position:relative}
+.sideInfo h3{color:#038; font-size:1.4em;background:#f4f4f4; line-height:2em; height:2em; padding-left:10px; position:relative}
 .sideInfo h3 .more{ position:absolute; right:0; top:0; padding-right:10px; font-size:.8em; font-weight:normal}
 .sideInfo ul { padding:10px}
 .sideInfo ul li a{ font-size:1.2em; display:block; height:2.2em; line-height:2.2em; padding-left:20px; background:url(../../images/icon-newsPoint.png) no-repeat left center;}
@@ -70,22 +77,31 @@ Author:vigoree.com Team*/
 
 
 /*articalContent*/
-.articalContent{ background:#fff; padding:20px;}
+.articalContent{ background:#fff; padding:20px; border:1px solid #ccc; border-radius:5px;; font-size:14px; line-height:30px;}
 .articalContent .title{ padding-bottom:10px;}
-.articalContent .title h1{ font-size:24px; line-height:30px;}
+.articalContent .title h1, .articalContent .title h2{ font-size:24px; line-height:30px;}
 .articalContent .tool{ padding-bottom:10px;}
 .articalContent .highlight{ border:1px solid #FCEBA9; background:#ffe; padding:10px;}
-.articalContent .content{ padding:20px 0}
+.articalContent .mainPart{ padding:20px 0}
 
 /*提示页*/
 
-.alertPage{ padding:200px;}
+.alertPage{ padding:50px 0 100px;}
+.alertPage .status{padding-top:70px;}
+.alertPage .statusOk{background:url(../../images/alert-icon-ok.png) no-repeat center top}
+.alertPage .statusNo{background:url(../../images/alert-icon-no.png) no-repeat center top}
+.alertPage .statusWait{background:url(../../images/alert-icon-wait.png) no-repeat center top}
+.alertPage .status h2{ font-size:16px; text-align:center; padding-bottom:30px;}
 
-
+.alertPage .content{ width:400px; margin:0 auto; padding:20px; background:#fff; border-radius:5px;border:1px solid #eee}
+.alertPage .content h3{}
+.alertPage .content p{ color:#888}
+.alertPage .content  .btnBar{ padding:10px 0 0;}
+.alertPage .content  .btnBar a{ background:#d70; color:#fff; display:inline-block; border-radius:5px; padding:2px 20px;}
 /*翻页*/
-.pageFlip{ padding:10px; background:#fff;}
-.pageFlip span, .pageFlip a:hover{display:inline-block; margin-right:5px; padding:5px 10px; background:#000; color:#fff;}
-.pageFlip a{ color:#777;display:inline-block; margin-right:5px; padding:5px 10px; background:#f7f7f7;}
+.pageFlip{ padding:10px 0; background:#fff;}
+.pageFlip span, .pageFlip a:hover{display:inline-block; margin-right:5px; padding:2px 10px; background:#d70; color:#fff; }
+.pageFlip a{ color:#777;display:inline-block; margin-right:5px; padding:2px 10px; background:#eee;}
 
 
 /*回顶部*/
