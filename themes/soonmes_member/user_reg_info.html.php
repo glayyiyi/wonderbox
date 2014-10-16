@@ -156,7 +156,7 @@ jQuery(function(){
 										</span>
 									</div>
 									<div class="reg-l-tips" id="username_notice">
-										<span>*</span> 请输入4-10位字符.英文,数字
+										<span>*</span> 请输入4-15位字符.英文,数字
 									</div></td>
 
 							</tr>
@@ -197,7 +197,7 @@ jQuery(function(){
 								<th>邀请人：</th>
 								<td><div class="input_style01">
 									<span class="r"><input id="invite_username"
-										name="invite_username" type="text" size="22" maxlength="10"
+										name="invite_username" type="text" size="22" maxlength="15"
 										value="{$magic.session.reginvite_user_Name}"
 										onFocus="this.className='biankuang1';"
 										onBlur="this.className='biankuang2';"></span>
