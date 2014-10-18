@@ -160,7 +160,7 @@
               <div class="title">
                 <div class="item"><span>投资人</span><span>投资金额</span><span>时间</span></div>
               </div>
-              <div class="slide" style="overflow:hidden">
+              <div class="slide" style="height:600px; overflow:hidden">
                 <ul>
                   {loop module="borrow" function="GetTenderList" limit="all" var="vat" borrow_id="$var.borrow.id" }
                   <li>
@@ -194,7 +194,7 @@
 
 
 <script type="text/javascript" src="{$tempdir}/statics/js/default/jquery.idTabs.min.js"></script> 
-<script type="text/javascript" src="{$tempdir}／statics/js/default/scroll.js"></script> 
+<script type="text/javascript" src="{$tempdir}/statics/js/default/scroll.js"></script> 
 
 <script type="text/javascript">
 var islz={$var.borrow.is_lz};
