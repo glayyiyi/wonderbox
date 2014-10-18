@@ -160,7 +160,7 @@
               <div class="title">
                 <div class="item"><span>投资人</span><span>投资金额</span><span>时间</span></div>
               </div>
-              <div class="slide" style="height:200px; overflow:hidden">
+              <div class="slide" style="height:600px; overflow:hidden">
                 <ul>
                   {loop module="borrow" function="GetTenderList" limit="all" var="vat" borrow_id="$var.borrow.id" }
                   <li>
@@ -194,14 +194,20 @@
 
 
 <script type="text/javascript" src="{$tempdir}/statics/js/default/jquery.idTabs.min.js"></script> 
-
+<script type="text/javascript" src="{$tempdir}／statics/js/default/scroll.js"></script> 
 
 <script type="text/javascript">
 var islz={$var.borrow.is_lz};
 
 {literal}
 $("#usual1 ul").idTabs(); 
-
+//滚动文字
+$(function(){
+	$("div.slide").myScroll({
+		speed:10, //数值越大，速度越慢
+		rowHeight:56 //li的高度
+	});
+});
 
 function check_form(lowest,most,use_money){
 		 var frm = document.forms['form1'];
