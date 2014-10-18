@@ -28,7 +28,7 @@ Author:vigoree.com Team*/
 .proItem .bMoney strong { display:block; font-size:20px; color:#d70 }
 
 .proItem .bTime { float:left; width:180px; }
-.proItem .bTime strong { display:block; font-size:20px; color:#038 }
+.proItem .bTime strong { display:block; font-size:16px; color:#038 }
 
 .proItem .bBalance { float:left; width:180px; }
 .proItem .bBalance strong { display:block; font-size:20px; color:#444 }

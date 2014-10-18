@@ -117,8 +117,8 @@
 
 /*regPage*/
 .regPage{padding:60px 0;}
-.regMain{background:#eee; width:500px; margin:0 auto; overflow:hidden;_height:!;zoom:1; border:5px solid #fff; border-radius:5px;}
-.regMain .regIntro{ padding:10px; background:#d70;color:#ddd}
+.regMain{width:500px; margin:0 auto; overflow:hidden;_height:!;zoom:1; }
+.regMain .regIntro{ padding:10px; background:#d70;color:#ddd;border-radius:5px;}
 .regMain .regIntro h2{ font-size:16px; color:#fff}
 .regMain .item{ padding:10px;}
 .regMain .item .title{ font-size:14px; color:#444; font-weight:bold;}
@@ -146,5 +146,12 @@
 .aboutPage .subMenu h3{ background:#d70; padding:5px 10px; color:#fff; font-size:16px;}
 
 .aboutPage .main{ min-height:500px;_height:500px;}
-.aboutPage  .aboutArtical h1{ font-size:16px; padding-bottom:10px; color:#C60}
-.aboutPage  .aboutArtical{ padding:20px 50px; font-size:14px; line-height:32px;}
+.aboutPage  .articalContent  h1{ font-size:26px; padding-bottom:10px; color:#000}
+.aboutPage  .articalContent  h2{ font-size:26px; padding-bottom:10px; color:#000}
+.aboutPage  .articalContent  h3{ color:#d70; font-size:14px;}
+.aboutPage  .articalContent { padding:20px 20px; font-size:14px; line-height:32px;}
+
+.aboutPage .acticalTable{ border-top:2px solid #ccc}
+.aboutPage .acticalTable td{ vertical-align:top; padding:5px 10px; font-size:14px; border-bottom:1px solid #ddd;}
+.aboutPage .acticalTable th{ vertical-align:top;padding:5px 10px; font-size:14px; background:#f7f7f7; color:#444;border-bottom:1px solid #ddd;}
+

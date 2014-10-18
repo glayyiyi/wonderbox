@@ -12,7 +12,7 @@ Author:vigoree.com Team*/
 .subMenu ul li{ border-top:1px solid #eee;}
 .subMenu ul li a{ display:block; height:35px; line-height:35px; font-size:14px;}
 .subMenu ul li.selected a{ color:#d70}
-.subMenu h3{ background:#1e3549; padding:5px 10px; color:#fff; font-size:14px;}
+.subMenu h3{ background:#d70; padding:5px 10px; color:#fff; font-size:14px;}
 
 .accountPage .main{ min-height:500px;_height:500px;}
 .accountPage .main .title{ padding:5px 10px; background:#fff; color:#d70; border:1px solid #eee; border-radius:5px; font-size:16px; font-weight:bold;}
@@ -28,7 +28,8 @@ Author:vigoree.com Team*/
 .accountPage .overview{}
 .accountPage .overview .profile{overflow:hidden;_height:1;zoom:1; background:url(../../images/profileBg02.png) no-repeat;padding:20px; color:#fff; font-size:12px; border:1px solid #ccc; border-bottom:none; border-top-left-radius:5px; border-top-right-radius:5px;}
 .accountPage .overview .profile .photo{ float:left; padding:0 20px;}
-.accountPage .overview .profile .photo a{}
+.accountPage .overview .profile .photo a.editPhoto{ display:block;}
+.accountPage .overview .profile .photo a.editProfile{ display:block; color:#fff; text-align:center;}
 .accountPage .overview .profile .photo img{ border-radius:100px; border:5px solid #fff; width:100px; height:100px;}
 .accountPage .overview .profile .base{float:left; width:350px;}
 .accountPage .overview .profile .base .welcomeWord{ padding-bottom:10px; font-size:14px;} 
@@ -58,7 +59,7 @@ Author:vigoree.com Team*/
 .accountPage .overview .myTrade .sheet .sheetTitle{ background:#eee; color:#444; padding-left:10px;}
 .accountPage .overview .myTrade .sheet .data{ padding:10px;}
 .accountPage .overview .myTrade .sheet .data table{ width:100%;}
-.accountPage .overview .myTrade .sheet .data table th{ padding:5px; border-bottom:1px solid #eee; font-weight:bold;}
+.accountPage .overview .myTrade .sheet .data table th{ padding:5px; border-bottom:1px solid #eee; font-weight:bold; color:#d70}
 .accountPage .overview .myTrade .sheet .data table td{ padding:5px; border-bottom:1px solid #eee;}
 
 /*noData*/
