@@ -39,7 +39,7 @@
                 <div class="rate rate{if $var.borrow.scale>0&$var.borrow.scale<=10 }10{elseif $var.borrow.scale>10&$var.borrow.scale<=20}20{elseif $var.borrow.scale>20&$var.borrow.scale<=30}30{elseif $var.borrow.scale>30&$var.borrow.scale<=40}40{elseif $var.borrow.scale>40&$var.borrow.scale<=50}50{elseif $var.borrow.scale>50&$var.borrow.scale<=60}60{elseif $var.borrow.scale>60&$var.borrow.scale<=70}70{elseif $var.borrow.scale>70&$var.borrow.scale<=80}80{elseif $var.borrow.scale>80&$var.borrow.scale<100}90{elseif $var.borrow.scale==100}100{/if}">{$var.borrow.scale|default:0}%</div>
               </div>
               <div class="info">
-                <div class="hasDone"><strong>已完成 {$var.borrow.account_yes}元</strong>，即刻投资收益生效后起算，每万元预期收益 {$var.borrow.interest*100|round:"2"}元</div>
+                <div class="hasDone"><strong>已完成 {$var.borrow.account_yes}元</strong>，投资收益生效后起算，每万元预期收益 {$var.borrow.interest*100|round:"2"}元</div>
                 <div class="relate"><strong class="money">{$var.borrow.account} <span>{$var.borrow.use_name}</span></strong> <strong class="limit">{if $var.borrow.isday==1 } 
 							{$var.borrow.time_limit_day}天
 							{else}

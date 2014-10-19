@@ -138,7 +138,7 @@
 	{elseif $var.status==4} <a class="done" href="invest/a{$var.id}.html">复审失败</a> 
 	{elseif $var.status==2} <a class="done" href="invest/a{$var.id}.html" >等待复审</a> 
 	{elseif $var.scale < 100} 
-	{if $var.is_lz==1} 
+	{if $var.biao_type=='pj'} 
 	<a href="invest/a{$var.id}.html">马上认购</a> 
 	{else} 
 	<a href="invest/a{$var.id}.html">立即投标</a> 
