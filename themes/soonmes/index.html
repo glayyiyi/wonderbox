@@ -75,7 +75,7 @@
                 <div class="rate rate{if $var.scale>0&$var.scale<=10 }10{elseif $var.scale>10&$var.scale<=20}20{elseif $var.scale>20&$var.scale<=30}30{elseif $var.scale>30&$var.scale<=40}40{elseif $var.scale>40&$var.scale<=50}50{elseif $var.scale>50&$var.scale<=60}60{elseif $var.scale>60&$var.scale<=70}70{elseif $var.scale>70&$var.scale<=80}80{elseif $var.scale>80&$var.scale<100}90{elseif $var.scale==100}100{/if}">{$var.scale|default:0}%</div>
                 <div class="intro">
                   <h3><a {if $var.status==3}class="done"{/if} href="invest/a{$var.id}.html"><strong>{$var.name|truncate:25:"..."}</strong></a></h3>
-                  <div class="relate"><strong class="money">{$var.account_format} <span>贷款</span></strong> 
+                  <div class="relate"><strong class="money">{$var.account_format} <span>{$var.use_name}</span></strong> 
                   <strong class="limit">
                  {if $var.isday==1}{$var.time_limit_day}天{else}{$var.time_limit}个月{/if}<span>期限</span></strong><strong class="level"><img src="{$tempdir}/statics/upload/icon-levelA.png" /></strong></div>
                   <div class="relate"><strong class="rateYear">{$var.apr}% <span>年化率</span></strong></div>
