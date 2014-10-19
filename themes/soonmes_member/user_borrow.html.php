@@ -2,19 +2,16 @@
 !defined('IN_TEMPLATE') && exit('Access Denied');
 ?>
 {include file="user_header.html"}
-<link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
-<!--用户中心的主栏目 开始-->
-<div id="main" class="clearfix" style="margin-top:0px;">
-<div class="wrap950 ">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
 		{include file="user_menu.html"}
-	</div>
+	
 	<!--左边的导航 结束-->
 	
 	<!--右边的内容 开始-->
-	<div class="user_right">
-		<div class="user_right_menu">
+	<div class="main">
+		<div class="tabBar">
 			{if $_U.query_type=="repayment" || $_U.query_type=="repaymentplan" || $_U.query_type=="loandetail" || $_U.query_type=="repaymentyes" || $_U.query_type=="repayment_view" }
 			<ul id="tab" class="list-tab clearfix">
 				<li {if $_U.query_type=="repayment"} class="cur"{/if}><a href="{$_U.query_url}/repayment">正在还款的借款</a></li>

@@ -6,18 +6,15 @@
 <script type="text/javascript" src="/themes/soonmes/media/js/tipswindown.js"></script>
 <link href="{$tempdir}/media/css/tipswindown.css" rel="stylesheet" type="text/css" />
 
- <div id="main" class="clearfix">
-<!--用户中心的主栏目 开始-->
-<div class="wrap950 mar10">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
 		{include file="user_menu.html"}
-	</div>
 	<!--左边的导航 结束-->
 	
 	<!--右边的内容 开始-->
-	<div class="user_right">
-		<div class="user_right_menu">
+	<div class="main">
+		<div class="tabBar">
 			<ul class="list-tab clearfix">
 				<li {if $_U.query_type=="list" || $_U.query_type=="view"} class="cur"{/if}><a href="{$_U.query_url}">收件箱</a></li>
 				<li {if $_U.query_type=="sented" || $_U.query_type=="viewed"} class="cur"{/if}><a href="{$_U.query_url}/sented">已发送</a></li>
@@ -346,4 +343,6 @@ href="javascript:void(0)">加为好友</A> </a>
 </div>
 <!--用户中心的主栏目 结束-->
 </div>
+</div>
+
 {include file="user_footer.html"}

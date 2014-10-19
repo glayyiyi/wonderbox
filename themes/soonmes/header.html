@@ -1,77 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 		<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
 		<meta http-equiv="X-UA-Compatible" content="IE=8" />
 		<title>{$_G.system.con_webname}</title>
 		<meta name="description" content="{$_G.system.con_description}" />
-<meta name="keywords" content="{$_G.system.con_keywords}" />
-
-<link href="{$tempdir}/media/css/style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{$tempdir}/media/css/jquery-ui.css" type="text/css" media="all" />
-<!-- <script src="{$tempdir}/script/jquery-1.7.2.min.js" type="text/javascript"></script> -->
- <script type="text/javascript" src="{$tempdir}/media/js/jquery.js"></script> 
-<script type="text/javascript" src="{$tempdir}/media/js/jquery-ui.js"></script>
-<script type="text/javascript" src="{$tempdir}/media/js/thickbox/thickbox.js"></script>
-<link rel="stylesheet" href="{$tempdir}/media/js/thickbox/thickbox.css" type="text/css" media="screen" />
-
-<!--jbox-->
-<link id="skin" rel="stylesheet" href="{$tempdir}/media/js/jBox/Skins/Gray/jbox.css" />
-<script type="text/javascript" src="{$tempdir}/media/js/jBox/jquery.jBox-2.3.min.js?v=1" charset='gb2312'></script>
-<script type="text/javascript" src="{$tempdir}/media/js/jBox/i18n/jquery.jBox-zh-CN.js?v=1" charset='gb2312'></script>
-<script type="text/javascript" src="{$tempdir}/media/js/blockUI.js"></script>
-<script type="text/javascript" src="{$tempdir}/media/js/index.js"></script>
-
-		<!--[if IE 6]>
-		<script src="{$tempdir}/script/iepng.js" type="text/javascript"></script>
-		<![endif]-->
-		<link href="{$tempdir}/style/basic.css" rel="stylesheet" type="text/css" />
-		<link href="{$tempdir}/style/index.css" rel="stylesheet" type="text/css" />
-
-
-<link rel="stylesheet" href="{$tempdir}/css/common.css" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" href="{$tempdir}/css/index.css" rel="stylesheet" type="text/css"/>
+		<meta name="keywords" content="{$_G.system.con_keywords}" />
 		
-		<script src="{$tempdir}/script/imgSlide.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="{$tempdir}/statics/css/default/main.css" media="screen"/>
+		<script type="text/javascript" src="{$tempdir}/statics/js/jquery.min.js"></script>
 
-	</head>
+</head>
 	<body>
-	<div id="wdjr-front">
-		<div class="wdjr-head">
-			<div class="inner">
-				<span><i class="icon i-tel"></i>服务热线：010-59091009</span>
-				<span><i class="icon i-time"></i>服务时间：9:00-18:00</span>
-				<span><i class="icon i-qq"></i>官方QQ群：391114833</span>
-				<span class="weibo"><a href="#"><i class="icon i-weibo"></i></a><a href="#"><i class="icon i-weixin"></i></a></span>
-				<span class="login">
-				{if $_G.user_id>0}
-				  欢迎你，<a href="/?user">{$_G.user_result.username}</a> 
+<div id="container">
+  <div id="header">
+    <div class="topTool">
+      <div class="content">
+        <div class="isLeft">
+          <div class="topContact"><span>服务热线：010-59091009 </span> <span>服务时间：9:00-18:00 </span> <span>官方QQ群：391114833</span></div>
+        </div>
+        <div class="isRight">
+          <div class="topLogin">
+          <span class="welcome">
+          您好，亲爱的万得金融用户
+                    {if $_G.user_id>0}
+				  <a href="/?user">{$_G.user_result.username}</a> 
 				  <a href="/?user&q=going/logout">[退出]</a>
+		
 				 {else}
-				 {if $_G.open_connet.type=='qq'}
-				 欢迎您，<img src="/data/images/base/connect_qq.gif" title="qq" />
-				 {$_G.open_connet.nickname} | 
-				 <a href="/index.action?user&q=going/reg">完善帐号信息</a> | 
-				 <a href="/index.action?user&q=going/login">绑定已有帐号</a> | 
-				<a href="/?user&q=going/logout">退出</a>
-				 {else}
-				 <a href="/index.action?user&q=going/login">登录</a> {if $_G.system.con_is_reg_open } | 
-				 <a href="/index.action?user&q=going/getreg">注册</a>{/if}
+				 <a href="/index.action?user&q=going/login">登录</a> 
+				 {if $_G.system.con_is_reg_open } 
+				 <a href="/index.action?user&q=going/getreg">注册</a>
 				 {/if}
-				
-				{/if}
-				
-				</span>
-				<!-- <a href="/" class="go-home">返回首页</a> -->
-			</div>
-		</div>
-		<div class="wdjr-menu">
-			<div class="inner">
-				<ul>
-					<!--<li class="on">
-						<a href="/">首页</a>
-					</li>-->
-					<li>
-						<a href="/">我要投资</a>
+				 {/if}
+          </span>
+         
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topBar floatIsTrue">
+      <div class="content">
+        <div class="logo"><img src="{$tempdir}/statics/images/logo.png" alt="万得金融 - 普惠,公开,平等的网络借贷平台" /></div>
+        <div class="menu">
+          <ul id="nav">
+          			<li>
+						<a href="/" class="highlight">我要投资</a>
 					</li>
 					<li>
 						<a href="/index.action?user">我的账户</a>
@@ -82,10 +57,24 @@
 					<li>
 						<a href="/html/aboutus/intro.html">关于我们</a>
 					</li>
-				</ul>
-				<a class="logo" href="/"></a>
-			</div>
-		</div>
-		<script type="text/javascript" src="{$tempdir}/media/js/head_nav.js"></script>
-		<script type="text/javascript" src="{$tempdir}/media/js/base.js"></script>
+            <!-- <li><a href="#">我要投资 </a></li>
+            <li><a href="#">新手指南</a>
+            </li>
+            <li><a href="#">安全保障</a></li>
+            <li><a href="#">关于我们</a>
+              <ul>
+                <li><a href="#"> 公司简介 </a></li>
+                <li><a href="#"> 产品介绍</a></li>
+                <li><a href="#"> 业务模式</a></li>
+                <li><a href="#"> 风险管控</a></li>
+                <li><a href="#"> 投资指南</a></li>
+                <li><a href="#"> 收益模式</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="highlight">我的账户</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 		<!-- 公共头结束 -->

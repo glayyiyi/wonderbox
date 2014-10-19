@@ -5,17 +5,15 @@
 <link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
  
 <!--用户中心的主栏目 开始-->
- <div id="main" class="clearfix" style="margin-top:0px;">
-<div class="wrap950 mar10">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
 		{include file="user_menu.html"}
-	</div>
 	<!--左边的导航 结束-->
 	
 	<!--右边的内容 开始-->
-	<div class="user_right">
-		<div class="user_right_menu">
+	<div class="main">
+		<div class="tabBar">
 			<ul id="tab" class="list-tab clearfix">
 				<li {if $_U.query_type=="list"} class="cur"{/if}><a href="{$_U.query_url}">帐户详情</a></li>
 				<li {if $_U.query_type=="bank"} class="cur"{/if}><a href="{$_U.query_url}/bank">银行账号</a></li>

@@ -2,18 +2,20 @@
 !defined('IN_TEMPLATE') && exit('Access Denied');
 ?>
 {include file="user_header.html"}
-<link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
+
 <!--用户中心的主栏目 开始-->
- <div id="main" class="clearfix" style="margin-top:0px;">
-<div class="wrap950 " style="margin-top:0">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
+        
 		{include file="user_menu.html"}
-	</div>
+
 	<!--左边的导航 结束-->
+	<div class="main">
 	{article module="borrow" function="GetUserLog" user_id=0 var="acc"}
 	<!--右边的内容 开始-->
-	<div class="user_right ">
+	
 
 		<div class="user_right_l ">
 		{if $_G.user_result.real_status==0}
@@ -129,67 +131,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="user_right_r">
-			<div class="list_2">
-				<div class="title">最新公告</div>
-				<div class="content">
-					<ul>
-						{loop module="article" function="GetList" limit="6" site_id="22"}
-						<li><a href="/{$var.site_nid}/a{$var.id}.html" target="_blank">{$var.name|truncate:14:"..."}</a></li>
-						{/loop}
-					</ul>
-				</div>
-			</div>
-			{article module="borrow" function="Getkf"}
-			{if $var.username}
-			<div class="user_right_info">
-				<div class="title">您的理财顾问在您身边</div>
-				<div class="content">
-					<ul>
-						<li><img src="{$var.kefu_userid|avatar:'big'}" border="0" class="picborder" width="150px" height="160px"/></li>
-						<li>理财顾问名称：{$var.username}</li>
-						<li>理财顾问QQ：
-                            <a target="_blank" href="http://wpa.qq.com/msgrd?v=1&uin={$var.qq}&site=qq&menu=yes" >
-                               <img border="0" src="http://wpa.qq.com/pa?p=1:{$var.qq}:1" alt="点击这里给我发消息" title="点击这里给我发消息">
-                            </a>
-                        </li>
-						<li>理财顾问电话：{$var.phone}</li>
-					</ul>
-				</div>
-			</div>
-			{/if}
-			{/article}
-<!-- 			<div class="list_2 clearfix"> -->
-<!-- 				<div class="title">个人资料完成率</div>  -->
-<!-- 				<div  class="content"> -->
-<!-- 				<ul> -->
-<!-- 				{article module="userinfo" function="GetOne" user_id="0"} -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/building">{if $var.building_status==1}<font color="#009900">已填写</font>{else}<font color="#FF0000">未填写</font>{/if}</a></span>房产资料</li> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/company">{if $var.company_status==1}<font color="#009900">已填写</font>{else}<font color="#FF0000">未填写</font>{/if}</a></span>单位资料</li> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/firm">{if $var.firm_status==1}<font color="#009900">已填写</font>{else}<font color="#FF0000">未填写</font>{/if}</a></span>私营业主</li> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/finance">{if $var.finance_status==1}<font color="#009900">已填写</font>{else}<font color="#FF0000">未填写</font>{/if}</a></span>财务状况</li> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/contact">{if $var.contact_status==1}<font color="#009900">已填写</font>{else}<font color="#FF0000">未填写</font>{/if}</a></span>联系方式</li> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/edu">{if $var.edu_status==1}<font color="#009900">已填写</font>{else}<font color="#FF0000">未填写</font>{/if}</a></span>教育背景</li> -->
-<!-- 				</ul> -->
-<!-- 				{/article} -->
-<!-- 				</div> -->
-<!-- 			</div> -->
+
 			
-			
-		
-<!-- 			<div class="list_2"> -->
-<!-- 				<div class="title">媒体报道</div> -->
-<!-- 				<div class="content"> -->
-<!-- 					<ul> -->
-<!-- 						{loop module="article" function="GetList" limit="6" site_id="59"} -->
-<!-- 						<li><a href="/{$var.site_nid}/a{$var.id}.html" target="_blank">{$var.name|truncate:14:"..."}</a></li> -->
-<!-- 						{/loop} -->
-<!-- 					</ul> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-		</div>
-	</div>
-	<!--右边的内容 结束-->
+</div>
+
+</div>
 </div>
 </div>
 <script type="text/javascript">

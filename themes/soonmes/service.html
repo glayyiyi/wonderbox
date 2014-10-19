@@ -1,11 +1,10 @@
 {include file="header.html"}
 <link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" /> 
 <link href="{$tempdir}/media/css/about.css" rel="stylesheet" type="text/css" /> 
-<div id="main" class="clearfix">
-<div class="cor_divtop">
-<div id="left" class="left">
-<div class="NavLinkHeader"><span>关于我们</span></div>
-<div class="NavLinkContent">
+<div id="mainBody">
+    <div class="aboutPage">      
+    <div class="content">
+        <div class="subMenu">
 		{loop module="article" function="GetSiteList" var="var" epage="20"  pid="21"  keywords="request" status=1}
 		<div id="item5" class="page" onClick="showsubmenu(1, 12)"><span class="txtspan"><a href="/{$var.nid}/index.html">{$var.name}</a></span></div>
 		<div style="display: none" id="open_item5"></div>
@@ -34,14 +33,13 @@
 		showSecond();
 		{/literal}
 	</script>
-<div id="right" class="right">
-<div>
-<div id="MainBanner">
-<div style="border-bottom:2px solid #c51e0b;" class="box_name">
-				<a href="#" class="btn-action" style="margin-top:8px;text-decoration:none;color:#fff;"  >{$_G.site_result.name} </a>
+<div class="main">
+        <div class="articalContent">
+          <div id="tab1">
+<div class="title">{$_G.site_result.name} 
 		</div>
-</div>
-<div style="clear: both"></div>
+
+
 <div id="myTabContent" class="content">
 			<div class="info" id="lxjs">
 			

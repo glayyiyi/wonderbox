@@ -24,3 +24,10 @@ VALUES
 	(526, 0, 10, 22, '0', '10万元', '100000', 0, NULL),
 	(527, 0, 10, 22, '0', '20万元', '200000', 0, NULL),
 	(528, 0, 10, 22, '0', '50万元', '500000', 0, NULL);
+
+	
+
+--用户票据产品	
+insert into `rd_biao_type` (`id`, `biao_type_name`, `available`, `password_model`, `day_model`, `auto_verify`, `auto_full_verify`, `min_amount`, `max_amount`, `min_interest_rate`, `max_interest_rate`, `advance_time`, `advance_scope`, `advance_vip_scope`, `late_interest_rate`, `borrow_fee_rate_start`, `borrow_fee_rate_start_month_num`, `borrow_fee_rate`, `borrow_day_fee_rate`, `interest_fee_rate`, `frost_rate`, `advance_rate`, `advance_vip_rate`, `late_customer_interest_rate`, `late_interest_scope`, `max_tender_times`, `show_name`, `extract_rate`) values('9','pj','1','1','1','0','0','500','100000000','0.0000','0.2400','30','2','2','0.0080','0.0200','2','0.0050','0.0050','0.1000','0.1000','0.5000','1.0000','0.0040','0','10','票据产品','1.0000');
+insert into `rd_linkage` (`id`, `status`, `order`, `type_id`, `pid`, `name`, `value`, `addtime`, `addip`) values('538','0','10','21','0','按天付息到期还本','4','0',NULL);
+

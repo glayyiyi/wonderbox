@@ -5,20 +5,19 @@
 <link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
 <link href="{$tempdir}/media/css/tipswindown.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" type="text/css" href="{$tempdir}/statics/css/invite/invite.css" media="screen"/>
 
 <!--用户中心的主栏目 开始-->
-<div id="main" class="clearfix" style="margin-top:0px;">
-<div class="wrap950 ">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
 		{include file="user_menu.html"}
-	</div>
+	
 	<!--左边的导航 结束-->
 	
 	<!--右边的内容 开始-->
-	<div class="user_right">
-		<div class="user_right_menu">
+	<div class="main">
+		<div class="tabBar">
 			{if $_U.query_type=="userpwd" || $_U.query_type=="paypwd" || $_U.query_type=="protection" || $_U.query_type=="getpaypwd" || $_U.query_type=="serialStatusSet"}
 			<ul id="tab" class="list-tab clearfix">
 				
@@ -578,7 +577,9 @@
 		
 		<!--好友邀请 开始-->
 		{elseif $_U.query_type=="reginvite"}
-		<div class="invitePage">
+		<link rel="stylesheet" type="text/css" href="{$tempdir}/statics/css/invite/invite.css" media="screen"/>
+		<div class="tabContent">
+            <div class="invitePage">
                 <div class="banner"></div>
                 <div class="inviteAction">
                   <div class="left">
@@ -674,6 +675,8 @@
 		</script>
 		{/literal}
 		<!--好友请求 结束-->
+		</div>
+		
 		
 		<!--好友请求 开始-->
 		{elseif $_U.query_type=="request"}
@@ -1242,6 +1245,8 @@
 </div>
 </div>
 </div>
+</div>
+
 <!--用户中心的主栏目 结束-->
 {include file="user_footer.html"}
 {literal}

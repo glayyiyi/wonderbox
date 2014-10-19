@@ -2,19 +2,17 @@
 !defined('IN_TEMPLATE') && exit('Access Denied');
 ?>
 {include file="user_header.html"}
-<link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
+
 <!--用户中心的主栏目 开始-->
- <div id="main" class="clearfix" style="margin-top:30px;">
-<div class="wrap950 mar10">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
 		{include file="user_menu.html"}
-	</div>
 	<!--左边的导航 结束-->
 	
 	<!--右边的内容 开始-->
-	<div class="user_right">
-		<div class="user_right_menu">
+		<div class="main">
+		<div class="tabBar">
 			<ul id="tab" class="list-tab-narrow clearfix">
 				<li {if $_U.query_type=="building"} class="cur"{/if}><a href="{$_U.query_url}/building">房产资料</a></li>
 				<li {if $_U.query_type=="company"} class="cur"{/if}><a href="{$_U.query_url}/company">单位资料</a></li>
@@ -873,6 +871,8 @@
 </div>
 </div>
 </div>
+</div>
+
 <!--用户中心的主栏目 结束-->
 <script src="{$tempdir}/media/js/tab.js"></script>
 <script src="{$tempdir}/media/js/alert.js"></script>

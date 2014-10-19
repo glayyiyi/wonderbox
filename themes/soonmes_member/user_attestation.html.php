@@ -4,17 +4,15 @@
 {include file="user_header.html"}
 <link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
 <!--用户中心的主栏目 开始-->
-<div id="main" class="clearfix">
-<div class="wrap950 mar10">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
 		{include file="user_menu.html"}
-	</div>
 	<!--左边的导航 结束-->
 	
 	<!--右边的内容 开始-->
-	<div class="user_right">
-		<div class="user_right_menu">
+	<div class="main">
+		<div class="tabBar">
 			{if $_U.query_type=="myuser"}
 			<ul>
 				<li ><a href="index.php?user&q=code/user/myuser">我的客服</a></li>
@@ -194,6 +192,8 @@
 	
 		{/if}
 </div>
+</div>
+
 <!--用户中心的主栏目 结束-->
 </div>
 </div>
