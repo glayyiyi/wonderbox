@@ -55,29 +55,57 @@
               <div class="bTime">剩余时间 <strong><span id="endtime">{$var.borrow.lave_time}</span></strong></div>
               <!-- <div class="rask"><a href="#">风险须知</a></div> -->
               <div class="inputForm">
-              			{if $var.borrow.is_lz==1}
-					<li>最小流转单位：100 元
-					<li>已认购:{$var.borrow.account_yes/100} 份&nbsp;&nbsp;
-					还剩:<b class="max">{$var.borrow.other/100}</b>份</li>
-					<li id="flow_num">购买份数：
-						<input class="less" value="-" type="button" onclick="less()">
-						<input type="text"  class="nums" id="flow_count" name="flow_count" value="1" size="5">
-						<input class="add" value="+" type="button" onclick="add()">
-					</li>
-					<input type="hidden" id="is_lz" name="is_lz" size="11" value="1">
+              
+              	{if $var.borrow.is_lz==1}
+              	
+             
+                <div class="byCopy">
+                <ul><li>最小流转单位1元/份，已认购{$var.borrow.account_yes}份，<strong>还剩 {$var.borrow.other}份  </strong></li> 
+                <li>购买 
+                <input type="button" value="-" class="decNum"  onclick="less()"/>
+                <input type="text" class="countNum" id="flow_count" name="flow_count" value="100"/>
+                <input type="button" value="+"  class="addNum" onclick="add()"/>
+                   份 ,  默认<strong>100份</strong>起购 ,账户余额 ￥{$var.user_account.use_money|default:0} <a href="/index.php?user&q=code/account/recharge_new">马上充值</a>
+                </li>
+                </ul>
+                </div>
+				<input type="hidden" id="is_lz" name="is_lz" size="11" value="1">
 				{else}
                 <div class="balance">请输入投资金额，可用余额 ￥{$var.user_account.use_money|default:0} <a href="/index.php?user&q=code/account/recharge_new">马上充值</a></div>
                 <input type="text" id="money" name="money" placeholder="请输入，如 3000.00" class="text"/>
+                
                 {/if}
-                支付密码：{if $_G.user_result.paypassword==""}<a href="/index.php?user&q=code/user/paypwd" target="_blank"><font color="red">请先设一个支付交易密码,设置完后返回该页面刷新生效</font></a>{else}<input type="password" name="paypassword" size="11" tabindex="2" />{/if}</li>
-					{if $var.borrow.pwd != ""}<li>定向标密码：<input type="text" name="dxbPWD" id="dxbPWD" size="11" tabindex="3" /></li>{/if}
-					<!-- {if $var.borrow.is_mb==1}  {/if} -->
-					</br>
-					</br>
-					<li>&nbsp;&nbsp;验证码：<input type="text" id="yzmcode" name="yzmcode" tabindex="4" size="10" style="margin-right:5px;" maxlength="4" /> <img src="/plugins/index.php?q=imgcode" alt="点击刷新" onClick="this.src='/plugins/index.php?q=imgcode&t=' + Math.random();" align="absmiddle" style="cursor:pointer;" />
-				<button id="qrfk">确认投资</button> 
-              
+                </div>
+                <div class="payForm"  id="payForm" style="background:#eee;">
+                {if $_G.user_result.paypassword==""}
+                <div class="payPWDTip">未设置支付交易密码，无法购买，请<a href="/index.php?user&q=code/user/paypwd" target="_blank">设置支付交易密码</a>，并刷新此页面</div>
+                {else}
+                <div class="mainForm">
+                 <div class="PWD">
+                      <input type="password" name="paypassword" size="11" tabindex="2" placeholder="支付密码" class="text"/>
+                 </div>
+               
+				{if $var.borrow.pwd != ""}
+				<div class="PWD">
+				<input type="password" name="dxbPWD" id="dxbPWD" size="11" tabindex="3" placeholder="定向标密码" class="text"/>
+				
+				 </div>
+				{/if}
+                   
+                    <div class="checkCode">
+                    <input type="text" class="text" placeholder="验证码" id="yzmcode" name="yzmcode" tabindex="4" size="10" style="margin-right:5px;" maxlength="4" /> <img src="/plugins/index.php?q=imgcode" alt="换一张" onClick="this.src='/plugins/index.php?q=imgcode&t=' + Math.random();" align="absmiddle" style="cursor:pointer;" />
+                      
+                    </div>
+                    <div class="submitBtn">
+                      <button id="qrfk" class="green">确认投资</button> 
+                     <!--  <div class="agree" style="display:inline"><label><input type="checkbox"/>同意</label><a href="#">投资协议</a></div> -->
+                    </div> 
+                  </div>
+                   
+               
+                
                 <p><input type="hidden" name="id" value="{$_G.article_id}" />注意:点击确认表示您并同意支付本投标金额！</p>
+                {/if}
                <!--  <button class="blue">全投</button> -->
               </div>
               {/if}

@@ -23,7 +23,6 @@ Author:vigoree.com Team*/
 .proItem .tradeInfo { background:#fff; border:1px solid #ccc; padding:20px; border-radius:5px; overflow:hidden; _height:1; zoom:1; }
 
 
-
 .proItem .bMoney { float:left; width:180px; }
 .proItem .bMoney strong { display:block; font-size:20px; color:#d70 }
 
@@ -61,6 +60,32 @@ Author:vigoree.com Team*/
 .proItem .tabBar ul li a.selected { background:#d70; }
 .proItem .tabBar ul li a:hover { background:#d70; }
 .proItem .tabContent { padding:10px; background:#fff; color:#d70; border:1px solid #eee; border-radius:5px; }
+
+.payForm{}
+.payForm .payFormTitle{ background:#d70; color:#fff; position:relative; padding: 0 20px; font-size:16px; line-height:35px; height:35px;}
+.payForm .mainForm{ padding:20px;}
+.payForm .PWD { padding-bottom:10px;}
+.payForm .PWD  input.text {  font-size:14px; height:35px; width:240px; line-height:35px; padding:0 10px; margin-right:10px; border-radius:5px; border:1px solid #ccc; }
+.payForm .checkCode{padding-bottom:10px;}
+.payForm .checkCode  input.text {  font-size:14px; height:35px; width:100px; line-height:35px; padding:0 10px; margin-right:10px; border-radius:5px; border:1px solid #ccc; }
+.payForm .checkCode a img{}
+.payForm button { font-size:14px; height:35px; width:120px; background: #d70; color:#fff; line-height:35px; padding:0 10px; border:none; margin-right:10px; border-radius:5px; cursor:pointer }
+.payForm  button.green { background:#009e1a }
+.payForm .tip{ padding-bottom:10px; font-size:14px;}
+.payForm .tip strong{ color:#d70}
+
+.hideForm{ display:none;}
+
+.payPWDTip{ background:#ffe0e0; color:#444; font-size:14px; padding:10px; margin-top:20px; text-align:center; border-radius:5px;}
+.payPWDTip a{ color:#900 !important}
+
+.byCopy{ font-size:14px; padding-bottom:10px; border-top:1px solid #ccc; padding-top:10px;}
+.byCopy ul{}
+.byCopy ul li{ padding:5px 0;}
+.byCopy input.addNum{ background:#333; color:#fff; border:1px solid #333; height:24px; width:24px;text-align:center; cursor:pointer}
+.byCopy input.decNum{background:#333; color:#fff; border:1px solid #333;height:24px; width:24px; text-align:center; cursor:pointer}
+.byCopy input.countNum{border:1px solid #333;height:24px; width:44px; background:#fff;text-align:center}
+.byCopy  strong{ color:#d70}
 
 .filter{}
 .filter .tabBar { padding:10px 0; }
