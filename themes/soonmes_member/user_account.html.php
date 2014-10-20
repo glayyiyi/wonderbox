@@ -206,7 +206,7 @@
 			</div>
 		</div>
 		<form action="" method="post" name="form1" target="_blank"  onsubmit= "return check();" >
-		<div id="returnpay">
+		<div id="inputForm">
 		<div class="user_right_border">
 			<div class="l" style="font-weight:bold;">充值方式：</div>
 			<div class="c">
@@ -333,12 +333,13 @@
 			</div>
 		</div>
  
-		<div class="user_right_border">
-			<div class="l" style="font-weight:bold;"></div>
-			<div class="c">
-				<input type="submit" class="btn-action"  name="name"  value="确认提交" size="30" /> 
+		
+			
+			<div class="submitBtn">
+<!-- 				<input type="submit" class="btn-action"  name="name"  value="确认提交" size="30" />  -->
+			<button>确认提交</button>
+			
 			</div>
-		</div>
 		</form>
 		</div>
 		
