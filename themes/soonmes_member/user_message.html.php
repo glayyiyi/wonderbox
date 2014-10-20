@@ -2,7 +2,7 @@
 !defined('IN_TEMPLATE') && exit('Access Denied');
 ?>
 {include file="user_header.html"}
-<link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
+
 <script type="text/javascript" src="/themes/soonmes/media/js/tipswindown.js"></script>
 <link href="{$tempdir}/media/css/tipswindown.css" rel="stylesheet" type="text/css" />
 

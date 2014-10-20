@@ -28,7 +28,7 @@ jQuery(function(){
 .is100{background-position:0 -70px;}
 </style>
 {/literal}
-<link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
+
 <form action="" method="post" name="formUser" onSubmit="return userReg();" id="reg_sub">
 <div id="main" class="clearfix">
 	<div class="box">

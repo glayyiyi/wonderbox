@@ -2,7 +2,7 @@
 !defined('IN_TEMPLATE') && exit('Access Denied');
 ?>
 {include file="user_header.html"}
-<link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
+
  
 <!--用户中心的主栏目 开始-->
  <div id="mainBody">

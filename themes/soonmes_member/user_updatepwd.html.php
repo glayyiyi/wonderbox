@@ -2,7 +2,7 @@
 !defined('IN_TEMPLATE') && exit('Access Denied');
 ?>
 {include file="user_header.html"}
-<link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
+
 <div id="main" class="clearfix">
 
 			<form action="" method="post" name="formUser" >

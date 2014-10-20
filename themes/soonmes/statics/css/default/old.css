@@ -2,19 +2,32 @@
 /*Jui website
 Author:vigoree.com Team*/
 .user_right_main{ padding:5px 10px; background:#fff; border:1px solid #ccc; border-radius:5px;}
-.user_right_main .user_main_title{ background:#f7f7f7; padding:0 10px;}
-.user_right_main table{ width:100%}
-.user_right_main table .head td{ background:#f7f7f7;}
-.user_right_main table tr th{ padding:5px; border-bottom:1px solid #eee;}
-.user_right_main table tr td{ padding:5px; border-bottom:1px solid #eee;}
+.user_right_main .user_main_title{ background:#f7f7f7; padding:0 10px;height:40px !important;}
+.user_right_main table.table { width:100%; margin-top:10px;}
+.user_right_main table.table  .head td{ background:#f7f7f7;}
+.user_right_main table.table  tr th{ padding:5px; border-bottom:1px solid #eee;}
+.user_right_main table.table  tr td{ padding:5px; border-bottom:1px solid #eee;}
 
 .user_right_main input.btn-action{ background:#d70; border:none; font-size:14px; color:#fff; padding:5px 10px; border-radius:5px;}
 
 .user_right_main input.input_border{ border:1px solid #ccc; border-radius:5px; height:30px; line-height:30px;}
 
-.user_right_main .alert{ padding:10px;}
+.user_right_main .alert{ padding:10px; background:#fcf8e3}
 
 .user_right_main .user_right_border{ overflow:hidden;_height:1;zoom:1; border-bottom:1px solid #eee; padding:5px;}
 .user_right_main .user_right_border .l{ float:left; width:120px;}
 .user_right_main .user_right_border .c{ float:left;}
 .user_right_main .user_right_border select{}
+
+.user_right_border input{ border:1px solid #ccc; height:30px;}
+
+.user_right_l{ overflow:hidden;_height:1;zoom:1; padding:5px 10px; background:#fff; border:1px solid #ccc; border-radius:5px;}
+.user_right_l .title{ background:#f7f7f7 !important; color:#444 !important}
+.user_right_l .content{ width:100%; padding:0}
+.user_right_l .content table td{ padding:5px 10px; border-bottom:1px solid #eee;}
+.user_right_l a{ color:#444}
+.user_right_l a strong{ color:#d70}
+.user_right_l .alert-error{ padding:10px; background:#FFE1E2;}
+.user_right_l .alert-error .close{ float:right; font-size:32px;}
+.user_right_l .alert-error strong{ color:#c00}
+.user_right_l .user_right_txt{ padding:10px 10px 0;}

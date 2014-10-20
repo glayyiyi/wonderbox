@@ -2,8 +2,7 @@
 !defined('IN_TEMPLATE') && exit('Access Denied');
 ?>
 {include file="user_header.html"}
-<link href="{$tempdir}/media/css/modal.css" rel="stylesheet" type="text/css" />
-<link href="{$tempdir}/media/css/auto_user.css" rel="stylesheet" type="text/css" />
+
 {literal}
 <style type="text/css">
 .auto_borrow_style tr{line-height:30px}

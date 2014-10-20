@@ -68,8 +68,7 @@ jQuery(function(){
 }
 </style>
 {/literal}
-<link href="{$tempdir}/media/css/modal.css" rel="stylesheet"
-	type="text/css" />
+
 <form action="" method="post" name="formUser"
 	onSubmit="return userReg();" id="reg_sub">
 	
