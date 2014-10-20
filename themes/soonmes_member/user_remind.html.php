@@ -38,7 +38,7 @@
 					<td>
 						{if $var.message==1 || $var.message==2}<input type="hidden"  {if $var.message==1 }checked="checked"{/if} name="message_{$var.nid}"  value="1" /><span disabled>{else}<span>{/if}
 						<input type="checkbox"  {if $var.message==1 || $var.message==3}checked="checked"{/if} name="message_{$var.nid}" id="message_{$var.nid}" value="1" />
-						<label for=message_{$var.nid}>站内信提醒</label></span> 
+						<label for=message_{$var.nid}>消息提醒</label></span> 
 					</td>
 					<td>
 					{if $var.email==1 || $var.email==2}<input type="hidden"  {if $var.email==1 }checked="checked"{/if} name="email_{$var.nid}" value="1" /><span disabled>{else}<span>{/if}
