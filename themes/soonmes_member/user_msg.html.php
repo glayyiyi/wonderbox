@@ -3,21 +3,18 @@
 ?>
 {include file="user_header.html"}
 
+ <div id="mainBody">
+    <div class="alertPage">
+    <div class="status statusWait">   
+    <h2>系统提示信息</h2>
+    </div>
+    <div class="content" style="text-align:center">
+ <h3>{$_U.showmsg.msg}</h3>
+ <div class="btnBar"><a href="{$_U.showmsg.url}" >{$_U.showmsg.content}</a></div>
+    </div>
+    </div>
+  </div>
 
-<div id="main" class="clearfix">
-	<div class="box">
-		<div class="box-con">
-			<p class="reg-pro">
-            系统提示信息
-            </p>
-            <div align="center">
-            <br><br>{$_U.showmsg.msg}
-            
-            <br><br><div id="msg_content"><a href="{$_U.showmsg.url}" >{$_U.showmsg.content}</a></div><br><br>
-            </div>
-		</div>
-	</div>
-</div>
 
 <script> 
 
