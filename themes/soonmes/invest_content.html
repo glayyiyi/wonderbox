@@ -114,11 +114,16 @@
                       <button id="qrfk" class="green">确认投资</button> 
                      <!--  <div class="agree" style="display:inline"><label><input type="checkbox"/>同意</label><a href="#">投资协议</a></div> -->
                     </div> 
+                   <div class="agree" style="display:inline">
+					<strong>注意:</strong>
+					点击确认表示您并同意支付本投标金额
+					</div>
                   </div>
                    
                
                 
-                <p><input type="hidden" name="id" value="{$_G.article_id}" />注意:点击确认表示您并同意支付本投标金额！</p>
+                <input type="hidden" name="id" value="{$_G.article_id}" />
+         
                 {/if}
                <!--  <button class="blue">全投</button> -->
               </div>
