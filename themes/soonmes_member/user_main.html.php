@@ -15,7 +15,8 @@
 	<div class="main">
 	{article module="borrow" function="GetUserLog" user_id=0 var="acc"}
 	<!--右边的内容 开始-->
-	
+	<div class="overview">
+            <div class="profile">
 
 		<div class="user_right_l ">
 		{if $_G.user_result.real_status==0}
@@ -65,6 +66,9 @@
 					</ul>
 				</div>
 			</div>
+			</div>
+			</div>
+
 			<div class="user_right_li" >
 <div class="content">
 <br><div class="title"><a href="/index.php?user&q=code/account">您的账户详情</a> </div>
