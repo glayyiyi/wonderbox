@@ -54,10 +54,10 @@
 <!-- 						<li> -->
 <!--                            <span style="color:red"> 信用额度：<font size="2">￥{$acc.credit|default:0}</font></span> -->
 <!--                         </li>  -->
-						<li><span>您的VIP期限： <a href="/vip/index.html">{if $_G.user_result.vip_status==1}
-                         {$_G.user_result.vip_verify_time|date_format:"Y-m-d"} 到 
-						{$_G.user_result.vip_verify_time+60*60*24*365|date_format:"Y-m-d"}
-                        {elseif $_G.user_result.vip_status==-1}VIP审核中{else}<font color="#999999">不是VIP</font></font>{/if}</a></li>
+<!-- 						<li><span>您的VIP期限： <a href="/vip/index.html">{if $_G.user_result.vip_status==1} -->
+<!--                          {$_G.user_result.vip_verify_time|date_format:"Y-m-d"} 到  -->
+<!-- 						{$_G.user_result.vip_verify_time+60*60*24*365|date_format:"Y-m-d"} -->
+<!--                         {elseif $_G.user_result.vip_status==-1}VIP审核中{else}<font color="#999999">不是VIP</font></font>{/if}</a></li> -->
 						<li><span>系统通知：</span><a href="/index.php?user&q=code/message"><font color="#FF0000">{$_U.user_cache.message}</font> 封未读信息</a>&nbsp; &nbsp; <a href="/index.php?user&q=code/user/request">{$_U.user_cache.friends_apply} 个好友邀请</a>
 <!--                                <a href="/index.php?user&q=code/account/recharge_new"><font color="#FF0000">[账号充值]</font></a> -->
 <!--                                <a href="/index.php?user&q=code/borrow/limitapp&type=credit"><font color="#FF0000">[额度申请]</font></a> -->
