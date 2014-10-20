@@ -1,23 +1,23 @@
 {include file="header.html"}
 
 <div id="main" class="clearfix">
-{loop module="scrollpic" function="GetList"  var="var"  limit="all" type_id="4"}  
-<img src="/{$var.pic}" alt="" >
-{/loop}
+	{loop module="scrollpic" function="GetList" var="var" limit="all"
+	type_id="4"} <img src="/{$var.pic}" alt=""> {/loop}
 
-<div id="mainBody">
-    <div class="aboutPage">      <div class="content">
-       <div class="subMenu">
-          <h3>安全保障</h3>
- <ul>
-		{loop module="article" function="GetSiteList" var="var" epage="20"  pid="84"  keywords="request" status=1}
-		<li><a href="/{$var.nid}/index.html">{$var.name}</a></li>
-		
-		{/loop}
-</div>
+	<div id="mainBody">
+		<div class="aboutPage">
+			<div class="content">
+				<div class="subMenu">
+					<h3>安全保障</h3>
+					<ul>
+						{loop module="article" function="GetSiteList" var="var" epage="20"
+						pid="84" keywords="request" status=1}
+						<li><a href="/{$var.nid}/index.html">{$var.name}</a></li> {/loop}
+					
+				</div>
 
-<div class="site_id" style="display: none">{$_G.site_result.nid}</div>
-	<script>
+				<div class="site_id" style="display: none">{$_G.site_result.nid}</div>
+				<script>
 	{literal}
 		function showSecond(){
 			var $ = jQuery;
@@ -38,50 +38,58 @@
 		showSecond();
 		{/literal}
 	</script>
-        <div class="main">
-        <div class="articalContent">
-          <div id="tab1">
-<div class="title">{$_G.site_result.name} 
-		</div>
+	<div class="main">
+	<div class="titleTop">{$_G.site_result.name}</div>
+					<div class="articalContent">
+						
 
-
-<div id="myTabContent" class="content">
-			<div class="info" id="lxjs">
-{literal}
-<style>
-.kefu_li li{ list-style:none; line-height:25px;}
-</style>
-{/literal}
-		
-				<div style="padding-left:10px; overflow:hidden; height:auto; width:98%">
-				{loop module="user" function="GetList" limit="20" type_id=3}
-					<div style="width:300px; float:left; margin:10px ">
-						<div class="floatl" style="width:120px">
-							<img src="{$var.user_id|avatar}" width="100" height="99" />
 							
-						</div>
-						<div>
-							<ul class="kefu_li">
-								<li>{$var.username}</li>
-								<li>姓名：{$var.realname}</li>
-								<li>电话:{$var.phone}</li>
-								<li>
+								<div class="info" id="lxjs">
+									{literal}
+									<style>
+.kefu_li li {
+	list-style: none;
+	line-height: 25px;
+}
+</style>
+									{/literal}
 
-                                                                    
-                                                   <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$var.qq}&site=qq&menu=yes">
-                                                    <img border="0" src="http://wpa.qq.com/pa?p=2:{$var.qq}:41" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
-                   </li>
-								<!--<li>{$var.content}</li>-->
-							</ul>
-						</div>
+									<div
+										style="padding-left: 10px; overflow: hidden; height: auto; width: 98%">
+										{loop module="user" function="GetList" limit="20" type_id=3}
+										<div style="width: 300px; float: left; margin: 10px">
+											<div class="floatl" style="width: 120px">
+												<img src="{$var.user_id|avatar}" width="100" height="99" />
+
+											</div>
+											<div>
+												<ul class="kefu_li">
+													<li>{$var.username}</li>
+													<li>姓名：{$var.realname}</li>
+													<li>电话:{$var.phone}</li>
+													<li><a target="_blank"
+														href="http://wpa.qq.com/msgrd?v=3&uin={$var.qq}&site=qq&menu=yes">
+															<img border="0"
+															src="http://wpa.qq.com/pa?p=2:{$var.qq}:41"
+															alt="点击这里给我发消息" title="点击这里给我发消息">
+													</a></li>
+													<!--<li>{$var.content}</li>-->
+												</ul>
+											</div>
+										</div>
+										{/loop}
+									</div>
+
+
+
+								</div>
+							
+					
 					</div>
-				{/loop}
 				</div>
-		
-			
-
-</div></div></div></div></div></div>
-</div></div>
+			</div>
+		</div>
+	</div>
 </div>
 
 

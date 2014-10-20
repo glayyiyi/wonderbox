@@ -33,21 +33,10 @@
 		{/literal}
 	</script>
  <div class="main">
+ <div class="titleTop">{$_G.site_result.name}</div>
         <div class="articalContent">
-          <div id="tab1">
-<div class="title">{$_G.site_result.name} 
-		</div>
-
-
-<div id="myTabContent" class="content">
-			<div class="info" id="lxjs">
-
-							<!--ÄÚÈÝ¿ªÊ¼-->
-				<div class="content_ro2">
-				<table width="90%"><tr>
-				
-				  <td>{$_G.site_result.content}</td>
-				</tr></table>
+    
+{$_G.site_result.content}
 
 				{if $_G.article.files!=""}
 				<div style="float:right">
@@ -59,8 +48,7 @@
 			
 			
 			
-</div></div></div></div></div></div></div>
-</div>
+</div></div></div></div>
 
 
 {include file="footer.html"}
