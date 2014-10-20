@@ -1,0 +1,20 @@
+@charset "utf-8";
+/*Jui website
+Author:vigoree.com Team*/
+.user_right_main{ padding:5px 10px; background:#fff; border:1px solid #ccc; border-radius:5px;}
+.user_right_main .user_main_title{ background:#f7f7f7; padding:0 10px;}
+.user_right_main table{ width:100%}
+.user_right_main table .head td{ background:#f7f7f7;}
+.user_right_main table tr th{ padding:5px; border-bottom:1px solid #eee;}
+.user_right_main table tr td{ padding:5px; border-bottom:1px solid #eee;}
+
+.user_right_main input.btn-action{ background:#d70; border:none; font-size:14px; color:#fff; padding:5px 10px; border-radius:5px;}
+
+.user_right_main input.input_border{ border:1px solid #ccc; border-radius:5px; height:30px; line-height:30px;}
+
+.user_right_main .alert{ padding:10px;}
+
+.user_right_main .user_right_border{ overflow:hidden;_height:1;zoom:1; border-bottom:1px solid #eee; padding:5px;}
+.user_right_main .user_right_border .l{ float:left; width:120px;}
+.user_right_main .user_right_border .c{ float:left;}
+.user_right_main .user_right_border select{}
