@@ -65,7 +65,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="user_right_li" style="float:left;width:550px;">
+			<div class="user_right_li" >
 <div class="content">
 <br><div class="title"><a href="/index.php?user&q=code/account">дЗ╣дук╩╖оЙгИ</a> </div>
 <table width="100%" cellspacing="2">
