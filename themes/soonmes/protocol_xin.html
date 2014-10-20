@@ -1,7 +1,7 @@
 
 {if $magic.request.admin==admin}
 {if $_G.user_id=="" ||$_G.user_result.type!=1 }
-	{rewrite url='/?admin&q=logout'}
+	{rewrite url='/?{$_G.system.con_houtai}&q=logout'}
 	
 {/if}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -64,7 +64,7 @@ function submit_fool(){
 	<div class="banner">
 		<div class="banner_top">
 			<span>
-			 <a href="/?admin">管理控台</a>  当前登录： <font color="#FF0000">{$_G.user_result.realname}</font> ({$_G.user_result.typename})<a href="/?admin&q=logout">[注销]</a> |&nbsp;<a href="/" target="_blank">网站首页</a> 
+			 <a href="/?{$_G.system.con_houtai}">管理控台</a>  当前登录： <font color="#FF0000">{$_G.user_result.realname}</font> ({$_G.user_result.typename})<a href="/?{$_G.system.con_houtai}&q=logout">[注销]</a> |&nbsp;<a href="/" target="_blank">网站首页</a> 
 		 </span>　</div>
  
 
@@ -79,24 +79,24 @@ function submit_fool(){
 			<div class="fenlan_title"><span><a href="javascript:void(0);" onclick="change_menu('site_menu_1',this)">+</a></span><strong><a href="#" >审核管理</a></strong></div>
 			<div class="fenlan_content">
 				<ul id="site_menu_1">
-					<li><a href="/?admin&q=module/borrow&status=0&site_id=8&a=borrow" id="adminlist">发标初审</a></li>
-					<li><a href="/?admin&q=module/borrow/full&status=1&site_id=8&a=borrow" id="adminlist">满标复审</a></li>
-					<li><a href="/?admin&q=module/borrow/amount&site_id=8&a=borrow" id="adminlist">信用额度审批</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow&status=0&site_id=8&a=borrow" id="adminlist">发标初审</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow/full&status=1&site_id=8&a=borrow" id="adminlist">满标复审</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow/amount&site_id=8&a=borrow" id="adminlist">信用额度审批</a></li>
 
 				</ul>
 			</div>
 		</div>
 		<div class="fenlan">
-			<div class="fenlan_title"><span><a href="javascript:void(0);" onclick="change_menu('site_menu_4',this)">+</a></span><strong><a href="/?admin&q=module/borrow&site_id=8&a=borrow" >贷款管理</a></strong></div>
+			<div class="fenlan_title"><span><a href="javascript:void(0);" onclick="change_menu('site_menu_4',this)">+</a></span><strong><a href="/?{$_G.system.con_houtai}&q=module/borrow&site_id=8&a=borrow" >贷款管理</a></strong></div>
 			<div class="fenlan_content">
 				<ul id="site_menu_4">
 					<li><a href="/borrow/index.html?admin=admin">创建新借款</a></li>
-					<li><a href="/?admin&q=module/borrow&status=1&site_id=8&a=borrow" id="adminlist">正在招标的借款</a></li>
-					<li><a href="/?admin&q=module/borrow&status=2&site_id=8&a=borrow" id="adminlist">初审未通过的借款</a></li>
-					<li><a href="/?admin&q=module/borrow/full&status=3&site_id=8&a=borrow" id="adminlist">满标复审状态</a></li>
-					<li><a href="/?admin&q=module/borrow/liubiao&site_id=8&a=borrow" id="adminlist">流标</a></li>
-					<li><a href="/?admin&q=module/borrow&site_id=8&a=borrow" id="admintype">所有借款</a></li>
- 					<li><a href="/?admin&q=module/borrow/tongji&site_id=8&a=borrow" id="adminlist">贷款统计</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow&status=1&site_id=8&a=borrow" id="adminlist">正在招标的借款</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow&status=2&site_id=8&a=borrow" id="adminlist">初审未通过的借款</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow/full&status=3&site_id=8&a=borrow" id="adminlist">满标复审状态</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow/liubiao&site_id=8&a=borrow" id="adminlist">流标</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow&site_id=8&a=borrow" id="admintype">所有借款</a></li>
+ 					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow/tongji&site_id=8&a=borrow" id="adminlist">贷款统计</a></li>
  					<li><a href="/protocol_xin/index.html?admin=admin">借款协议</a></li>
 
 				</ul>
@@ -110,9 +110,9 @@ function submit_fool(){
 			<div class="fenlan_title"><span><a href="javascript:void(0);" onclick="change_menu('site_menu_5',this)">+</a></span><strong><a href="#" >还款管理</a></strong></div>
 			<div class="fenlan_content">
 				<ul id="site_menu_5">
-					<li><a href="/?admin&q=module/borrow/lateFast&site_id=8&a=borrow" id="adminlist">即将到期借款</a></li>
-					<li><a href="/?admin&q=module/borrow/repayment&site_id=8&a=borrow&status=1" id="adminlist">已还款借款</a></li>
-					<li><a href="/?admin&q=module/borrow/late&site_id=8&a=borrow" id="adminlist">当前逾期借款</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow/lateFast&site_id=8&a=borrow" id="adminlist">即将到期借款</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow/repayment&site_id=8&a=borrow&status=1" id="adminlist">已还款借款</a></li>
+					<li><a href="/?{$_G.system.con_houtai}&q=module/borrow/late&site_id=8&a=borrow" id="adminlist">当前逾期借款</a></li>
 					
 				</ul>
 			</div>
@@ -125,14 +125,14 @@ function submit_fool(){
  		<div class="banner_position">
  
 		<ul class="aNavContent">
-			<li class=""><a href="/?admin&q=module/borrow&site_id=8&a=borrow">借款管理</a></li>
-			<li class=""><a href="/?admin&q=module/attestation/all_s&site_id=26&a=attestation">认证管理</a></li>
-			<li class=""><a href="/?admin&q=module/account/list&a=cash">资金管理</a></li>
-			<li class=""><a href="/?admin&q=module/userinfo&site_id=46&a=userinfo">用户管理</a></li>
-			<li class=""><a href="/?admin&q=module/article&a=content">文章管理</a></li> 
-			<li class=""><a href="/?admin&q=site/loop&a=loop">栏目管理</a></li> 
-			<li class=""><a href="/?admin&q=module">模块管理</a></li>
-			<li class=""><a href="/?admin&q=system">系统设置</a></li>
+			<li class=""><a href="/?{$_G.system.con_houtai}&q=module/borrow&site_id=8&a=borrow">借款管理</a></li>
+			<li class=""><a href="/?{$_G.system.con_houtai}&q=module/attestation/all_s&site_id=26&a=attestation">认证管理</a></li>
+			<li class=""><a href="/?{$_G.system.con_houtai}&q=module/account/list&a=cash">资金管理</a></li>
+			<li class=""><a href="/?{$_G.system.con_houtai}&q=module/userinfo&site_id=46&a=userinfo">用户管理</a></li>
+			<li class=""><a href="/?{$_G.system.con_houtai}&q=module/article&a=content">文章管理</a></li> 
+			<li class=""><a href="/?{$_G.system.con_houtai}&q=site/loop&a=loop">栏目管理</a></li> 
+			<li class=""><a href="/?{$_G.system.con_houtai}&q=module">模块管理</a></li>
+			<li class=""><a href="/?{$_G.system.con_houtai}&q=system">系统设置</a></li>
  
 		</ul>
 	</div>	
