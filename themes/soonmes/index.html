@@ -68,7 +68,8 @@
         <div class="list">
           <ul>
           {loop module="borrow" function="GetList" var="var" limit="5" order="biaoindex"}
-          {if $var.is_lz!=1} 
+           {if $var.biao_type!='pj'} 
+           {if $var.is_lz!=1} 
             <li class="first">
               <div class="item">
                 <div class="rate rate{if $var.scale>0&$var.scale<=10 }10{elseif $var.scale>10&$var.scale<=20}20{elseif $var.scale>20&$var.scale<=30}30{elseif $var.scale>30&$var.scale<=40}40{elseif $var.scale>40&$var.scale<=50}50{elseif $var.scale>50&$var.scale<=60}60{elseif $var.scale>60&$var.scale<=70}70{elseif $var.scale>70&$var.scale<=80}80{elseif $var.scale>80&$var.scale<100}90{elseif $var.scale==100}100{/if}">{$var.scale|default:0}%</div>
@@ -105,6 +106,7 @@
               </div>
             </li>
             {/if}
+            {/if}
            {/loop}
           </ul>
         </div>
@@ -115,7 +117,7 @@
         <div class="list">
           <ul>
           {loop module="borrow" function="GetList" var="var" limit="5" order="biaoindex"}
-          {if $var.is_lz==1} 
+          {if $var.biao_type=='pj'} 
             <li class="first">
               <div class="item">
                 <div class="rate rate{if $var.scale>0&$var.scale<=10 }10{elseif $var.scale>10&$var.scale<=20}20{elseif $var.scale>20&$var.scale<=30}30{elseif $var.scale>30&$var.scale<=40}40{elseif $var.scale>40&$var.scale<=50}50{elseif $var.scale>50&$var.scale<=60}60{elseif $var.scale>60&$var.scale<=70}70{elseif $var.scale>70&$var.scale<=80}80{elseif $var.scale>80&$var.scale<100}90{elseif $var.scale==100}100{/if}">{$var.scale|default:0}%</div>
