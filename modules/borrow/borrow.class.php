@@ -17,6 +17,7 @@ require_once(ROOT_PATH."modules/borrow/biao/jinbiao.class.php");
 require_once(ROOT_PATH."modules/borrow/biao/fastbiao.class.php");
 require_once(ROOT_PATH."modules/borrow/biao/miaobiao.class.php");
 require_once(ROOT_PATH."modules/borrow/biao/lzbiao.class.php");
+require_once(ROOT_PATH."modules/borrow/biao/pjbiao.class.php");
 
 //liukun add for bug 52 begin
 $firePHPEnable=TRUE;
@@ -887,8 +888,7 @@ class borrowClass extends amountClass{
 			return self::BORROW_DAY_MODEL;
 		}
 		$classname = $data['biao_type']."biaoClass";
-		$dynaBiaoClass = new $classname();
-                
+		$dynaBiaoClass = new $classname();                
 		$add_result = $dynaBiaoClass->add($data);
 		return $add_result;
 	}
@@ -3265,13 +3265,14 @@ class borrowClass extends amountClass{
 	/*
 	 * 获取各个还款方式的利息
 	 */
-	public static function EqualInterest ($data = array()){
+	public static function EqualInterest ($data = array()){		
 		if (isset($data['borrow_style']) && $data['borrow_style']!=""){
 			$borrow_style = $data['borrow_style'];
 		}else{
 			$borrow_style = 0;
 		}
 		
+		//die("利息方式：".$borrow_style);
 		if ($borrow_style==0){
 			return self::EqualMonth($data);
 		}elseif ($borrow_style==1){
@@ -3280,6 +3281,8 @@ class borrowClass extends amountClass{
 			return self::EqualEnd($data);
 		}elseif ($borrow_style==3){
 			return self::EqualEndMonth($data);
+		}elseif ($borrow_style==4){
+			return self::EqualMonth($data);
 		}
 	
 	}
@@ -3290,77 +3293,77 @@ class borrowClass extends amountClass{
 	//（a×i－b）×（1＋i）
 	public static function EqualMonth ($data = array()){
 	 	if (1==2){
-		if (isset($data['account']) && $data['account']>0){
-			$account = $data['account'];
-		}else{
-			return "";
-		}
-		
-		if (isset($data['year_apr']) && $data['year_apr']>0){
-			$year_apr = $data['year_apr'];
-		}else{
-			return "";
-		}
-		
-		if (isset($data['month_times']) && $data['month_times']>0){
-			$month_times = $data['month_times'];
-		}
-		if (isset($data['borrow_time']) && $data['borrow_time']>0){
-			$borrow_time = $data['borrow_time'];
-		}else{
-			$borrow_time = time();
-		}
-		$month_apr = $year_apr/(12*100);
-		//如果是天标 weego
-		if($data['isday']==1){
-			$month_apr=$month_apr*$data['time_limit_day']/30;
-		}
-		
-		$_li = pow((1+$month_apr),$month_times);
-
-		$repayment = @round($account * ($month_apr * $_li)/($_li-1),2);
- 
-		$_result = array();
-		$totalRepaymentMoney = round($repayment*$month_times,2);
-		if (isset($data['type']) && $data['type']=="all"){
-			$_result['repayment_account'] = round($repayment*$month_times,2);
-			$_result['monthly_repayment'] = round($repayment,2);
-			$_result['month_apr'] = round($month_apr*100,2);
-		 
-		}else{
-			//$re_month = date("n",$borrow_time);
-			for($i=0;$i<$month_times;$i++){
-				if ($i==0){
-					$interest = round($account*$month_apr,3);
-				}else{
-					$_lu = pow((1+$month_apr),$i);
-					$interest = round(($account*$month_apr - $repayment)*$_lu + $repayment,3);
-				}
-				$_result[$i]['repayment_account'] =  round($repayment,2); //月还款本息
-				
-							//repair by weego 20120525 for 天标还款时间
-				if($data['isday']==1){
-					$_result[$i]['repayment_time'] = strtotime("$data[time_limit_day] days",time());	
-				}else{
-					$_result[$i]['repayment_time'] = get_times(array("time"=>$borrow_time,"num"=>$i+1));
-				}
-				
-				$_result[$i]['interest'] = round($interest,2); //利息
-				$_result[$i]['capital'] = round($repayment-$interest,2); //月还款本金
-				if($i==($month_times-1)){
-						//0.01问题处理 weego 20120519
-				$_result[$i]['repayment_account'] = $_result[$i]['capital']+$_result[$i]['interest'];
-					}
-				$totalRepaymentMoney=round(($totalRepaymentMoney-$_result[$i]['repayment_account']),2);
-			 	if($totalRepaymentMoney<0.1) {$totalRepaymentMoney=0;}
-				$_result[$i]['totalRepaymentMoney'] = $totalRepaymentMoney; //余额
-				 
+			if (isset($data['account']) && $data['account']>0){
+				$account = $data['account'];
+			}else{
+				return "";
 			}
-		 
-		
-		}
- 
-		return $_result;
+			
+			if (isset($data['year_apr']) && $data['year_apr']>0){
+				$year_apr = $data['year_apr'];
+			}else{
+				return "";
+			}
+			
+			if (isset($data['month_times']) && $data['month_times']>0){
+				$month_times = $data['month_times'];
+			}
+			if (isset($data['borrow_time']) && $data['borrow_time']>0){
+				$borrow_time = $data['borrow_time'];
+			}else{
+				$borrow_time = time();
+			}
+			$month_apr = $year_apr/(12*100);
+			//如果是天标 weego
+			if($data['isday']==1){
+				$month_apr=$month_apr*$data['time_limit_day']/30;
+			}
+			
+			$_li = pow((1+$month_apr),$month_times);
+	
+			$repayment = @round($account * ($month_apr * $_li)/($_li-1),2);
+	 
+			$_result = array();
+			$totalRepaymentMoney = round($repayment*$month_times,2);
+			if (isset($data['type']) && $data['type']=="all"){
+				$_result['repayment_account'] = round($repayment*$month_times,2);
+				$_result['monthly_repayment'] = round($repayment,2);
+				$_result['month_apr'] = round($month_apr*100,2);
+			 
+			}else{
+				//$re_month = date("n",$borrow_time);
+				for($i=0;$i<$month_times;$i++){
+					if ($i==0){
+						$interest = round($account*$month_apr,3);
+					}else{
+						$_lu = pow((1+$month_apr),$i);
+						$interest = round(($account*$month_apr - $repayment)*$_lu + $repayment,3);
+					}
+					$_result[$i]['repayment_account'] =  round($repayment,2); //月还款本息
+					
+								//repair by weego 20120525 for 天标还款时间
+					if($data['isday']==1){
+						$_result[$i]['repayment_time'] = strtotime("$data[time_limit_day] days",time());	
+					}else{
+						$_result[$i]['repayment_time'] = get_times(array("time"=>$borrow_time,"num"=>$i+1));
+					}
+					
+					$_result[$i]['interest'] = round($interest,2); //利息
+					$_result[$i]['capital'] = round($repayment-$interest,2); //月还款本金
+					if($i==($month_times-1)){
+							//0.01问题处理 weego 20120519
+					$_result[$i]['repayment_account'] = $_result[$i]['capital']+$_result[$i]['interest'];
+						}
+					$totalRepaymentMoney=round(($totalRepaymentMoney-$_result[$i]['repayment_account']),2);
+				 	if($totalRepaymentMoney<0.1) {$totalRepaymentMoney=0;}
+					$_result[$i]['totalRepaymentMoney'] = $totalRepaymentMoney; //余额
+					 
+				}
+			 
+			
+			}
+	 
+			return $_result;
 	 	}
 	 	
 	 	if (isset($data['account']) && $data['account']>0){

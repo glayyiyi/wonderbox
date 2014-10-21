@@ -35,16 +35,17 @@ if ($_U['query_type'] == "add" || $_U['query_type'] == "update"){
 		$msg = array("验证码不正确");
 	}elseif($_POST['style']==1 && $_POST['time_limit']%3!=0){
 		$msg = array("您选择的是按季还款，借款期限请填写3的倍数");
-        }elseif($_POST['award']==1 && $_POST['part_account']<5){
+    }elseif($_POST['award']==1 && $_POST['part_account']<5){
                 $msg = array("您选择的是按金额奖励，请填写奖励金额值(不能低于5元)");
-        }elseif($_POST['award']==2 && $_POST['funds'] < 0.1){
+    }elseif($_POST['award']==2 && $_POST['funds'] < 0.1){
                 $msg = array("您选择的是按比例奖励，请填写奖励比例值( 0.1% ~ 6% )");
-        }elseif(isset($_POST['isDXB']) && (!isset($_POST['pwd']) || $_POST['pwd'] == "" ) ){
+    }elseif(isset($_POST['isDXB']) && (!isset($_POST['pwd']) || $_POST['pwd'] == "" ) ){
                 $msg = array("您选择了定向标，请输入定向标的密码.");
-        }elseif(isset($_POST['is_lz']) && $_POST['account']%1!=0){//By Glay 以前是10000
+	}elseif(isset($_POST['is_lz']) && $_POST['account']%1!=0){//By Glay 以前是10000
         	$msg = array("流转标的借款金额必须是1的整数倍.");
-        }else{
-		$var = array("name","use","time_limit","style","account","apr","lowest_account","most_account","valid_time","award","part_account","funds","is_false","open_account","open_borrow","open_tender","open_credit","content","is_vouch","vouch_award","vouch_user");
+    }else{
+		
+    	$var = array("name","use","time_limit","style","account","apr","lowest_account","most_account","valid_time","award","part_account","funds","is_false","open_account","open_borrow","open_tender","open_credit","content","is_vouch","vouch_award","vouch_user");
 		$data = post_var($var);
 		if(isset($_POST['ismb'])){
 			$data['time_limit'] = 1;
@@ -65,13 +66,19 @@ if ($_U['query_type'] == "add" || $_U['query_type'] == "update"){
 			$data['lowest_account'] = 1;//By Glay 以前是50000
 			$data['style'] = 0;
 		}
+		if(isset($_POST['is_pj'])){	
+			//票据产品检查		
+			$data['lowest_account'] = 1;//By Glay 以前是50000			
+		}
 		if(isset($_POST['isxin'])){
 			$data['is_xin'] = intval($_POST['isxin']);
 		}
 		//按天 add by weego for 天标  20120513
 		if((int)$_POST['isday']==1){
 			//liukun add for bug 324 begin
-			$data['style'] = 0;
+			if(!isset($_POST['is_pj'])){
+				$data['style'] = 0;
+			}
 			//liukun add for bug 324 end
 			$data['time_limit'] = 1;
 			$data['time_limit_day'] = intval($_POST['time_limit_day']);
@@ -196,8 +203,12 @@ elseif ($_U['query_type'] == "tender"){
 		$_SESSION['valicode']="";
 		include_once(ROOT_PATH."modules/account/account.class.php");
 		$borrow_result = borrowClass::GetOne(array("id"=>$_POST['id'],"tender_userid"=>$_G['user_id']));//获取借款标的单独信息
-		$is_lz=$borrow_result['is_lz'];
+		$biao_type=$borrow_result['biao_type'];//add by angus以标类型区别各类标
+		$borrow_result['is_lz'];
 		if($is_lz==1){
+			$account_money = (int)$_POST['flow_count']*1;//By Glay 以前是10000
+			$postmoney = (int)$_POST['flow_count']*1;//By Glay 以前是10000
+		}elseif($biao_type=='pj'){
 			$account_money = (int)$_POST['flow_count']*1;//By Glay 以前是10000
 			$postmoney = (int)$_POST['flow_count']*1;//By Glay 以前是10000
 		}else{
