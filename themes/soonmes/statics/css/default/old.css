@@ -30,4 +30,9 @@ Author:vigoree.com Team*/
 .user_right_l .alert-error{ padding:10px; background:#FFE1E2;}
 .user_right_l .alert-error .close{ float:right; font-size:32px;}
 .user_right_l .alert-error strong{ color:#c00}
-.user_right_l .user_right_txt{ padding:10px 10px 0;}
+.user_right_l .user_right_txt{ padding:10px 10px; background:url(../../images/profileBg02.png)}
+
+ul.oldStyle{ color:#fff; padding-left:10px}
+ul.oldStyle li{}
+ul.oldStyle h3{ font-size:16px;}
+ul.oldStyle a{ color:#d70; font-weight:bold; display:inline-block; padding:0 20px 0 0}
