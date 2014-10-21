@@ -203,7 +203,13 @@ jQuery.jBox.prompt('您正在发布的是：信用标!', '提示', 'info');
 <script>
 jQuery.jBox.prompt('您正在发布的是：流转标!', '提示', 'info');
 </script>
-		
+	{elseif $_G.biaotype_info.biao_type_name=="pj"}
+	<div class="alert alert-error fade in">
+	 <a class="close" data-dismiss="alert" href="#">&times;</a>
+	<font color="#FF0000">尊敬的用户，您好！您正在发布的是票据产品，投资人即刻投资即刻生效！</font></div>
+<script>
+jQuery.jBox.prompt('您正在发布的是：票据产品!', '提示', 'info');
+</script>	
 	{/if}
 </div>
 <!--子栏目 结束-->
@@ -274,7 +280,7 @@ jQuery.jBox.prompt('您正在发布的是：流转标!', '提示', 'info');
 <span id="infomb" data-content="需要借多少时间。">
 			{linkages nid="borrow_time_limit" value="$var.time_limit" name="time_limit" type="value" disabled="disabled"}
 </span>
-{elseif $_G.biaotype_info.biao_type_name=="lz"}
+{elseif $_G.biaotype_info.biao_type_name=="lz" || $_G.biaotype_info.biao_type_name=="pj"}
 
 <span id="infotl" data-content="还款周期。">
 <span id="time_limit_day">
@@ -297,7 +303,7 @@ jQuery.jBox.prompt('您正在发布的是：流转标!', '提示', 'info');
 		</div>
 		<div class="module_border" id="borrow_day" {if $_G.biaotype_info.biao_type_name=="jin"}style="display:block"{else}style="display:none;"{/if}>
 			<div class="w">是否天标：</div>
-			<div class="c"><input type="hidden" name="isday" id="isday" {if $_G.biaotype_info.biao_type_name=="jin"||$_G.biaotype_info.biao_type_name=="lz"} value="1" {else} value="0" {/if}/>是
+			<div class="c"><input type="hidden" name="isday" id="isday" {if $_G.biaotype_info.biao_type_name=="jin"|| $_G.biaotype_info.biao_type_name=="lz" || $_G.biaotype_info.biao_type_name=="pj"} value="1" {else} value="0" {/if}/>是
 			</div>
 			<div class="sco" style="color:#FF0000" >借款成功后，系统将按照每月30天来计算借款利息。<a href="/gonggao/a244.html" target="_blank">天标系统说明</a></div>
 		</div>	
@@ -351,6 +357,35 @@ jQuery.jBox.prompt('您正在发布的是：流转标!', '提示', 'info');
 		</div>
 {/if}
 
+{if $_G.biaotype_info.biao_type_name=="pj"}
+<input name="is_pj" type="hidden" value="1" />
+<div class="module_border">
+			<div class="w">每份金额：</div>
+			<div class="c">
+                  <span id="infolzpermoney" data-content="设置本标认购的每份价值。" ><input disabled="disabled" type="text" name="lzpermoney" id="lzpermoney" value='1'> 元</span>
+			</div>
+                  <div class="w">总份数：</div>
+			<div class="c">
+                  <span id="infolzper" data-content='系统根据借款金额和每份金额，自动自算本标的流转份数。' ><input disabled="disabled" type="text" name="lzper" id="lzper"></span><input type="button" name="clstotalper" id="clstotalper" value="计算"/>
+			</div>
+</div>
+
+<script type="text/javascript">
+{literal}
+//计算流转标的总份数
+jQuery("#clstotalper").click(function(){
+	if(jQuery("#account").val()%jQuery("#lzpermoney").val()!=0){
+		jQuery.jBox.error('借款金额必须为1的整数倍','提示');
+		return;
+	}
+	var clstotalper=jQuery("#account").val()/jQuery("#lzpermoney").val();
+	jQuery("#lzper").val(clstotalper+"份");
+
+})
+
+{/literal}
+</script>
+{/if}
 {if $_G.biaotype_info.biao_type_name=="lz"}
 <input name="is_lz" type="hidden" value="1" />
 <div class="module_border">
@@ -379,7 +414,7 @@ jQuery("#clstotalper").click(function(){
 
 {/literal}
 </script>
-{else}
+{elseif $_G.biaotype_info.biao_type_name!="pj"}
 
 <div class="module_border">
 			<div class="w">是否定向标：</div>
@@ -399,7 +434,7 @@ jQuery("#clstotalper").click(function(){
 		<div class="module_border">
 			<div class="w">最低投标金额：</div>
 			<div class="c">
-				{if $_G.biaotype_info.biao_type_name=="lz"}
+				{if $_G.biaotype_info.biao_type_name=="lz" || $_G.biaotype_info.biao_type_name=="pj"}
 				<span id="infolow" data-content="允许投资者对一个借款标的投标总额的限制">1元</span>
 				{else}	
 				<span id="infolow" data-content="允许投资者对一个借款标的投标总额的限制">{linkages nid="borrow_lowest_account" value="$var.lowest_account" name="lowest_account" type="value" }</span>
@@ -419,6 +454,8 @@ jQuery("#clstotalper").click(function(){
 			<div class="c">
 			{if $_G.biaotype_info.biao_type_name=="lz"}
 				<span id="infohk" data-content="按月分期还款是指贷款者借款成功后，每月还本息。"><select disabled="disabled" name='style' id=style ><option value='0' >按月分期还款</option></select></span>
+			{elseif $_G.biaotype_info.biao_type_name=="pj"}
+				<span id="infohk" data-content="按天付息,到期还本。"><select  name='style' id=style ><option value='4' >按天付息到期还本</option></select></span>
 			{else}
 				<span id="infohk" data-content="按月分期还款是指贷款者借款成功后，每月还本息。">{linkages nid="borrow_style" value="$var.style" name="style" type="value" }</span>
 			{/if}
@@ -701,6 +738,7 @@ var max_apr ={$_G.system.con_borrow_apr|default:22.18};
 {if $_G.biaotype_info.biao_type_name=="jin"} var jinbiao = 1;{else} var jinbiao = 0;{/if}
 {if $_G.biaotype_info.biao_type_name=="lz"} var lzbiao = 1;{else} var lzbiao = 0;{/if}
 {if $_G.biaotype_info.biao_type_name=="xin"} var xinbiao = 1;{else} var xinbiao = 0;{/if}
+{if $_G.biaotype_info.biao_type_name=="pj"} var pjbiao = 1;{else} var pjbiao = 0;{/if}
 
 
 {literal}
@@ -759,7 +797,7 @@ function check_form(){
 	 //var content = frm.elements['content'].value;
 	 var content = $("iframe").get(0).contentWindow.document.body.innerHTML;
          frm.elements['content'].value = content;
-	 if(lzbiao){
+	 if(lzbiao || pjbiao){
 		 var time_limit = "";
 		 var lowest_account = "";
 	 }else{
@@ -795,10 +833,18 @@ function check_form(){
 		  if(account%1!==0){
 			  errorMsg += '- 流转标的借款金额必须为1的倍数' + '\n';
 		  }
-		if(time_limit_day<1)
-		{
+		  if(time_limit_day<1){
 			errorMsg += '- 请填写借款周期<br/>';
-		}
+		  }
+	  }
+	  
+	  if(pjbiao){
+		  if(account%1!==0){
+			  errorMsg += '- 票据的借款金额必须为1的倍数' + '\n';
+		  }
+		  if(time_limit_day<1){
+			errorMsg += '- 请填写借款周期<br/>';
+		  }
 	  }
 	 
 	  if (apr.length == 0 ) {
