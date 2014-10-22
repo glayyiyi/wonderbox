@@ -109,14 +109,14 @@
     <td>已赚利息：<font>￥{$acc.collection_interest1|round:2|default:0}</font> </td>
 <!--     <td width="65%">&nbsp;&nbsp;&nbsp;&nbsp;已赚奖励：<font>￥{$acc.award_add|round:2|default:0}</font></td> -->
   </tr>
-<!--   <tr> -->
-<!--     <td>借款总额：<font>￥{$acc.borrow_num|round:2|default:0}</font></td> -->
-<!--     <td width="65%">&nbsp;&nbsp;&nbsp;&nbsp;待还总额：<font>￥{$acc.wait_payment|round:2|default:0}</font> </td> -->
-<!--   </tr> -->
-<!--   <tr> -->
-<!--     <td>最近待还金额：<font>￥{$acc.new_repay_account|round:2|default:0}</font></td> -->
-<!--     <td width="65%">&nbsp;&nbsp;&nbsp;&nbsp;最近待还时间：<font>{$acc.new_repay_time|date_format:"Y-m-d"|default:""}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?user&q=code/borrow/repaymentplan"><strong><font color="red">我要还款</font></strong></a></td> -->
-<!--   </tr> -->
+  <tr>
+    <td>借款总额：<font>￥{$acc.borrow_num|round:2|default:0}</font></td>
+    <td width="65%">&nbsp;&nbsp;&nbsp;&nbsp;待还总额：<font>￥{$acc.wait_payment|round:2|default:0}</font> </td>
+  </tr>
+  <tr>
+    <td>最近待还金额：<font>￥{$acc.new_repay_account|round:2|default:0}</font></td>
+    <td width="65%">&nbsp;&nbsp;&nbsp;&nbsp;最近待还时间：<font>{$acc.new_repay_time|date_format:"Y-m-d"|default:""}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?user&q=code/borrow/repaymentplan"><strong><font color="red">我要还款</font></strong></a></td>
+  </tr>
 
 </table>
 <br>
