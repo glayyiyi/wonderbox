@@ -10,17 +10,16 @@
 {/literal}
 
 <!--用户中心的主栏目 开始-->
-<div id="main" class="clearfix">
-<div class="wrap950 ">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
+        
 		{include file="user_menu.html"}
-	</div>
 	<!--左边的导航 结束-->
 	
 	<!--右边的内容 开始-->
-	<div class="user_right">
-		<div class="user_right_menu">
+	<div class="main">
+			<div class="tabBar">
 			<ul id="tab" class="list-tab clearfix">
 				<li {if $_U.query_type=="auto"} class="cur"{/if}><a href="{$_U.query_url}/auto">自动投标列表</a></li>
 				<li {if $_U.query_type=="auto_new"} class="cur"{/if}><a href="{$_U.query_url}/auto_new">添加自动投标</a></li>
