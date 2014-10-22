@@ -765,7 +765,8 @@
 					<td>标题</td>
 					<td>借款者</td>
 					<td>投标/有效金额</td>
-					<td>信用积分/投标时间 </td>
+<!-- 					<td>信用积分/投标时间 </td> -->
+					<td>投标时间 </td>
 					<td>进度</td>
 					<td>状态 </td>
 				</tr>
@@ -776,8 +777,8 @@
 					<td style="line-height:21px;">借款者:{$item.op_username}</td>
 					<td style="line-height:21px;">投标金额:￥{$item.money}<br />有效金额:<font color="#FF0000">￥{$item.tender_account}</font></td>
 					
-					<td style="line-height:25px;"><span><img src="{$_G.system.con_credit_picurl}{$item.credit_pic|default:credit_s11.gif}" title="{$item.credit_jifen|default:0}分" /></span><br />{$item.addtime|date_format:"Y-m-d H:i:s"}</td>
-					
+					<!--  <td style="line-height:25px;"><span><img src="{$_G.system.con_credit_picurl}{$item.credit_pic|default:credit_s11.gif}" title="{$item.credit_jifen|default:0}分" /></span><br />{$item.addtime|date_format:"Y-m-d H:i:s"}</td>-->
+					<td style="line-height:25px;">{$item.addtime|date_format:"Y-m-d H:i:s"}</td>
 					<td style="line-height:21px;"><div class="rate_bg floatl" align="left">
 							<div class="rate_tiao" style=" width:{$item.scale|default:0}%"></div>
 						</div><span class="floatl">{$item.scale}%</span></td>
