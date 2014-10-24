@@ -531,7 +531,7 @@
 				<tr class="head" >
 					<td>标题</td>
 					<td>借款者</td>
-					<td>借款者积分</td>
+<!-- 					<td>借款者积分</td> -->
 					<td>年利率</td>
 					<td>期限</td>
 					<td>投标时间</td>
@@ -543,7 +543,7 @@
 				<tr {if $key%2==1} class="tr1"{/if}>
 					<td title="{$item.borrow_name}"><a href="/invest/a{$item.id}.html" target="_blank">{$item.borrow_name|truncate:10}</a></td>
 					<td><a href="/index.php?user&q=code/message/sent&receive={$item.username}">{$item.username}</a></td>
-					<td>{$item.credit|credit}{$item.credit}分</td>
+<!-- 					<td>{$item.credit|credit}{$item.credit}分</td> -->
 					<td>{$item.apr}%</td>
 					<td>{if $item.isday==1}{$item.time_limit_day}天{else}{$item.time_limit}个月{/if}</td>
 					<td>{$item.tender_time|date_format:"Y-m-d H:i:s"}</td>
