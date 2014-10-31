@@ -1,7 +1,7 @@
 @charset "utf-8";
 /*Jui website
 Author:vigoree.com Team*/
-.invitePage{ background:#f7f7f7 url(inviteBg.jpg) center top no-repeat; padding-top:588px; font-size:12px; padding-bottom:10px}
+.invitePage{ /* background:#f7f7f7 url(inviteBg.jpg) center top no-repeat; */ /* padding-top:588px; */ font-size:12px; padding-bottom:10px}
 /*
 .inviteAction{ width:740px; margin:0 auto;overflow:hidden;_height:1;zoom:1; border:1px solid #eee;}
 .inviteAction .left{ float:left;width:370px;height:430px;  overflow:auto; background:#fff;}
