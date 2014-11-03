@@ -176,7 +176,7 @@
 		{elseif $_U.query_type=="userpwd"}
 		<!--修改登录密码 开始-->
 		<form action="" name="form1" method="post" onsubmit="return check_form()">
-		<div class="user_help alert alert">密码请不要太简单，设成复杂一点，做好字母+符号</div>
+<!-- 		<div class="user_help alert alert">密码设置请不要太简单，最好字母+符号</div> -->
 		<div class="user_right_border">
 			<div class="e">原始密码：</div>
 			<div class="c">
