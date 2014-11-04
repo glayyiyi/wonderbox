@@ -455,7 +455,7 @@ jQuery("#clstotalper").click(function(){
 			{if $_G.biaotype_info.biao_type_name=="lz"}
 				<span id="infohk" data-content="按月分期还款是指贷款者借款成功后，每月还本息。"><select disabled="disabled" name='style' id=style ><option value='0' >按月分期还款</option></select></span>
 			{elseif $_G.biaotype_info.biao_type_name=="pj"}
-				<span id="infohk" data-content="按天付息,到期还本。"><select  name='style' id=style ><option value='4' >按天付息到期还本</option></select></span>
+				<span id="infohk" data-content="按天付息,到期还本。"><select  name='style' id=style ><option value='4' >按天计息到期还款</option></select></span>
 			{else}
 				<span id="infohk" data-content="按月分期还款是指贷款者借款成功后，每月还本息。">{linkages nid="borrow_style" value="$var.style" name="style" type="value" }</span>
 			{/if}
