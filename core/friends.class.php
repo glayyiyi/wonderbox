@@ -397,7 +397,7 @@ class friendsClass{
             'list' => $result2
         );
 	}
-	//By Glay
+	//By Glay 获取明细提成
 	public static function GetTiChengDetailList($data = array()){
 		global $mysql;
 	
