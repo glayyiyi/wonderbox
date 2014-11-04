@@ -616,6 +616,24 @@
                   </div>
                   </div>
                   </div>
+          <table border="0"  cellspacing="1" class="table table-striped  table-condensed" style="width:98%">
+				<tr class="head" >
+					<td>已邀请用户</td>
+					<td>投资时间</td>
+					<td>投资金额</td>
+					<td>预计提成</td>
+				</tr>
+				{list  module="user" function="GetTiChengList" var="loop" status="0" user_id="0" }
+				{foreach from="$loop.list" item="item"}
+				<tr >
+					<td>{$item.username}</td>
+					<td>{$item.addtime|date_format:"Y-m-d H:i:s"}</td>
+					<td>￥{$item.account}</td>
+					<td>￥{$item.account*0.02}</td>
+				</tr>
+				{/foreach}
+				{/list}
+		</table>
 <!--		<table border="0" cellspacing="1" class="table table-striped  table-condensed" style="width:98%">-->
 <!-- 			  <form action="" method="post"> -->
 <!-- 				<tr class="head"> -->

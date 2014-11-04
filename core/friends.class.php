@@ -374,28 +374,35 @@ class friendsClass{
 		global $mysql;
 
 		if (isset($data['user_id']) && $data['user_id']!=""){
-            $_sql = "select  date_format(from_unixtime(addtime),'%Y-%m') as addtimes, sum(account) as money from view_tc where invite_userid = {$data['user_id']} group by addtimes order by addtimes desc" ;
-            //$_sql = "select  date_format(from_unixtime(addtime),'%Y-%m') as addtimes, sum(money) as money from view_tc where invite_userid = 300 group by addtimes order by addtimes desc" ;
+			// By Glay  $_sql = "select  date_format(from_unixtime(addtime),'%Y-%m') as addtimes, sum(account) as money from view_tc where invite_userid = {$data['user_id']} group by addtimes order by addtimes desc" ;
+			$_sql = "select  * from view_tc where invite_userid = {$data['user_id']} order by addtime desc" ;
 			$result = $mysql->db_fetch_arrays($_sql);
-		}		
-		$i = 0;
-		foreach ( $result as $key=>$value){
-			$dict[$value['addtimes']] = $dict[$value['addtimes']] ? $dict[$value['addtimes']] : 0;
-			$dict[$value['addtimes']] += $value['money'];
-			$result[$key]['money'] = number_format( $value['money'], 2, '.', ',');
-		}
-		$result = $result?$result:array();
-		$result2 = array();
-		if($dict){
-			foreach ( $dict as $key=>$value){
-				$result2[$i]['addtimes'] = $key;
-				$result2[$i]['money'] = $value;
-				$i++;
-			}
-		}//if($dict)
-		return array(
-            'list' => $result2
-        );
+			return array(
+					'list' => $result?$result:array()
+			);
+			
+		}	
+
+		
+		
+// By Glay		$i = 0;
+// 		foreach ( $result as $key=>$value){
+// 			$dict[$value['addtimes']] = $dict[$value['addtimes']] ? $dict[$value['addtimes']] : 0;
+// 			$dict[$value['addtimes']] += $value['money'];
+// 			$result[$key]['money'] = number_format( $value['money'], 2, '.', ',');
+// 		}
+// 		$result = $result?$result:array();
+// 		$result2 = array();
+// 		if($dict){
+// 			foreach ( $dict as $key=>$value){
+// 				$result2[$i]['addtimes'] = $key;
+// 				$result2[$i]['money'] = $value;
+// 				$i++;
+// 			}
+// 		}//if($dict)
+// 		return array(
+//             'list' => $result2
+//         );
 	}
 	/**
      * 重新加为好友
