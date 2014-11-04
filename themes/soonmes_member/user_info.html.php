@@ -623,7 +623,7 @@
 					<td>投资金额</td>
 					<td>预计提成</td>
 				</tr>
-				{list  module="user" function="GetTiChengList" var="loop" status="0" user_id="0" }
+				{list  module="user" function="GetTiChengDetailList" var="loop" status="0" user_id="0" }
 				{foreach from="$loop.list" item="item"}
 				<tr >
 					<td>{$item.username}</td>
@@ -800,18 +800,21 @@
 		<!-- 提成开始-->
 		{elseif $_U.query_type=="ticheng"}
 		<div class="user_main_title alert" style="height:60px; padding-top:7px;"> 
+		按月提成统计
 		</div>
 
 		<table border="0"  cellspacing="1" class="table table-striped  table-condensed" style="width:98%">
 				<tr class="head" >
 					<td>时间</td>
 					<td>投资金额</td>
+					<td>预计提成合计</td>
 				</tr>
 				{list  module="user" function="GetTiChengList" var="loop" status="0" user_id="0" }
 				{foreach from="$loop.list" item="item"}
 				<tr >
 					<td>{$item.addtimes}</td>
 					<td>￥{$item.money}</td>
+					<td>￥{$item.money*0.2}</td>
 				</tr>
 				{/foreach}
 				{/list}
