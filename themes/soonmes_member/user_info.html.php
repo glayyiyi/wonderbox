@@ -593,7 +593,79 @@
                 <p><strong>2. </strong>验证通过后，点击“进入我的账户”&mdash;“个人设置，邀请好友”&mdash;“发送短信或复制链接给好友”，好友在收到您的信息后按照提示完成实名注册，即为推荐成功。</p>
                 <p><strong>3. </strong>在您成功推荐后，我们客服人员将在一个星期内为您点亮“理财经理”标签，一旦该标签点亮，您便已踏上了轻轻松松创业，安安稳稳拿钱的双薪道路！</p>
                 <h3>奖励计算方式：</h3>
-                <h4>点亮称号	达成条件（推荐累计金额）	计划奖励（推荐金额年化利率）</h4>
+<!--                 <h4>点亮称号	达成条件（推荐累计金额）	计划奖励（推荐金额年化利率）</h4> -->
+                <table width="100%">
+	<tbody>
+		<tr>
+			<td width="30%">
+				<p >
+					<h4>点亮称号</h4>
+				</p>
+			</td>
+			<td width="40%">
+				<p >
+					<h4>达成条件（推荐累计金额）</h4>
+				</p>
+			</td>
+			<td width="30%">
+				<p >
+					<h4>计划奖励（推荐金额年化利率）</h4>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td >
+				<p >
+					<span >精英<span></span></span>
+				</p>
+			</td>
+			<td >
+				<p>
+					<span >(</span><span >金额</span><span >)&lt;10w</span>
+				</p>
+			</td>
+			<td style="border:none;" width="165">
+				<p>
+					<span >1%</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td >
+				<p >
+					<span >达人<span></span></span>
+				</p>
+			</td>
+			<td >
+				<p>
+					<span >10w&lt;=(</span><span >金额</span><span >)&lt;50w</span>
+				</p>
+			</td>
+			<td>
+				<p>
+					<span >1.50%</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td >
+				<p >
+					<span >骨灰<span></span></span>
+				</p>
+			</td>
+			<td >
+				<p>
+					<span >50w&lt;=(</span><span >金额</span><span >)</span>
+				</p>
+			</td>
+			<td >
+				<p>
+					<span >2%</span>
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
                 <p>本计划投资链融通系列理财产品有效，您推荐的用户理财到期日返本付息，同时将您的奖励结算到您的账户上。 </p>
                 <p>奖励的年化利率执行累进递进方式。即超过10万元的部分开始按照1.5%的年化利率计算，之前的部分仍按照1%计算，以此类推。 </p>
                 <p>本活动截止至2015年1月31日，以起息日为计算标准。<br>
@@ -647,7 +719,7 @@
 					<td>{$item.username}</td>
 					<td>{$item.addtime|date_format:"Y-m-d H:i:s"}</td>
 					<td>￥{$item.account}</td>
-					<td>￥{$item.account*0.02}</td>
+					<td>￥{$item.account*0.0275*0.02}</td>
 				</tr>
 				{/foreach}
 				{/list}
@@ -832,7 +904,7 @@
 				<tr >
 					<td>{$item.addtimes}</td>
 					<td>￥{$item.money}</td>
-					<td>￥{$item.money*0.2}</td>
+					<td>￥{$item.money*0.0275*0.02}</td>
 				</tr>
 				{/foreach}
 				{/list}
