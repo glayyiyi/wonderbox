@@ -1,7 +1,16 @@
 @charset "utf-8";
 /*Jui website
 Author:vigoree.com Team*/
-.invitePage{ /* background:#f7f7f7 url(inviteBg.jpg) center top no-repeat; */ /* padding-top:588px; */ font-size:12px; padding-bottom:10px}
+.invitePage{font-size:12px; padding-bottom:10px}
+.invitePage .banner{ background:#f7f7f7 url(inviteBg.jpg) center top no-repeat; padding-top:588px; }
+
+.invitePage .pageIntro{ padding:20px; color:#444;}
+.invitePage .pageIntro h2{ text-align:center; padding:10px;font-size:16px; background:#f7f7f7; margin-bottom:20px;}
+.invitePage .pageIntro h3{ font-size:16px; color:#d70;padding-bottom:20px;}
+.invitePage .pageIntro h4{padding-bottom:20px;}
+.invitePage .pageIntro p{ padding-bottom:20px;}
+
+.invitePage .record{ padding:20px;}
 /*
 .inviteAction{ width:740px; margin:0 auto;overflow:hidden;_height:1;zoom:1; border:1px solid #eee;}
 .inviteAction .left{ float:left;width:370px;height:430px;  overflow:auto; background:#fff;}
