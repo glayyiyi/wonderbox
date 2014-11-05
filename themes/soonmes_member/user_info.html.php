@@ -29,7 +29,7 @@
 			{elseif $_U.query_type=="reginvite"  || $_U.query_type=="request" || $_U.query_type=="myfriend" || $_U.query_type=="black"|| $_U.query_type=="ticheng"}
 			<ul id="tab" class="list-tab clearfix">
 				<li {if $_U.query_type=="reginvite"} class="cur"{/if}><a href="{$_U.query_url}/reginvite">邀请好友</a></li>
-				<li {if $_U.query_type=="request"} class="cur"{/if}><a href="{$_U.query_url}/request">好友请求</a></li>
+<!-- 				<li {if $_U.query_type=="request"} class="cur"{/if}><a href="{$_U.query_url}/request">好友请求</a></li> -->
 				<li {if $_U.query_type=="myfriend"} class="cur"{/if}><a href="{$_U.query_url}/myfriend">我的好友</a></li>
 				<li {if $_U.query_type=="black"} class="cur"{/if}><a href="{$_U.query_url}/black">黑名单</a></li>
 				<li {if $_U.query_type=="ticheng"} class="cur"{/if}><a href="{$_U.query_url}/ticheng">提成统计</a></li>
