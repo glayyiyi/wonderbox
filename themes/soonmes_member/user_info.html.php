@@ -579,6 +579,7 @@
 		{elseif $_U.query_type=="reginvite"}
 		<link rel="stylesheet" type="text/css" href="{$tempdir}/statics/css/invite/invite.css" media="screen"/>
 		<div class="tabContent">
+		 <div class="invitePage">
            <div class="pageIntro">
                 <h2>理财经理计划,安稳投资，双份工资！ </h2>
                 <h3>什么叫理财经理计划？</h3>
@@ -703,6 +704,7 @@
 		</script>
 		{/literal}
 		<!--好友请求 结束-->
+		</div>
 		</div>
 		
 		
