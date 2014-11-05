@@ -652,7 +652,7 @@
 <a href="#" onclick="doCopy('invite')" class="copy">复制</a></div>
                   </div>
                   </div>
-                  </div>
+                 <div class="record">
           <table border="0"  cellspacing="1" class="table table-striped  table-condensed" style="width:98%">
 				<tr class="head" >
 					<td>已邀请用户</td>
@@ -671,35 +671,8 @@
 				{/foreach}
 				{/list}
 		</table>
-<!--		<table border="0" cellspacing="1" class="table table-striped  table-condensed" style="width:98%">-->
-<!-- 			  <form action="" method="post"> -->
-<!-- 				<tr class="head"> -->
-<!-- 					<td>下线用户名 </td> -->
-<!--                     <td>真实姓名 </td> -->
-<!-- 					<td>注册时间 </td> -->
-<!--                     <td>是否VIP会员 </td> -->
-<!-- 					<td>应得提成收入</td> -->
-<!--                     <td>实际提成收入(已支付)</td> -->
-<!-- 				</tr> -->
-<!-- 				{list module="user" function="GetFriendsInvite" var="loop" user_id="0" showpage="3"} -->
-<!-- 				{foreach from="$loop.list" item="item"} -->
-<!-- 				<tr> -->
-<!-- 					<td>{$item.username}</td> -->
-<!--                     <td>{$item.realname}</td> -->
-<!-- 					<td>{$item.addtime|date_format}</td> -->
-<!--                     <td>{ if $item.vip_status == 1}是{else}否{/if}</td> -->
-<!-- 					<td>{ if $item.vip_status == 1}100元{else}0元{/if}</td> -->
-<!--                     <td>{$item.invite_money}元</td> -->
-<!-- 				</tr> -->
-<!-- 				{/foreach} -->
-<!-- 				<tr> -->
-<!-- 					<td colspan="6" class="page"> -->
-<!-- 						<div class="list_table_page">{$loop.showpage}</div> -->
-<!-- 					</td> -->
-<!-- 				</tr> -->
-<!-- 				{/list} -->
-<!-- 			</form>	 -->
-<!-- 		</table> -->
+</div>
+
 		{literal}
 		<script>
 		function doCopy(id) { 
