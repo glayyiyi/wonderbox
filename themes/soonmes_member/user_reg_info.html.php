@@ -118,7 +118,7 @@ jQuery(function(){
         </div>
         <div class="item">
           <div class="agree">
-          <label><input type="checkbox" checked="checked"/> 同意</label> <a href="/reg_protocol/index.html">万得金融注册协议</a> 
+          <label><input type="checkbox" checked="checked"/> 同意</label> <a href="/reg_protocol/index.html">万得贷网站注册协议</a> 
           </div>
         </div>
         <div class="item">
