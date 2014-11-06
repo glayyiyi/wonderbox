@@ -78,8 +78,8 @@ jQuery(function(){
     <div class="regPage">
       <div class="regMain">
       <div class="regIntro">
-      <h2>注册成为万得会员</h2>
-      万得金融是一群中高收入客户组成的私密投资圈子，欢迎您的加入，目前开放注册中
+      <div align="center"><h2>注册成为万得贷网站会员</h2></div>
+<!--       万得金融是一群中高收入客户组成的私密投资圈子，欢迎您的加入，目前开放注册中 -->
       </div>
         <div class="item">
           <div class="title" id="username_notice">用户名： <span>请输入4-10位字符.英文,数字 </span></div>

@@ -627,13 +627,13 @@
                   <table style="text-align:left">
                         <tr>
                           <th width="80"> 短信发送 </th>
-                          <td>【万得金融】我是{$_G.user_result.realname}，我在万得金融平台送你红包，百度“万得金融”，注册填写邀请人{$_G.user_result.username}。
+                          <td>【万得金融】我是{$_G.user_result.realname}，我在万得贷网站送你红包，百度“万得金融”，注册填写邀请人{$_G.user_result.username}。
 </td>
                         </tr>
                          <tr>
                           <th> 手机号 </th>
                           <td><input id="phone" name="phone" type="text" />
-                          <input id="content" name="content" type="hidden" value='我是{$_G.user_result.realname}，我在万得金融平台送你红包，百度“万得金融”，注册填写邀请人{$_G.user_result.username}。{$_G.weburl}'
+                          <input id="content" name="content" type="hidden" value='我是{$_G.user_result.realname}，我在万得贷网站送你红包，百度“万得金融”，注册填写邀请人{$_G.user_result.username}。{$_G.weburl}'
                           />
 
 </td>
