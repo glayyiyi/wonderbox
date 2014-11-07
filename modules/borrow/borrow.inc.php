@@ -187,13 +187,13 @@ elseif ($_U['query_type'] == "tender"){
 	//投标锁 20121010 add by weego 
 	//liukun add for bug 296 begin
 	if(1==2){
-	require_once(ROOT_PATH."core/slock.class.php");
-	$_POST['id']=(int)$_POST['id'];
-
-	$lockTenderNo=$_POST['id']; //根据标的id进行锁定控制排队进行
-	//---------------apc高并发内存共享锁开启--------------------------
-	$lock = new slock();
-	$lock->lock($lockTenderNo);
+		require_once(ROOT_PATH."core/slock.class.php");
+		$_POST['id']=(int)$_POST['id'];
+	
+		$lockTenderNo=$_POST['id']; //根据标的id进行锁定控制排队进行
+		//---------------apc高并发内存共享锁开启--------------------------
+		$lock = new slock();
+		$lock->lock($lockTenderNo);
 	}
 	//liukun add for bug 296 end
 	 
@@ -204,7 +204,7 @@ elseif ($_U['query_type'] == "tender"){
 		include_once(ROOT_PATH."modules/account/account.class.php");
 		$borrow_result = borrowClass::GetOne(array("id"=>$_POST['id'],"tender_userid"=>$_G['user_id']));//获取借款标的单独信息
 		$biao_type=$borrow_result['biao_type'];//add by angus以标类型区别各类标
-		$borrow_result['is_lz'];
+		$is_lz = $borrow_result['is_lz'];
 		if($is_lz==1){
 			$account_money = (int)$_POST['flow_count']*1;//By Glay 以前是10000
 			$postmoney = (int)$_POST['flow_count']*1;//By Glay 以前是10000
@@ -334,13 +334,14 @@ elseif ($_U['query_type'] == "tender"){
 				$data['user_id'] = $_G['user_id'];
 				$data['status'] = 5;
 				$result = borrowClass::AddTender($data);//添加借款标
-// 				print_r($result);
-// 				exit();
 				if ($result["tender_result"] === true){
-					if ($borrow_result['status'] ==1 && ($borrow_result['account_yes'] + $account_money) >= $borrow_result['account'] && $borrow_result['is_lz']!=1){
+					if ($borrow_result['status'] ==1 
+							&& ($borrow_result['account_yes'] + $account_money) >= $borrow_result['account'] 
+							&& $borrow_result['is_lz']!=1 && $biao_type!='pj'){
 						$classname = $borrow_result['biao_type']."biaoClass";
 						$dynaBiaoClass = new $classname();
 						$auto_full_verify_result = $dynaBiaoClass->get_auto_full_verify($borrow_result['biao_type']);
+						
 						if ($auto_full_verify_result==1){
 							$data_e['id'] = $_POST['id'];
 							$data_e['status'] = '3';
@@ -363,7 +364,7 @@ elseif ($_U['query_type'] == "tender"){
 	//---------------apc高并发内存共享锁关闭--------------------------
 	//liukun add for bug 296 begin
 	if(1==2){
-	$lock->release($lockTenderNo);
+		$lock->release($lockTenderNo);
 	}
 	//投标锁 add by weego 20121010
 }
