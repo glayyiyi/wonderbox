@@ -873,9 +873,12 @@ class Magic
 			$_url = $parse_var['url'];
 			$_url = str_replace('@@', '=', $_url);
 		}
-		$str = '<div id="main" class="clearfix"><div class="box"><div class="box-con"><p class="reg-pro">系统提示信息</p><div align="center">
-		<br><br>'.$content.'<br><br><div id="msg_content"><a href="'.$_url.'" >'.$msg.'</a></div><br><br>
-		</div></div></div></div>';
+		$str = '<div id="mainBody">
+    <div class="alertPage">
+    <div class="status statusWait">   
+    <h2>系统提示信息</h2></div><div class="content" style="text-align:center"><h3>'.$content.'</h3>
+ <div class="btnBar"><a href="'.$_url.'" >'.$msg.'</a></div>
+		</div></div></div>';
 		if($parse_var['mode']==1){
 			$_str = '<? ';
 			$_str .= $url.';';

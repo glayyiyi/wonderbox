@@ -212,7 +212,7 @@
                 <ul>
                   {loop module="borrow" function="GetTenderList" limit="all" var="vat" borrow_id="$var.borrow.id" }
                   <li>
-                    <div class="item"><span>{$vat.username}</span>
+                    <div class="item"><span>{$vat.username|truncate:5:"**":false:true}</span>
                   <span>{$vat.tender_account|default:0}</span>
                   <span>{$vat.addtime|date_format:"Y-m-d H:i:s"}</span>
                   </div>
