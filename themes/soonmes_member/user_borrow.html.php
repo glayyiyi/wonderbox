@@ -732,7 +732,8 @@
 			{list module="borrow" var="loop" function ="GetTenderList" showpage="3" user_id="0" keywords="request" dotime1="request" dotime2="request" }
 				{foreach from="$loop.list" item="item"}
 				<tr {if $key%2==1} class="tr1"{/if}>
-				<td><a href="/invest/a{$item.borrow_id}.html?doaction=success&borrow_id={$item.borrow_id}&tender_id={$item.id}">{$item.id}</a></td>
+<!-- 				<td><a href="/invest/a{$item.borrow_id}.html?doaction=success&borrow_id={$item.borrow_id}&tender_id={$item.id}">{$item.id}</a></td> -->
+					<td><a href="#">{$item.id}</a></td>
 					<td>{$item.op_username}</td>
 					<td><a href="/invest/a{$item.borrow_id}.html">{$item.borrow_name|truncate:14}</a></td>
 					<td>гд{$item.tender_account}</td>
