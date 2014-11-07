@@ -106,7 +106,8 @@ class borrowClass extends amountClass{
                 $_sql .= " and p1.is_mb =1  and (p1.verify_time+p1.valid_time*25*60*60)>".time()."  and p1.status=1 and isnull(p1.pwd)";
            }
 		}
-		if (isset($data['recMonth']) && $data['recMonth']=="1"){
+
+		if(isset($data['recMonth']) && $data['recMonth']=="1"){
 			$curDate = time();
 			$curDateStart = $curDate-24*60*60*30;
 			$_sql .= " and p1.addtime <= ".$curDate." and p1.addtime >=".$curDateStart;
@@ -1758,6 +1759,235 @@ class borrowClass extends amountClass{
 		}
 		return $rebuyAllmoney;
 	}
+	
+	/**
+	 * 票据产品自动回购
+	 * add by angus 20141103
+	 * @param Array $data
+	 * @return Array
+	 */
+	public static function autoPJRepay($data = array()){
+		global $mysql,$_G,$rdGlobal;
+		$tqtime=$rdGlobal['pj_reBackTime']; //票据标提前回购的时间设置
+		$tqtime=time()+$tqtime;
+		//获取还款的列表
+		$sql="select a1.id as tender_id,a2.id as borrow_id from (select p1.* from {borrow_tender} as p1
+		left join {borrow_collection} as p2 on ((p2.tender_id=p1.id)) where p2.status=0 and p2.repay_time<'{$tqtime}' ) as a1
+		join {borrow} as a2 on ((a1.borrow_id=a2.id))
+		where a2.biao_type='pj'";
+		fb::info($sql,'borrow sql');
+		$result = $mysql->db_fetch_arrays($sql);
+		$rebuyAllmoney='0'; //初始化回购的总金额
+		$biao_type = new pjbiaoClass();
+		$pjbiaotype = $biao_type->get_biaotype_info();
+		$_fee = $pjbiaotype['interest_fee_rate'];
+		$sendSMS = array();
+		$sendRemind = array();
+		mysql_query("start transaction");
+		if (!empty($result)){
+			$coninvest_reward = array();//回款续投
+			foreach ($result as $key => $value){
+				//获取tender的信息
+				$sql="select * from {borrow_tender} where id='{$value['tender_id']}'";
+				$tender_result = $mysql->db_fetch_array($sql);
+				//获取borrow的信息
+				$sql="select * from {borrow} where id='{$tender_result['borrow_id']}'";
+				$borrow_repayment_result = $mysql->db_fetch_array($sql);
+				
+				//获取borrow_collection的信息(add by angus)
+				$sql1="select * from {borrow_collection} where tender_id='{$value['tender_id']}' and repay_time<'{$tqtime}'";
+	
+				$collection_result = $mysql->db_fetch_arrays($sql1);		
+				$_reBuyAccountTotal=0;//加总本投标应还款
+				foreach($collection_result as $key1 => $value1){
+					$_reBuyAccountTotal = $_reBuyAccountTotal + $value1['repay_account'];
+	
+				}
+								
+				///////////////////////////////////////////////////////////////////////////////////////////////
+				$reBuyAccount=$tender_result['account']; //本次回购的本金
+				$reBuyInterest=round($tender_result['interest']/$borrow_repayment_result['time_limit_day'],2); //本次回购的利息
+				fb::info($reBuyInterest,'reBuyInterest');
+				$reBuyAccountTotal=$_reBuyAccountTotal;//本次回购的本息
+				$reBuyUid=$tender_result['user_id']; //本次被回购的投资者UID
+				$reBuyBorrowUid=$borrow_repayment_result['user_id']; //本次回购的借款者UID
+				$reBuyBorrowid=$borrow_repayment_result['id']; //本次回购的借款borrow_ID
+				$borrow_account=$borrow_repayment_result['account'];//标的总借款金额
+				$reBuyTenderid=$tender_result['id']; //本次回购tender_id
+				//////////////奖励相关/////////////////////
+				$part_account = $borrow_repayment_result['part_account']; //固定的奖励总金额
+				$award =$borrow_repayment_result['award'];  //1 固定金额分配  2 按照比例
+				$funds =$borrow_repayment_result['funds'];  //比例奖励的百分数
+
+				$rebuyAllmoney =$rebuyAllmoney +$reBuyAccountTotal; //累计回购的本息总金额
+				
+				fb::info($reBuyAccountTotal,'reBuyAccountTotal');
+				fb::info($rebuyAllmoney,'rebuyAllmoney');
+				///////////////////////////////////////////////////////////////////////////////////////////////
+						
+				//更新借款者积分
+				$credit['nid'] = "advance_day";
+				$credit_result = creditClass::GetTypeOne(array("nid"=>$credit['nid']));
+				$credit['user_id'] = $reBuyBorrowUid;
+				$credit['value'] = $credit_result['value'];
+				$credit['op_user'] = $_G['user_id'];
+				$credit['op'] = 1;//增加
+				$credit['type_id'] = $credit_result['id'];
+				$credit['remark'] = "还款成功加{$credit_result['value']}分";
+				$re = creditClass::UpdateCredit($credit);
+				if($credit_result==false || $re==false || $borrow_repayment_result==false || $tender_result==false){
+					mysql_query("rollback");
+					return false;
+				}
+				//扣除借款者的还款金额
+				$account_result =  accountClass::GetOneAccount(array("user_id"=>$reBuyBorrowUid));
+				$account_log['user_id'] =$reBuyBorrowUid;
+				$account_log['type'] = "repayment";
+				$account_log['money'] = $reBuyAccountTotal;
+				$account_log['total'] =$account_result['total']-$account_log['money'];
+				$account_log['use_money'] = $account_result['use_money']-$account_log['money'];
+				$account_log['no_use_money'] = $account_result['no_use_money'];
+				$account_log['collection'] = $account_result['collection'];
+				$account_log['to_user'] = "0";
+				$account_log['remark'] = "对[<a href=\'/invest/a{$borrow_repayment_result['id']}.html\' target=_blank>{$borrow_repayment_result['name']}</a>]还款";
+				$re = accountClass::AddLog($account_log);
+				if($account_result==false || $re==false){
+					mysql_query("rollback");
+					return false;
+				}
+				$sendSMS[] = array('user_id'=>$reBuyBorrowUid,'content'=>"成功对[{$borrow_repayment_result['name']}]标的还款".$account_log['money']."元。");
+
+				//更新投资人的分期信息
+				$sql = "update  `{borrow_collection}` set repay_yestime='".time()."',repay_yesaccount = repay_account ,status=1   where tender_id = '{$reBuyTenderid}' and repay_time<'{$tqtime}'";
+				$re = $mysql->db_query($sql);
+	
+				//更新投资的信息
+				$sql = "update  `{borrow_tender}` set status=1,repayment_yesaccount= repayment_yesaccount + ".$reBuyAccountTotal.",wait_account = wait_account  - ".$reBuyAccountTotal." ,wait_interest = wait_interest - ".$reBuyInterest.",repayment_yesinterest  = repayment_yesinterest  + {$reBuyInterest}  where id = '{$reBuyTenderid}'";
+				$re_1 = $mysql->db_query($sql);
+				$account_result =  accountClass::GetOneAccount(array("user_id"=>$reBuyUid));
+				$account_log['user_id'] =$reBuyUid;
+				$account_log['type'] = "invest_repayment";
+				$account_log['money'] = $reBuyAccountTotal;
+				$account_log['total'] = $account_result['total'];
+				$account_log['use_money'] = $account_result['use_money']+$account_log['money'];
+				$account_log['no_use_money'] = $account_result['no_use_money'];
+				$account_log['collection'] =$account_result['collection'] -$account_log['money'];
+				$account_log['to_user'] = $reBuyBorrowUid;
+				$account_log['remark'] = "客户对[<a href=\'/invest/a{$borrow_repayment_result['id']}.html\' target=_blank>{$borrow_repayment_result['name']}</a>]借款的还款";
+				$re_2 = accountClass::AddLog($account_log);
+				if($re_2==false || $re_1==false || $re==false || $account_result==false){
+					mysql_query("rollback");
+					return false;
+				}
+				//扣除投资的管理费
+				$account_result =  accountClass::GetOneAccount(array("user_id"=>$reBuyUid));
+				$log['user_id'] = $reBuyUid;
+				$log['type'] = "tender_mange";
+				$log['money'] = $reBuyInterest*$_fee;
+				$log['total'] = $account_result['total']-$log['money'];
+				$log['use_money'] = $account_result['use_money']-$log['money'];
+				$log['no_use_money'] = $account_result['no_use_money'];
+				$log['collection'] = $account_result['collection'];
+				$log['to_user'] = 0;
+				$log['remark'] = "用户成功还款扣除利息的管理费";
+				$re = accountClass::AddLog($log);
+				if($account_result==false || $re==false){
+					mysql_query("rollback");
+					return false;
+				}
+				//回款续投
+					$coninvest_reward[] = array('user_id'=>$reBuyUid,'borrow_id'=>$borrow_repayment_result['id'],'money'=>$reBuyAccountTotal-$log['money'],'borrow_name'=>$borrow_repayment_result['name']);
+	
+					$remind['nid'] = "loan_pay";
+					$remind['sent_user'] = "0";
+					$remind['receive_user'] = $reBuyUid;
+					$remind['title'] = "客户对[{$borrow_repayment_result['name']}]借款的还款";
+					$remind['content'] = "客户在".date("Y-m-d H:i:s")."对[<a href=\'/invest/a{$borrow_repayment_result['id']}.html\' target=_blank>{$borrow_repayment_result['name']}</a>]借款的还款,还款金额为{$reBuyAccountTotal}";
+					$remind['type'] = "system";
+					$sendRemind[] = $remind;
+					//投标奖励扣除和增加。
+					if ($award==1 || $award==2){
+						if (!$rdGlobal['pj_awardfirst']){
+							if ($award==1){
+								$money = round(($reBuyAccount/$borrow_account)*$part_account/$borrow_repayment_result['time_limit_day'],2);
+							}elseif ($award==2){
+								$money = round((($funds/100)*$reBuyAccount)/$borrow_repayment_result['time_limit_day'],2);
+							}
+							//发放奖励
+							$account_result =  accountClass::GetOneAccount(array("user_id"=>$reBuyUid));
+							$log['user_id'] = $reBuyUid;
+							$log['type'] = "award_add";
+							$log['money'] = $money;
+							$log['total'] = $account_result['total']+$money;
+							$log['use_money'] = $account_result['use_money']+$money;
+							$log['no_use_money'] = $account_result['no_use_money'];
+							$log['collection'] = $account_result['collection'];
+							$log['to_user'] = $reBuyBorrowUid;
+							$log['remark'] = "借款[<a href=\'/invest/a{$borrow_repayment_result['id']}.html\' target=_blank>{$borrow_repayment_result['name']}</a>]的奖励";
+							$re = accountClass::AddLog($log);
+							if($account_result==false || $re==false){
+								mysql_query("rollback");
+								return false;
+							}
+							//扣除奖励
+							$account_result =  accountClass::GetOneAccount(array("user_id"=>$reBuyBorrowUid));
+							$log['user_id'] = $reBuyBorrowUid;
+							$log['type'] = "award_lower";
+							$log['money'] = $money;
+							$log['total'] = $account_result['total']-$money;
+							$log['use_money'] = $account_result['use_money']-$money;
+							$log['no_use_money'] = $account_result['no_use_money'];
+							$log['collection'] = $account_result['collection'];
+							$log['to_user'] = $value['user_id'];
+							$log['remark'] = "扣除借款[<a href=\'/invest/a{$borrow_repayment_result['id']}.html\' target=_blank>{$borrow_repayment_result['name']}</a>]的奖励";
+							$re = accountClass::AddLog($log);
+							if($account_result==false || $re==false){
+								mysql_query("rollback");
+								return false;
+							}
+						}
+					}
+					//更新借款标的已经认购金额
+					fb::info($collection_result,"collection_result");
+					foreach($collection_result as $key1 => $value1){
+						if($value1['order']=='0'){//add by angus当为第1期时还款时，就把认购金额减掉
+							$sql = "update {borrow} set account_yes= account_yes - {$reBuyAccount} where id={$reBuyBorrowid}";
+							$result = $mysql -> db_query($sql);
+							if($result==false){
+								mysql_query("rollback");
+								return false;
+							}
+						}
+					}
+					
+				} //foreach end
+			}//if end
+			mysql_query("commit");
+			//回款续投
+			if($_G['system']['con_return_tender']==1){
+				foreach($coninvest_reward as $value){
+					$log = array();
+					$re = accountClass::GetReturnedMoney($value['user_id']);
+					$log['user_id'] = $value['user_id'];
+					$log['borrow_id'] = $value['borrow_id'];
+					$log['type'] = 'return_2';
+					$log['money'] = $value['money'];
+					$log['total'] = $re['total']+$value['money'];
+					$log['use_money'] = $re['use_money']+$value['money'];
+					$log['already_use_money'] = $re['already_use_money'];
+					$log['not_use_money'] = $re['not_use_money'];
+					$log['remark'] = "票据回购，回款金额增加[<a href=\'/invest/a".$value['borrow_id'].".html\' target=_blank>".$value['borrow_name']."</a>]";
+					accountClass::AddConinvestLog($log);
+				}
+			}
+			foreach($sendRemind as $remind){
+				remindClass::sendRemind($remind);
+			}
+			foreach($sendSMS as $value){
+				sendSMS($value['user_id'],$value['content'],1);
+			}
+			return $rebuyAllmoney;
+		}
 	/**
 	 * 还款
 	 *
@@ -2156,6 +2386,7 @@ class borrowClass extends amountClass{
 			if ($data['limit'] != "all"){
 				$_limit = "  limit ".$data['limit'];
 			}
+			
 			$list = $mysql->db_fetch_arrays(str_replace(array('SELECT', 'ORDER', 'LIMIT'), array($_select,  $_order, $_limit), $sql));
 			foreach ($list as $key => $value){
 				$repay_data['repayment_time']=$value['repayment_time'];
@@ -2172,6 +2403,7 @@ class borrowClass extends amountClass{
 			}
 			return $list;
 		}
+
 		$row = $mysql->db_fetch_array(str_replace(array('SELECT', 'ORDER', 'LIMIT'), array('count(1) as num', '', ''), $sql));
 		
 		$total = $row['num'];
@@ -2874,6 +3106,225 @@ class borrowClass extends amountClass{
 		}
 		return true;
 	}
+	
+	/**
+	 * 票据产品及时生息，这个方法中的事务在AddTender()方法中统一提交，避免事务嵌套。此方法不能单独调用，必须配合事务
+	 * add by angus
+	 * @param Array $data(user_id,id,status,remark)
+	 * @return Array
+	 */
+	public static function AddRepaymentForPJ($data = array()){
+		global $mysql,$_G,$rdGlobal;
+	
+		$tender_id = $data['tender_id'];
+		$id = $data['id'];
+		if ($id  =="") return self::ERROR;
+		$status = $data['status'];
+	
+		$sql = "select * from {borrow}  where id=$id";
+		$result = $mysql->db_fetch_array($sql);
+	
+		$user_id = $result['user_id'];
+		$borrow_name = $result['name'];
+	
+		$style = $result['style'];
+		$award =$result['award'];
+		$funds = $result['funds'];
+		$is_vouch = $result['is_vouch'];//是否是担保标
+		$vouch_award = $result['vouch_award'];//担保的奖励
+		$part_account = $result['part_account'];
+		$tender_times = $result['tender_times'];
+		$month_times = $result['time_limit'];
+		$borrow_account_b = $result['account'];
+		//add by weego 20120525
+		$isday = $result['isday'];
+		$time_limit_day = $result['time_limit_day'];
+		$repayment_account  = $result['repayment_account'];
+		$borrow_url = "<a href=\'/invest/a{$id}.html\' target=_blank>{$borrow_name}</a>";
+		$sendRemind = array();
+		$sendSMS = array();
+		if ($status == 3){
+			//扣除投资者的金钱。
+			$sql = "select * from `{borrow_tender}`  where id=$tender_id and status=5 order by id";
+			$result = $mysql->db_fetch_arrays($sql);
+			foreach ($result as $key => $value){
+				$borrow_account += $value['account'];
+				$account_result =  accountClass::GetOneAccount(array("user_id"=>$value['user_id']));
+				$log['user_id'] = $value['user_id'];
+				$log['type'] = "invest";
+				$log['money'] = $value['account'];
+				$log['total'] = $account_result['total']-$log['money'];
+				$log['use_money'] = $account_result['use_money'];
+				$log['no_use_money'] = $account_result['no_use_money']-$log['money'];
+				$log['collection'] = $account_result['collection'];
+				$log['to_user'] = $user_id;
+				$log['remark'] = "投标成功费用扣除，来自[{$borrow_url}]";
+				$re = accountClass::AddLog($log);
+				if($account_result==false || $re==false){
+					return false;
+				}
+				//添加待收的金额
+				$account_result =  accountClass::GetOneAccount(array("user_id"=>$value['user_id']));
+				$log['user_id'] = $value['user_id'];
+				$log['type'] = "collection";
+				$log['money'] = $value['repayment_account'];
+				$log['total'] = $account_result['total']+$log['money'];
+				$log['use_money'] = $account_result['use_money'];
+				$log['no_use_money'] = $account_result['no_use_money'];
+				$log['collection'] = $account_result['collection']+$log['money'];
+				$log['to_user'] = $user_id;
+				$log['remark'] = "待收金额,来自[{$borrow_url}]";
+				$re = accountClass::AddLog($log);
+				$sql = " update `{borrow_tender}` set status=1 where status= 5 and id='{$value['id']}'";
+				$re_1 = $mysql ->db_query($sql);
+				if($account_result==false || $re==false || $re_1==false){
+					return false;
+				}
+				//提醒设置
+				$remind['nid'] = "loan_yes_account";
+				$remind['sent_user'] = "0";
+				$remind['receive_user'] = $value['user_id'];
+				$remind['title'] = "[借出成功，扣除冻结款]恭喜您，投资[{$borrow_name}]成功.";
+				$remind['content'] = "投资[<a href=\'/invest/a{$data['id']}.html\' target=_blank><font color=red>{$borrow_name}</font></a>]在".date("Y-m-d",time())."已经审核通过";
+				$remind['type'] = "system";
+				$sendRemind[] = $remind;
+				$sendSMS[] = array('user_id'=>$value['user_id'],'content'=>"成功投资[{$borrow_name}]".$value['account']."元。");
+	
+				$credit['nid'] = "invest_success";
+				$result = creditClass::GetTypeOne(array("nid"=>$credit['nid']));
+				$credit['user_id'] = $value['user_id'];
+				$credit['value'] = round($value['account']/100);
+				$credit['op_user'] = $_G['user_id'];
+				$credit['op'] = 1;//增加
+				$credit['type_id'] = $result['id'];
+				$credit['remark'] = "投资成功加{$credit['value']}分";
+				$re = creditClass::UpdateCredit($credit);//更新积分
+				if($result==false || $re==false){
+					return false;
+				}
+				//echo "month_times:".$month_times;
+				//echo "time_limit_day:".$month_times;
+				//die();
+				//更新投资人的投标标的还款日期 add by weego 20120614
+// 				for ($i=0;$i<$month_times;$i++){
+// 					//repair by weego 20120525 for 天标还款时间
+// 					if($isday==1){
+// 						$repay_time=strtotime("$time_limit_day days",time());
+// 					}else{
+// 						$repay_time = get_times(array("time"=>time(),"num"=>$i+1));
+// 					}
+// 					// 2012-06-14 修改还款时间 LiuYY
+// 					//$to_day = date("Y-m-d 23:59:59", $repay_time);
+// 					//$repay_time = strtotime($to_day);
+// 					$sql = " update `{borrow_collection}` set repay_time={$repay_time} where `order`= {$i} and tender_id='{$value['id']}'";
+// 					$re = $mysql ->db_query($sql);
+// 					if($re==false){
+// 						return false;
+// 					}
+// 				}
+			}
+			//借款者总金额增加。
+			$account_result =  accountClass::GetOneAccount(array("user_id"=>$user_id));
+			$borrow_log['user_id'] = $user_id;
+			$borrow_log['type'] = "borrow_success";
+			$borrow_log['money'] = $borrow_account;
+			$borrow_log['total'] =$account_result['total']+$borrow_log['money'];
+			$borrow_log['use_money'] = $account_result['use_money']+$borrow_log['money'];
+			$borrow_log['no_use_money'] = $account_result['no_use_money'];
+			$borrow_log['collection'] = $account_result['collection'];
+			$borrow_log['to_user'] = "0";
+			$borrow_log['remark'] = "通过[{$borrow_url}]借到的款";
+			$re = accountClass::AddLog($borrow_log);
+			if($account_result==false || $re==false){
+				return false;
+			}
+			$sendSMS[] = array('user_id'=>$user_id,'content'=>"票据产品[{$borrow_name}]已被购买，你的账户增加了{$borrow_account}元。");
+	
+			//Glay 扣除手续费
+			$biao_type = new pjbiaoClass();
+			$biao_result = $biao_type->get_biaotype_info();
+			if($isday==1){
+				$borrow_fee = $biao_result['borrow_day_fee_rate'];
+			}else{
+				$borrow_fee = $biao_result['borrow_fee_rate'];
+			}
+			$money = round($borrow_account*$borrow_fee*$month_times,2);
+			//add by weego for 天标借款管理费 20120525
+			if($isday==1){
+				$money=$money/30*$time_limit_day;
+			}
+			$account_result =  accountClass::GetOneAccount(array("user_id"=>$user_id));
+			$fee_log['user_id'] = $user_id;
+			$fee_log['type'] = "borrow_fee";
+			//$fee_log['money'] = $money;
+			$fee_log['money']=0;//By Glay 因为是平台方放贷，暂时去掉手续费
+				
+			$fee_log['total'] = $account_result['total']-$fee_log['money'];
+			$fee_log['use_money'] = $account_result['use_money']-$fee_log['money'];
+			$fee_log['no_use_money'] = $account_result['no_use_money'];
+			$fee_log['collection'] = $account_result['collection'];
+			$fee_log['to_user'] = "0";
+			$fee_log['remark'] = "借款[{$borrow_url}]的手续费";
+			$re = accountClass::AddLog($fee_log);
+			if($account_result==false || $re==false){
+				return false;
+			}
+			$view_status = 1;//回款续投
+		}
+		//如果有设置奖励并且招标成功，或者失败也奖励
+		if ($award==1 || $award==2){
+			if ($status == 3 && $rdGlobal['lz_awardfirst']){
+				$sql = "select * from {borrow_tender}  where id=$tender_id";
+				$result = $mysql->db_fetch_arrays($sql);
+				foreach ($result as $key => $value){
+					//投标奖励扣除和增加。
+					if ($award==1){
+						$money = round(($value['account']/$borrow_account_b)*$part_account,2);
+					}elseif ($award==2){
+						$money = round((($funds/100)*$value['account']),2);
+					}
+					$account_result =  accountClass::GetOneAccount(array("user_id"=>$value['user_id']));
+					$log['user_id'] = $value['user_id'];
+					$log['type'] = "award_add";
+					$log['money'] = $money;
+					$log['total'] = $account_result['total']+$money;
+					$log['use_money'] = $account_result['use_money']+$money;
+					$log['no_use_money'] = $account_result['no_use_money'];
+					$log['collection'] = $account_result['collection'];
+					$log['to_user'] = $user_id;
+					$log['remark'] = "借款[{$borrow_url}]的奖励";
+					$re = accountClass::AddLog($log);
+					if($account_result==false || $re==false){
+						return false;
+					}
+					$account_result =  accountClass::GetOneAccount(array("user_id"=>$user_id));
+					$log['user_id'] = $user_id;
+					$log['type'] = "award_lower";
+					$log['money'] = $money;
+					$log['total'] = $account_result['total']-$money;
+					$log['use_money'] = $account_result['use_money']-$money;
+					$log['no_use_money'] = $account_result['no_use_money'];
+					$log['collection'] = $account_result['collection'];
+					$log['to_user'] = $value['user_id'];
+					$log['remark'] = "扣除借款[{$borrow_url}]的奖励";
+					$re = accountClass::AddLog($log);
+					if($account_result==false || $re==false){
+						return false;
+					}
+				}
+			}
+		}
+		foreach($sendRemind as $remind){
+			remindClass::sendRemind($remind);
+		}
+		foreach($sendSMS as $value){
+			sendSMS($value['user_id'],$value['content'],1);
+		}
+		if($_G['system']['con_return_tender']==1){//回款续投
+			accountClass::ViewBorrowUpdate(array('borrow_id'=>$data['id'],'view_status'=>$view_status));
+		}
+		return true;
+	}
 	/**
 	 * 满标复审
 	 *
@@ -2908,6 +3359,7 @@ class borrowClass extends amountClass{
 		$time_limit_day = $result['time_limit_day'];
 
 		$repayment_account  = $result['repayment_account'];
+		$_data=array();
 		$_data['account'] = $borrow_account;
 		$_data['year_apr'] = $result['apr'];
 		$_data['month_times'] = $month_times;
@@ -2935,7 +3387,7 @@ class borrowClass extends amountClass{
 		$biao_type = $result['biao_type'];
 		$classname = $borrow_result['biao_type']."biaoClass";
 		$dynaBiaoClass = new $classname();
-
+		fb::log($_data,'_data');
 		$interest_result = self::EqualInterest($_data);
 		$total_account = 0;
 		$borrow_url = "<a href=\'/invest/a{$id}.html\' target=_blank>{$borrow_name}</a>";
@@ -2944,6 +3396,7 @@ class borrowClass extends amountClass{
 		$sql = " update {borrow} set status='{$data['status']}' where id='{$id}'";
 		$mysql->db_query($sql);
 		$borrow_result['status'] = $status;
+
 		if ($status == 3){
 			//如果成功，则将还款信息输进表里面去
 			foreach ($interest_result as $key => $value){
@@ -2952,8 +3405,7 @@ class borrowClass extends amountClass{
 				$value['repayment_time'] = strtotime($to_day);
 				$total_account = $total_account+$value['repayment_account'];//总还金额
 				$sql = "insert into {borrow_repayment} set `addtime` = '".time()."',`addip` = '".ip_address()."',`borrow_id`='{$id}',`order`='{$key}',`repayment_time`='{$value['repayment_time']}',
-				`repayment_account`='{$value['repayment_account']}',`interest`='{$value['interest']}',`capital`='{$value['capital']}'
-				";
+				`repayment_account`='{$value['repayment_account']}',`interest`='{$value['interest']}',`capital`='{$value['capital']}'";
 				$re = $mysql->db_query($sql);
 				$repayment_account = $value['repayment_account'];
 				if ($re==false){
@@ -3282,7 +3734,7 @@ class borrowClass extends amountClass{
 		}elseif ($borrow_style==3){
 			return self::EqualEndMonth($data);
 		}elseif ($borrow_style==4){
-			return self::EqualMonth($data);
+			return self::EqualEndDay($data);
 		}
 	
 	}
@@ -3650,6 +4102,74 @@ class borrowClass extends amountClass{
 			return $_result;
 		}
 	}
+	
+	//到期还本，按天付息
+	function EqualEndDay ($data = array()){
+
+		//借款的天数
+		if (isset($data['time_limit_day']) && $data['time_limit_day']>0){
+			$day_times = $data['time_limit_day'];
+		}
+
+		//借款的总金额
+		if (isset($data['account']) && $data['account']>0){
+			$account = $data['account'];
+		}else{
+			return "";
+		}
+	
+		//借款的年利率
+		if (isset($data['year_apr']) && $data['year_apr']>0){
+			$year_apr = $data['year_apr'];
+		}else{
+			return "";
+		}
+	
+		//借款的时间
+		if (isset($data['borrow_time']) && $data['borrow_time']>0){
+			$borrow_time = $data['borrow_time'];
+		}else{
+			$borrow_time = time();
+		}
+		fb::info($data,'EqualEndDay data');
+		//天利率	
+		$day_apr = $year_apr/(12*100*30);
+	
+		//$re_month = date("n",$borrow_time);
+		$_yes_account = 0 ;
+		$repayment_account = 0;//总还款额
+	
+		$interest = round($account*$day_apr,2);//利息等于应还金额乘月利率
+		fb::info($account,'EqualEndDay account');
+		fb::info($day_apr,'EqualEndDay day_apr');
+		for($i=0;$i<$day_times;$i++){
+			$capital = 0;//本金初始值
+			if ($i+1 == $day_times){
+				$capital = $account;//本金只在最后一期返还
+			}
+				
+			$_result[$i]['repayment_account'] = $interest+$capital;
+			$_result[$i]['repayment_time'] = get_times(array("time"=>$borrow_time,"num"=>$i+1,"type"=>'day'));
+			//$_result[$i]['repayment_time_tmp']=gmdate("Y-m-d",$_result[$i]['repayment_time']);
+			$_result[$i]['interest'] = $interest;
+			$_result[$i]['capital'] = $capital;
+		}
+		
+		//print_r($_result);
+		//die("==");
+
+		//if (isset($data['type']) && $data['type']=="all"){
+// 			$_resul['repayment_account'] = $account + $interest*$month_times;
+// 			$_resul['monthly_repayment'] = $interest;
+// 			$_resul['month_apr'] = round($month_apr*100,2);
+// 			return $_resul;
+		//}else{
+		fb::info($_result);
+			return $_result;
+		//}
+
+		
+	}
 
 	//获取待还总额
 	//用户id
@@ -3916,7 +4436,7 @@ class borrowClass extends amountClass{
 			$_sql .= " and p1.status={$data['status']}";
 		}
 		if (isset($data['borrow_status']) && $data['borrow_status']!="" ){
-			$_sql .= " and (p3.status={$data['borrow_status']} or (p2.status=1 and p3.is_lz=1))";
+			$_sql .= " and (p3.status={$data['borrow_status']} or (p2.status=1 and p3.is_lz=1) or (p2.status=1 and p3.biao_type='pj'))";
 		}
 		if (isset($data['username']) && $data['username']!="" ){
 			$_sql .= " and p4.username like '%{$data['username']}%' ";
@@ -3948,7 +4468,7 @@ class borrowClass extends amountClass{
                 
 		$page = empty($data['page'])?1:$data['page'];
 		$epage = empty($data['epage'])?10:$data['epage'];
-		$_select = 'p1.*,p3.name as borrow_name,p3.id as borrow_id,p3.time_limit,p4.username, p3.biao_type ';
+		$_select = 'p1.*,p3.name as borrow_name,p3.id as borrow_id,p3.time_limit,p4.username, p3.biao_type,p3.time_limit_day,p3.isday ';
 		$_order = " order by p1.id ";
 
 		if (isset($data['order']) && $data['order']!="" ){
@@ -4002,6 +4522,7 @@ class borrowClass extends amountClass{
 			$late = self::LateCollectionInterest($repay_data);
 			$list[$key]['mytime']=$value['repay_time']-time();
 		}
+		
 		return array(
             'list' => $list,
             'total' => $total,
