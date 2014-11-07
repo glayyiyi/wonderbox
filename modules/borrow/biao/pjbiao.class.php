@@ -79,8 +79,8 @@ class pjbiaoClass extends biaotypeClass{
 		$data_e['id'] = $borrow_id;
 		$data_e['status'] = '3';
 		$data_e['tender_id'] = $tender_id;
-		$data_e['repayment_remark'] = '自动审核流转标';
-		$re = borrowClass::AddRepaymentForLZ($data_e);
+		$data_e['repayment_remark'] = '自动审核票据产品';
+		$re = borrowClass::AddRepaymentForPJ($data_e);
 		return $re;
 	}
 	
