@@ -689,7 +689,7 @@
 					<td><a href="/invest/a{$item.borrow_id}.html" target="_blank" title="{$item.borrow_name}">{$item.borrow_name|truncate:13}</a></td>
 					<td>{$item.repay_time|date_format:"Y-m-d"}</td>
 					<td>{$item.username}</td>
-					<td  align="center">{$item.order+1}/{$item.time_limit}</td>
+					<td  align="center">{$item.order+1}/{if $item.isday==1 && $item.biao_type=='pj'}{$item.time_limit_day}{else}{$item.time_limit}{/if}</td>
 					<td>гд{$item.capital}</td>
 					<td>+</td>
 					<td>гд{$item.interest}</td>
