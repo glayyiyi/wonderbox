@@ -67,7 +67,7 @@
         </div>
         <div class="list">
           <ul>
-          {loop module="borrow" function="GetList" var="var" limit="5" order="biaoindex"}
+          {loop module="borrow" function="GetList" var="var" limit="50" order="biaoindex"}
            {if $var.biao_type!='pj'} 
            {if $var.is_lz!=1} 
             <li class="first">
