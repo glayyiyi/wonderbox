@@ -3037,8 +3037,8 @@ class borrowClass extends amountClass{
 			$account_result =  accountClass::GetOneAccount(array("user_id"=>$user_id));
 			$fee_log['user_id'] = $user_id;
 			$fee_log['type'] = "borrow_fee";
-			//$fee_log['money'] = $money;
-			$fee_log['money']=0;//By Glay 因为是平台方放贷，暂时去掉手续费
+			$fee_log['money'] = $money;
+			//$fee_log['money']=0;//By Glay 因为是平台方放贷，暂时去掉手续费
 			
 			$fee_log['total'] = $account_result['total']-$fee_log['money'];
 			$fee_log['use_money'] = $account_result['use_money']-$fee_log['money'];
