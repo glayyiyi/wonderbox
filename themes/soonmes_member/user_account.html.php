@@ -722,12 +722,12 @@ function sub_form(){
 				<input type="text" name="mobilecode"  maxlength="6"  />&nbsp;&nbsp;<input id="codetime" name="codetime" type="button" value="发送验证码"/>
 			</div>
 		</div>
-		<div class="user_right_border">
-			<div class="l" style="font-weight:bold;">动态口令(可选)：</div>
-			<div class="c">
-				<input type="text" name="uchoncode"  maxlength="6"  />
-			</div>
-		</div>
+<!-- 		<div class="user_right_border"> -->
+<!-- 			<div class="l" style="font-weight:bold;">动态口令(可选)：</div>-->
+<!-- 			<div class="c"> -->
+<!-- 				<input type="text" name="uchoncode"  maxlength="6"  /> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 {literal}
 		<script language="javascript">
 				
