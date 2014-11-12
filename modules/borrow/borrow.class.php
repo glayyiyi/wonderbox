@@ -1769,10 +1769,10 @@ class borrowClass extends amountClass{
 	public static function autoPJRepay($data = array()){
 		global $mysql,$_G,$rdGlobal;
 		$tqtime=$rdGlobal['pj_reBackTime']; //票据标提前回购的时间设置
-		$tqtime=time()+$tqtime;
+		$tqtime=date('Y-m-d',strtotime('-1 day'));
 		//获取还款的列表
 		$sql="select a1.id as tender_id,a2.id as borrow_id from (select p1.* from {borrow_tender} as p1
-		left join {borrow_collection} as p2 on ((p2.tender_id=p1.id)) where p2.status=0 and p2.repay_time<'{$tqtime}' ) as a1
+		left join {borrow_collection} as p2 on ((p2.tender_id=p1.id)) where p2.status=0 and FROM_UNIXTIME(p2.repay_time,'%Y-%m-%d') ='{$tqtime}' ) as a1
 		join {borrow} as a2 on ((a1.borrow_id=a2.id))
 		where a2.biao_type='pj'";
 		fb::info($sql,'borrow sql');
@@ -1795,7 +1795,7 @@ class borrowClass extends amountClass{
 				$borrow_repayment_result = $mysql->db_fetch_array($sql);
 				
 				//获取borrow_collection的信息(add by angus)
-				$sql1="select * from {borrow_collection} where tender_id='{$value['tender_id']}' and repay_time<'{$tqtime}'";
+				$sql1="select * from {borrow_collection} where status=0 and tender_id='{$value['tender_id']}' and FROM_UNIXTIME(repay_time,'%Y-%m-%d')='{$tqtime}'";
 	
 				$collection_result = $mysql->db_fetch_arrays($sql1);		
 				$_reBuyAccountTotal=0;//加总本投标应还款
@@ -1858,7 +1858,7 @@ class borrowClass extends amountClass{
 				$sendSMS[] = array('user_id'=>$reBuyBorrowUid,'content'=>"成功对[{$borrow_repayment_result['name']}]标的还款".$account_log['money']."元。");
 
 				//更新投资人的分期信息
-				$sql = "update  `{borrow_collection}` set repay_yestime='".time()."',repay_yesaccount = repay_account ,status=1   where tender_id = '{$reBuyTenderid}' and repay_time<'{$tqtime}'";
+				$sql = "update  `{borrow_collection}` set repay_yestime='".time()."',repay_yesaccount = repay_account ,status=1   where tender_id = '{$reBuyTenderid}' and FROM_UNIXTIME(repay_time,'%Y-%m-%d')='{$tqtime}'";
 				$re = $mysql->db_query($sql);
 	
 				//更新投资的信息
@@ -1948,18 +1948,18 @@ class borrowClass extends amountClass{
 						}
 					}
 					//更新借款标的已经认购金额
-					fb::info($collection_result,"collection_result");
+					/*fb::info($collection_result,"collection_result");
 					foreach($collection_result as $key1 => $value1){
 						if($value1['order']=='0'){//add by angus当为第1期时还款时，就把认购金额减掉
-							$sql = "update {borrow} set account_yes= account_yes - {$reBuyAccount} where id={$reBuyBorrowid}";
-							$result = $mysql -> db_query($sql);
+							$sql = "update {borrow} set account_yes=account_yes-{$reBuyAccount} where id={$reBuyBorrowid}";
+							$result = $mysql->db_query($sql);
+							fb::info($sql,"borrow sql");
 							if($result==false){
 								mysql_query("rollback");
 								return false;
 							}
 						}
-					}
-					
+					}*/					
 				} //foreach end
 			}//if end
 			mysql_query("commit");
