@@ -165,7 +165,7 @@
           <ul>
           {site site_id="22" }
                     {loop module="article" function="GetList" limit="6"  site_var="var" var="item" status=1}
-            <li><a href="{$item.site_nid}/a{$item.id}.html">{$item.name|truncate:10}</a></li>
+            <li><a href="{$item.site_nid}/a{$item.id}.html">{$item.name}</a></li>
              {/loop}
                     {/site}	
           </ul>
