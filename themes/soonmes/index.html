@@ -62,6 +62,56 @@
     </div>
     <div class="homeSection">
       <div class="project">
+      
+         <div class="title">万得宝
+          <div class="more"><!-- <a href="#">更多票据宝</a> --></div>
+        </div> 
+        <div class="list">
+          <ul>
+          {loop module="borrow" function="GetList" var="var" limit="5" order="biaoindex"}
+          {if $var.biao_type=='pj'} 
+            <li class="first">
+              <div class="item">
+                <div class="rate rate{if $var.scale>0&$var.scale<=10 }10{elseif $var.scale>10&$var.scale<=20}20{elseif $var.scale>20&$var.scale<=30}30{elseif $var.scale>30&$var.scale<=40}40{elseif $var.scale>40&$var.scale<=50}50{elseif $var.scale>50&$var.scale<=60}60{elseif $var.scale>60&$var.scale<=70}70{elseif $var.scale>70&$var.scale<=80}80{elseif $var.scale>80&$var.scale<100}90{elseif $var.scale==100}100{/if}">{$var.scale|default:0}%</div>
+                <div class="intro">
+                  <h3><a {if $var.status==3}class="done"{/if} href="invest/a{$var.id}.html"><strong>{$var.name|truncate:25:"..."}</strong></a></h3>
+                  <div class="relate"><strong class="money">{$var.account_format} <span>{$var.use_name}</span></strong> 
+                  <strong class="limit">
+                 {if $var.isday==1}{$var.time_limit_day}天{else}{$var.time_limit}个月{/if}<span>期限</span></strong><strong class="level"><img src="{$tempdir}/statics/upload/icon-levelA.png" /></strong></div>
+                  <div class="relate"><strong class="rateYear">{$var.apr}% <span>年化率</span></strong></div>
+                </div>
+                <div class="oprate"> {if $var.status==3}
+	{if $var.repayment_account == $var.repayment_yesaccount } 
+	<a class="done" href="invest/a{$var.id}.html" >已还款</a> 
+	{else} 
+	<a class="done" href="invest/a{$var.id}.html" >还款中</a> 
+	{/if} 
+	{elseif $var.status==5} <img src="{$tempdir}/images/cancel_repayment.jpg" />
+	{elseif $var.status==4} <a class="done" href="invest/a{$var.id}.html">复审失败</a> 
+	{elseif $var.status==2} <a class="done" href="invest/a{$var.id}.html" >等待复审</a> 
+	{elseif $var.scale < 100} 
+	{if $var.biao_type=='pj'} 
+	<a href="invest/a{$var.id}.html">马上认购</a> 
+	{else} 
+	<a href="invest/a{$var.id}.html">立即投标</a> 
+	{/if} 
+	{else} 
+	{if $var.is_lz==1} 
+	<a class="done" href="invest/a{$var.id}.html" >已认购完</a> 
+	{else} 
+		<a class="done" href="invest/a{$var.id}.html" >等待复审</a> {/if} 
+	{/if}
+                  <div class="remain"><strong>余额 ￥{$var.other}</strong><span> 剩余 {$var.lave_time}</span></div>
+                </div>
+              </div>
+            </li>
+            {/if}
+           {/loop}
+          </ul>
+        </div>
+      
+      
+      
         <div class="title">链融通
           <div class="more"><!-- <a href="#">更多链融通</a> --></div>
         </div>
@@ -111,53 +161,7 @@
           </ul>
         </div>
         
-        <div class="title">票据宝
-          <div class="more"><!-- <a href="#">更多票据宝</a> --></div>
-        </div> 
-        <div class="list">
-          <ul>
-          {loop module="borrow" function="GetList" var="var" limit="5" order="biaoindex"}
-          {if $var.biao_type=='pj'} 
-            <li class="first">
-              <div class="item">
-                <div class="rate rate{if $var.scale>0&$var.scale<=10 }10{elseif $var.scale>10&$var.scale<=20}20{elseif $var.scale>20&$var.scale<=30}30{elseif $var.scale>30&$var.scale<=40}40{elseif $var.scale>40&$var.scale<=50}50{elseif $var.scale>50&$var.scale<=60}60{elseif $var.scale>60&$var.scale<=70}70{elseif $var.scale>70&$var.scale<=80}80{elseif $var.scale>80&$var.scale<100}90{elseif $var.scale==100}100{/if}">{$var.scale|default:0}%</div>
-                <div class="intro">
-                  <h3><a {if $var.status==3}class="done"{/if} href="invest/a{$var.id}.html"><strong>{$var.name|truncate:25:"..."}</strong></a></h3>
-                  <div class="relate"><strong class="money">{$var.account_format} <span>{$var.use_name}</span></strong> 
-                  <strong class="limit">
-                 {if $var.isday==1}{$var.time_limit_day}天{else}{$var.time_limit}个月{/if}<span>期限</span></strong><strong class="level"><img src="{$tempdir}/statics/upload/icon-levelA.png" /></strong></div>
-                  <div class="relate"><strong class="rateYear">{$var.apr}% <span>年化率</span></strong></div>
-                </div>
-                <div class="oprate"> {if $var.status==3}
-	{if $var.repayment_account == $var.repayment_yesaccount } 
-	<a class="done" href="invest/a{$var.id}.html" >已还款</a> 
-	{else} 
-	<a class="done" href="invest/a{$var.id}.html" >还款中</a> 
-	{/if} 
-	{elseif $var.status==5} <img src="{$tempdir}/images/cancel_repayment.jpg" />
-	{elseif $var.status==4} <a class="done" href="invest/a{$var.id}.html">复审失败</a> 
-	{elseif $var.status==2} <a class="done" href="invest/a{$var.id}.html" >等待复审</a> 
-	{elseif $var.scale < 100} 
-	{if $var.biao_type=='pj'} 
-	<a href="invest/a{$var.id}.html">马上认购</a> 
-	{else} 
-	<a href="invest/a{$var.id}.html">立即投标</a> 
-	{/if} 
-	{else} 
-	{if $var.is_lz==1} 
-	<a class="done" href="invest/a{$var.id}.html" >已认购完</a> 
-	{else} 
-		<a class="done" href="invest/a{$var.id}.html" >等待复审</a> {/if} 
-	{/if}
-                  <div class="remain"><strong>余额 ￥{$var.other}</strong><span> 剩余 {$var.lave_time}</span></div>
-                </div>
-              </div>
-            </li>
-            {/if}
-           {/loop}
-          </ul>
-        </div>
-
+     
       </div>
       <div class="info">
         <div class="notice">
