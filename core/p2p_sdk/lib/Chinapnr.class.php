@@ -268,7 +268,7 @@ HTML;
 	 * @param  $merPriv
 	 * @param  $charSet
 	 *
-	 * @return 无返回，使用autoRedirect方式重定向用户浏览器页面
+	 * @return 
 	 */
 	public function bgRegister($merCustId, $loginPwd, $transPwd="", $usrId="", $usrName="", $idType="", $idNo="", $usrMp="", $usrEmail="", $merPriv="", $charSet=""){
 		$checkValue= $this->sign($this::VERSION_10.$this::CMDID_BG_REGISTER.$merCustId.$usrId.$usrName.$loginPwd.$transPwd.$idType.$idNo.$usrMp.$usrEmail.$merPriv);
