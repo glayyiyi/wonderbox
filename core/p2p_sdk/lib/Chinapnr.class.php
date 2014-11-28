@@ -289,7 +289,7 @@ HTML;
 				"ChkValue"	=>	$checkValue,
 		);
 	
-		return $this->reactResponse($this->request($reqData));
+		return $this->reactResponse($this->request($reqData),array("CmdId","RespCode","MerCustId"));
 	}
 	
 	
