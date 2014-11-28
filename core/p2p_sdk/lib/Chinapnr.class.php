@@ -250,6 +250,49 @@ HTML;
 		$this->autoRedirect($reqData);
 	}
 	
+	
+	/**
+	 * @desc open an account 后台方式用户开户
+	 * @link API:5.3.1
+	 *
+	 * @param  $merCustId
+	 * @param  $loginPwd
+	 * @param  $transPwd
+	 * @param  $usrId
+	 * @param  $usrName
+	 * @param  $idType
+	 * @param  $idNo
+	 * @param  $usrMp
+	 * @param  $usrMp
+	 * @param  $usrEmail
+	 * @param  $merPriv
+	 * @param  $charSet
+	 *
+	 * @return 无返回，使用autoRedirect方式重定向用户浏览器页面
+	 */
+	public function bgRegister($merCustId, $loginPwd, $transPwd="", $usrId="", $usrName="", $idType="", $idNo="", $usrMp="", $usrEmail="", $merPriv="", $charSet=""){
+		$checkValue= $this->sign($this::VERSION_10.$this::CMDID_BG_REGISTER.$merCustId.$usrId.$usrName.$loginPwd.$transPwd.$idType.$idNo.$usrMp.$usrEmail.$merPriv);
+		$reqData=array(
+				"Version"	=>	$this::VERSION_10,
+				"CmdId"		=>	$this::CMDID_BG_REGISTER,
+				"MerCustId"	=>	$merCustId,
+				"LoginPwd"	=>	$loginPwd,
+				"TransPwd"	=>	$transPwd,
+				"UsrId"		=>	$usrId,
+				"UsrName"	=>	$usrName,
+				"IdType"	=>	$idType,
+				"IdNo"		=>	$idNo,
+				"UsrMp"		=>	$usrMp,
+				"UsrEmail"	=>	$usrEmail,
+				"MerPriv"	=>	$merPriv,
+				"CharSet"	=>	$charSet,
+				"ChkValue"	=>	$checkValue,
+		);
+	
+		$this->autoRedirect($reqData);
+	}
+	
+	
 	/**
 	 * @desc query customer's account balance 用户账户余额查询
 	 * @link API:5.5.1
