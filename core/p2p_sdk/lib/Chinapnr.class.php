@@ -289,7 +289,7 @@ HTML;
 				"ChkValue"	=>	$checkValue,
 		);
 	
-		$this->autoRedirect($reqData);
+		return $this->reactResponse($this->request($reqData));
 	}
 	
 	
