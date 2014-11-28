@@ -288,8 +288,9 @@ HTML;
 				"CharSet"	=>	$charSet,
 				"ChkValue"	=>	$checkValue,
 		);
-	
-		return $this->reactResponse($this->request($reqData),array("CmdId","RespCode","MerCustId"));
+		$response = $this->reactResponse($this->request($reqData),array("CmdId","RespCode","RespDesc","MerCustId","UsrId","UsrCustId","MerPriv"));
+		return $response;
+
 	}
 	
 	
