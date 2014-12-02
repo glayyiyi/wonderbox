@@ -18,25 +18,83 @@ $chinapnr= Chinapnr::getInstance();
 $merCustId='6000060000273476';
 $usrCustId='6000060000579066';
 $openAcctId='436742666666666666666666';
-$openBankId='CCB';
-$openProvId='0044';
-$openAreaId='4401';
-$isDefault='Y';
 $charSet='UTF-8';
+
 
 
 //1,查询子账户接口测试
 //$result= $chinapnr->queryAccts("6000060000273476");
 
 //2,后台开户接口测试
-$result= $chinapnr->bgRegister("6000060000273476","6000060000273476_8","glay8","glay8.123","glay8.123","","","11111111118","","","");
+$result= $chinapnr->bgRegister($merCustId,"6000060000273476_8","glay8","glay8.123","glay8.123","","","11111111118","","","");
 
-//登陆接口
+//3,登陆接口
 //$chinapnr->userLogin($merCustId, $usrCustId);
 
-//3,后台绑卡
+//4,后台绑卡
+//$openBankId='CCB';
+//$openProvId='0044';
+//$openAreaId='4401';
+//$isDefault='Y';
 //$result= $chinapnr->bgBindCard($merCustId,$usrCustId,$openAcctId,$openBankId,$openProvId,$openAreaId,$openBranchName,$isDefault,$merPriv,$charSet);
-//print_r('bgBindCard('.$merCustId.','.$usrCustId.','.$openAcctId.','.$openBankId.','.$openProvId.','.$openAreaId.','.$openBranchName.','.$isDefault.','.$merPriv.','.$charSet.')');
 
+
+//4,网银充值
+//$gateBusiId='B2C';
+//$transAmt='0.10';
+//$ordId='00000000000000000001';
+//$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
+//$ordDate='20141202';
+//$result= $chinapnr->netSave($merCustId,$usrCustId,$ordId,$ordDate,$gateBusiId,$openBankId,$dcFlag,$transAmt,$retUrl,$bgRetUrl,$merPriv);
+
+//4.1,商户无卡代扣充值
+//$ordId='00000000000000000001';
+//$ordDate='20141202';
+//$transAmt='0.10';
+//$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
+//$result=$chinapnr->posWhSave($merCustId,$usrCustId,$openAcctId,$transAmt,$ordId,$ordDate,$checkDate,$retUrl,$bgRetUrl,$merPriv);
+
+
+//自动扣款（放款）,后台数据流方式
+//$ordId='00000000000000000001';
+//$subOrdId='00000000000000000002';
+//$subOrdDate='20141202';
+//$ordDate='20141202';
+//$transAmt='0.10';
+//$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
+//$outCustId='6000060000579066';
+//$inCustId='6000060000579067';
+//$fee='0.00';
+//$isDefault="Y";
+//$result=$chinapnr->loans($merCustId,$ordId,$ordDate,$outCustId,$transAmt,$fee,$subOrdId,$subOrdDate,$inCustId,$divDetails,$feeObjFlag,$isDefault,$isUnFreeze,$unFreezeOrdId ,$freezeTrxId,$bgRetUrl,$merPriv ,$reqExt);
+
+
+
+
+//自动扣款（还款）,后台数据流方式
+//$result=$chinapnr->repayment($merCustId,$ordId,$ordDate,$outCustId,$subOrdId,$subOrdDate,$outAcctId = '',$transAmt,$fee,$inCustId,$inAcctId = '',$divDetails = '',$feeObjFlag,$bgRetUrl,$merPriv = '',$reqExt = '');
+
+
+
+//usrFreezeBg 资金（货款）冻结
+//$ordId='00000000000000000001';
+//$ordDate='20141202';
+//$transAmt='0.10';
+//$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
+//$result=$chinapnr->usrFreezeBg($merCustId,$usrCustId,$subAcctType,$subAcctId,$ordId,$ordDate,$transAmt,$retUrl,$bgRetUrl,$merPriv );
+
+//usrUnFreeze 资金（货款）解冻
+//$ordId='00000000000000000001';
+//$ordDate='20141202';
+//$trxId='201412020000000001';
+//$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
+//$result=$chinapnr->usrUnFreeze($merCustId,$ordId,$ordDate,$trxId,$retUrl ,$bgRetUrl,$merPriv);
+
+//5,商家代取现接口
+//$ordId='00000000000000000001';
+//$ordDate='20141202';
+//$transAmt='0.10';
+//$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
+//$result=$chinapnr-> merCash($merCustId,$ordId,$usrCustId,$transAmt,$servFee,$servFeeAcctId ,$retUrl ,$bgRetUrl,$remark,$charSet,$merPriv,$reqExt);
 
 var_dump($result);

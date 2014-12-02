@@ -1345,7 +1345,7 @@ HTML;
 		return $response;
 	}
 	/**
-	 * @desc usrUnFreeze 资金（货款）冻结
+	 * @desc usrUnFreeze 资金（货款）解冻
 	 * @link API:4.3.3
 	 * @param string $merCustId
 	 * @param string $ordId
