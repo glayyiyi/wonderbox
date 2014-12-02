@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 /**
  * 接口调用示例
@@ -21,7 +22,7 @@ $openBankId='CCB';
 $openProvId='0044';
 $openAreaId='4401';
 $isDefault='Y';
-$charSet='GBK';
+$charSet='UTF-8';
 
 
 //1,查询子账户接口测试
