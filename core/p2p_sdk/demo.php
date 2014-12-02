@@ -26,7 +26,13 @@ $charSet='UTF-8';
 //$result= $chinapnr->queryAccts("6000060000273476");
 
 //2,后台开户接口测试
-$result= $chinapnr->bgRegister($merCustId,"6000060000273476_8","glay8","glay8.123","glay8.123","","","11111111118","","","");
+//$result= $chinapnr->bgRegister($merCustId,"6000060000273476_8","glay8","glay8.123","glay8.123","","","11111111118","","","");
+
+//2.1,开户接口测试
+$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
+$chinapnr->userRegister($merCustId, $bgRetUrl, $retUrl, $usrId, $usrName, $idType, $idNo, $usrMp, $usrEmail, $merPriv, $charSet);
+
+
 
 //3,登陆接口
 //$chinapnr->userLogin($merCustId, $usrCustId);
