@@ -62,23 +62,33 @@ $chinapnr->userRegister($merCustId, $bgRetUrl, $retUrl, $usrId, $usrName, $idTyp
 
 
 //自动扣款（放款）,后台数据流方式
-//$ordId='00000000000000000001';
-//$subOrdId='00000000000000000002';
-//$subOrdDate='20141202';
-//$ordDate='20141202';
-//$transAmt='0.10';
-//$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
-//$outCustId='6000060000579066';
-//$inCustId='6000060000579067';
-//$fee='0.00';
-//$isDefault="Y";
-//$result=$chinapnr->loans($merCustId,$ordId,$ordDate,$outCustId,$transAmt,$fee,$subOrdId,$subOrdDate,$inCustId,$divDetails,$feeObjFlag,$isDefault,$isUnFreeze,$unFreezeOrdId ,$freezeTrxId,$bgRetUrl,$merPriv ,$reqExt);
+// $ordId='00000000000000000001';
+// $ordDate='20141202';
+// $outCustId='6000060000579066';
+// $transAmt='0.10';
+// $fee='0.00';
+// $inCustId='6000060000579067';
+// $subOrdId='00000000000000000002';
+// $subOrdDate='20141202';
+// $isDefault="Y";
+// $isUnFreeze="N";
+// $bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
+// $result=$chinapnr->loans($merCustId,$ordId,$ordDate,$outCustId,$transAmt,$fee,$subOrdId,$subOrdDate,$inCustId,$divDetails,$feeObjFlag,$isDefault,$isUnFreeze,$unFreezeOrdId ,$freezeTrxId,$bgRetUrl,$merPriv ,$reqExt);
 
 
 
 
 //自动扣款（还款）,后台数据流方式
-//$result=$chinapnr->repayment($merCustId,$ordId,$ordDate,$outCustId,$subOrdId,$subOrdDate,$outAcctId = '',$transAmt,$fee,$inCustId,$inAcctId = '',$divDetails = '',$feeObjFlag,$bgRetUrl,$merPriv = '',$reqExt = '');
+//$ordId='00000000000000000001';
+//$ordDate='20141202';
+//$outCustId='6000060000579066';
+//$transAmt='0.10';
+//$fee='0.00';
+//$inCustId='6000060000579067';
+//$subOrdId='00000000000000000002';
+//$subOrdDate='20141202';
+//$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
+//$result=$chinapnr->repayment($merCustId,$ordId,$ordDate,$outCustId,$subOrdId,$subOrdDate,$outAcctId,$transAmt,$fee,$inCustId,$inAcctId ,$divDetails,$feeObjFlag,$bgRetUrl,$merPriv,$reqExt );
 
 
 
