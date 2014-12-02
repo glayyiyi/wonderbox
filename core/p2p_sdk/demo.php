@@ -21,13 +21,13 @@ $openBankId='CCB';
 $openProvId='0044';
 $openAreaId='4401';
 $isDefault='Y';
-$charSet='UTF-8';
+$charSet='GBK';
 
 
 //1,查询子账户接口测试
 //$result= $chinapnr->queryAccts("6000060000273476");
 
-//2,后台客户接口测试
+//2,后台开户接口测试
 $result= $chinapnr->bgRegister("6000060000273476","6000060000273476_8","glay8","glay8.123","glay8.123","","","11111111118","","","");
 
 //登陆接口
