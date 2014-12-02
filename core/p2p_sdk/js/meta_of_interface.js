@@ -29,7 +29,7 @@ var META_DATA_OF_INTERFACE= {
 			"TransPwd":["text","",true,'用户交易密码,需拼接在密钥后进行 32 位 md5 加 密 注意:交易密码的明文长度为 6~16 位,如果不是 会导致无法登陆本平台交易'],
 			"IdType":["text","",false,'00-- 身份证'],
 			"IdNo":["text","",false,'用户证件号码'],
-			"UsrMp":["text","",false,'本平台系统提供按照手机号查询订单的功能'],
+			"UsrMp":["text","",true,'手机号，本平台系统提供按照手机号查询订单的功能'],
 			"UsrEmail":["text","",false,'用户email'],
 			"MerPriv":["text","",false,'为商户的自定义字段,该字段在交易完成后由 台原样返回。'],
 			"CharSet":["text","",false,"GBK"]

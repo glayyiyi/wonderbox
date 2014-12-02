@@ -14,6 +14,28 @@
  */
 require_once("lib/Chinapnr.class.php");
 $chinapnr= Chinapnr::getInstance();
-$result= $chinapnr->querySubAccount("6000060000002526");
+$merCustId='6000060000273476';
+$usrCustId='6000060000579066';
+$openAcctId='436742666666666666666666';
+$openBankId='CCB';
+$openProvId='0044';
+$openAreaId='4401';
+$isDefault='Y';
+$charSet='UTF-8';
+
+
+//1,查询子账户接口测试
+//$result= $chinapnr->queryAccts("6000060000273476");
+
+//2,后台客户接口测试
+$result= $chinapnr->bgRegister("6000060000273476","6000060000273476_8","glay8","glay8.123","glay8.123","","","11111111118","","","");
+
+//登陆接口
+//$chinapnr->userLogin($merCustId, $usrCustId);
+
+//3,后台绑卡
+//$result= $chinapnr->bgBindCard($merCustId,$usrCustId,$openAcctId,$openBankId,$openProvId,$openAreaId,$openBranchName,$isDefault,$merPriv,$charSet);
+//print_r('bgBindCard('.$merCustId.','.$usrCustId.','.$openAcctId.','.$openBankId.','.$openProvId.','.$openAreaId.','.$openBranchName.','.$isDefault.','.$merPriv.','.$charSet.')');
+
 
 var_dump($result);
