@@ -24,8 +24,8 @@ class chinapnrPayment {
 		$OrdAmt = trim($totalAmount);
 		$CurCode = "RMB";
 		$Pid = "1111";
-		$RetUrl = "http://wdjr.com.cn/modules/payment/chinapnr_return.php";
-		$BgRetUrl = "http://wdjr.com.cn/modules/payment/chinapnr_return.php";
+		$RetUrl = "http://wandedai.com/modules/payment/chinapnr_return.php";
+		$BgRetUrl = "http://wandedai.com/modules/payment/chinapnr_return.php";
 		$MerPriv = "1111";
 		$GateId = "";
 		$UsrMp = "";
