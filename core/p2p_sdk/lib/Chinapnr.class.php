@@ -151,8 +151,10 @@ class Chinapnr{
 	private function reactResponse($res= "", $signKeys=array()){
 		$res= urldecode($res);
 		$ret= json_decode($res,true);
+		
 		// 指定的signKeys 拼接字符串进行验签
 		if($ret){
+			print_r($ret);
 			if($this->verify($this->getSignContent($ret, $signKeys), $ret['ChkValue']))
 				return $ret;			
 		}		
@@ -174,7 +176,7 @@ class Chinapnr{
 	 * @param string $sign
 	 * @return boolean
 	 */
-	private function verify($originStr, $sign){
+	public function verify($originStr, $sign){
 		return $this->scureTool->verify($originStr, $sign);
 	}
 	
@@ -249,6 +251,51 @@ HTML;
 		
 		$this->autoRedirect($reqData);
 	}
+	
+	
+	/**
+	 * @desc open an account 后台方式用户开户
+	 * @link API:5.3.1
+	 *
+	 * @param  $merCustId
+	 * @param  $loginPwd
+	 * @param  $transPwd
+	 * @param  $usrId
+	 * @param  $usrName
+	 * @param  $idType
+	 * @param  $idNo
+	 * @param  $usrMp
+	 * @param  $usrEmail
+	 * @param  $merPriv
+	 * @param  $charSet
+	 *
+	 * @return 
+	 */
+	public function bgRegister($merCustId, $usrId="", $usrName="",$loginPwd, $transPwd="",$idType="", $idNo="", $usrMp="", $usrEmail="", $merPriv="", $charSet=""){
+		$loginPwd=	md5("d3776loqw21h77mmh675aas567xyusgKUL2H3DK4735O9861M6Q1ETGHB1C5ZK17K3P32VZR31WC77AC9E7TC43188PD3H9".$loginPwd);
+		$transPwd=	md5("d3776loqw21h77mmh675aas567xyusgR80470I9Q3894I244OS35FJ9F2TT3696FD59109KEE07NDRE59ARF78G46ZKF8XC".$transPwd);
+		$checkValue= $this->sign($this::VERSION_10.$this::CMDID_BG_REGISTER.$merCustId.$usrId.$usrName.$loginPwd.$transPwd.$idType.$idNo.$usrMp.$usrEmail.$merPriv);
+		$reqData=array(
+				"Version"	=>	$this::VERSION_10,
+				"CmdId"		=>	$this::CMDID_BG_REGISTER,
+				"MerCustId"	=>	$merCustId,
+				"LoginPwd"	=>	$loginPwd,
+				"TransPwd"	=>	$transPwd,
+				"UsrId"		=>	$usrId,
+				"UsrName"	=>	$usrName,
+				"IdType"	=>	$idType,
+				"IdNo"		=>	$idNo,
+				"UsrMp"		=>	$usrMp,
+				"UsrEmail"	=>	$usrEmail,
+				"MerPriv"	=>	$merPriv,
+				"CharSet"	=>	$charSet,
+				"ChkValue"	=>	$checkValue,
+		);
+		
+		return  $this->reactResponse($this->request($reqData),array("CmdId","RespCode","MerCustId","UsrId","UsrCustId","MerPriv"));
+	
+	}
+	
 	
 	/**
 	 * @desc query customer's account balance 用户账户余额查询
@@ -1298,7 +1345,7 @@ HTML;
 		return $response;
 	}
 	/**
-	 * @desc usrUnFreeze 资金（货款）冻结
+	 * @desc usrUnFreeze 资金（货款）解冻
 	 * @link API:4.3.3
 	 * @param string $merCustId
 	 * @param string $ordId

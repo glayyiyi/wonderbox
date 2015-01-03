@@ -113,6 +113,10 @@ if ($_U['query_sort'] == "going"){
 		}
 		
 	}
+	# 第三方注册页面
+	elseif ($_U['query_class'] == 'third_reg'){ 		
+		include("third_reg.php");
+	}
 	
 	# 发送激活邮件
 	elseif ($_U['query_class'] == 'reg_email'){
@@ -395,7 +399,7 @@ if ($_U['query_sort'] == "going"){
 			$result = $mysql->db_fetch_array($sql);
 			$_SESSION['reginvite_user_Name'] = $result["username"];
 		}
-		header('location:index.php?user&q=going/getreg');
+		header('location:index.action?user&q=going/getreg');
 	}
 	
 # 用户中心处理数据的地方	
