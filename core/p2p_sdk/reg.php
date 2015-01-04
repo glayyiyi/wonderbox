@@ -53,12 +53,6 @@ $chinapnr->userRegister($merCustId, $bgRetUrl, $retUrl, $usrId, $usrName, $idTyp
 //$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
 //$result=$chinapnr-> merCash($merCustId,$ordId,$usrCustId,$transAmt,$servFee,$servFeeAcctId ,$retUrl ,$bgRetUrl,$remark,$charSet,$merPriv,$reqExt);
 
-
-
-
-
-
-
 //=======ÍøÒø³äÖµ
 //$gateBusiId='B2C';
 //$transAmt='0.10';
