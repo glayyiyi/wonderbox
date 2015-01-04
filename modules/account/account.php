@@ -390,7 +390,7 @@ elseif ($_A['query_type'] == "recharge_new"){
 			if ($result==false){
 				$msg = array("用户不存在");
 			}else{
-				$data['user_id'] = $result['user_id'];
+				/*$data['user_id'] = $result['user_id'];
 				$data['status'] = 0;
 				$data['money'] = $money;
 				$data['type'] = 2;
@@ -403,7 +403,20 @@ elseif ($_A['query_type'] == "recharge_new"){
 					$msg = array($result);
 				}else{
 					$msg = array("操作成功");
-				}
+				}*/
+				//调用汇付天下充值接口
+				$merCustId='6000060000273476';
+				$usrCustId='6000060000579066';
+				$charSet='GBK';
+				$weburl = "http://".$_SERVER['SERVER_NAME'];
+				$transAmt=$money;
+				$ordId='00000000000000000102';
+				$bgRetUrl=$weburl.'/chinapnr_return.php';
+				$retUrl=$weburl.'/chinapnr_return.php';
+				$ordDate=date("Y-m-d");			
+				$merPriv= $result['user_id'];
+				$result= $chinapnr->netSave($merCustId,$usrCustId,$ordId,$ordDate,$gateBusiId,$openBankId,$dcFlag,$transAmt,$retUrl,$bgRetUrl,$merPriv);
+				
 			}
 		}
 	}

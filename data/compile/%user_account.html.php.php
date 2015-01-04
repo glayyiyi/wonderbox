@@ -2,20 +2,18 @@
 !defined('IN_TEMPLATE') && exit('Access Denied');
 ?>
 <? $this->magic_include(array('file' => "user_header.html", 'vars' => array()));?>
-<link href="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/media/css/modal.css" rel="stylesheet" type="text/css" />
+
  
 <!--用户中心的主栏目 开始-->
- <div id="main" class="clearfix" style="margin-top:0px;">
-<div class="wrap950 mar10">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
 		<? $this->magic_include(array('file' => "user_menu.html", 'vars' => array()));?>
-	</div>
 	<!--左边的导航 结束-->
 	
 	<!--右边的内容 开始-->
-	<div class="user_right">
-		<div class="user_right_menu">
+	<div class="main">
+		<div class="tabBar">
 			<ul id="tab" class="list-tab clearfix">
 				<li <? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="list"): ?> class="cur"<? endif; ?>><a href="<? if (!isset($this->magic_vars['_U']['query_url'])) $this->magic_vars['_U']['query_url'] = ''; echo $this->magic_vars['_U']['query_url']; ?>">帐户详情</a></li>
 				<li <? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="bank"): ?> class="cur"<? endif; ?>><a href="<? if (!isset($this->magic_vars['_U']['query_url'])) $this->magic_vars['_U']['query_url'] = ''; echo $this->magic_vars['_U']['query_url']; ?>/bank">银行账号</a></li>
@@ -233,8 +231,10 @@ if (count($_from)>0):
 			<div class="l" style="font-weight:bold;">充值方式：</div>
 			<div class="c">
 			<table>
-				<tr><td><input type="radio" name="type" id="type_1" class="input_border" onclick="change_type(1)" value="1"  checked="checked" /></td><td><label for="type_1">网上充值</label></td>
-				<!-- <td><input type="radio" name="type" id="type_2" class="input_border"  value="2"  onclick="change_type(2)" /></td>
+				<tr>
+				<td><input type="radio" name="type" id="type_1" class="input_border" onclick="change_type(1)" value="1"  checked="checked" />&nbsp;&nbsp;</td>
+				<td><label for="type_1">网上充值</label></td>
+			<!-- 	<td><input type="radio" name="type" id="type_2" class="input_border"  value="2"  onclick="change_type(2)" /></td>
 				<td><label for="type_2">线下充值</label></td> -->
 				</tr>
 			</table>
@@ -250,7 +250,8 @@ if (count($_from)>0):
 			<div class="user_right_border">
 				<div class="l" style="font-weight:bold;">充值类型：</div>
 				<div class="c">
-						<font color="red">以下银行是使用个人网上银行支付，只需开通个人网上银行即可!</font>
+				<img border="0" src="/themes/soonmes/images/chinapnr.jpg">
+<!-- 						<font color="red">下一步选择银行是使用个人网上银行支付，只需开通个人网上银行即可!</font> -->
 <style type="text/css">
 
 #ban table td{height:40px; line-height:40px;padding-right:30px;padding-bottom:10px; }
@@ -269,54 +270,55 @@ if (count($_from)>0):
 .btn_grey_b:hover span, .btn_grey_b:hover span {background-position:0 -105px }
 
 </style>
-<div id="ban">
-<table width="100%" cellpadding="3" cellspacing="3">
-<tr>
-<td width="160"><input type="radio" name="payment1" value="1025_cbp"/>
-<img src="../data/bank/ICBC_OUT.gif" border="0"/></td>
-<td width="160">
-<input type="radio" name="payment1" value="104_cbp">
-<img src="../data/bank/BOC_OUT.gif" border="0"/>
-</td>
-<td  width="160">
-<input type="radio" name="payment1" value="105_cbp"/>
-<img src="../data/bank/CCB_OUT.gif" border="0"/></td>
-</tr>
-<tr>
-<td><input type="radio" name="payment1" value="103_cbp"/>
-<img src="../data/bank/ABC_OUT.gif" border="0"/></td>
-<td>
-<input type="radio" name="payment1" value="3080_cbp"/>
-<img src="../data/bank/CMB_OUT.gif" border="0"/>
-</td>
-<td><input type="radio" name="payment1" value="306_cbp" />
-<img src="../data/bank/GDB_OUT.gif" border="0"/></td>
-</tr><tr>
-<td><input type="radio" name="payment1" value="305_cbp"/>
-<img src="../data/bank/CMBC_OUT.gif" border="0"/></td>
-<td><input type="radio" name="payment1" value="312_cbp"/>
-<img src="../data/bank/CEB_OUT.gif" border="0"/></td>
-<td><input type="radio" name="payment1" value="309_cbp"/>
-<img src="../data/bank/CIB_OUT.gif" border="0"/></td>
-</tr>
-<tr>
-<td><input type="radio" name="payment1" value="3230_cbp"/>
-<img src="../data/bank/yz.jpg" border="0"/></td>
-<td><input type="radio" name="payment1" value="311_cbp"/>
-<img src="../data/bank/hx.jpg" border="0"/></td>
-<td><input type="radio" name="payment1" value="301_cbp"/>
-<img src="../data/bank/COMM_OUT.gif" border="0"/></td>
-</tr>
-<tr>
-<td><input type="radio" name="payment1" value="313_cbp"/>
-<img src="../data/bank/CITIC_OUT.gif" border="0"/></td>
-<td><input type="radio" name="payment1" value="314_cbp">
-<img src="../data/bank/pf.jpg" border="0"/></td>
-<td><input type="radio" name="payment1" value="307_cbp">
-<img src="../data/bank/bank_payh.gif" border="0"/></td>
-</tr>
-</table>
-</div>
+<input type="hidden" name="payment1" value="PAYMENT_cpr"/>
+<!-- By Glay <div id="ban"> -->
+<!-- <table width="100%" cellpadding="3" cellspacing="3"> -->
+<!-- <tr> -->
+<!-- <td width="160"><input type="radio" name="payment1" value="ICBC_cpr"/> -->
+<!-- <img src="../data/bank/ICBC_OUT.gif" border="0"/></td> -->
+<!-- <td width="160"> -->
+<!-- <input type="radio" name="payment1" value="BOC_cpr"> -->
+<!-- <img src="../data/bank/BOC_OUT.gif" border="0"/> -->
+<!-- </td> -->
+<!-- <td  width="160"> -->
+<!-- <input type="radio" name="payment1" value="CCB_cpr"/> -->
+<!-- <img src="../data/bank/CCB_OUT.gif" border="0"/></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td><input type="radio" name="payment1" value="ABC_cpr"/> -->
+<!-- <img src="../data/bank/ABC_OUT.gif" border="0"/></td> -->
+<!-- <td> -->
+<!-- <input type="radio" name="payment1" value="CMB_cpr"/> -->
+<!-- <img src="../data/bank/CMB_OUT.gif" border="0"/> -->
+<!-- </td> -->
+<!-- <td><input type="radio" name="payment1" value="GDB_cpr" /> -->
+<!-- <img src="../data/bank/GDB_OUT.gif" border="0"/></td> -->
+<!-- </tr><tr> -->
+<!-- <td><input type="radio" name="payment1" value="CMBC_cpr"/> -->
+<!-- <img src="../data/bank/CMBC_OUT.gif" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="CEB_cpr"/> -->
+<!-- <img src="../data/bank/CEB_OUT.gif" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="CIB_cpr"/> -->
+<!-- <img src="../data/bank/CIB_OUT.gif" border="0"/></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td><input type="radio" name="payment1" value="PSBC_cpr"/> -->
+<!-- <img src="../data/bank/yz.jpg" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="HXBC_cpr"/> -->
+<!-- <img src="../data/bank/hx.jpg" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="BOCOM_cpr"/> -->
+<!-- <img src="../data/bank/COMM_OUT.gif" border="0"/></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td><input type="radio" name="payment1" value="CITIC_cpr"/> -->
+<!-- <img src="../data/bank/CITIC_OUT.gif" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="SPDB_cpr"> -->
+<!-- <img src="../data/bank/pf.jpg" border="0"/></td> -->
+<!-- <td><input type="radio" name="payment1" value="SDB_cpr"> -->
+<!-- <img src="../data/bank/SZFZ_OUT.gif" border="0"/></td> -->
+<!-- </tr> -->
+<!-- </table> -->
+<!-- </div> -->
 <?  if(!isset($this->magic_vars['_U']['account_payment_list']) || $this->magic_vars['_U']['account_payment_list']=='') $this->magic_vars['_U']['account_payment_list'] = array();  $_from = $this->magic_vars['_U']['account_payment_list']; 
  if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); } 
 if (count($_from)>0):
@@ -335,17 +337,15 @@ if (count($_from)>0):
                                 
 				<div class="c">
                     <div>
-                       <font color="red">线下充值如遇到问题，请马上与理财顾问联系；<br>
+                       <font color="red">线下充值如遇到问题，请马上与客服联系联系；<br>
 （1）线下充值红包奖励的单笔最低金额不低于20000元。<br>
-（2）<strong><font color="blue">有效充值登记时间为:周一至周五的9:30到16:00</font></strong>，充值成功请跟我们的理财顾问联系。<br><br></font></div>
+（2）<strong><font color="blue">有效充值登记时间为:周一至周五的9:30到16:00</font></strong>，充值成功请跟我们的客服联系。<br><br></font></div>
 					<div>
-
 					<?  if(!isset($this->magic_vars['_U']['account_payment_list']) || $this->magic_vars['_U']['account_payment_list']=='') $this->magic_vars['_U']['account_payment_list'] = array();  $_from = $this->magic_vars['_U']['account_payment_list']; 
  if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); } 
 if (count($_from)>0):
 ;    foreach ($_from as $this->magic_vars['key'] =>  $this->magic_vars['var']):
 ?>
-					
 					<? if (!isset($this->magic_vars['var']['nid'])) $this->magic_vars['var']['nid']=''; ;if (  $this->magic_vars['var']['nid']=="offline"): ?>
 					<input type="radio" name="payment2"  class="input_border" value="<? if (!isset($this->magic_vars['var']['id'])) $this->magic_vars['var']['id'] = ''; echo $this->magic_vars['var']['id']; ?>" id="offline_<? if (!isset($this->magic_vars['key'])) $this->magic_vars['key'] = ''; echo $this->magic_vars['key']; ?>" /><label for="offline_<? if (!isset($this->magic_vars['key'])) $this->magic_vars['key'] = ''; echo $this->magic_vars['key']; ?>"><? if (!isset($this->magic_vars['var']['description'])) $this->magic_vars['var']['description'] = ''; echo $this->magic_vars['var']['description']; ?></label><br />
 					<? endif; ?>
@@ -354,7 +354,7 @@ if (count($_from)>0):
 				</div>
 			</div>
 			<div class="user_right_border">
-				<!--  <div class="l" style="font-weight:bold;">线下充值备注：</div>-->
+				<div class="l" style="font-weight:bold;">线下充值备注：</div>
 				<div class="c">
 					<input type="text" name="remark"  class="input_border" value="" size="30" /><br>（请注明您的用户名，转账银行卡号和转账流水号，以及转账时间，谢谢配合）
 				</div>
@@ -407,16 +407,16 @@ if (count($_from)>0):
 
 			if(aa == 1){
 			//线上充值
-				var xsbank = $("input[name=payment1]:checked").val();
+// By Glay				var xsbank = $("input[name=payment1]:checked").val();
 				 
-				if (!xsbank){
- 					jQuery.jBox.tip('请选择在线充值类型！','warning');
-					return false;
-				}else{
-					//提交跳出充值提示框 20130130 add by weego 
-					jQuery.jBox(info,{title:'在线充值',buttons: {'返回重新选择': 'ok' }, width: 500,opacity: 0.3, showClose: false,showIcon: false, top: '25%',draggable: false});
-					return true;			
-				}
+// 				if (!xsbank){
+//  					jQuery.jBox.tip('请选择在线充值类型！','warning');
+// 					return false;
+// 				}else{
+ 					//提交跳出充值提示框 20130130 add by weego 
+ 					jQuery.jBox(info,{title:'在线充值',buttons: {'返回重新选择': 'ok' }, width: 500,opacity: 0.3, showClose: false,showIcon: false, top: '25%',draggable: false});
+ 					return true;			
+// 				}
 				
 			}else{
 			//线下充值
@@ -530,7 +530,7 @@ if (count($_from)>0):
 			<div class="l" style="font-weight:bold;">开户行名称：</div>
 			<div class="c">
 				<input type="text" name="branch" value="" data-content="**分行**支行**分理处或营业部(如：上海分行杨浦支行控江路分理处),
-		    如果您无法确定,建议您致电您的开户银行理财顾问进行询问。 " id="infokaih" />
+		    如果您无法确定,建议您致电您的开户银行客服进行询问。 " id="infokaih" />
 			</div>
 		</div>
 		<div class="user_right_border" style="margin-left:0px">
@@ -645,9 +645,11 @@ function sub_form(){
 <strong>注：</strong><br/>
 1、确保您的银行帐号的姓名和您的网站上的真实姓名一致<br><br>
 2、请输入您要取出金额,我们将在1至2个工作日(国家节假日除外)之内处理您提交的提现申请。资金将在24小时内到达您的账上。请用户务必于每个工作日的下午4点(以最新公告时间为准)之前提交提现申请，每个工作日16:00(以最新公告时间为准)之后提交的提现申请在当天将不会得到及时处理。<br><br>
-3、单笔取现下限<? if (!isset($this->magic_vars['_G']['cash_rule']['min_cash'])) $this->magic_vars['_G']['cash_rule']['min_cash'] = ''; echo $this->magic_vars['_G']['cash_rule']['min_cash']; ?>元，上限为<? if (!isset($this->magic_vars['_G']['cash_rule']['max_cash'])) $this->magic_vars['_G']['cash_rule']['max_cash'] = ''; echo $this->magic_vars['_G']['cash_rule']['max_cash']; ?>，日累计提现不得超过<? if (!isset($this->magic_vars['_G']['cash_rule']['max_day_cash'])) $this->magic_vars['_G']['cash_rule']['max_day_cash'] = ''; echo $this->magic_vars['_G']['cash_rule']['max_day_cash']; ?>。<br><br>
+<!-- 3、单笔取现下限<? if (!isset($this->magic_vars['_G']['cash_rule']['min_cash'])) $this->magic_vars['_G']['cash_rule']['min_cash'] = ''; echo $this->magic_vars['_G']['cash_rule']['min_cash']; ?>元，上限为<? if (!isset($this->magic_vars['_G']['cash_rule']['max_cash'])) $this->magic_vars['_G']['cash_rule']['max_cash'] = ''; echo $this->magic_vars['_G']['cash_rule']['max_cash']; ?>，日累计提现不得超过<? if (!isset($this->magic_vars['_G']['cash_rule']['max_day_cash'])) $this->magic_vars['_G']['cash_rule']['max_day_cash'] = ''; echo $this->magic_vars['_G']['cash_rule']['max_day_cash']; ?>。<br><br> -->
+3、单笔取现下限<? if (!isset($this->magic_vars['_G']['cash_rule']['min_cash'])) $this->magic_vars['_G']['cash_rule']['min_cash'] = ''; echo $this->magic_vars['_G']['cash_rule']['min_cash']; ?>元。<br><br>
 <? if (!isset($this->magic_vars['_G']['cash_rule']['scheme'])) $this->magic_vars['_G']['cash_rule']['scheme']=''; ;if (  $this->magic_vars['_G']['cash_rule']['scheme']==1): ?>
-4、单笔提现金额<? if (!isset($this->magic_vars['_G']['cash_rule']['cash_lt'])) $this->magic_vars['_G']['cash_rule']['cash_lt'] = ''; echo $this->magic_vars['_G']['cash_rule']['cash_lt']; ?>元（包含）以下，每笔收取<? if (!isset($this->magic_vars['_G']['cash_rule']['every_lt_fee'])) $this->magic_vars['_G']['cash_rule']['every_lt_fee'] = ''; echo $this->magic_vars['_G']['cash_rule']['every_lt_fee']; ?>元手续费。单笔提现<? if (!isset($this->magic_vars['_G']['cash_rule']['cash_gt'])) $this->magic_vars['_G']['cash_rule']['cash_gt'] = ''; echo $this->magic_vars['_G']['cash_rule']['cash_gt']; ?>元以上，每笔收取<? if (!isset($this->magic_vars['_G']['cash_rule']['every_gt_fee'])) $this->magic_vars['_G']['cash_rule']['every_gt_fee'] = ''; echo $this->magic_vars['_G']['cash_rule']['every_gt_fee']; ?>元手续费。用户自充值之日起于<? if (!isset($this->magic_vars['_G']['cash_rule']['every_day_lt'])) $this->magic_vars['_G']['cash_rule']['every_day_lt'] = ''; echo $this->magic_vars['_G']['cash_rule']['every_day_lt']; ?>日之内且未完全投标的额外加收<? if (!isset($this->magic_vars['_G']['cash_rule']['every_extra_fee'])) $this->magic_vars['_G']['cash_rule']['every_extra_fee'] = ''; echo $this->magic_vars['_G']['cash_rule']['every_extra_fee']; ?>元手续费。
+<!-- 4、单笔提现金额<? if (!isset($this->magic_vars['_G']['cash_rule']['cash_lt'])) $this->magic_vars['_G']['cash_rule']['cash_lt'] = ''; echo $this->magic_vars['_G']['cash_rule']['cash_lt']; ?>元（包含）以下，每笔收取<? if (!isset($this->magic_vars['_G']['cash_rule']['every_lt_fee'])) $this->magic_vars['_G']['cash_rule']['every_lt_fee'] = ''; echo $this->magic_vars['_G']['cash_rule']['every_lt_fee']; ?>元手续费。单笔提现<? if (!isset($this->magic_vars['_G']['cash_rule']['cash_gt'])) $this->magic_vars['_G']['cash_rule']['cash_gt'] = ''; echo $this->magic_vars['_G']['cash_rule']['cash_gt']; ?>元以上，每笔收取<? if (!isset($this->magic_vars['_G']['cash_rule']['every_gt_fee'])) $this->magic_vars['_G']['cash_rule']['every_gt_fee'] = ''; echo $this->magic_vars['_G']['cash_rule']['every_gt_fee']; ?>元手续费。用户自充值之日起于<? if (!isset($this->magic_vars['_G']['cash_rule']['every_day_lt'])) $this->magic_vars['_G']['cash_rule']['every_day_lt'] = ''; echo $this->magic_vars['_G']['cash_rule']['every_day_lt']; ?>日之内且未完全投标的额外加收<? if (!isset($this->magic_vars['_G']['cash_rule']['every_extra_fee'])) $this->magic_vars['_G']['cash_rule']['every_extra_fee'] = ''; echo $this->magic_vars['_G']['cash_rule']['every_extra_fee']; ?>元手续费。 -->
+4、优惠期间，提现手续费全免！
 <? else: ?>
 4、提现手续费为提现金额的<? if (!isset($this->magic_vars['_G']['cash_rule']['scale_fee'])) $this->magic_vars['_G']['cash_rule']['scale_fee'] = ''; echo $this->magic_vars['_G']['cash_rule']['scale_fee']; ?>%，用户自充值之日起于<? if (!isset($this->magic_vars['_G']['cash_rule']['scale_day_lt'])) $this->magic_vars['_G']['cash_rule']['scale_day_lt'] = ''; echo $this->magic_vars['_G']['cash_rule']['scale_day_lt']; ?>日之内且未完全投标的部分额外加收<? if (!isset($this->magic_vars['_G']['cash_rule']['scale_extra_fee'])) $this->magic_vars['_G']['cash_rule']['scale_extra_fee'] = ''; echo $this->magic_vars['_G']['cash_rule']['scale_extra_fee']; ?>%手续费。
 <? endif; ?>
@@ -696,12 +698,6 @@ function sub_form(){
 			<div class="l" style="font-weight:bold;">正在申请提现：</div>
 			<div class="c">
 				<? if (!isset($this->magic_vars['var']['txValue'])) $this->magic_vars['var']['txValue'] = '';$_tmp = $this->magic_vars['var']['txValue'];$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?>元(金额)
-			</div>
-		</div>
-		<div class="user_right_border">
-			<div class="l" style="font-weight:bold;">要还的借款：</div>
-			<div class="c">
-				<? if (!isset($this->magic_vars['var']['txRepayment'])) $this->magic_vars['var']['txRepayment'] = ''; echo $this->magic_vars['var']['txRepayment']; ?>元(金额)
 			</div>
 		</div>
                 
@@ -754,12 +750,12 @@ function sub_form(){
 				<input type="text" name="mobilecode"  maxlength="6"  />&nbsp;&nbsp;<input id="codetime" name="codetime" type="button" value="发送验证码"/>
 			</div>
 		</div>
-		<div class="user_right_border">
-			<div class="l" style="font-weight:bold;">动态口令(可选)：</div>
-			<div class="c">
-				<input type="text" name="uchoncode"  maxlength="6"  />
-			</div>
-		</div>
+<!-- 		<div class="user_right_border"> -->
+<!-- 			<div class="l" style="font-weight:bold;">动态口令(可选)：</div>-->
+<!-- 			<div class="c"> -->
+<!-- 				<input type="text" name="uchoncode"  maxlength="6"  /> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 
 		<script language="javascript">
 				

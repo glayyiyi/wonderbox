@@ -106,7 +106,6 @@ class userClass extends friendsClass{
 			$_sql = " and user_id!= {$data['user_id']}";
 		}
 		$sql = "select * from `{user}` where  username = '{$username}' $_sql";
-
 		$result = $mysql -> db_fetch_array($sql);
 		if ($result == false) return false;
 		return true;
@@ -513,6 +512,7 @@ class userClass extends friendsClass{
 	 */
 	function AddUser($data = array()){
 		global $mysql;
+	
         $password = '';
         //By Glay if (!$data['username'] || !$data['password'] || !$data['email']) {
         if (!$data['username'] || !$data['password'] ) {

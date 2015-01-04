@@ -1,20 +1,39 @@
-<!-- 站点信息 -->
-<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-		<div class="foot">
-			<div class="site_info">
-		  		<div class="fl copy">
-                	<p>Copyright @ 2013  <? if (!isset($this->magic_vars['_G']['system']['con_weburl'])) $this->magic_vars['_G']['system']['con_weburl'] = ''; echo $this->magic_vars['_G']['system']['con_weburl']; ?> All Rights Reserved.</p>
-                    <p><? if (!isset($this->magic_vars['_G']['system']['con_webname'])) $this->magic_vars['_G']['system']['con_webname'] = ''; echo $this->magic_vars['_G']['system']['con_webname']; ?> - 版权所有</p>
-                    <p><? if (!isset($this->magic_vars['_G']['system']['con_beian'])) $this->magic_vars['_G']['system']['con_beian'] = ''; echo $this->magic_vars['_G']['system']['con_beian']; ?></p>
-                </div>
-       	   		<div class="fr footMenu">
-           	    <p class="m_b_15"><a href="/aboutus/index.html">关于我们</a>  <a href="/hr2/index.html">加入我们</a> <a href="/tools2/index.html">工具箱</a></p>
-                    <!-- <p><a href="#">热门城市贷款</a>  --><a href="/intro/index.html">联系我们</a> <a href="/help/index.html">政策法规</a> <a href="/linekefu/index.html">建议与投诉</a> <!-- <a href="#">网站地图</a> --></p>
-           	    </div>
-			</div>
-		</div>
-		<!-- end 站点信息 -->
- <a href="http://webscan.360.cn/index/checkwebsite/url/wonderpay.com.cn"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/640528591a3c1b2b092c4ef409e666d6"/></a>
-	</body>
+
+  <div id="footer">
+    <div class="footerContact isClean">
+      <div class="isLeft">
+      <img src="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/statics/images/footerContact01.png" />
+      <img src="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/statics/images/footerContact02.png" />
+      <!--<img src="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/statics/images/footerContact03.png" />-->
+      <a href="/onlineservice/index.html"  target="_blank"><img src="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/statics/images/footerContact04.png" /></a>
+      </div>
+      <div class="isRight"><img src="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/statics/images/footerContact00.png" /></div>
+    </div>
+    <div class="copyright">
+   <!--  <div class="moreLink"> <a href="/html/aboutus/intro.html">关于万得贷</a> | <a href="#">联系我们</a> | <a href="#">合作伙伴</a> | <a href="#">服务协议</a> | <a href="#">隐私保护声明</a></div> -->
+      <div class="add">地址：北京市朝阳区朝阳门外大街昆泰国际大厦2610室</div>
+      <div class="content">Copyright @ 2013 wandedai.com All Rights Reserved.万得贷 - 版权所有 京ICP备12028038号-1</div>
+      <div class="certificate"><a id='___szfw_logo___' href='https://search.szfw.org/cert/l/CX20140929005206005278' target='_blank'><img src='<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/statics/upload/certificate.jpg'></a></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/statics/js/default/placeholder.js"></script>
+
+<script type="text/javascript">
+(function(){document.getElementById('___szfw_logo___').oncontextmenu=function(){return false;}})();
+</script>
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4a3d948b433e4d2cb284304e74f74376' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!--  <div align='center'><a href="http://webscan.360.cn/index/checkwebsite/url/www.wdjr.com.cn"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/49178a68d7f0d48012911ec12d30bd06"/></a></div>-->
+	
+
+</body>
 
 </html>

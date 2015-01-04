@@ -2,18 +2,20 @@
 !defined('IN_TEMPLATE') && exit('Access Denied');
 ?>
 <? $this->magic_include(array('file' => "user_header.html", 'vars' => array()));?>
-<link href="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/media/css/modal.css" rel="stylesheet" type="text/css" />
+
 <!--用户中心的主栏目 开始-->
- <div id="main" class="clearfix" style="margin-top:0px;">
-<div class="wrap950 " style="margin-top:0">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
+        
 		<? $this->magic_include(array('file' => "user_menu.html", 'vars' => array()));?>
-	</div>
+
 	<!--左边的导航 结束-->
+	<div class="main">
 	<? $data = array('user_id'=>'0','var'=>'acc','user_id'=>$this->magic_vars['_G']['user_id']);  include_once(ROOT_PATH.'modules/borrow/borrow.class.php');$this->magic_vars['acc'] = borrowClass::GetUserLog($data);if(!is_array($this->magic_vars['acc'])){ $this->magic_vars['acc']=array();}?>
 	<!--右边的内容 开始-->
-	<div class="user_right ">
+	
 
 		<div class="user_right_l ">
 		<? if (!isset($this->magic_vars['_G']['user_result']['real_status'])) $this->magic_vars['_G']['user_result']['real_status']=''; ;if (  $this->magic_vars['_G']['user_result']['real_status']==0): ?>
@@ -30,12 +32,12 @@
 <!-- 					<a href="index.php?user&q=code/user/avatar"><font color="#FF0000">[更换头像]</font></a> -->
 <!-- 				</div> -->
 				<div class="user_right_txt">
-					<ul>
-					<li>
-					 <font color="red" size="5">尊敬的 <? if (!isset($this->magic_vars['_G']['user_result']['realname'])) $this->magic_vars['_G']['user_result']['realname'] = ''; echo $this->magic_vars['_G']['user_result']['realname']; ?> 客户</font>
+				<ul class="oldStyle">
+                  <li>
+					 <h3>尊敬的 <? if (!isset($this->magic_vars['_G']['user_result']['realname'])) $this->magic_vars['_G']['user_result']['realname'] = ''; echo $this->magic_vars['_G']['user_result']['realname']; ?> 客户</h3>
 					</li>
 					<li>
-					 投资等级：<font color="red" size="3"><? if (!isset($this->magic_vars['acc']['collection'])) $this->magic_vars['acc']['collection']=''; ;if (  $this->magic_vars['acc']['collection']>1000000): ?>投资专家<? if (!isset($this->magic_vars['acc']['collection'])) $this->magic_vars['acc']['collection']='';if (!isset($this->magic_vars['acc']['collection'])) $this->magic_vars['acc']['collection']=''; ;elseif (  $this->magic_vars['acc']['collection']<1000000 &&  $this->magic_vars['acc']['collection']>800000): ?>投资能手<? if (!isset($this->magic_vars['acc']['collection'])) $this->magic_vars['acc']['collection']='';if (!isset($this->magic_vars['acc']['collection'])) $this->magic_vars['acc']['collection']=''; ;elseif (  $this->magic_vars['acc']['collection']<800000 &&  $this->magic_vars['acc']['collection']>500000): ?>投资达人<? else: ?>投资新手<? endif; ?></font>
+					 <strong>投资等级：</strong><? if (!isset($this->magic_vars['acc']['collection'])) $this->magic_vars['acc']['collection']=''; ;if (  $this->magic_vars['acc']['collection']>1000000): ?>投资专家<? if (!isset($this->magic_vars['acc']['collection'])) $this->magic_vars['acc']['collection']='';if (!isset($this->magic_vars['acc']['collection'])) $this->magic_vars['acc']['collection']=''; ;elseif (  $this->magic_vars['acc']['collection']<1000000 &&  $this->magic_vars['acc']['collection']>800000): ?>投资能手<? if (!isset($this->magic_vars['acc']['collection'])) $this->magic_vars['acc']['collection']='';if (!isset($this->magic_vars['acc']['collection'])) $this->magic_vars['acc']['collection']=''; ;elseif (  $this->magic_vars['acc']['collection']<800000 &&  $this->magic_vars['acc']['collection']>500000): ?>投资达人<? else: ?>投资新手<? endif; ?>
 					</li>
  <!-- 					<li><a href="/index.php?user&q=code/user/credit" style="float:left"><? if (!isset($this->magic_vars['_G']['user_result']['credit'])) $this->magic_vars['_G']['user_result']['credit'] = '';$_tmp = $this->magic_vars['_G']['user_result']['credit'];$_tmp = $this->magic_modifier("credit",$_tmp,"");echo $_tmp;unset($_tmp); ?></a><font color="red"><? if (!isset($this->magic_vars['_G']['user_result']['credit'])) $this->magic_vars['_G']['user_result']['credit'] = ''; echo $this->magic_vars['_G']['user_result']['credit']; ?>分</font> -->
 <!--                        <? if (!isset($this->magic_vars['_G']['user_result']['typename'])) $this->magic_vars['_G']['user_result']['typename'] = ''; echo $this->magic_vars['_G']['user_result']['typename']; ?> -->
@@ -52,18 +54,18 @@
 <!-- 						<li> -->
 <!--                            <span style="color:red"> 信用额度：<font size="2">￥<? if (!isset($this->magic_vars['acc']['credit'])) $this->magic_vars['acc']['credit'] = '';$_tmp = $this->magic_vars['acc']['credit'];$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?></font></span> -->
 <!--                         </li>  -->
-						<li><span>您的VIP期限： <a href="/vip/index.html"><? if (!isset($this->magic_vars['_G']['user_result']['vip_status'])) $this->magic_vars['_G']['user_result']['vip_status']=''; ;if (  $this->magic_vars['_G']['user_result']['vip_status']==1): ?>
-                         <? if (!isset($this->magic_vars['_G']['user_result']['vip_verify_time'])) $this->magic_vars['_G']['user_result']['vip_verify_time'] = '';$_tmp = $this->magic_vars['_G']['user_result']['vip_verify_time'];$_tmp = $this->magic_modifier("date_format",$_tmp,"Y-m-d");echo $_tmp;unset($_tmp); ?> 到 
-						<? if (!isset($this->magic_vars['_G']['user_result']['vip_verify_time'])) $this->magic_vars['_G']['user_result']['vip_verify_time'] = '';$_tmp = $this->magic_vars['_G']['user_result']['vip_verify_time']+60*60*24*365;$_tmp = $this->magic_modifier("date_format",$_tmp,"Y-m-d");echo $_tmp;unset($_tmp); ?>
-                        <? if (!isset($this->magic_vars['_G']['user_result']['vip_status'])) $this->magic_vars['_G']['user_result']['vip_status']=''; ;elseif (  $this->magic_vars['_G']['user_result']['vip_status']==-1): ?>VIP审核中<? else: ?><font color="#999999">不是VIP</font></font><? endif; ?></a></li>
-						<li><span>系统通知：</span><a href="/index.php?user&q=code/message"><font color="#FF0000"><? if (!isset($this->magic_vars['_U']['user_cache']['message'])) $this->magic_vars['_U']['user_cache']['message'] = ''; echo $this->magic_vars['_U']['user_cache']['message']; ?></font> 封未读信息</a>&nbsp; &nbsp; <a href="/index.php?user&q=code/user/request"><? if (!isset($this->magic_vars['_U']['user_cache']['friends_apply'])) $this->magic_vars['_U']['user_cache']['friends_apply'] = ''; echo $this->magic_vars['_U']['user_cache']['friends_apply']; ?> 个好友邀请</a>
+<!-- 						<li><span>您的VIP期限： <a href="/vip/index.html"><? if (!isset($this->magic_vars['_G']['user_result']['vip_status'])) $this->magic_vars['_G']['user_result']['vip_status']=''; ;if (  $this->magic_vars['_G']['user_result']['vip_status']==1): ?> -->
+<!--                          <? if (!isset($this->magic_vars['_G']['user_result']['vip_verify_time'])) $this->magic_vars['_G']['user_result']['vip_verify_time'] = '';$_tmp = $this->magic_vars['_G']['user_result']['vip_verify_time'];$_tmp = $this->magic_modifier("date_format",$_tmp,"Y-m-d");echo $_tmp;unset($_tmp); ?> 到  -->
+<!-- 						<? if (!isset($this->magic_vars['_G']['user_result']['vip_verify_time'])) $this->magic_vars['_G']['user_result']['vip_verify_time'] = '';$_tmp = $this->magic_vars['_G']['user_result']['vip_verify_time']+60*60*24*365;$_tmp = $this->magic_modifier("date_format",$_tmp,"Y-m-d");echo $_tmp;unset($_tmp); ?> -->
+<!--                         <? if (!isset($this->magic_vars['_G']['user_result']['vip_status'])) $this->magic_vars['_G']['user_result']['vip_status']=''; ;elseif (  $this->magic_vars['_G']['user_result']['vip_status']==-1): ?>VIP审核中<? else: ?><font color="#999999">不是VIP</font></font><? endif; ?></a></li> -->
+						  <li><strong>系统通知：</strong><a href="/index.php?user&q=code/message"><font color="#FF0000"><? if (!isset($this->magic_vars['_U']['user_cache']['message'])) $this->magic_vars['_U']['user_cache']['message'] = ''; echo $this->magic_vars['_U']['user_cache']['message']; ?></font> 封未读信息</a>&nbsp; &nbsp; <a href="/index.php?user&q=code/user/request"><? if (!isset($this->magic_vars['_U']['user_cache']['friends_apply'])) $this->magic_vars['_U']['user_cache']['friends_apply'] = ''; echo $this->magic_vars['_U']['user_cache']['friends_apply']; ?> 个好友邀请</a>
 <!--                                <a href="/index.php?user&q=code/account/recharge_new"><font color="#FF0000">[账号充值]</font></a> -->
 <!--                                <a href="/index.php?user&q=code/borrow/limitapp&type=credit"><font color="#FF0000">[额度申请]</font></a> -->
                         </li>
 					</ul>
 				</div>
 			</div>
-			<div class="user_right_li" style="float:left;width:550px;">
+			<div class="user_right_li" >
 <div class="content">
 <br><div class="title"><a href="/index.php?user&q=code/account">您的账户详情</a> </div>
 <table width="100%" cellspacing="2">
@@ -107,14 +109,14 @@
     <td>已赚利息：<font>￥<? if (!isset($this->magic_vars['acc']['collection_interest1'])) $this->magic_vars['acc']['collection_interest1'] = '';$_tmp = $this->magic_vars['acc']['collection_interest1'];$_tmp = $this->magic_modifier("round",$_tmp,"2");$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?></font> </td>
 <!--     <td width="65%">&nbsp;&nbsp;&nbsp;&nbsp;已赚奖励：<font>￥<? if (!isset($this->magic_vars['acc']['award_add'])) $this->magic_vars['acc']['award_add'] = '';$_tmp = $this->magic_vars['acc']['award_add'];$_tmp = $this->magic_modifier("round",$_tmp,"2");$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?></font></td> -->
   </tr>
-<!--   <tr> -->
-<!--     <td>借款总额：<font>￥<? if (!isset($this->magic_vars['acc']['borrow_num'])) $this->magic_vars['acc']['borrow_num'] = '';$_tmp = $this->magic_vars['acc']['borrow_num'];$_tmp = $this->magic_modifier("round",$_tmp,"2");$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?></font></td> -->
-<!--     <td width="65%">&nbsp;&nbsp;&nbsp;&nbsp;待还总额：<font>￥<? if (!isset($this->magic_vars['acc']['wait_payment'])) $this->magic_vars['acc']['wait_payment'] = '';$_tmp = $this->magic_vars['acc']['wait_payment'];$_tmp = $this->magic_modifier("round",$_tmp,"2");$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?></font> </td> -->
-<!--   </tr> -->
-<!--   <tr> -->
-<!--     <td>最近待还金额：<font>￥<? if (!isset($this->magic_vars['acc']['new_repay_account'])) $this->magic_vars['acc']['new_repay_account'] = '';$_tmp = $this->magic_vars['acc']['new_repay_account'];$_tmp = $this->magic_modifier("round",$_tmp,"2");$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?></font></td> -->
-<!--     <td width="65%">&nbsp;&nbsp;&nbsp;&nbsp;最近待还时间：<font><? if (!isset($this->magic_vars['acc']['new_repay_time'])) $this->magic_vars['acc']['new_repay_time'] = '';$_tmp = $this->magic_vars['acc']['new_repay_time'];$_tmp = $this->magic_modifier("date_format",$_tmp,"Y-m-d");$_tmp = $this->magic_modifier("default",$_tmp,"");echo $_tmp;unset($_tmp); ?></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?user&q=code/borrow/repaymentplan"><strong><font color="red">我要还款</font></strong></a></td> -->
-<!--   </tr> -->
+  <tr>
+    <td>借款总额：<font>￥<? if (!isset($this->magic_vars['acc']['borrow_num'])) $this->magic_vars['acc']['borrow_num'] = '';$_tmp = $this->magic_vars['acc']['borrow_num'];$_tmp = $this->magic_modifier("round",$_tmp,"2");$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?></font></td>
+    <td width="65%">&nbsp;&nbsp;&nbsp;&nbsp;待还总额：<font>￥<? if (!isset($this->magic_vars['acc']['wait_payment'])) $this->magic_vars['acc']['wait_payment'] = '';$_tmp = $this->magic_vars['acc']['wait_payment'];$_tmp = $this->magic_modifier("round",$_tmp,"2");$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?></font> </td>
+  </tr>
+  <tr>
+    <td>最近待还金额：<font>￥<? if (!isset($this->magic_vars['acc']['new_repay_account'])) $this->magic_vars['acc']['new_repay_account'] = '';$_tmp = $this->magic_vars['acc']['new_repay_account'];$_tmp = $this->magic_modifier("round",$_tmp,"2");$_tmp = $this->magic_modifier("default",$_tmp,"0");echo $_tmp;unset($_tmp); ?></font></td>
+    <td width="65%">&nbsp;&nbsp;&nbsp;&nbsp;最近待还时间：<font><? if (!isset($this->magic_vars['acc']['new_repay_time'])) $this->magic_vars['acc']['new_repay_time'] = '';$_tmp = $this->magic_vars['acc']['new_repay_time'];$_tmp = $this->magic_modifier("date_format",$_tmp,"Y-m-d");$_tmp = $this->magic_modifier("default",$_tmp,"");echo $_tmp;unset($_tmp); ?></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?user&q=code/borrow/repaymentplan"><strong><font color="red">我要还款</font></strong></a></td>
+  </tr>
 
 </table>
 <br>
@@ -129,71 +131,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="user_right_r">
-			<div class="list_2">
-				<div class="title">最新公告</div>
-				<div class="content">
-					<ul>
-						<? $this->magic_vars['query_type']='GetList';$data = array('limit'=>'6','site_id'=>'22');$default = '';  include_once(ROOT_PATH.'modules/article/article.class.php');$this->magic_vars['magic_result'] = articleClass::GetList($data);if(!isset($this->magic_vars['magic_result'])) $this->magic_vars['magic_result']= array(); $_from = $this->magic_vars['magic_result']; if (!is_array($_from) && !is_object($_from)) {$_from =array(); } if (count($_from)>0):
-;    foreach ($_from as $this->magic_vars['key'] => $this->magic_vars['var']):
-?>
-						<li><a href="/<? if (!isset($this->magic_vars['var']['site_nid'])) $this->magic_vars['var']['site_nid'] = ''; echo $this->magic_vars['var']['site_nid']; ?>/a<? if (!isset($this->magic_vars['var']['id'])) $this->magic_vars['var']['id'] = ''; echo $this->magic_vars['var']['id']; ?>.html" target="_blank"><? if (!isset($this->magic_vars['var']['name'])) $this->magic_vars['var']['name'] = '';$_tmp = $this->magic_vars['var']['name'];$_tmp = $this->magic_modifier("truncate",$_tmp,"14:...");echo $_tmp;unset($_tmp); ?></a></li>
-						<? endforeach;else:echo $default; endif; unset($_from);unset($_magic_vars); ?>
-					</ul>
-				</div>
-			</div>
-			<? $data = '';  include_once(ROOT_PATH.'modules/borrow/borrow.class.php');$this->magic_vars['var'] = borrowClass::Getkf($data);if(!is_array($this->magic_vars['var'])){ $this->magic_vars['var']=array();}?>
-			<? if (!isset($this->magic_vars['var']['username'])) $this->magic_vars['var']['username']=''; ;if (  $this->magic_vars['var']['username']): ?>
-			<div class="user_right_info">
-				<div class="title">您的理财顾问在您身边</div>
-				<div class="content">
-					<ul>
-						<li><img src="<? if (!isset($this->magic_vars['var']['kefu_userid'])) $this->magic_vars['var']['kefu_userid'] = '';$_tmp = $this->magic_vars['var']['kefu_userid'];$_tmp = $this->magic_modifier("avatar",$_tmp,"big");echo $_tmp;unset($_tmp); ?>" border="0" class="picborder" width="150px" height="160px"/></li>
-						<li>理财顾问名称：<? if (!isset($this->magic_vars['var']['username'])) $this->magic_vars['var']['username'] = ''; echo $this->magic_vars['var']['username']; ?></li>
-						<li>理财顾问QQ：
-                            <a target="_blank" href="http://wpa.qq.com/msgrd?v=1&uin=<? if (!isset($this->magic_vars['var']['qq'])) $this->magic_vars['var']['qq'] = ''; echo $this->magic_vars['var']['qq']; ?>&site=qq&menu=yes" >
-                               <img border="0" src="http://wpa.qq.com/pa?p=1:<? if (!isset($this->magic_vars['var']['qq'])) $this->magic_vars['var']['qq'] = ''; echo $this->magic_vars['var']['qq']; ?>:1" alt="点击这里给我发消息" title="点击这里给我发消息">
-                            </a>
-                        </li>
-						<li>理财顾问电话：<? if (!isset($this->magic_vars['var']['phone'])) $this->magic_vars['var']['phone'] = ''; echo $this->magic_vars['var']['phone']; ?></li>
-					</ul>
-				</div>
-			</div>
-			<? endif; ?>
-			<? unset($_magic_vars);unset($data); ?>
-<!-- 			<div class="list_2 clearfix"> -->
-<!-- 				<div class="title">个人资料完成率</div>  -->
-<!-- 				<div  class="content"> -->
-<!-- 				<ul> -->
-<!-- 				<? $data = array('user_id'=>'0','user_id'=>$this->magic_vars['_G']['user_id']);  include_once(ROOT_PATH.'modules/userinfo/userinfo.class.php');$this->magic_vars['var'] = userinfoClass::GetOne($data);if(!is_array($this->magic_vars['var'])){ $this->magic_vars['var']=array();}?> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/building"><? if (!isset($this->magic_vars['var']['building_status'])) $this->magic_vars['var']['building_status']=''; ;if (  $this->magic_vars['var']['building_status']==1): ?><font color="#009900">已填写</font><? else: ?><font color="#FF0000">未填写</font><? endif; ?></a></span>房产资料</li> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/company"><? if (!isset($this->magic_vars['var']['company_status'])) $this->magic_vars['var']['company_status']=''; ;if (  $this->magic_vars['var']['company_status']==1): ?><font color="#009900">已填写</font><? else: ?><font color="#FF0000">未填写</font><? endif; ?></a></span>单位资料</li> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/firm"><? if (!isset($this->magic_vars['var']['firm_status'])) $this->magic_vars['var']['firm_status']=''; ;if (  $this->magic_vars['var']['firm_status']==1): ?><font color="#009900">已填写</font><? else: ?><font color="#FF0000">未填写</font><? endif; ?></a></span>私营业主</li> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/finance"><? if (!isset($this->magic_vars['var']['finance_status'])) $this->magic_vars['var']['finance_status']=''; ;if (  $this->magic_vars['var']['finance_status']==1): ?><font color="#009900">已填写</font><? else: ?><font color="#FF0000">未填写</font><? endif; ?></a></span>财务状况</li> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/contact"><? if (!isset($this->magic_vars['var']['contact_status'])) $this->magic_vars['var']['contact_status']=''; ;if (  $this->magic_vars['var']['contact_status']==1): ?><font color="#009900">已填写</font><? else: ?><font color="#FF0000">未填写</font><? endif; ?></a></span>联系方式</li> -->
-<!-- 					<li><span><a href="/index.php?user&q=code/userinfo/edu"><? if (!isset($this->magic_vars['var']['edu_status'])) $this->magic_vars['var']['edu_status']=''; ;if (  $this->magic_vars['var']['edu_status']==1): ?><font color="#009900">已填写</font><? else: ?><font color="#FF0000">未填写</font><? endif; ?></a></span>教育背景</li> -->
-<!-- 				</ul> -->
-<!-- 				<? unset($_magic_vars);unset($data); ?> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
+
 			
-			
-		
-<!-- 			<div class="list_2"> -->
-<!-- 				<div class="title">媒体报道</div> -->
-<!-- 				<div class="content"> -->
-<!-- 					<ul> -->
-<!-- 						<? $this->magic_vars['query_type']='GetList';$data = array('limit'=>'6','site_id'=>'59');$default = '';  include_once(ROOT_PATH.'modules/article/article.class.php');$this->magic_vars['magic_result'] = articleClass::GetList($data);if(!isset($this->magic_vars['magic_result'])) $this->magic_vars['magic_result']= array(); $_from = $this->magic_vars['magic_result']; if (!is_array($_from) && !is_object($_from)) {$_from =array(); } if (count($_from)>0):
-;    foreach ($_from as $this->magic_vars['key'] => $this->magic_vars['var']):
-?> -->
-<!-- 						<li><a href="/<? if (!isset($this->magic_vars['var']['site_nid'])) $this->magic_vars['var']['site_nid'] = ''; echo $this->magic_vars['var']['site_nid']; ?>/a<? if (!isset($this->magic_vars['var']['id'])) $this->magic_vars['var']['id'] = ''; echo $this->magic_vars['var']['id']; ?>.html" target="_blank"><? if (!isset($this->magic_vars['var']['name'])) $this->magic_vars['var']['name'] = '';$_tmp = $this->magic_vars['var']['name'];$_tmp = $this->magic_modifier("truncate",$_tmp,"14:...");echo $_tmp;unset($_tmp); ?></a></li> -->
-<!-- 						<? endforeach;else:echo $default; endif; unset($_from);unset($_magic_vars); ?> -->
-<!-- 					</ul> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-		</div>
-	</div>
-	<!--右边的内容 结束-->
+</div>
+
+</div>
 </div>
 </div>
 <script type="text/javascript">

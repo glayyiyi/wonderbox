@@ -57,17 +57,12 @@ $charSet='GBK';
 //$result=$chinapnr-> merCash($merCustId,$ordId,$usrCustId,$transAmt,$servFee,$servFeeAcctId ,$retUrl ,$bgRetUrl,$remark,$charSet,$merPriv,$reqExt);
 
 
-
-
-
-
-
 //=======ÍøÒø³äÖµ
 $transAmt='0.10';
 $ordId='00000000000000000102';
 $bgRetUrl='http://dev.wonderbox.com/chinapnr_return.php';
 $retUrl='http://dev.wonderbox.com/chinapnr_return.php';
-$ordDate='20141219';
+$ordDate='20150103';
 
 $result= $chinapnr->netSave($merCustId,$usrCustId,$ordId,$ordDate,$gateBusiId,$openBankId,$dcFlag,$transAmt,$retUrl,$bgRetUrl,$merPriv);
 

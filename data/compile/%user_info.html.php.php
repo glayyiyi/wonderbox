@@ -2,21 +2,22 @@
 !defined('IN_TEMPLATE') && exit('Access Denied');
 ?>
 <? $this->magic_include(array('file' => "user_header.html", 'vars' => array()));?>
-<link href="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/media/css/modal.css" rel="stylesheet" type="text/css" />
+
 <link href="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/media/css/tipswindown.css" rel="stylesheet" type="text/css" />
 
+
 <!--用户中心的主栏目 开始-->
-<div id="main" class="clearfix" style="margin-top:0px;">
-<div class="wrap950 ">
-	<!--左边的导航 开始-->
-	<div class="user_left">
+
+ <div id="mainBody">
+    <div class="accountPage">
+      <div class="content">
 		<? $this->magic_include(array('file' => "user_menu.html", 'vars' => array()));?>
-	</div>
+	
 	<!--左边的导航 结束-->
 	
 	<!--右边的内容 开始-->
-	<div class="user_right">
-		<div class="user_right_menu">
+	<div class="main">
+		<div class="tabBar">
 			<? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']='';if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']='';if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']='';if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']='';if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="userpwd" ||  $this->magic_vars['_U']['query_type']=="paypwd" ||  $this->magic_vars['_U']['query_type']=="protection" ||  $this->magic_vars['_U']['query_type']=="getpaypwd" ||  $this->magic_vars['_U']['query_type']=="serialStatusSet"): ?>
 			<ul id="tab" class="list-tab clearfix">
 				
@@ -28,10 +29,10 @@
 			<? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']='';if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']='';if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']='';if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']='';if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;elseif (  $this->magic_vars['_U']['query_type']=="reginvite"  ||  $this->magic_vars['_U']['query_type']=="request" ||  $this->magic_vars['_U']['query_type']=="myfriend" ||  $this->magic_vars['_U']['query_type']=="black"||  $this->magic_vars['_U']['query_type']=="ticheng"): ?>
 			<ul id="tab" class="list-tab clearfix">
 				<li <? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="reginvite"): ?> class="cur"<? endif; ?>><a href="<? if (!isset($this->magic_vars['_U']['query_url'])) $this->magic_vars['_U']['query_url'] = ''; echo $this->magic_vars['_U']['query_url']; ?>/reginvite">邀请好友</a></li>
-				<li <? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="request"): ?> class="cur"<? endif; ?>><a href="<? if (!isset($this->magic_vars['_U']['query_url'])) $this->magic_vars['_U']['query_url'] = ''; echo $this->magic_vars['_U']['query_url']; ?>/request">好友请求</a></li>
+<!-- 				<li <? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="request"): ?> class="cur"<? endif; ?>><a href="<? if (!isset($this->magic_vars['_U']['query_url'])) $this->magic_vars['_U']['query_url'] = ''; echo $this->magic_vars['_U']['query_url']; ?>/request">好友请求</a></li> -->
 				<li <? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="myfriend"): ?> class="cur"<? endif; ?>><a href="<? if (!isset($this->magic_vars['_U']['query_url'])) $this->magic_vars['_U']['query_url'] = ''; echo $this->magic_vars['_U']['query_url']; ?>/myfriend">我的好友</a></li>
-				<li <? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="black"): ?> class="cur"<? endif; ?>><a href="<? if (!isset($this->magic_vars['_U']['query_url'])) $this->magic_vars['_U']['query_url'] = ''; echo $this->magic_vars['_U']['query_url']; ?>/black">黑名单</a></li>
-				<li <? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="ticheng"): ?> class="cur"<? endif; ?>><a href="<? if (!isset($this->magic_vars['_U']['query_url'])) $this->magic_vars['_U']['query_url'] = ''; echo $this->magic_vars['_U']['query_url']; ?>/ticheng">好友提成</a></li>
+<!-- 				<li <? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="black"): ?> class="cur"<? endif; ?>><a href="<? if (!isset($this->magic_vars['_U']['query_url'])) $this->magic_vars['_U']['query_url'] = ''; echo $this->magic_vars['_U']['query_url']; ?>/black">黑名单</a></li> -->
+				<li <? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;if (  $this->magic_vars['_U']['query_type']=="ticheng"): ?> class="cur"<? endif; ?>><a href="<? if (!isset($this->magic_vars['_U']['query_url'])) $this->magic_vars['_U']['query_url'] = ''; echo $this->magic_vars['_U']['query_url']; ?>/ticheng">提成统计</a></li>
 			</ul>
 			<? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;elseif (  $this->magic_vars['_U']['query_type']=="credit"): ?>
 			<ul id="tab" class="list-tab clearfix">
@@ -180,7 +181,7 @@ echo $objAvatar->uc_avatar($this->magic_vars['_G']['user_id'], 'virtual');
 		<? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;elseif (  $this->magic_vars['_U']['query_type']=="userpwd"): ?>
 		<!--修改登录密码 开始-->
 		<form action="" name="form1" method="post" onsubmit="return check_form()">
-		<div class="user_help alert alert">密码请不要太简单，设成复杂一点，做好字母+符号</div>
+<!-- 		<div class="user_help alert alert">密码设置请不要太简单，最好字母+符号</div> -->
 		<div class="user_right_border">
 			<div class="e">原始密码：</div>
 			<div class="c">
@@ -581,52 +582,107 @@ echo $objAvatar->uc_avatar($this->magic_vars['_G']['user_id'], 'virtual');
 		
 		<!--好友邀请 开始-->
 		<? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;elseif (  $this->magic_vars['_U']['query_type']=="reginvite"): ?>
-		<div class="user_help alert" style="text-align:left;" > 
-			<strong>温馨提示：</strong><br/>
-请不要发送邀请给不熟悉的人士,避免给别人带来不必要的困扰。<br />
-请把下边的邀请码发给您的好友，注册后，您将成为他的上线用户。<br />
-		</div>
-		<div class="user_right_border">
-			<div class="l">邀请链接：</div>
-			<div class="c">
-				  <textarea style="height:100px;width:500px" id="invite"><? if (!isset($this->magic_vars['_G']['weburl'])) $this->magic_vars['_G']['weburl'] = ''; echo $this->magic_vars['_G']['weburl']; ?>/index.php?user&q=going/reginvite&u=<? if (!isset($this->magic_vars['_U']['user_inviteid'])) $this->magic_vars['_U']['user_inviteid'] = ''; echo $this->magic_vars['_U']['user_inviteid']; ?></textarea>
-				<!--<textarea style="height:100px;width:500px" id="invite">邀请你加入君和会VIP投资俱乐部（www.viptouzi.com），注册邀请码是<? if (!isset($this->magic_vars['_U']['user_inviteid'])) $this->magic_vars['_U']['user_inviteid'] = ''; echo $this->magic_vars['_U']['user_inviteid']; ?></textarea>-->
-				<br/><input type="button" onclick="doCopy('invite')" class="btn-action" value="复制" />
-			</div>
-		</div>
-		<table border="0" cellspacing="1" class="table table-striped  table-condensed" style="width:98%">
-			  <form action="" method="post">
-				<tr class="head">
-					<td>下线用户名 </td>
-                    <td>真实姓名 </td>
-					<td>注册时间 </td>
-                    <td>是否VIP会员 </td>
-					<td>应得提成收入</td>
-                    <td>实际提成收入(已支付)</td>
+		<link rel="stylesheet" type="text/css" href="<? if (!isset($this->magic_vars['tempdir'])) $this->magic_vars['tempdir'] = ''; echo $this->magic_vars['tempdir']; ?>/statics/css/invite/invite.css" media="screen"/>
+		<div class="tabContent">
+		 <div class="invitePage">
+           <div class="pageIntro">
+                <h2>理财经理计划,安稳投资，双份工资！ </h2>
+                <h3>什么叫理财经理计划？</h3>
+                <p> 理财经理计划是万得贷新推出的一款理财合作计划，只要您实名注册我平台，即可参与本计划，推荐您的亲朋好友实名注册我平台，便能成为我平台理财经理，更能获得其投资总额最少1%年化利率的可提现奖金作为计划奖励，为您带来实打实的“外快”！在您安稳投资的同时，赚得两份工资！ </p>
+                <h3>具体执行流程：</h3>
+                <h4>即日起，按照以下流程操作，即可加入本计划 </h4>
+                <p><strong>1. </strong>注册我平台并完成实名验证。<br>
+<strong>2. </strong>验证通过后，点击“进入我的账户”&mdash;“个人设置，邀请好友”&mdash;“发送短信或复制链接给好友”，好友在收到您的信息后按照提示完成实名注册，即为推荐成功。<br>
+<strong>3. </strong>在您成功推荐后，我们客服人员将在一个星期内为您点亮“理财经理”标签，一旦该标签点亮，您便已踏上了轻轻松松创业，安安稳稳拿钱的双薪道路！</p>
+                <h3>奖励计算方式：</h3>
+                <div class="accountDataTable">
+                  <table>
+                    <tbody><tr>
+                      <th width="80"> 点亮称号</th>
+                      <th>达成条件（推荐累计金额） </th>
+                      <th>计划奖励（推荐金额年化利率） </th>
+                    </tr>
+                    <tr>
+                      <td> 精英 </td>
+                      <td>(金额)&lt;10w </td>
+                      <td>1% </td>
+                    </tr>
+                    <tr>
+                      <td> 达人 </td>
+                      <td>10w&lt;=(金额)&lt;50w </td>
+                      <td>1.50% </td>
+                    </tr>
+                    <tr>
+                      <td> 骨灰 </td>
+                      <td>50w&lt;=(金额) </td>
+                      <td>2% </td>
+                    </tr>
+                  </tbody></table>
+                </div>
+                <p>本计划投资链融通系列理财产品有效，您推荐的用户理财到期日返本付息，同时将您的奖励结算到您的账户上。 <br>
+奖励的年化利率执行累进递进方式。即超过10万元的部分开始按照1.5%的年化利率计算，之前的部分仍按照1%计算，以此类推。 </p>
+                <p>本活动截止至2015年1月31日，以起息日为计算标准。<br>
+                  最终解释权归北京万得普惠科技有限公司所属 </p>
+              </div>
+                <div class="inviteAction">
+                  <div class="left">
+                  <div class="sms">
+                  <h3>一键发送</h3>
+                  <form method="post" name="form1" action="/index.php?user&q=code/user/send_phone">
+                  <table style="text-align:left">
+                        <tr>
+                          <th width="80"> 短信发送 </th>
+                          <td>【万得金融】我是<? if (!isset($this->magic_vars['_G']['user_result']['realname'])) $this->magic_vars['_G']['user_result']['realname'] = ''; echo $this->magic_vars['_G']['user_result']['realname']; ?>，我在万得贷网站送你红包，百度“万得金融”，注册填写邀请人<? if (!isset($this->magic_vars['_G']['user_result']['username'])) $this->magic_vars['_G']['user_result']['username'] = ''; echo $this->magic_vars['_G']['user_result']['username']; ?>。
+</td>
+                        </tr>
+                         <tr>
+                          <th> 手机号 </th>
+                          <td><input id="phone" name="phone" type="text" />
+                          <input id="content" name="content" type="hidden" value='我是<? if (!isset($this->magic_vars['_G']['user_result']['realname'])) $this->magic_vars['_G']['user_result']['realname'] = ''; echo $this->magic_vars['_G']['user_result']['realname']; ?>，我在万得贷网站送你红包，百度“万得金融”，注册填写邀请人<? if (!isset($this->magic_vars['_G']['user_result']['username'])) $this->magic_vars['_G']['user_result']['username'] = ''; echo $this->magic_vars['_G']['user_result']['username']; ?>。<? if (!isset($this->magic_vars['_G']['weburl'])) $this->magic_vars['_G']['weburl'] = ''; echo $this->magic_vars['_G']['weburl']; ?>'
+                          />
+
+</td>
+                        </tr>
+<!--                          <tr> -->
+<!--                           <th> 验证码 </th> -->
+<!--                           <td><input type="text" /></td> -->
+<!--                         </tr> -->
+
+                        </table>
+                        <a href="#" onclick="sub_form()" class="submit">发送短信</a>
+                        </form>
+                  </div>
+                 <div class="copy"> <h3>复制链接内容发送</h3>
+<textarea id='invite' style=" line-height: 14px;height:90px;" rows="6">万得金融平台的红包，点击以下链接
+<? if (!isset($this->magic_vars['_G']['weburl'])) $this->magic_vars['_G']['weburl'] = ''; echo $this->magic_vars['_G']['weburl']; ?>/index.php?user&q=going/reginvite&u=<? if (!isset($this->magic_vars['_U']['user_inviteid'])) $this->magic_vars['_U']['user_inviteid'] = ''; echo $this->magic_vars['_U']['user_inviteid']; ?> </textarea>
+<a href="#" onclick="doCopy('invite')" class="copy">复制</a></div>
+                  </div>
+                  </div>
+                 <div class="record">
+          <table border="0"  cellspacing="1" class="table table-striped  table-condensed" style="width:98%">
+				<tr class="head" >
+					<td>已邀请用户</td>
+					<td>投资时间</td>
+					<td>投资金额</td>
+					<td>预计提成</td>
 				</tr>
-				<? $this->magic_vars['query_type']='GetFriendsInvite';$data = array('var'=>'loop','user_id'=>'0','showpage'=>'3','user_id'=>$this->magic_vars['_G']['user_id']);$data['page'] = isset($_REQUEST['page'])?$_REQUEST['page']:'';  include_once(ROOT_PATH.'core/user.class.php');$this->magic_vars['magic_result'] = userClass::GetFriendsInvite($data); $this->magic_vars['loop']['list'] =  $this->magic_vars['magic_result']['list']; $this->magic_vars['loop']['page'] =  $this->magic_vars['magic_result']['page']; $this->magic_vars['loop']['epage'] =  $this->magic_vars['magic_result']['epage']; $this->magic_vars['loop']['total'] =  $this->magic_vars['magic_result']['total']; $this->magic_vars['_G']['class_pages']->set_data($this->magic_vars['magic_result']); $this->magic_vars['loop']['showpage'] =  $this->magic_vars['_G']['class_pages']->show(3);?>
+				<? $this->magic_vars['query_type']='GetTiChengDetailList';$data = array('var'=>'loop','status'=>'0','user_id'=>'0','user_id'=>$this->magic_vars['_G']['user_id']);$data['page'] = isset($_REQUEST['page'])?$_REQUEST['page']:'';  include_once(ROOT_PATH.'core/user.class.php');$this->magic_vars['magic_result'] = userClass::GetTiChengDetailList($data); $this->magic_vars['loop']['list'] =  $this->magic_vars['magic_result']['list']; $this->magic_vars['loop']['page'] =  $this->magic_vars['magic_result']['page']; $this->magic_vars['loop']['epage'] =  $this->magic_vars['magic_result']['epage']; $this->magic_vars['loop']['total'] =  $this->magic_vars['magic_result']['total']; $this->magic_vars['loop']['showpage'] =  show_pages($this->magic_vars['magic_result']);?>
 				<?  if(!isset($this->magic_vars['loop']['list']) || $this->magic_vars['loop']['list']=='') $this->magic_vars['loop']['list'] = array();  $_from = $this->magic_vars['loop']['list']; 
  if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); } 
 if (count($_from)>0):
 ;    foreach ($_from as $this->magic_vars['key'] =>  $this->magic_vars['item']):
 ?>
-				<tr>
+				<tr >
 					<td><? if (!isset($this->magic_vars['item']['username'])) $this->magic_vars['item']['username'] = ''; echo $this->magic_vars['item']['username']; ?></td>
-                    <td><? if (!isset($this->magic_vars['item']['realname'])) $this->magic_vars['item']['realname'] = ''; echo $this->magic_vars['item']['realname']; ?></td>
-					<td><? if (!isset($this->magic_vars['item']['addtime'])) $this->magic_vars['item']['addtime'] = '';$_tmp = $this->magic_vars['item']['addtime'];$_tmp = $this->magic_modifier("date_format",$_tmp,"");echo $_tmp;unset($_tmp); ?></td>
-                    <td><? if (!isset($this->magic_vars['item']['vip_status'])) $this->magic_vars['item']['vip_status']=''; ;if (  $this->magic_vars['item']['vip_status'] == 1): ?>是<? else: ?>否<? endif; ?></td>
-					<td><? if (!isset($this->magic_vars['item']['vip_status'])) $this->magic_vars['item']['vip_status']=''; ;if (  $this->magic_vars['item']['vip_status'] == 1): ?>100元<? else: ?>0元<? endif; ?></td>
-                    <td><? if (!isset($this->magic_vars['item']['invite_money'])) $this->magic_vars['item']['invite_money'] = ''; echo $this->magic_vars['item']['invite_money']; ?>元</td>
+					<td><? if (!isset($this->magic_vars['item']['addtime'])) $this->magic_vars['item']['addtime'] = '';$_tmp = $this->magic_vars['item']['addtime'];$_tmp = $this->magic_modifier("date_format",$_tmp,"Y-m-d H:i:s");echo $_tmp;unset($_tmp); ?></td>
+					<td>￥<? if (!isset($this->magic_vars['item']['account'])) $this->magic_vars['item']['account'] = ''; echo $this->magic_vars['item']['account']; ?></td>
+					<td>￥<? if (!isset($this->magic_vars['item']['account'])) $this->magic_vars['item']['account'] = ''; echo $this->magic_vars['item']['account']*0.0275*0.02; ?></td>
 				</tr>
 				<? endforeach; endif; unset($_from); ?>
-				<tr>
-					<td colspan="6" class="page">
-						<div class="list_table_page"><? if (!isset($this->magic_vars['loop']['showpage'])) $this->magic_vars['loop']['showpage'] = ''; echo $this->magic_vars['loop']['showpage']; ?></div>
-					</td>
-				</tr>
 				<? unset($_magic_vars); ?>
-			</form>	
 		</table>
+</div>
+
 		
 		<script>
 		function doCopy(id) { 
@@ -642,9 +698,24 @@ if (count($_from)>0):
 		   alert("此功能只能在IE上有效\n\n请在文本域中用Ctrl+A选择再复制");
 		 }
 		}
+		function sub_form(){
+			var username = document.getElementById("phone").value;
+			var content = document.getElementById("content").value;
+			if(username==""){
+				alert("手机号码不能为空");return;
+			}
+			if(content==""){
+				alert("内容不能为空");return;
+			}
+			document.forms['form1'].submit();
+			document.forms['form1'].elements['sub'].disabled=true;
+		}
 		</script>
 		
 		<!--好友请求 结束-->
+		</div>
+		</div>
+		
 		
 		<!--好友请求 开始-->
 		<? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;elseif (  $this->magic_vars['_U']['query_type']=="request"): ?>
@@ -762,12 +833,14 @@ if (count($_from)>0):
 		<!-- 提成开始-->
 		<? if (!isset($this->magic_vars['_U']['query_type'])) $this->magic_vars['_U']['query_type']=''; ;elseif (  $this->magic_vars['_U']['query_type']=="ticheng"): ?>
 		<div class="user_main_title alert" style="height:60px; padding-top:7px;"> 
+		按月提成统计
 		</div>
 
 		<table border="0"  cellspacing="1" class="table table-striped  table-condensed" style="width:98%">
 				<tr class="head" >
 					<td>时间</td>
 					<td>投资金额</td>
+					<td>预计提成合计</td>
 				</tr>
 				<? $this->magic_vars['query_type']='GetTiChengList';$data = array('var'=>'loop','status'=>'0','user_id'=>'0','user_id'=>$this->magic_vars['_G']['user_id']);$data['page'] = isset($_REQUEST['page'])?$_REQUEST['page']:'';  include_once(ROOT_PATH.'core/user.class.php');$this->magic_vars['magic_result'] = userClass::GetTiChengList($data); $this->magic_vars['loop']['list'] =  $this->magic_vars['magic_result']['list']; $this->magic_vars['loop']['page'] =  $this->magic_vars['magic_result']['page']; $this->magic_vars['loop']['epage'] =  $this->magic_vars['magic_result']['epage']; $this->magic_vars['loop']['total'] =  $this->magic_vars['magic_result']['total']; $this->magic_vars['loop']['showpage'] =  show_pages($this->magic_vars['magic_result']);?>
 				<?  if(!isset($this->magic_vars['loop']['list']) || $this->magic_vars['loop']['list']=='') $this->magic_vars['loop']['list'] = array();  $_from = $this->magic_vars['loop']['list']; 
@@ -778,6 +851,7 @@ if (count($_from)>0):
 				<tr >
 					<td><? if (!isset($this->magic_vars['item']['addtimes'])) $this->magic_vars['item']['addtimes'] = ''; echo $this->magic_vars['item']['addtimes']; ?></td>
 					<td>￥<? if (!isset($this->magic_vars['item']['money'])) $this->magic_vars['item']['money'] = ''; echo $this->magic_vars['item']['money']; ?></td>
+					<td>￥<? if (!isset($this->magic_vars['item']['money'])) $this->magic_vars['item']['money'] = ''; echo $this->magic_vars['item']['money']*0.0275*0.02; ?></td>
 				</tr>
 				<? endforeach; endif; unset($_from); ?>
 				<? unset($_magic_vars); ?>
@@ -1235,6 +1309,8 @@ if (count($_from)>0):
 </div>
 </div>
 </div>
+</div>
+
 <!--用户中心的主栏目 结束-->
 <? $this->magic_include(array('file' => "user_footer.html", 'vars' => array()));?>
 

@@ -160,7 +160,7 @@ if(1==2){
 				$data['trade_no'] = time().$_G['user_id'].rand(1,9);
 				$result = accountClass::AddRecharge($data);
 				
-				if ($data['type']==1){
+				 if ($data['type']==1){
 				
 					if(isset($bco)) {
 						
@@ -181,6 +181,7 @@ if(1==2){
 					//$data['subject'] = $_G['system']['con_webname']."’À∫≈≥‰÷µ";
 					$data['body'] = "’À∫≈≥‰÷µ";
 					$url = paymentClass::ToSubmit($data);
+					
 				}
 				
 				if ($result!==true){

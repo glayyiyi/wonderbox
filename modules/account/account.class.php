@@ -8,6 +8,7 @@
  * $UpdateDate:None 
 ******************************/
 require_once("modules/remind/remind.class.php");
+
 class accountClass{
 
 	const ERROR = '操作有误，请不要乱操作';
