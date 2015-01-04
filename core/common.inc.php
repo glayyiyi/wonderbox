@@ -12,7 +12,7 @@ if (!defined('ROOT_PATH'))  die('不能访问');//防止直接访问
 
 $db_config['host']     = '127.0.0.1';      //数据库主机	
 $db_config['user']     = 'root';      //数据库用户名	
-$db_config['pwd']      = 'appdor.123';  //数据库用户密码	
+$db_config['pwd']      = '123456';  //数据库用户密码	
 $db_config['name']     = 'wonderbox';      //数据库名	
 $db_config['port']     = '3306';      //端口		
 $db_config['prefix']   = 'rd_'; //CMS表名前缀	
