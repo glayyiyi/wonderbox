@@ -11,12 +11,11 @@
 require_once("lib/Chinapnr.class.php");
 $chinapnr= Chinapnr::getInstance();
 $merCustId='6000060000273476';
-
-$usrCustId='6000060000639322';
+$usrCustId='6000060000710761';
 $charSet='GBK';
-
-$usrCustId='6000060000579066';
-$charSet='UTF-8';
+$weburl = "http://".$_SERVER['SERVER_NAME'];
+$bgRetUrl='http://dev.wonderbox.com/chinapnr_return.php';
+$retUrl='http://dev.wonderbox.com/chinapnr_return.php';
 
 //=======
 //$chinapnr->userLogin($merCustId, $usrCustId);
@@ -28,8 +27,8 @@ $charSet='UTF-8';
 //$result= $chinapnr->bgRegister($merCustId,"6000060000273476_8","glay8","glay8.123","glay8.123","","","11111111118","","","");
 
 //=======
-$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
-$chinapnr->userRegister($merCustId, $bgRetUrl, $retUrl, $usrId, $usrName, $idType, $idNo, $usrMp, $usrEmail, $merPriv, $charSet);
+//$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
+//$chinapnr->userRegister($merCustId, $bgRetUrl, $retUrl, $usrId, $usrName, $idType, $idNo, $usrMp, $usrEmail, $merPriv, $charSet);
 
 
 //=======
@@ -166,13 +165,28 @@ $chinapnr->userRegister($merCustId, $bgRetUrl, $retUrl, $usrId, $usrName, $idTyp
 
 
 //=======网银充值
-$transAmt='0.10';
-$ordId='00000000000000000102';
-$bgRetUrl='http://dev.wonderbox.com/chinapnr_return.php';
-$retUrl='http://dev.wonderbox.com/chinapnr_return.php';
-$ordDate='20150103';
+// $transAmt='0.10';
+// $ordId='00000000000000000102';
+// $bgRetUrl='http://dev.wonderbox.com/chinapnr_return.php';
+// $retUrl='http://dev.wonderbox.com/chinapnr_return.php';
+// $ordDate='20150103';
+// $result= $chinapnr->netSave($merCustId,$usrCustId,$ordId,$ordDate,$gateBusiId,$openBankId,$dcFlag,$transAmt,$retUrl,$bgRetUrl,$merPriv);
 
-$result= $chinapnr->netSave($merCustId,$usrCustId,$ordId,$ordDate,$gateBusiId,$openBankId,$dcFlag,$transAmt,$retUrl,$bgRetUrl,$merPriv);
+
+
+$ordId='00000000000000000102';
+$ordDate='20150111';
+$transAmt='0.10';
+$maxTenderRate='0.00';
+$borrowerDetails=array(array('BorrowerCustId'=>'6000060000273476',		
+		'BorrowerAmt'=>'0.10',
+		'BorrowerRate'=>'0.00',
+		'ProId'=>'6000010000000014')
+);
+//$borrowerDetails="[{\"BorrowerCustId\":\"6000010000000014\", \"BorrowerAmt\": \"20.01\", \"BorrowerRate\":\"0.18\",\"ProId\":\"6000010000000014\"}, {\"BorrowerCustId\": \"6000010000000014\", \"BorrowerAmt\":\"20.01\", \"BorrowerRate\":\"0.18\",\"ProId\":\"6000010000000015\"}, {\"BorrowerCustId\":\"6000010000000014\", \"BorrowerAmt\": \"20.01\",\"BorrowerRate\": \"0.18\",\"ProId\":\"6000010000000016\"}]";
+$isFreeze="Y";
+$freezeOrdId="00000000000000010001";
+$result= $chinapnr->initiativeTender($merCustId,$ordId,$ordDate,$transAmt,$usrCustId,$maxTenderRate,$borrowerDetails,$isFreeze,$freezeOrdId = '',$retUrl = '',$bgRetUrl,$merPriv,$reqExt = '')
 
 //=======商户无卡代扣充值
 //$ordId='00000000000000000001';
