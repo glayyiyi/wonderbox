@@ -6,7 +6,6 @@
 require_once("lib/Chinapnr.class.php");
 $chinapnr= Chinapnr::getInstance();
 $merCustId='6000060000273476';
-$usrCustId='6000060000579066';
 $charSet='GBK';
 $weburl = "http://".$_SERVER['SERVER_NAME'];
 
@@ -52,6 +51,12 @@ $chinapnr->userRegister($merCustId, $bgRetUrl, $retUrl, $usrId, $usrName, $idTyp
 //$transAmt='0.10';
 //$bgRetUrl='http://dev.wonderbox.com/modules/payment/chinapnr_return.php';
 //$result=$chinapnr-> merCash($merCustId,$ordId,$usrCustId,$transAmt,$servFee,$servFeeAcctId ,$retUrl ,$bgRetUrl,$remark,$charSet,$merPriv,$reqExt);
+
+
+
+
+
+
 
 //=======ÍøÒø³äÖµ
 //$gateBusiId='B2C';
