@@ -162,6 +162,8 @@ class paymentClass {
 		$data['subject'] = isset($data['subject'])?$data['subject']:"";
 		$data['body'] = isset($data['body'])?$data['body']:"";
 		$data['trade_no'] = isset($data['trade_no'])?$data['trade_no']:"";
+		$data['t_UsrCustId'] = $_G['user_result']['t_UsrCustId'];//p2pÕÊºÅÎ¨Ò»ID
+				
 		$sql = "select * from `{payment}` where id = '{$payment}'";
 		$result = $mysql->db_fetch_array($sql);
 		if ($result==false) return self::ERROR;

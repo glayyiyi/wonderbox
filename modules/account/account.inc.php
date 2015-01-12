@@ -113,6 +113,10 @@ if(1==2){
 					$bco = $payment[0];
 					$_POST['payment1'] = 9;
 					$payment_type = 'hna';
+				}else if($payment[1] == 'hftx'){	  //汇付天p2p
+					$bco = $payment[0];
+					$_POST['payment1'] = 57;
+					$payment_type = 'hftx';
 				}
 			}
 			
@@ -157,7 +161,8 @@ if(1==2){
 				}
 				$data['reward'] = round($data['reward'],2);
 				$data['fee'] = round($data['fee'],2);
-				$data['trade_no'] = time().$_G['user_id'].rand(1,9);
+				//修改订单号新的20位
+				$data['trade_no'] = date("YmdHis").mt_rand(100000,999999);//time().$_G['user_id'].rand(1,9);
 				$result = accountClass::AddRecharge($data);
 				
 				 if ($data['type']==1){

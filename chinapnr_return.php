@@ -46,9 +46,12 @@ $RespCode = $_REQUEST['RespCode']; 	//应答返回码
 if($RespCode=='000'){
 	//调用成功
 	if($CmdId==Chinapnr::CMDID_USER_REGISTER){
+		//用户开户,页面浏览器方式
 		UserRegisterRtn();
 			
-	}elseif($CmdId==Chinapnr::CMDID_BG_BIND_CARD){
+	}elseif($CmdId==Chinapnr::CMDID_NET_SAVE){
+		//网银充值,页面浏览器方式
+		NetSaveRtn();
 		
 	}else{
 		
@@ -62,7 +65,7 @@ if($RespCode=='000'){
  **/
 function UserRegisterRtn(){
 	global $CmdId,$RespCode,$chinapnr;
-	$MerId = $_REQUEST['MerId']; 	 		//商户号
+	
 	$RespCode = $_REQUEST['RespCode']; 	//应答返回码
 	$TrxId = $_REQUEST['TrxId'];  			//交易唯一标识
 	$MerPriv = $_REQUEST['MerPriv'];  		//商户私有域
@@ -95,6 +98,56 @@ function UserRegisterRtn(){
 			//返回成功
 			echo "<script>alert('第三方托管账户开通成功！');location.href='index.php?user';</script>";		
 		}
+	}else{
+		echo "验证失败!";
+	}
+}
+
+/**
+ * 网银充值返回处理
+ *
+ **/
+function NetSaveRtn(){
+	global $CmdId,$RespCode,$chinapnr;	
+	$RespCode = $_REQUEST['RespCode']; 	//应答返回码
+	$TrxId = $_REQUEST['TrxId'];  			//交易唯一标识
+	$MerPriv = $_REQUEST['MerPriv'];  		//商户私有域
+	$ChkValue = $_REQUEST['ChkValue']; 	//签名信息
+	$MerCustId = $_REQUEST['MerCustId'];
+	$UsrId = $_REQUEST['UsrId'];
+	$UsrCustId= $_REQUEST['UsrCustId'];
+	$BgRetUrl= $_REQUEST['BgRetUrl'];
+	$RetUrl= $_REQUEST['RetUrl'];
+	$UsrName=$_REQUEST['UsrName'];
+	$UsrEmail=$_REQUEST['UsrEmail'];
+	$IdNo =$_REQUEST['IdNo'];
+	$UsrMp=$_REQUEST['UsrMp'];
+	$OrdId = $_REQUEST['OrdId'];
+	$OrdDate=$_REQUEST['OrdDate'];
+	$TransAmt=$_REQUEST['TransAmt'];
+
+	$originStr = $CmdId.$RespCode.$MerCustId.$UsrCustId.$OrdId.$OrdDate.$TransAmt.$TrxId.$RetUrl.$BgRetUrl.$MerPriv;
+	
+	$chkResult = $chinapnr->verify($originStr,$ChkValue);
+	if($chkResult=='000'){
+		//验证链接正确	
+		require_once (ROOT_PATH.'modules/account/account.class.php');
+		require_once (ROOT_PATH.'modules/payment/payment.class.php');
+		$file = $cachepath['pay'].$OrdId;
+		$fp = fopen($file , 'w+');
+		@chmod($file, 0777);
+		if(flock($fp , LOCK_EX | LOCK_NB)){    //设定模式独占锁定和不堵塞锁定
+			$acunt=new accountClass();
+			$acunt->OnlineReturn(array("trade_no"=>$OrdId));
+			flock($fp , LOCK_UN);
+			header('location:/?user&q=code/account/recharge');
+			echo "充值成功，请点击返回查看充值记录<a href=/?user&q=code/account/recharge> >>>>>></a>";
+		} else{
+			fclose($fp);
+			echo "充值失败ERROE:001，请点击返回<a href=/?user&q=code/account/recharge> >>>>>></a>";
+		}
+		//echo "ok";
+			exit();
 	}else{
 		echo "验证失败!";
 	}

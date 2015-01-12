@@ -2173,10 +2173,12 @@ class accountClass{
 			$rec['verify_time'] = time();
 			$rec['verify_remark'] = "订单:".$trade_no."成功充值";
 			$rec['recharge_type'] = 1;
-			self::UpdateRecharge($rec);
+			self::UpdateRecharge($rec);			
 			
-			$user_id = str_replace($rechage_result['addtime'],"",$trade_no);
-			$user_id = substr($user_id,0,strlen($user_id)-1); 
+			//$user_id = str_replace($rechage_result['addtime'],"",$trade_no);
+			//$user_id = substr($user_id,0,strlen($user_id)-1); 
+			//修改user_id取法 angus直接从$rechage_result中拿
+			$user_id=$rechage_result['user_id'];
 			
 			$account_result =  self::GetOne(array("user_id"=>$user_id));		
 			$log['user_id'] = $user_id;
@@ -2194,6 +2196,7 @@ class accountClass{
 			accountClass::AddLog($log);
 			
 			//By Glay 增加在线支付成功后的短信通知
+			//sendSMS($log['user_id'],$sendMsg,1);
 			sendSMS($log['user_id'],$sendMsg,1);
 			
 			

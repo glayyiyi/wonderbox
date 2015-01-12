@@ -250,7 +250,8 @@
 .btn_grey_b:hover span, .btn_grey_b:hover span {background-position:0 -105px }
 {/literal}
 </style>
-<input type="hidden" name="payment1" value="PAYMENT_cpr"/>
+<input type="radio" name="payment1" value="PAYMENT_cpr"/>钱管家
+<input type="radio" name="payment1" value="PAYMENT_hftx"/>汇付天下(P2P)
 <!-- By Glay <div id="ban"> -->
 <!-- <table width="100%" cellpadding="3" cellspacing="3"> -->
 <!-- <tr> -->

@@ -102,7 +102,7 @@ if (isset($_POST['password'])) {
 					$data['username'] = $result['username'];
 					$data['user_id'] = $result['user_id'];
 					$data['user_typeid'] = $result['type_id'];
-                                        if ($result['email_status']==1){
+                      if ($result['email_status']==1){
 						$data['reg_step'] = "reg_email";
 						$_url = 'index.php?user&q=going/reg_email';
 					}else{
@@ -223,6 +223,9 @@ if (isset($_POST['password'])) {
 				$data['username'] = $result['username'];
 				$data['user_id'] = $result['user_id'];
 				$data['user_typeid'] = $result['type_id'];
+				$data['t_UsrCustId'] = $result['t_UsrCustId'];//托管帐户ID，由汇付生成 ，用户唯一标识
+				$data['t_UsrId'] = $result['t_UsrId'];//商户下的平台用户号
+				
 					if ($result['email_status'] == 1 ){
 						$data['reg_step'] = "";
  						$_url = 'index.action?user';
